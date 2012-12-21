@@ -88,6 +88,8 @@
 
 #include "core/memcheck.h"
 
+#include "web/UBWebController.h"
+
 UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     : UBDocumentContainer(mainWindow->centralWidget())
     , mMainWindow(mainWindow)
@@ -1109,7 +1111,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
     }
 }
 
-void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos)
+void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos, const QString &embedCode)
 {
     QString widgetUrl;
 	QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
@@ -1122,14 +1124,22 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
     }
     else{
         QString html;
-        if(UBMimeType::Video == itemMimeType)
+        if (!embedCode.isEmpty())
+            html = embedCode;
+        else if(UBMimeType::Video == itemMimeType)
             html = "     <video src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::Audio == itemMimeType)
             html = "     <audio src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::RasterImage == itemMimeType || UBMimeType::VectorImage == itemMimeType)
             html = "     <img src=\"" + lSourceUrl + "\">\n";
+        else if (UBApplication::webController->isOEmbedable(QUrl(sourceUrl)))
+        {         
+            mActiveScene->addOEmbed(sourceUrl.replace("watch?v=","embed/") , pos);
+            return;
+        }
         else if(QUrl(lSourceUrl).isValid())
             html = "     <iframe width=\"800\" height=\"600\" src=\"" + lSourceUrl + "\" frameborder=\"0\"></iframe>";
+
 
         QString tmpDirPath = UBFileSystemUtils::createTempDir();
         widgetUrl = UBGraphicsW3CWidgetItem::createHtmlWrapperInDir(html, QDir(tmpDirPath), size, QUuid::createUuid().toString());
@@ -1141,12 +1151,13 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
         widgetItem->setUuid(QUuid::createUuid());
         widgetItem->setSourceUrl(QUrl::fromLocalFile(widgetUrl));
 
+
+        if (!embedCode.isEmpty())
+            widgetItem->resize(800, 600);
+
         UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
     }
-
 }
-
-
 
 UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize,bool isBackground, bool internalData)
 {
@@ -1370,15 +1381,15 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             sUrl = sourceUrl.toLocalFile();
         }
 
-        QTemporaryFile* eduMediaFile = 0;
+        QTemporaryFile* tempFile = 0;
 
-        if (sUrl.toLower().contains("edumedia-sciences.com"))
+        if (!pData.isNull())
         {
-            eduMediaFile = new QTemporaryFile("XXXXXX.swf");
-            if (eduMediaFile->open())
+            tempFile = new QTemporaryFile("XXXXXX.swf");
+            if (tempFile->open())
             {
-                eduMediaFile->write(pData);
-                QFileInfo fi(*eduMediaFile);
+                tempFile->write(pData);
+                QFileInfo fi(*tempFile);
                 sUrl = fi.absoluteFilePath();
             }
         }
@@ -1400,14 +1411,15 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             UBGraphicsWidgetItem *widgetItem = mActiveScene->addW3CWidget(QUrl::fromLocalFile(widgetUrl), pPos);
             widgetItem->setUuid(QUuid::createUuid());
             widgetItem->setSourceUrl(QUrl::fromLocalFile(widgetUrl));
+            widgetItem->resize(size);
 
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
             return widgetItem;
         }
 
-        if (eduMediaFile)
-            delete eduMediaFile;
+        if (tempFile)
+            delete tempFile;
 
     }
     else if (UBMimeType::PDF == itemMimeType)

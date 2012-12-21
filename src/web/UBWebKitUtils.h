@@ -36,42 +36,20 @@ class UBWebKitUtils
         {
 
             public:
-                HtmlObject()
-                    : width(0)
-                    , height(0)
-                {
-                    // NOOP
-                }
-
-                HtmlObject(const QString& pSource, const QString& pObjectName, const QString& pObjectMimeType, const QString &pTagName, int pWidth, int pHeight)
-                    : source(pSource)
-                    , tagName(pTagName)
-                    , objectName(pObjectName)
-                    , objectMimeType(pObjectMimeType)
-                    , width(pWidth)
-                    , height(pHeight)
-                {
-                    // NOOP
-                }
-
-                bool operator == (const HtmlObject &obj)
-                {
-                    return source == obj.source
-                        && width == obj.width
-                        && height == obj.height
-                        && tagName == obj.tagName
-                        && objectName == obj.objectName
-                        && objectMimeType == obj.objectMimeType;
-                }
+                HtmlObject();
+                HtmlObject(const QString &pSource, const QString &pObjectName, const QString &pObjectMimeType, const QString &pTagName, int pWidth, int pHeight);
+                HtmlObject(const QString &pSource, const QString &metaDataString);
 
                 QString source;
                 QString tagName;
                 QString objectName;
                 QString objectMimeType;
+                QString embedCode;
                 int width;
                 int height;
 
 
+                bool operator == (const HtmlObject &obj);
 
         };
         static QString widgetNameFromUrl(QString pObjectUrl);

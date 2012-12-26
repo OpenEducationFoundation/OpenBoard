@@ -914,13 +914,13 @@ void UBFeaturesController::createBookmark(const QString& fileName, const QString
 
 }
 
-void UBFeaturesController::createLink(const QString& fileName, const QString& urlString, QSize& size)
+void UBFeaturesController::createLink(const QString& fileName, const QString& urlString, QSize& size, QString mimeType, QString bEmbedCode)
 {
     QString name = fileName;
     if(name.indexOf(".") != -1)
         name = name.left(name.indexOf("."));
 
-    CategoryData categoryData = getDestinationCategoryForMimeType(UBFileSystemUtils::mimeTypeFromFileName(urlString));
+    CategoryData categoryData = getDestinationCategoryForMimeType((!mimeType.isNull() ? mimeType : UBFileSystemUtils::mimeTypeFromFileName(urlString)));
     QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".lnk";
 
     int counter = 1;
@@ -934,9 +934,23 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
 
     QFile file(lFileName);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
-    //TODO claudio
-    // Why +10 because of an error on the board displaying
-    file.write(urlString.toAscii() + QString("\n%1x%2").arg(size.width() + 10).arg(size.height()+10).toAscii());
+
+    QXmlStreamWriter xmlWriter(&file);  
+
+    xmlWriter.writeStartDocument();
+
+    xmlWriter.writeStartElement("link");
+
+    xmlWriter.writeTextElement("src", urlString);
+    xmlWriter.writeTextElement("width", QString("%1").arg(size.width()));
+    xmlWriter.writeTextElement("height", QString("%1").arg(size.height()));
+    xmlWriter.writeTextElement("html", bEmbedCode);
+    
+    xmlWriter.writeEndElement();
+
+    xmlWriter.writeEndDocument();
+
+
     file.close();
 
     QImage thumb = createThumbnail(lFileName);

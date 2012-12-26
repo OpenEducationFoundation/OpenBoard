@@ -208,10 +208,7 @@ void UBTrapWebPageContentController::oEmbedRequestFinished(bool pSuccess, QUrl s
         
         response.setContent(pData);
 
-
         QString sResponse = response.toString();
-        sResponse.replace("&lt;", "<");
-        
         QString sSourceUrl = sourceUrl.toString().remove("http://www.youtube.com/oembed?url=").remove("&format=xml");
 
         UBWebKitUtils::HtmlObject obj(sSourceUrl, sResponse);
@@ -245,14 +242,14 @@ void UBTrapWebPageContentController::addLink(bool isOnLibrary)
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoToTrapByTrapWebComboboxIndex.value(selectedIndex));
-    QSize size(selectedObject.width + 10,selectedObject.height + 10);
+    QSize size(selectedObject.width,selectedObject.height);
     if(isOnLibrary){
         if(selectedIndex == 0){
             QString tmp = mTrapWebContentDialog->applicationNameLineEdit()->text();
             UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(tmp,selectedObject.source);
         }
         else
-            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(),selectedObject.source,size);
+            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(), selectedObject.source,size, selectedObject.objectMimeType, selectedObject.embedCode);
     }
     else
         UBApplication::boardController->addLinkToPage(selectedObject.source, size, QPointF(), selectedObject.embedCode);

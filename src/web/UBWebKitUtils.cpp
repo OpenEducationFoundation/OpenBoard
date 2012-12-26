@@ -202,24 +202,37 @@ UBWebKitUtils::HtmlObject::HtmlObject(const QString &pSource, const QString &pOb
     // NOOP
 }
 
+
+#include <QDomDocument>
 UBWebKitUtils::HtmlObject::HtmlObject(const QString &pSource, const QString &metaDataString)
     : width(640)
     , height(480)
 {
-    int iframeStartPos = metaDataString.indexOf("iframe")-1;
-    int iframeLenght = metaDataString.lastIndexOf("/iframe") + QString("/iframe").size() - iframeStartPos + 1;
+    QDomDocument embedAnswerDomDoc;
+    embedAnswerDomDoc.setContent(metaDataString);
 
-    QString objectFrame = metaDataString.midRef(iframeStartPos, iframeLenght).toString();
+    QDomElement e = embedAnswerDomDoc.firstChild().nextSibling().firstChildElement();
+    while(!e.isNull()) 
+    {     
+        if ( "html" == e.tagName().toLower())
+            embedCode = e.text();
 
-    if (!objectFrame.isEmpty())
-    {
-        embedCode = objectFrame;
-        source = pSource;
+        if ( "title" == e.tagName().toLower())
+            objectName = e.text();
 
-        int titleStartPos = metaDataString.indexOf("title") + QString("title").size()+1;
-        int titleEndPos = metaDataString.indexOf("/title", titleStartPos)-1;
-        objectName = metaDataString.midRef(titleStartPos, titleEndPos - titleStartPos).toString();
+        if ( "width" == e.tagName().toLower())
+            width = e.text().toInt();
+
+        if ( "height" == e.tagName().toLower())
+            height = e.text().toInt();
+
+        if ("type" == e.tagName().toLower())
+            objectMimeType = e.text();
+ 
+        e = e.nextSiblingElement();
     }
+
+    source = pSource;
 }
 
 bool UBWebKitUtils::HtmlObject::operator == (const HtmlObject &obj)

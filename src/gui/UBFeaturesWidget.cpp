@@ -444,9 +444,9 @@ void UBFeaturesWidget::createBookmark(QString& title, QString& urlString)
     controller->createBookmark(title,urlString);
 }
 
-void UBFeaturesWidget::createLink(QString title, QString& urlString,QSize& size)
+void UBFeaturesWidget::createLink(QString title, QString& urlString,QSize& size, QString mimeType, QString embedCode)
 {
-    controller->createLink(title,urlString,size);
+    controller->createLink(title,urlString,size,mimeType,embedCode);
 }
 
 QString UBFeaturesWidget::importFromUrl(const QUrl &url) const

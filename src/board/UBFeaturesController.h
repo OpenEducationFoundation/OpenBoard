@@ -287,7 +287,7 @@ public:
     void importImage(const QImage &image, const QString &fileName = QString());
     void importImage( const QImage &image, const UBFeature &destination, const QString &fileName = QString() );
     void createBookmark(const QString& fileName, const QString &urlString);
-    void createLink(const QString& fileName, const QString& urlString, QSize &size);
+    void createLink(const QString& fileName, const QString& urlString, QSize &size, QString mimeType, QString bEmbedCode);
     bool newFolderAllowed() const {return currentElement.isFolder() && currentElement.testPermissions(UBFeature::WRITE_P);}
     QStringList getFileNamesInFolders();
 

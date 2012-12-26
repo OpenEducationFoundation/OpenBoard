@@ -1132,14 +1132,18 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
             html = "     <audio src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::RasterImage == itemMimeType || UBMimeType::VectorImage == itemMimeType)
             html = "     <img src=\"" + lSourceUrl + "\">\n";
-        else if (UBApplication::webController->isOEmbedable(QUrl(sourceUrl)))
-        {         
-            mActiveScene->addOEmbed(sourceUrl.replace("watch?v=","embed/") , pos);
-            return;
-        }
         else if(QUrl(lSourceUrl).isValid())
-            html = "     <iframe width=\"800\" height=\"600\" src=\"" + lSourceUrl + "\" frameborder=\"0\"></iframe>";
-
+        {
+            html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n";
+            html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n";
+            html += "    <head>\r\n";
+            html += "        <meta http-equiv=\"refresh\" content=\"0; " + lSourceUrl + "\">\r\n";
+            html += "    </head>\r\n";
+            html += "    <body>\r\n";
+            html += "        Redirect to target...\r\n";
+            html += "    </body>\r\n";
+            html += "</html>\r\n";
+        }
 
         QString tmpDirPath = UBFileSystemUtils::createTempDir();
         widgetUrl = UBGraphicsW3CWidgetItem::createHtmlWrapperInDir(html, QDir(tmpDirPath), size, QUuid::createUuid().toString());
@@ -1150,10 +1154,6 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
         UBGraphicsWidgetItem *widgetItem = mActiveScene->addW3CWidget(QUrl::fromLocalFile(widgetUrl), pos);
         widgetItem->setUuid(QUuid::createUuid());
         widgetItem->setSourceUrl(QUrl::fromLocalFile(widgetUrl));
-
-
-        if (!embedCode.isEmpty())
-            widgetItem->resize(800, 600);
 
         UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
     }
@@ -1389,6 +1389,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             if (tempFile->open())
             {
                 tempFile->write(pData);
+                tempFile->close();
                 QFileInfo fi(*tempFile);
                 sUrl = fi.absoluteFilePath();
             }
@@ -1553,11 +1554,38 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             }
         }
     }
-    else if (UBMimeType::Link == itemMimeType){
-        QString url = QString::fromAscii(pData);
-        QStringList stringList = url.split("\n");
-        QStringList sizeList = stringList.at(1).split("x");
-        addLinkToPage(stringList.at(0),QSize(sizeList.at(0).toInt(),sizeList.at(1).toInt()),pPos);
+    else if (UBMimeType::Link == itemMimeType)
+    {
+        QString url;
+        QString embedCode;
+        QSize size;
+
+        QDomDocument linkDoc;
+        linkDoc.setContent(QString(pData));
+
+        QDomElement e = linkDoc.firstChildElement();
+        if ("link" == e.tagName().toLower())
+            e = e.firstChildElement();
+
+        while(!e.isNull())
+        {     
+            if ("src" == e.tagName().toLower())
+                url = e.text();
+
+            if ( "html" == e.tagName().toLower())
+                embedCode = e.text();
+
+            if ( "width" == e.tagName().toLower())
+                size.setWidth(e.text().toInt());
+
+            if ( "height" == e.tagName().toLower())
+                size.setHeight(e.text().toInt());
+
+            e = e.nextSiblingElement();
+        }
+
+
+        addLinkToPage(url, size, pPos, embedCode);
     }
     else if (UBMimeType::Web == itemMimeType){
         addLinkToPage(sourceUrl.toString(),pSize,pPos);

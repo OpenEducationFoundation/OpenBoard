@@ -2368,11 +2368,7 @@ void UBBoardController::copy()
         UBItem* ubItem = dynamic_cast<UBItem*>(gi);
 
         if (ubItem && !mActiveScene->tools().contains(gi))
-        {
-            UBItem *itemCopy = ubItem->deepCopy();
-            if (itemCopy)
-                selected << itemCopy;
-        }
+            selected << ubItem;
     }
 
     if (selected.size() > 0)

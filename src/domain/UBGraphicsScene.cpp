@@ -1488,15 +1488,13 @@ UBGraphicsTextItem* UBGraphicsScene::textForObjectName(const QString& pString, c
     if(!textItem){
         textItem = addTextWithFont(pString,QPointF(0,0) ,72,UBSettings::settings()->fontFamily(),true,false);
         textItem->setObjectName(objectName);
-        QSizeF size = textItem->size();
-        textItem->setPos(QPointF(-size.width()/2.0,-size.height()/2.0));
         textItem->setData(UBGraphicsItemData::ItemEditable,QVariant(false));
+        textItem->adjustSize();
+        textItem->setPlainText(pString);
+        textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     }
 
-    textItem->setPlainText(pString);
-    textItem->adjustSize();
     textItem->clearFocus();
-    textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     return textItem;
 }
 

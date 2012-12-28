@@ -558,6 +558,19 @@ void UBFeaturesController::initHardcodedData()
                              //permissions for category subfolders. Scanning data
                              , UBFeature::NO_P);
 
+    bookmarkData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
+        .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
+        //UBFeature represented Trash element
+        , UBFeature(rootData.categoryFeature().getFullVirtualPath()
+        + "/Bookmarks"                //Virtual Path
+        , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
+        , tr("Bookmarks")                                             //Translation name
+        , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
+        , FEATURE_CATEGORY                                      //UBFeature's type
+        , UBFeature::WRITE_P)                                   //UBFeature's permissions
+        //permissions for category subfolders. Scanning data
+        , UBFeature::WRITE_P | UBFeature::DELETE_P);
+
     trashData = CategoryData(CategoryData::PathData() //Static library paths for Trash category. Scanning data
                                 .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::userTrashDirPath()))
                             //UBFeature represented Trash element
@@ -585,18 +598,7 @@ void UBFeaturesController::initHardcodedData()
                              //permissions for category subfolders. Scanning data
                              , UBFeature::WRITE_P | UBFeature::DELETE_P);
 
-    bookmarkData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
-                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
-                                 //UBFeature represented Trash element
-                                 , UBFeature(rootData.categoryFeature().getFullVirtualPath()
-                                             + "/Bookmarks"                //Virtual Path
-                                           , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
-                                           , tr("Bookmarks")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
-                                           , FEATURE_CATEGORY                                      //UBFeature's type
-                                           , UBFeature::WRITE_P)                                   //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+    
 
     extentionPermissionsCategoryData << webFolderData;
 }
@@ -615,8 +617,8 @@ void UBFeaturesController::loadHardcodedItemsToModel()
                     << shapesData.categoryFeature().markedWithSortKey("07")
                     << favoriteData.categoryFeature().markedWithSortKey("08")
                     << webSearchData.categoryFeature().markedWithSortKey("09")
-                    << trashData.categoryFeature().markedWithSortKey("10")
-                    << bookmarkData.categoryFeature().markedWithSortKey("11");
+                    << bookmarkData.categoryFeature().markedWithSortKey("10")
+                    << trashData.categoryFeature().markedWithSortKey("11");
 
     //filling favoriteList
     loadFavoriteList();

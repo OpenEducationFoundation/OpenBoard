@@ -42,8 +42,8 @@ class UBGraphicsCache : public QGraphicsRectItem, public UBItem
 public:
     enum eMode
     {
-        Construction = 0,
-        Presentation
+        OnClick = 0,
+        Persistent
     };
 
 public:

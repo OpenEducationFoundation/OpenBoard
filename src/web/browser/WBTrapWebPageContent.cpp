@@ -10,7 +10,7 @@ WBTrapBar::WBTrapBar(QWidget *parent)
     layout()->setAlignment(Qt::AlignTop);
 
     setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-    setButtonIconSize(QSize(128, 128));
+    setButtonIconSize(QSize(64, 64));
 }
 
 void WBTrapBar::mouseMoveEvent(QMouseEvent *event)

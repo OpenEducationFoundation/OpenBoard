@@ -208,8 +208,8 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpModeLabel = new QLabel(tr("Mode:"), mpProperties);
     mpModeComboBox = new QComboBox(mpProperties);
     mpModeComboBox->setObjectName("CacheModeSelectionComboBox");
-    mpModeComboBox->addItem("Construction", UBGraphicsCache::Construction);
-    mpModeComboBox->addItem("Presentation", UBGraphicsCache::Presentation);
+    mpModeComboBox->addItem("On Click", UBGraphicsCache::OnClick);
+    mpModeComboBox->addItem("Persistent", UBGraphicsCache::Persistent);
     mpModeLayout->addWidget(mpModeLabel);
     mpModeLayout->addWidget(mpModeComboBox);
 

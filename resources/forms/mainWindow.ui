@@ -1655,7 +1655,7 @@
   <action name="actionBookmark">
    <property name="icon">
     <iconset resource="../sankore.qrc">
-     <normaloff>:/images/toolbar/bookmark.svg</normaloff>:/images/toolbar/bookmark.svg</iconset>
+     <normaloff>:/images/toolbar/bookmark.png</normaloff>:/images/toolbar/bookmark.png</iconset>
    </property>
    <property name="text">
     <string>Bookmark</string>

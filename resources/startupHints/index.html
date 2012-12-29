@@ -30,19 +30,25 @@
                 }            
             
                 if(files_count > 0){
+                    current = Math.floor((Math.random()*files_count)+1);
+                
                     $("#source").attr("src", "locales/" + lang + "/1.html");                    
                     $("#right").click(function(){
                         if(current < files_count){
                             current++;
-                            $("#source").attr("src", "locales/" + lang + "/" + current + ".html");
-                        }
+                        } else
+                            current = 1;
+                            
+                        $("#source").attr("src", "locales/" + lang + "/" + current + ".html");
                     })
                     
                     $("#left").click(function(){
                         if(current > 1){
-                            current--;
-                            $("#source").attr("src", "locales/" + lang + "/" + current + ".html");
-                        }
+                            current--;                            
+                        } else
+                            current = files_count;
+                            
+                        $("#source").attr("src", "locales/" + lang + "/" + current + ".html");
                     })
                 } else 
                     $("#source").attr("src", "locales/" + lang + "/error.html");               

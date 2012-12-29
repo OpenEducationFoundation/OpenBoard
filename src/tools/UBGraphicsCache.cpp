@@ -49,7 +49,7 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
   , mScene(scene)
   , mShouldDrawAtHoverEnter(false)
 {
-    setMode(static_cast<int>(Construction)); 
+    setMode(static_cast<int>(OnClick)); 
 
     mHoleSize = UBSettings::settings()->casheLastHoleSize->get().toSize();
     
@@ -146,9 +146,9 @@ void UBGraphicsCache::setMode(int mode)
 {
     mCurrentMode = static_cast<eMode>(mode);
 
-    if (Construction == mCurrentMode)
+    if (OnClick == mCurrentMode)
         setAcceptHoverEvents(false);
-    if (Presentation == mCurrentMode)
+    if (Persistent == mCurrentMode)
         setAcceptHoverEvents(true);
 
     drawHole(false);
@@ -192,12 +192,12 @@ void UBGraphicsCache::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 
 void UBGraphicsCache::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (Construction == mCurrentMode)
+    if (OnClick == mCurrentMode)
     {
         drawHole(true);
     }
     
-    if (Presentation == mCurrentMode)
+    if (Persistent == mCurrentMode)
         drawHole(!mDrawMask);
 
     setHolePos(event->pos());
@@ -234,7 +234,7 @@ void UBGraphicsCache::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     Q_UNUSED(event);
 
-    if (Construction == mCurrentMode)
+    if (OnClick == mCurrentMode)
         drawHole(false);
 
     // Note: if refresh issues occure, replace the following 3 lines by: update();

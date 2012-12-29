@@ -726,7 +726,12 @@ bool UBWebController::isOEmbedable(const QUrl& pUrl)
     foreach(QString provider, mOEmbedProviders)
     {
         if(urlAsString.contains(provider))
-            return true;
+        {
+            if ("youtube.com" == provider)
+                return (urlAsString.contains("/embed/") || urlAsString.contains("watch?v="));
+            else
+                return true;
+        }
     }
 
     return false;

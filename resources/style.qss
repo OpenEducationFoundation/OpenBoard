@@ -133,16 +133,6 @@ QPushButton#DockPaletteWidgetButton::checked
 	background-color: #BBBBBB;
 }
 
-QCheckBox::indicator::checked
-{
-     image: url(:/images/unpin.svg);
-}
-
-QCheckBox::indicator::unchecked
-{
-     image: url(:/images/pin.svg);
-}
-
 QScrollBar::vertical
 {
 	background:transparent;

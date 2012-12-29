@@ -88,6 +88,8 @@
 
 #include "core/memcheck.h"
 
+#include "web/UBWebController.h"
+
 UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     : UBDocumentContainer(mainWindow->centralWidget())
     , mMainWindow(mainWindow)
@@ -148,7 +150,7 @@ void UBBoardController::init()
             , this, SLOT(lastWindowClosed()));
 
     connect(UBDownloadManager::downloadManager(), SIGNAL(downloadModalFinished()), this, SLOT(onDownloadModalFinished()));
-    connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool)));
+    connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
     UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createDocument();
 
@@ -710,7 +712,7 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
         return retItem;
     }
 
-    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()), false);
+    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()));
     if (createdItem)
     {
         createdItem->setSourceUrl(item->sourceUrl());
@@ -1057,7 +1059,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
         {
             QFile file(fileName);
             file.open(QIODevice::ReadOnly);
-            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, isBackground, internalData);
+            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, true, isBackground, internalData);
             file.close();
        }
        else
@@ -1109,7 +1111,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
     }
 }
 
-void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos)
+void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos, const QString &embedCode)
 {
     QString widgetUrl;
 	QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
@@ -1122,14 +1124,26 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
     }
     else{
         QString html;
-        if(UBMimeType::Video == itemMimeType)
+        if (!embedCode.isEmpty())
+            html = embedCode;
+        else if(UBMimeType::Video == itemMimeType)
             html = "     <video src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::Audio == itemMimeType)
             html = "     <audio src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::RasterImage == itemMimeType || UBMimeType::VectorImage == itemMimeType)
             html = "     <img src=\"" + lSourceUrl + "\">\n";
         else if(QUrl(lSourceUrl).isValid())
-            html = "     <iframe width=\"800\" height=\"600\" src=\"" + lSourceUrl + "\" frameborder=\"0\"></iframe>";
+        {
+            html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n";
+            html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n";
+            html += "    <head>\r\n";
+            html += "        <meta http-equiv=\"refresh\" content=\"0; " + lSourceUrl + "\">\r\n";
+            html += "    </head>\r\n";
+            html += "    <body>\r\n";
+            html += "        Redirect to target...\r\n";
+            html += "    </body>\r\n";
+            html += "</html>\r\n";
+        }
 
         QString tmpDirPath = UBFileSystemUtils::createTempDir();
         widgetUrl = UBGraphicsW3CWidgetItem::createHtmlWrapperInDir(html, QDir(tmpDirPath), size, QUuid::createUuid().toString());
@@ -1143,12 +1157,9 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
 
         UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
     }
-
 }
 
-
-
-UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize,bool isBackground, bool internalData)
+UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData)
 {
     Q_ASSERT(pSuccess);
 
@@ -1298,7 +1309,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         else
         {
             qDebug() << sourceUrl.toString();
-            mediaVideoItem = addVideo(sourceUrl, false, pPos, true);
+            mediaVideoItem = addVideo(sourceUrl, false, pPos, isSyncOperation);
         }
 
         if(mediaVideoItem){
@@ -1342,7 +1353,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         }
         else
         {
-            audioMediaItem = addAudio(sourceUrl, false, pPos, true);
+            audioMediaItem = addAudio(sourceUrl, false, pPos, isSyncOperation);
         }
 
         if(audioMediaItem){
@@ -1370,15 +1381,16 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             sUrl = sourceUrl.toLocalFile();
         }
 
-        QTemporaryFile* eduMediaFile = 0;
+        QTemporaryFile* tempFile = 0;
 
-        if (sUrl.toLower().contains("edumedia-sciences.com"))
+        if (!pData.isNull())
         {
-            eduMediaFile = new QTemporaryFile("XXXXXX.swf");
-            if (eduMediaFile->open())
+            tempFile = new QTemporaryFile("XXXXXX.swf");
+            if (tempFile->open())
             {
-                eduMediaFile->write(pData);
-                QFileInfo fi(*eduMediaFile);
+                tempFile->write(pData);
+                tempFile->close();
+                QFileInfo fi(*tempFile);
                 sUrl = fi.absoluteFilePath();
             }
         }
@@ -1400,14 +1412,15 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             UBGraphicsWidgetItem *widgetItem = mActiveScene->addW3CWidget(QUrl::fromLocalFile(widgetUrl), pPos);
             widgetItem->setUuid(QUuid::createUuid());
             widgetItem->setSourceUrl(QUrl::fromLocalFile(widgetUrl));
+            widgetItem->resize(size);
 
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
             return widgetItem;
         }
 
-        if (eduMediaFile)
-            delete eduMediaFile;
+        if (tempFile)
+            delete tempFile;
 
     }
     else if (UBMimeType::PDF == itemMimeType)
@@ -1541,11 +1554,38 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             }
         }
     }
-    else if (UBMimeType::Link == itemMimeType){
-        QString url = QString::fromAscii(pData);
-        QStringList stringList = url.split("\n");
-        QStringList sizeList = stringList.at(1).split("x");
-        addLinkToPage(stringList.at(0),QSize(sizeList.at(0).toInt(),sizeList.at(1).toInt()),pPos);
+    else if (UBMimeType::Link == itemMimeType)
+    {
+        QString url;
+        QString embedCode;
+        QSize size;
+
+        QDomDocument linkDoc;
+        linkDoc.setContent(QString(pData));
+
+        QDomElement e = linkDoc.firstChildElement();
+        if ("link" == e.tagName().toLower())
+            e = e.firstChildElement();
+
+        while(!e.isNull())
+        {     
+            if ("src" == e.tagName().toLower())
+                url = e.text();
+
+            if ( "html" == e.tagName().toLower())
+                embedCode = e.text();
+
+            if ( "width" == e.tagName().toLower())
+                size.setWidth(e.text().toInt());
+
+            if ( "height" == e.tagName().toLower())
+                size.setHeight(e.text().toInt());
+
+            e = e.nextSiblingElement();
+        }
+
+
+        addLinkToPage(url, size, pPos, embedCode);
     }
     else if (UBMimeType::Web == itemMimeType){
         addLinkToPage(sourceUrl.toString(),pSize,pPos);
@@ -2183,7 +2223,7 @@ UBGraphicsMediaItem* UBBoardController::addVideo(const QUrl& pSourceUrl, bool st
     QUrl concreteUrl = pSourceUrl;
 
     // media file is not in document folder yet
-    if (!bUseSource)
+    if (bUseSource)
     {
         QString destFile;
         bool b = UBPersistenceManager::persistenceManager()->addFileToDocument(selectedDocument(),
@@ -2218,7 +2258,7 @@ UBGraphicsMediaItem* UBBoardController::addAudio(const QUrl& pSourceUrl, bool st
     QUrl concreteUrl = pSourceUrl;
 
     // media file is not in document folder yet
-    if (!bUseSource)
+    if (bUseSource)
     {
         QString destFile;
         bool b = UBPersistenceManager::persistenceManager()->addFileToDocument(selectedDocument(),
@@ -2328,11 +2368,7 @@ void UBBoardController::copy()
         UBItem* ubItem = dynamic_cast<UBItem*>(gi);
 
         if (ubItem && !mActiveScene->tools().contains(gi))
-        {
-            UBItem *itemCopy = ubItem->deepCopy();
-            if (itemCopy)
-                selected << itemCopy;
-        }
+            selected << ubItem;
     }
 
     if (selected.size() > 0)

@@ -252,6 +252,31 @@ void UBTGAdaptableText::focusOutEvent(QFocusEvent* e)
 	QTextEdit::focusOutEvent(e);
 }
 
+void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
+{
+    QMimeData editedMimeData;
+    QTextDocument textDoc;
+    QString plainText;
+
+    if (source->hasHtml())
+    {
+        textDoc.setHtml(source->html());
+        plainText += textDoc.toPlainText();
+    }
+    if (source->hasText())
+        plainText += source->text();
+    if (source->hasUrls())
+    {
+        foreach(QUrl url, source->urls())
+        {
+            plainText += url.toString();
+        }
+    }
+        
+    editedMimeData.setText(plainText);
+    QTextEdit::insertFromMimeData(&editedMimeData);
+}
+
 void UBTGAdaptableText::managePlaceholder(bool focus)
 {
 	if(focus){

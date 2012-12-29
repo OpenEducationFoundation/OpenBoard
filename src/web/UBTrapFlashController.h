@@ -65,6 +65,7 @@ class UBTrapWebPageContentController : public QObject
 
     private slots:
         void selectHtmlObject(int pObjectIndex);
+        void oEmbedRequestFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
 
     private:
 
@@ -75,7 +76,7 @@ class UBTrapWebPageContentController : public QObject
         QString widgetNameForUrl(QString pObjectUrl);
 
         QString generateFullPageHtml(const QUrl &srcUrl);
-        void generatePreview(const UBWebKitUtils::HtmlObject& pObject);
+        void generatePreview(const UBWebKitUtils::HtmlObject& pObject, bool bTryToEmbed = false);
 
         QString generateIcon(const QString& pDirPath);
 
@@ -85,7 +86,7 @@ class UBTrapWebPageContentController : public QObject
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
         QList<UBWebKitUtils::HtmlObject> mAvaliableObjects;
-        QMap<int, int> mObjectNoByTrapWebComboboxIndex;
+        QMap<int, int> mObjectNoToTrapByTrapWebComboboxIndex;
 
         WBTrapWebPageContentWindow *mTrapWebContentDialog;
         QWebHitTestResult mLastWebHitTestResult;

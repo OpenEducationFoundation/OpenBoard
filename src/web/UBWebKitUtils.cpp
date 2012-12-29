@@ -24,6 +24,8 @@
 #include "UBWebKitUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
 #include "core/memcheck.h"
+#include "core/UBApplication.h"
+#include "web/UBWebController.h"
 
 UBWebKitUtils::UBWebKitUtils()
 {
@@ -100,15 +102,20 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
                     continue;
             }
 
-            name = element.attribute("alt");
-            if(name.isEmpty())
-                name = element.toPlainText();
-            if(name.isEmpty())
-                name = widgetNameFromUrl(source);
-            if(name.isEmpty())
-                continue;
+            
+            if (UBApplication::webController->isOEmbedable(QUrl(source)))
+                name = element.attribute("title");
+            else
+            {
+                if(name.isEmpty())
+                    name = widgetNameFromUrl(source);
+                if(name.isEmpty())
+                    name = element.toPlainText();
+            }
 
-
+            if(name.isEmpty())
+               continue;
+            
             UBWebKitUtils::HtmlObject obj(source, name, mimeType, tagName, width, heigth);
             if (!htmlObjects.contains(obj))
                 htmlObjects << obj;
@@ -175,4 +182,66 @@ QStringList UBWebKitUtils::getUrls(QUrl& baseUrl,QWebElement& element)
         result << validUrl(baseUrl,values);
     }
     return result;
+}
+
+UBWebKitUtils::HtmlObject::HtmlObject()
+: width(0)
+, height(0)
+{
+    // NOOP
+}
+
+UBWebKitUtils::HtmlObject::HtmlObject(const QString &pSource, const QString &pObjectName, const QString &pObjectMimeType, const QString &pTagName, int pWidth, int pHeight)
+: source(pSource)
+, tagName(pTagName)
+, objectName(pObjectName)
+, objectMimeType(pObjectMimeType)
+, width(pWidth)
+, height(pHeight)
+{
+    // NOOP
+}
+
+
+#include <QDomDocument>
+UBWebKitUtils::HtmlObject::HtmlObject(const QString &pSource, const QString &metaDataString)
+    : width(640)
+    , height(480)
+{
+    QDomDocument embedAnswerDomDoc;
+    embedAnswerDomDoc.setContent(metaDataString);
+
+    QDomElement e = embedAnswerDomDoc.firstChild().nextSibling().firstChildElement();
+    while(!e.isNull()) 
+    {     
+        if ( "html" == e.tagName().toLower())
+            embedCode = e.text();
+
+        if ( "title" == e.tagName().toLower())
+            objectName = e.text();
+
+        if ( "width" == e.tagName().toLower())
+            width = e.text().toInt();
+
+        if ( "height" == e.tagName().toLower())
+            height = e.text().toInt();
+
+        if ("type" == e.tagName().toLower())
+            objectMimeType = e.text();
+ 
+        e = e.nextSiblingElement();
+    }
+
+    source = pSource;
+}
+
+bool UBWebKitUtils::HtmlObject::operator == (const HtmlObject &obj)
+{
+    return source == obj.source
+        && width == obj.width
+        && height == obj.height
+        && tagName == obj.tagName
+        && objectName == obj.objectName
+        && objectMimeType == obj.objectMimeType
+        && embedCode == obj.embedCode;
 }

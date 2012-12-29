@@ -558,6 +558,19 @@ void UBFeaturesController::initHardcodedData()
                              //permissions for category subfolders. Scanning data
                              , UBFeature::NO_P);
 
+    bookmarkData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
+        .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
+        //UBFeature represented Trash element
+        , UBFeature(rootData.categoryFeature().getFullVirtualPath()
+        + "/Bookmarks"                //Virtual Path
+        , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
+        , tr("Bookmarks")                                             //Translation name
+        , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
+        , FEATURE_CATEGORY                                      //UBFeature's type
+        , UBFeature::WRITE_P)                                   //UBFeature's permissions
+        //permissions for category subfolders. Scanning data
+        , UBFeature::WRITE_P | UBFeature::DELETE_P);
+
     trashData = CategoryData(CategoryData::PathData() //Static library paths for Trash category. Scanning data
                                 .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::userTrashDirPath()))
                             //UBFeature represented Trash element
@@ -585,18 +598,7 @@ void UBFeaturesController::initHardcodedData()
                              //permissions for category subfolders. Scanning data
                              , UBFeature::WRITE_P | UBFeature::DELETE_P);
 
-    bookmarkData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
-                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
-                                 //UBFeature represented Trash element
-                                 , UBFeature(rootData.categoryFeature().getFullVirtualPath()
-                                             + "/Bookmarks"                //Virtual Path
-                                           , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
-                                           , tr("Bookmarks")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
-                                           , FEATURE_CATEGORY                                      //UBFeature's type
-                                           , UBFeature::WRITE_P)                                   //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+    
 
     extentionPermissionsCategoryData << webFolderData;
 }
@@ -615,8 +617,8 @@ void UBFeaturesController::loadHardcodedItemsToModel()
                     << shapesData.categoryFeature().markedWithSortKey("07")
                     << favoriteData.categoryFeature().markedWithSortKey("08")
                     << webSearchData.categoryFeature().markedWithSortKey("09")
-                    << trashData.categoryFeature().markedWithSortKey("10")
-                    << bookmarkData.categoryFeature().markedWithSortKey("11");
+                    << bookmarkData.categoryFeature().markedWithSortKey("10")
+                    << trashData.categoryFeature().markedWithSortKey("11");
 
     //filling favoriteList
     loadFavoriteList();
@@ -914,13 +916,13 @@ void UBFeaturesController::createBookmark(const QString& fileName, const QString
 
 }
 
-void UBFeaturesController::createLink(const QString& fileName, const QString& urlString, QSize& size)
+void UBFeaturesController::createLink(const QString& fileName, const QString& urlString, QSize& size, QString mimeType, QString bEmbedCode)
 {
     QString name = fileName;
     if(name.indexOf(".") != -1)
         name = name.left(name.indexOf("."));
 
-    CategoryData categoryData = getDestinationCategoryForMimeType(UBFileSystemUtils::mimeTypeFromFileName(urlString));
+    CategoryData categoryData = getDestinationCategoryForMimeType((!mimeType.isNull() ? mimeType : UBFileSystemUtils::mimeTypeFromFileName(urlString)));
     QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".lnk";
 
     int counter = 1;
@@ -934,9 +936,23 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
 
     QFile file(lFileName);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
-    //TODO claudio
-    // Why +10 because of an error on the board displaying
-    file.write(urlString.toAscii() + QString("\n%1x%2").arg(size.width() + 10).arg(size.height()+10).toAscii());
+
+    QXmlStreamWriter xmlWriter(&file);  
+
+    xmlWriter.writeStartDocument();
+
+    xmlWriter.writeStartElement("link");
+
+    xmlWriter.writeTextElement("src", urlString);
+    xmlWriter.writeTextElement("width", QString("%1").arg(size.width()));
+    xmlWriter.writeTextElement("height", QString("%1").arg(size.height()));
+    xmlWriter.writeTextElement("html", bEmbedCode);
+    
+    xmlWriter.writeEndElement();
+
+    xmlWriter.writeEndDocument();
+
+
     file.close();
 
     QImage thumb = createThumbnail(lFileName);

@@ -143,10 +143,10 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 
         disconnect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
 
-        mObjectNoByTrapWebComboboxIndex.clear();
+        mObjectNoToTrapByTrapWebComboboxIndex.clear();
         combobox->clear();
         combobox->addItem(tr("Whole page"));
-        mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), 0);
+        mObjectNoToTrapByTrapWebComboboxIndex.insert(combobox->count(), 0);
 
         for(int i = 1; i < objects.count(); i++)
         {
@@ -154,13 +154,24 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 
             if ("separator"== wrapper.tagName)
                 combobox->insertSeparator(combobox->count());
-            else{
-                mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), i);
+            else
+            {
+                mObjectNoToTrapByTrapWebComboboxIndex.insert(combobox->count(), i);
                 combobox->addItem(wrapper.objectName);
             }
         }
-        if(combobox->count()>=1)
-            combobox->removeItem(combobox->count()-1);
+
+        for(int i = 1; i <= objects.count(); i++)
+        {
+            UBWebKitUtils::HtmlObject wrapper = objects.at(i-1);
+            if (UBApplication::webController->isOEmbedable(QUrl(wrapper.source)))
+            {
+                UBHttpGet *getEmbed = new UBHttpGet(this);
+                getEmbed->get(QUrl("http://www.youtube.com/oembed?url="+wrapper.source+"&format=xml"));
+                connect(getEmbed, SIGNAL(downloadFinished(bool, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(oEmbedRequestFinished(bool, QUrl, QString, QByteArray, QPointF, QSize, bool)));
+            }
+        }
+
         connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
     }
 }
@@ -177,19 +188,42 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
     }
     else if (pObjectIndex > 0 && pObjectIndex <= mAvaliableObjects.size())
     {
-        UBWebKitUtils::HtmlObject currentObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(pObjectIndex));
+        UBWebKitUtils::HtmlObject currentObject;
 
+        currentObject = mAvaliableObjects.at(mObjectNoToTrapByTrapWebComboboxIndex.value(pObjectIndex));
         generatePreview(currentObject);
+
         mTrapWebContentDialog->applicationNameLineEdit()->setText(currentObject.objectName);
-        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(false);
-        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(false);
+
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(!currentObject.embedCode.isEmpty());
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(!currentObject.embedCode.isEmpty());
     }
 }
 
+void UBTrapWebPageContentController::oEmbedRequestFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)
+{
+    if (pSuccess)
+    {
+        QDomDocument response;
+        
+        response.setContent(pData);
+
+        QString sResponse = response.toString();
+        QString sSourceUrl = sourceUrl.toString().remove("http://www.youtube.com/oembed?url=").remove("&format=xml");
+
+        UBWebKitUtils::HtmlObject obj(sSourceUrl, sResponse);
+        mAvaliableObjects << obj;
+
+        QComboBox *combobox = mTrapWebContentDialog->itemsComboBox();
+
+        mObjectNoToTrapByTrapWebComboboxIndex.insert(combobox->count(), mAvaliableObjects.count()-1);
+        combobox->addItem(tr("Embed ") + obj.objectName);
+    }
+}
 void UBTrapWebPageContentController::prepareCurrentItemForImport(bool sendToBoard)
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
-    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
+    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoToTrapByTrapWebComboboxIndex.value(selectedIndex));
 
     QSize currentItemSize(selectedObject.width, selectedObject.height);
 
@@ -207,18 +241,18 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool sendToBoar
 void UBTrapWebPageContentController::addLink(bool isOnLibrary)
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
-    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
-    QSize size(selectedObject.width + 10,selectedObject.height + 10);
+    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoToTrapByTrapWebComboboxIndex.value(selectedIndex));
+    QSize size(selectedObject.width,selectedObject.height);
     if(isOnLibrary){
         if(selectedIndex == 0){
             QString tmp = mTrapWebContentDialog->applicationNameLineEdit()->text();
             UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(tmp,selectedObject.source);
         }
         else
-            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(),selectedObject.source,size);
+            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(), selectedObject.source,size, selectedObject.objectMimeType, selectedObject.embedCode);
     }
     else
-        UBApplication::boardController->addLinkToPage(selectedObject.source,size);
+        UBApplication::boardController->addLinkToPage(selectedObject.source, size, QPointF(), selectedObject.embedCode);
 }
 
 void UBTrapWebPageContentController::addItemToLibrary()
@@ -269,10 +303,10 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         {
             list << UBWebKitUtils::HtmlObject(pCurrentWebFrame->baseUrl().toString(), widgetNameForUrl(pCurrentWebFrame->title()), QString(),"Whole Page", 800, 600);
             list << UBWebKitUtils::HtmlObject(QString(),QString(),QString(),"separator",0,0);
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
-            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "source");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "frame");
@@ -374,7 +408,7 @@ QString UBTrapWebPageContentController::generateFullPageHtml(const QUrl &srcUrl)
 }
 
 
-void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlObject& pObject)
+void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlObject& pObject, bool bTryToEmbed)
 {
     QUrl objectUrl(pObject.source);
     QString objectFullUrl = pObject.source;
@@ -405,7 +439,12 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
 
     htmlContentString += "      <div align='center'>";
 
-    if(mimeType.contains("image")){
+
+    if (!pObject.embedCode.isEmpty())
+    {
+        htmlContentString += pObject.embedCode;
+    }
+    else if(mimeType.contains("image")){
         htmlContentString += "    <img src=\"" + objectFullUrl + "\">";
     }
     else if (mimeType.contains("video")){
@@ -414,8 +453,31 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
     else if (mimeType.contains("audio")){
         htmlContentString += "    <audio src=\"" + objectFullUrl + "\" controls=\"controls\">";
     }
-    else if (mimeType.contains("html")){
-        htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
+    else if (mimeType.contains("html"))
+    {
+        if (bTryToEmbed)
+        {
+            QString videoId;
+            
+            int videoIdStartPos = -1;
+            if (objectFullUrl.contains("watch?v="))
+            {
+                videoIdStartPos = objectFullUrl.indexOf("watch?v=") + QString("watch?v=").size();
+            }
+            else if (objectFullUrl.contains("/embed/"))
+            {
+                videoIdStartPos = objectFullUrl.indexOf("/embed/") + QString("/embed/").size();
+            }
+            
+            videoId = objectFullUrl.right(objectFullUrl.size() - videoIdStartPos);
+
+            if (!videoId.isNull())
+            {
+                htmlContentString += "<iframe width=\""+QString("%1").arg((640 > pObject.width) ? 640 : pObject.width)+"\" height=\""+QString("%1").arg((480 > pObject.width) ? 480 : pObject.width)+"\" src=\"http://www.youtube.com/embed/"+videoId+"\" frameborder=\"0\" allowfullscreen></iframe>";
+            }
+        }
+        else
+            htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
     }
     else if (mCurrentWebFrame->url().toString().contains("youtube")){
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.getElementById('embed_code').value");

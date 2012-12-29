@@ -64,6 +64,12 @@
          </property>
          <item>
           <widget class="UBDocumentTreeView" name="documentTreeView">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
            <property name="animated">
             <bool>true</bool>
            </property>
@@ -239,8 +245,6 @@
     </widget>
    </item>
   </layout>
-  <zorder>topFrame</zorder>
-  <zorder>tabWidget</zorder>
  </widget>
  <layoutdefault spacing="0" margin="0"/>
  <customwidgets>

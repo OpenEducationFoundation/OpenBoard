@@ -424,7 +424,7 @@ void UBPersistenceManager::deleteDocument(UBDocumentProxy* pDocumentProxy)
 
     pDocumentProxy->deleteLater();
 
-    emit proxyListChanged();
+//    emit proxyListChanged();
 
 }
 

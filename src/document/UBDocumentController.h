@@ -94,6 +94,11 @@ public:
         , aTrash
     };
 
+    enum eCopyMode {
+        aReference
+        , aContentCopy
+    };
+
     UBDocumentTreeModel(QObject *parent = 0);
     ~UBDocumentTreeModel();
 
@@ -116,7 +121,7 @@ public:
 //    bool insertRow(int row, const QModelIndex &parent);
     void addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent);
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
-    QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent);
+    QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
     void setCurrentDocument(UBDocumentProxy *pDocument);
@@ -131,6 +136,8 @@ public:
     bool inUntitledDocuments(const QModelIndex &index) const;
     bool isCatalog(const QModelIndex &index) const {return nodeFromIndex(index)->nodeType() == UBDocumentTreeNode::Catalog;}
     bool isDocument(const QModelIndex &index) const {return nodeFromIndex(index)->nodeType() == UBDocumentTreeNode::Document;}
+    bool isToplevel(const QModelIndex &index) const {return nodeFromIndex(index) ? nodeFromIndex(index)->isTopLevel() : false;}
+    bool isConstant(const QModelIndex &index) const {return isToplevel(index) || (index == mUntitledDocuments);}
     UBDocumentProxy *proxyData(const QModelIndex &index) const {return nodeFromIndex(index)->proxyData();}
 
     QPersistentModelIndex myDocumentsIndex() const {return mMyDocuments;}

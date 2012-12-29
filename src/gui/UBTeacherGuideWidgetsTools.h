@@ -118,6 +118,7 @@ protected:
     void showEvent(QShowEvent* e);
     void focusInEvent(QFocusEvent* e);
     void focusOutEvent(QFocusEvent* e);
+    virtual void insertFromMimeData(const QMimeData *source);
 
 private:
     void setCursorToTheEnd();

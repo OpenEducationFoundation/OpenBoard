@@ -64,6 +64,7 @@ public:
     Type nodeType() const {return mType;}
     QString nodeName() const {return mName;}
     QString displayName() const {return mDisplayName;}
+    void setNodeName(const QString &str) {mName = str; mDisplayName = str;}
     void addChild(UBDocumentTreeNode *pChild);
     void removeChild(int index);
     UBDocumentTreeNode *moveTo(const QString &pPath);
@@ -139,6 +140,10 @@ public:
     bool isToplevel(const QModelIndex &index) const {return nodeFromIndex(index) ? nodeFromIndex(index)->isTopLevel() : false;}
     bool isConstant(const QModelIndex &index) const {return isToplevel(index) || (index == mUntitledDocuments);}
     UBDocumentProxy *proxyData(const QModelIndex &index) const {return nodeFromIndex(index)->proxyData();}
+    void addDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent = QModelIndex());
+    void addCatalog(const QString &pName, const QModelIndex &pParent);
+    QList<UBDocumentProxy*> newDocuments() {return mNewDocuments;}
+    void setNewName(const QModelIndex &index, const QString &newName);
 
     QPersistentModelIndex myDocumentsIndex() const {return mMyDocuments;}
     QPersistentModelIndex modelsIndex() const {return mModels;}
@@ -161,6 +166,7 @@ private:
     QPersistentModelIndex mModels;
     QPersistentModelIndex mTrash;
     QPersistentModelIndex mUntitledDocuments;
+    QList<UBDocumentProxy*> mNewDocuments;
 
 };
 
@@ -196,6 +202,27 @@ protected:
 
     UBDocumentTreeModel *fullModel() {return qobject_cast<UBDocumentTreeModel*>(model());}
     void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end);
+
+private:
+    bool isAcceptable(const QModelIndex &dragIndex, const QModelIndex &atIndex);
+    Qt::DropAction acceptableAction(const QModelIndex &dragIndex, const QModelIndex &atIndex);
+};
+
+class UBDocumentTreeItemDelegate : public QStyledItemDelegate
+{
+    Q_OBJECT
+
+public:
+    UBDocumentTreeItemDelegate(QObject *parent = 0);
+
+private slots:
+    void commitAndCloseEditor(QLineEdit *editor);
+
+protected:
+    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void setEditorData(QWidget *editor, const QModelIndex &index) const;
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
+    void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex &index) const;
 };
 
 class UBDocumentController : public UBDocumentContainer

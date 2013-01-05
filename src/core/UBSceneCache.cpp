@@ -143,7 +143,7 @@ void UBSceneCache::removeAllScenes(UBDocumentProxy* proxy)
 {
     for(int i = 0 ; i < proxy->pageCount(); i++)
     {
-        removeScene(proxy, i);
+         removeScene(proxy, i);
     }
 }
 

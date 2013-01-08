@@ -4,23 +4,7 @@
 #include <QtGui>
 #include <QWebView>
 
-#include "gui/UBActionPalette.h"
 #include "WBWebView.h"
-
-
-class WBTrapBar : public UBActionPalette
-{
-    Q_OBJECT;
-
-public:
-    WBTrapBar(QWidget *parent = NULL);
-
-private:
-    virtual void mouseMoveEvent(QMouseEvent *event);
-    virtual void paintEvent(QPaintEvent *event);
-
-};
-
 
 class WBTrapWebPageContentWindow : public QDialog
 {
@@ -39,9 +23,6 @@ private:
 
     QHBoxLayout *mTrapApplicationHLayout;
     QVBoxLayout *mTrapApplicationVLayout;
-
-    WBTrapBar *mTrapActionsBar;
-
     QHBoxLayout *mSelectContentLayout;
     QLabel *mSelectContentLabel;
     QComboBox *mSelectContentCombobox;
@@ -52,9 +33,8 @@ private:
     QHBoxLayout *mApplicationNameLayout;
     QLabel *mApplicationNameLabel;
     QLineEdit *mApplicationNameEdit;
-
     QToolButton *mShowDisclaimerToolButton;
-
+    QList<QToolButton *> mTrapButtons;
     QWebHitTestResult mLastHitTestResult;
 
 };

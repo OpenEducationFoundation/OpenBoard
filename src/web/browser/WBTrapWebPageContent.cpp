@@ -4,82 +4,119 @@
 #include "core/UBApplicationController.h"
 #include "gui/UBMainWindow.h"
 
-WBTrapBar::WBTrapBar(QWidget *parent)
-    : UBActionPalette(Qt::Vertical, parent)
-{
-    layout()->setAlignment(Qt::AlignTop);
-
-    setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-    setButtonIconSize(QSize(64, 64));
-}
-
-void WBTrapBar::mouseMoveEvent(QMouseEvent *event)
-{
-    QWidget::mouseMoveEvent(event);
-}
-
-void WBTrapBar::paintEvent(QPaintEvent *event)
-{
-    QWidget::paintEvent(event);
-}
-
 WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWidget *parent)
     : QDialog(parent)
     , mController(controller)
 {
     setModal(true);
-    mTrapApplicationHLayout = new QHBoxLayout(this);
-    setLayout(mTrapApplicationHLayout);
+    resize(800, 600);
+    setObjectName("WBTrapWebPageContentWindow");
+    setStyleSheet("QWidget#WBTrapWebPageContentWindow{background-color: rgb(225,225,225)");
 
     mTrapApplicationVLayout = new QVBoxLayout();
-    QSizePolicy selfSizePolicy = sizePolicy();
-    selfSizePolicy.setHeightForWidth(true);
-    setSizePolicy(selfSizePolicy);
+    mTrapApplicationVLayout->setSpacing(0);
+    mTrapApplicationVLayout->setContentsMargins(1,1,1,1);
+    setLayout(mTrapApplicationVLayout);
 
-    mTrapActionsBar = new WBTrapBar();
+    mTrapApplicationHLayout = new QHBoxLayout(this);
+    mTrapApplicationHLayout->setContentsMargins(0,0,0,0);
+    mTrapApplicationHLayout->setSpacing(0);
 
-    mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapToLibrary);
-    mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapToCurrentPage);
-    mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapLinkToLibrary);
-    mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapLinkToPage);
+    QToolButton *buttonWebTrapToLibrary = new QToolButton();
+    buttonWebTrapToLibrary->setDefaultAction(UBApplication::mainWindow->actionWebTrapToLibrary);
+    mTrapButtons << buttonWebTrapToLibrary;
 
-    foreach (QAction *barAction, mTrapActionsBar->actions())
+    QToolButton *buttonWebTrapToCurrentPage = new QToolButton();
+    buttonWebTrapToCurrentPage->setDefaultAction(UBApplication::mainWindow->actionWebTrapToCurrentPage);
+    mTrapButtons << buttonWebTrapToCurrentPage;
+
+    QToolButton *buttonWebTrapLinkToLibrary = new QToolButton();
+    buttonWebTrapLinkToLibrary->setDefaultAction(UBApplication::mainWindow->actionWebTrapLinkToLibrary);
+    mTrapButtons << buttonWebTrapLinkToLibrary;
+
+    QToolButton *buttonWebTrapLinkToPage = new QToolButton();
+    buttonWebTrapLinkToPage->setDefaultAction(UBApplication::mainWindow->actionWebTrapLinkToPage);
+    mTrapButtons << buttonWebTrapLinkToPage;
+
+    QString buttonStileSheet("QToolButton#WBWebTrapToolButton{background-color: rgb(127, 127, 127, 20%)}");
+   
+    QWidget *buttonsLayoutWidget = new QWidget();
+    buttonsLayoutWidget->setObjectName("WBWebTrapButtonsLayoutWidget");
+    buttonsLayoutWidget->setStyleSheet("QWidget#WBWebTrapButtonsLayoutWidget{border: 2px solid #999999; border-top-style: none; border-right-style: none}");
+    QVBoxLayout *buttonsLayout = new QVBoxLayout();
+    buttonsLayoutWidget->setLayout(buttonsLayout);
+    buttonsLayout->setAlignment(Qt::AlignTop);
+    buttonsLayout->setContentsMargins(7,3,3,7);
+    
+    foreach (QToolButton *button, mTrapButtons)
     {
-        mTrapActionsBar->getButtonFromAction(barAction)->setStyleSheet(QString("QToolButton{color: black; font: bold 14px; font-family: Arial; background-color: transparent; border: none}"));
-        barAction->setEnabled(false);
+        button->setObjectName("WBWebTrapToolButton");
+        button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        button->setIconSize(QSize(64, 64));
+        button->setMinimumSize(QSize(64,64));
+        button->setMaximumSize(QSize(64,64)); 
+        button->setStyleSheet(buttonStileSheet);
+        button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        button->defaultAction()->setEnabled(false);
+
+        QLabel *buttonLabel = new QLabel(button->defaultAction()->text());
+        buttonLabel->setMaximumWidth(64);
+        buttonLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        buttonLabel->setAlignment(Qt::AlignHCenter);
+
+        QVBoxLayout *currentButtonWithLabelWayout = new QVBoxLayout();
+        currentButtonWithLabelWayout->setAlignment(Qt::AlignVCenter);
+        currentButtonWithLabelWayout->setContentsMargins(1,0,1,0);
+        currentButtonWithLabelWayout->addWidget(button);
+
+        currentButtonWithLabelWayout->addWidget(buttonLabel);
+        currentButtonWithLabelWayout->setSpacing(0);
+        buttonsLayout->addLayout(currentButtonWithLabelWayout);        
     }
 
+    QWidget *trapContentLayoutWidget = new QWidget();
+    trapContentLayoutWidget->setObjectName("WBWebTrapPreviewWidget");
+    trapContentLayoutWidget->setStyleSheet("QWidget#WBWebTrapPreviewWidget{border: 2px solid #999999; border-left-style: none; border-top-style: none; border-right-style: none}");
+    QVBoxLayout *trapContentVLayout = new QVBoxLayout();
+    trapContentVLayout->setContentsMargins(1,3,7,7);
+    trapContentVLayout->setSpacing(1);
+    trapContentLayoutWidget->setLayout(trapContentVLayout);
 
-    mTrapApplicationHLayout->addLayout(mTrapApplicationVLayout);
-    mTrapApplicationHLayout->addWidget(mTrapActionsBar);
+    trapContentLayoutWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
     mSelectContentLayout = new QHBoxLayout();
+    trapContentVLayout->addLayout(mSelectContentLayout);
+
     mSelectContentLabel = new QLabel(tr("Select content to trap:"));
+    mSelectContentLayout->addWidget(mSelectContentLabel);
+
     mSelectContentCombobox = new QComboBox(this);
+    mSelectContentLayout->addWidget(mSelectContentCombobox);
+
     mSelectContentCombobox->setMaxVisibleItems(15);
     mSelectContentCombobox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-    mSelectContentLayout->addWidget(mSelectContentLabel);
-    mSelectContentLayout->addWidget(mSelectContentCombobox);
-
-    mTrapApplicationVLayout->addLayout(mSelectContentLayout);
-
     mTrapContentPreview = new WBWebView();
-    mTrapContentPreview->setMinimumSize(QSize(640, 480));
+    trapContentVLayout->addWidget(mTrapContentPreview);
+
+    mTrapContentPreview->setMinimumSize(QSize(320, 240));
     mTrapContentPreview->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    mTrapApplicationVLayout->addWidget(mTrapContentPreview);
-
     mApplicationNameLayout = new QHBoxLayout();
+    trapContentVLayout->addLayout(mApplicationNameLayout);
+
     mApplicationNameLabel = new QLabel(tr("Application name"));
-    mApplicationNameEdit = new QLineEdit();
-
     mApplicationNameLayout->addWidget(mApplicationNameLabel);
+
+    mApplicationNameEdit = new QLineEdit();
     mApplicationNameLayout->addWidget(mApplicationNameEdit);
-    mTrapApplicationVLayout->addLayout(mApplicationNameLayout);
 
-    mTrapApplicationVLayout->addLayout(mApplicationNameLayout);
+    mTrapApplicationHLayout->addWidget(trapContentLayoutWidget);
+    mTrapApplicationHLayout->addWidget(buttonsLayoutWidget);
 
-    mTrapApplicationVLayout->addWidget(new QLabel(tr("Open-Sankoré promotes the use of CCbySA work, please consult this page for more informations")));
+    mTrapApplicationVLayout->addLayout(mTrapApplicationHLayout);
+    QLabel *infoLabel = new QLabel(tr("Open-Sankoré promotes the use of CCbySA work, please consult this page for more informations"));
+    mTrapApplicationVLayout->addWidget(infoLabel);
 
     connect(mTrapContentPreview, SIGNAL(pixmapCaptured(const QPixmap&, bool)), UBApplication::applicationController, SLOT(addCapturedPixmap(const QPixmap &, bool)));
     connect(mTrapContentPreview, SIGNAL(embedCodeCaptured(const QString&)), UBApplication::applicationController, SLOT(addCapturedEmbedCode(const QString&)));
@@ -106,9 +143,9 @@ void WBTrapWebPageContentWindow::setUrl(const QUrl &url)
 
 void WBTrapWebPageContentWindow::setReadyForTrap(bool bReady)
 {
-    foreach (QAction *barAction, mTrapActionsBar->actions())
+    foreach (QToolButton *button, mTrapButtons)
     {
-        barAction->setEnabled(bReady);
+        button->defaultAction()->setEnabled(bReady);
     }
 }
 

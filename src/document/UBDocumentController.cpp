@@ -707,21 +707,31 @@ void UBDocumentTreeModel::setNewName(const QModelIndex &index, const QString &ne
         return;
     }
 
+    UBDocumentTreeNode *indexNode = nodeFromIndex(index);
+
+    QString magicSeparator = "+!##s";
     if (isCatalog(index)) {
+        if (!newName.contains(magicSeparator)) {
+            indexNode->setNodeName(newName);
+        }
         for (int i = 0; i < rowCount(index); i++) {
             QModelIndex subIndex = this->index(i, 0, index);
-            setNewName(subIndex, subIndex.data().toString() + "/" + newName);
+            setNewName(subIndex, newName + magicSeparator + subIndex.data().toString());
         }
+
     } else if (isDocument(index)) {
-        int prefixIndex = newName.lastIndexOf("/");
-        if (prefixIndex == -1) {
-            UBDocumentTreeNode *indexNode = nodeFromIndex(index);
-            Q_ASSERT(indexNode->proxyData());
+        Q_ASSERT(indexNode->proxyData());
+
+        int prefixIndex = newName.lastIndexOf(magicSeparator);
+        if (prefixIndex != -1) {
+            QString newDocumentGroupName = newName.left(prefixIndex).replace(magicSeparator, "/");
+            indexNode->proxyData()->setMetaData(UBSettings::documentGroupName, newDocumentGroupName);
+        } else {
             indexNode->setNodeName(newName);
             indexNode->proxyData()->setMetaData(UBSettings::documentName, newName);
-            UBPersistenceManager::persistenceManager()->persistDocumentMetadata(indexNode->proxyData());
         }
-        qDebug() << newName;
+
+        UBPersistenceManager::persistenceManager()->persistDocumentMetadata(indexNode->proxyData());
     }
 }
 
@@ -1259,7 +1269,7 @@ void UBDocumentController::setupViews()
 
         connect(mMainWindow->actionDelete, SIGNAL(triggered()), this, SLOT(deleteSelectedItem()));
         connect(mMainWindow->actionDuplicate, SIGNAL(triggered()), this, SLOT(duplicateSelectedItem()));
-        connect(mMainWindow->actionRename, SIGNAL(triggered()), this, SLOT(renameSelectedItem()));
+//        connect(mMainWindow->actionRename, SIGNAL(triggered()), this, SLOT(renameSelectedItem()));
         connect(mMainWindow->actionAddToWorkingDocument, SIGNAL(triggered()), this, SLOT(addToDocument()));
 
         loadDocumentProxies();

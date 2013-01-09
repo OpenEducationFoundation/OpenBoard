@@ -1908,7 +1908,7 @@ void UBBoardController::lastWindowClosed()
             teacherGuideModified = UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
         if (selectedDocument()->pageCount() == 1 && (!mActiveScene || mActiveScene->isEmpty()) && !teacherGuideModified)
         {
-            UBPersistenceManager::persistenceManager()->deleteDocument(selectedDocument());
+//            UBPersistenceManager::persistenceManager()->deleteDocument(selectedDocument());
         }
         else
         {

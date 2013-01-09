@@ -170,8 +170,6 @@ class UBPersistenceManager : public QObject
 
         bool mHasPurgedDocuments;
 
-        QList<UBDocumentProxy*> mDocumentCreatedDuringSession;
-
         QString mDocumentRepositoryPath;
 
         QHash<int,QString>teacherBarNodeString;

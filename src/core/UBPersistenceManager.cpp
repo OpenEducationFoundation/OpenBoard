@@ -318,15 +318,13 @@ QStringList UBPersistenceManager::allWidgets(const QDir& dir)
 
 UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage, QString directory, int pageCount)
 {
-
-
     UBDocumentProxy *doc;
     if(directory.length() != 0 ){
         doc = new UBDocumentProxy(directory); // deleted in UBPersistenceManager::destructor
         doc->setPageCount(pageCount);
     }
     else{
-         checkIfDocumentRepositoryExists();
+        checkIfDocumentRepositoryExists();
         doc = new UBDocumentProxy();
     }
 
@@ -348,14 +346,10 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
-    UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
-    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(doc->metaData(UBSettings::documentGroupName).toString());
-    mDocumentTreeStructureModel->addNode(freeNode, parentIndex);
+
+    mDocumentTreeStructureModel->addDocument(doc);
 
     emit proxyListChanged();
-    emit documentCreated(doc);
-
-    mDocumentCreatedDuringSession << doc;
 
     return doc;
 }
@@ -396,10 +390,7 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     }
 
     documentProxies << QPointer<UBDocumentProxy>(doc);
-    UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
-    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(doc->metaData(UBSettings::documentGroupName).toString());
-    mDocumentTreeStructureModel->addNode(freeNode, parentIndex);
-
+    mDocumentTreeStructureModel->addDocument(doc);
 
     emit proxyListChanged();
 
@@ -415,19 +406,13 @@ void UBPersistenceManager::deleteDocument(UBDocumentProxy* pDocumentProxy)
 
     emit documentWillBeDeleted(pDocumentProxy);
 
+    Q_ASSERT(QFileInfo(pDocumentProxy->persistencePath()).exists());
     UBFileSystemUtils::deleteDir(pDocumentProxy->persistencePath());
-
-    documentProxies.removeAll(QPointer<UBDocumentProxy>(pDocumentProxy));
-    mDocumentCreatedDuringSession.removeAll(pDocumentProxy);
 
     mSceneCache.removeAllScenes(pDocumentProxy);
 
     pDocumentProxy->deleteLater();
-
-//    emit proxyListChanged();
-
 }
-
 
 UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocumentProxy)
 {
@@ -935,24 +920,19 @@ bool UBPersistenceManager::isEmpty(UBDocumentProxy* pDocumentProxy)
 
 void UBPersistenceManager::purgeEmptyDocuments()
 {
-    if(!mHasPurgedDocuments) // hack to workaround the fact that app closing is called twice :-(
+    QList<UBDocumentProxy*> toBeDeleted;
+
+    foreach(UBDocumentProxy* docProxy, mDocumentTreeStructureModel->newDocuments())
     {
-        QList<UBDocumentProxy*> toBeDeleted;
-
-        foreach(UBDocumentProxy* docProxy, mDocumentCreatedDuringSession)
+        if (isEmpty(docProxy))
         {
-            if (isEmpty(docProxy))
-            {
-                toBeDeleted << docProxy;
-            }
+            toBeDeleted << docProxy;
         }
+    }
 
-        foreach(UBDocumentProxy* docProxy, toBeDeleted)
-        {
-            deleteDocument(docProxy);
-        }
-
-        mHasPurgedDocuments = true;
+    foreach(UBDocumentProxy* docProxy, toBeDeleted)
+    {
+        deleteDocument(docProxy);
     }
 }
 

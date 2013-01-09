@@ -770,6 +770,12 @@ UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
 {
     setObjectName("UBDocumentTreeView");
     setRootIsDecorated(true);
+
+    QScrollBar *hScroller = horizontalScrollBar();
+    if (hScroller)
+    {
+        connect(hScroller, SIGNAL(rangeChanged(int, int)), this, SLOT(hSliderRangeChanged(int, int)));
+    }
 }
 
 void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand)
@@ -797,6 +803,15 @@ void UBDocumentTreeView::onModelIndexChanged(const QModelIndex &pNewIndex, const
 {
     Q_UNUSED(pOldIndex)
     setSelectedAndExpanded(pNewIndex, true);
+}
+
+void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
+{
+    QScrollBar *hScroller = horizontalScrollBar();
+    if (hScroller)
+    {
+        hScroller->triggerAction(QAbstractSlider::SliderToMaximum);
+    }
 }
 
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
@@ -1292,6 +1307,8 @@ void UBDocumentController::setupViews()
         mDocumentUI->documentTreeView->setAcceptDrops(true);
         mDocumentUI->documentTreeView->viewport()->setAcceptDrops(true);
         mDocumentUI->documentTreeView->setDropIndicatorShown(true);
+        mDocumentUI->documentTreeView->header()->setStretchLastSection(false);
+        mDocumentUI->documentTreeView->header()->setResizeMode(0, QHeaderView::ResizeToContents);
 //        mDocumentUI->documentTreeView->setEditTriggers(QAbstractItemView::dou);
 
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));

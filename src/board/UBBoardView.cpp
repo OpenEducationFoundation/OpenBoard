@@ -1201,7 +1201,7 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           movingItem = NULL;
       }
       else
-      if (movingItem && !isCppTool(movingItem))
+      if (movingItem && (!isCppTool(movingItem) || UBGraphicsCurtainItem::Type == movingItem->type()))
       {
           if (suspendedMousePressEvent)
           {

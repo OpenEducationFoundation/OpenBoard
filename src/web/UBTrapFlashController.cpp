@@ -156,6 +156,9 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
                 combobox->insertSeparator(combobox->count());
             else
             {
+                if (wrapper.objectMimeType.contains("html"))
+                    continue;
+
                 mObjectNoToTrapByTrapWebComboboxIndex.insert(combobox->count(), i);
                 combobox->addItem(wrapper.objectName);
             }
@@ -303,12 +306,12 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         {
             list << UBWebKitUtils::HtmlObject(pCurrentWebFrame->baseUrl().toString(), widgetNameForUrl(pCurrentWebFrame->title()), QString(),"Whole Page", 800, 600);
             list << UBWebKitUtils::HtmlObject(QString(),QString(),QString(),"separator",0,0);
-            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
-            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
+            //list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
+            //list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "source");
-            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
+            //list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "frame");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
@@ -477,7 +480,12 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
             }
         }
         else
-            htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
+        {
+            htmlContentString = generateFullPageHtml(objectFullUrl);
+            mTrapWebContentDialog->webView()->setHtml(htmlContentString);
+            return;
+            //htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
+        }
     }
     else if (mCurrentWebFrame->url().toString().contains("youtube")){
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.getElementById('embed_code').value");

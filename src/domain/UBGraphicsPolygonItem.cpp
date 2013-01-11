@@ -36,6 +36,7 @@ UBGraphicsPolygonItem::UBGraphicsPolygonItem (QGraphicsItem * parent)
     , mOriginalWidth(-1)
     , mIsNominalLine(false)
     , mStroke(0)
+    , mpGroup(NULL)
 {
     // NOOP
     initialize();
@@ -60,6 +61,7 @@ UBGraphicsPolygonItem::UBGraphicsPolygonItem (const QLineF& pLine, qreal pWidth)
     , mOriginalWidth(pWidth)
     , mIsNominalLine(true)
     , mStroke(0)
+    , mpGroup(NULL)
 {
     // NOOP
     initialize();

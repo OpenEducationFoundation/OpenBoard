@@ -92,6 +92,10 @@ public:
 
     QString importFromUrl(const QUrl &url) const;
 
+    void switchToElement(const UBFeature &feature);
+    void switchToRoot();
+    void switchToBookmarks();
+
     static const int minThumbnailSize = 20;
     static const int maxThumbnailSize = 100;
     static const int defaultThumbnailSize = 40;

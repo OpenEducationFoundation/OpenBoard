@@ -20,12 +20,10 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-
 #include "UBDocumentContainer.h"
 #include "adaptors/UBThumbnailAdaptor.h"
 #include "core/UBPersistenceManager.h"
 #include "core/memcheck.h"
-
 
 UBDocumentContainer::UBDocumentContainer(QObject * parent)
     :QObject(parent)

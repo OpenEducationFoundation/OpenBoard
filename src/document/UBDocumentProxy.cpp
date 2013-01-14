@@ -44,7 +44,7 @@ UBDocumentProxy::UBDocumentProxy(const UBDocumentProxy &rValue) :
     mPersistencePath = rValue.mPersistencePath;
     mMetaDatas = rValue.mMetaDatas;
     mIsModified = rValue.mIsModified;
-    mPageCount = rValue.mIsModified;
+    mPageCount = rValue.mPageCount;
 }
 
 UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)

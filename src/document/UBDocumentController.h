@@ -129,8 +129,9 @@ public:
     void setRootNode(UBDocumentTreeNode *pRoot);
     UBDocumentProxy *proxyForIndex(const QModelIndex &pIndex) const;
     QString virtualDirForIndex(const QModelIndex &pIndex) const;
+    QString virtualPathForIndex(const QModelIndex &pIndex) const;
     QStringList nodeNameList(const QModelIndex &pIndex) const;
-    bool newFolderAllowed(const QModelIndex &pIndex)  const;
+    bool newNodeAllowed(const QModelIndex &pSelectedIndex)  const;
     QModelIndex goTo(const QString &dir);
     bool inTrash(const QModelIndex &index) const;
     bool inModel(const QModelIndex &index) const;
@@ -139,11 +140,13 @@ public:
     bool isDocument(const QModelIndex &index) const {return nodeFromIndex(index)->nodeType() == UBDocumentTreeNode::Document;}
     bool isToplevel(const QModelIndex &index) const {return nodeFromIndex(index) ? nodeFromIndex(index)->isTopLevel() : false;}
     bool isConstant(const QModelIndex &index) const {return isToplevel(index) || (index == mUntitledDocuments);}
+    bool isOkToRename(const QModelIndex &index) const {return flags(index) & Qt::ItemIsEditable;}
     UBDocumentProxy *proxyData(const QModelIndex &index) const {return nodeFromIndex(index)->proxyData();}
     void addDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent = QModelIndex());
     void addCatalog(const QString &pName, const QModelIndex &pParent);
     QList<UBDocumentProxy*> newDocuments() {return mNewDocuments;}
     void setNewName(const QModelIndex &index, const QString &newName);
+    QString adjustNameForParentIndex(const QString &pName, const QModelIndex &pIndex);
 
     QPersistentModelIndex myDocumentsIndex() const {return mMyDocuments;}
     QPersistentModelIndex modelsIndex() const {return mModels;}
@@ -217,13 +220,18 @@ public:
     UBDocumentTreeItemDelegate(QObject *parent = 0);
 
 private slots:
-    void commitAndCloseEditor(QLineEdit *editor);
+    void commitAndCloseEditor();
+    void processChangedText(const QString &str) const;
+    bool validateString(const QString &str) const;
 
 protected:
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     void setEditorData(QWidget *editor, const QModelIndex &index) const;
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
     void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex &index) const;
+
+private:
+    mutable QStringList mExistingFileNames;
 };
 
 class UBDocumentController : public UBDocumentContainer
@@ -231,6 +239,19 @@ class UBDocumentController : public UBDocumentContainer
     Q_OBJECT
 
     public:
+
+    enum DeletionType {
+        MoveToTrash = 0
+        , CompleteDelete
+        , EmptyFolder
+        , NoDeletion
+    };
+
+    enum LastSelectedElementType
+    {
+        None = 0, Folder, Document, Page
+    };
+
         UBDocumentController(UBMainWindow* mainWindow);
         virtual ~UBDocumentController();
 
@@ -250,6 +271,7 @@ class UBDocumentController : public UBDocumentContainer
 
         void setDocument(UBDocumentProxy *document, bool forceReload = false);
         QModelIndex firstSelectedTreeIndex();
+        DeletionType deletionTypeForSelection(LastSelectedElementType pTypeSelection, const QModelIndex &selectedIndex);
 
     signals:
         void exportDone();
@@ -258,6 +280,7 @@ class UBDocumentController : public UBDocumentContainer
         void createNewDocument();
         void createNewDocumentGroup();
         void deleteSelectedItem();
+        void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);
         void deleteIndexAndAssociatedData(const QModelIndex &pIndex);
         void renameSelectedItem();
         void openSelectedItem();
@@ -276,7 +299,7 @@ class UBDocumentController : public UBDocumentContainer
         void focusChanged(QWidget *old, QWidget *current);
         void updateActions();
 
-    protected:
+protected:
         virtual void setupViews();
         virtual void setupToolbar();
         void setupPalettes();
@@ -288,11 +311,6 @@ class UBDocumentController : public UBDocumentContainer
         UBDocumentProxyTreeItem* selectedDocumentProxyTreeItem();
         UBDocumentGroupTreeItem* selectedDocumentGroupTreeItem();
         QStringList allGroupNames();
-
-        enum LastSelectedElementType
-        {
-            None = 0, Folder, Document, Page
-        };
 
         LastSelectedElementType mSelectionType;
 
@@ -323,7 +341,7 @@ class UBDocumentController : public UBDocumentContainer
         void loadDocumentProxies();
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
-        void itemSelectionChanged();
+        void itemSelectionChanged(LastSelectedElementType newSelection);
         void exportDocument();
         void exportDocumentSet();
         void itemChanged(QTreeWidgetItem * item, int column);
@@ -334,7 +352,6 @@ class UBDocumentController : public UBDocumentContainer
         void pageDoubleClicked(QGraphicsItem* item, int index);
         void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
-        void itemClicked(QTreeWidgetItem * item, int column );
         void addToDocument();
         void addDocumentInTree(UBDocumentProxy* pDocument);
         void updateDocumentInTree(UBDocumentProxy* pDocument);

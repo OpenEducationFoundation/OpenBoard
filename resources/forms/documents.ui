@@ -64,11 +64,26 @@
          </property>
          <item>
           <widget class="UBDocumentTreeView" name="documentTreeView">
+           <property name="minimumSize">
+            <size>
+             <width>256</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>256</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Plain</enum>
+           </property>
+           <property name="autoScroll">
+            <bool>false</bool>
            </property>
            <property name="animated">
             <bool>true</bool>

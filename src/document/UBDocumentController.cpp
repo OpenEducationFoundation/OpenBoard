@@ -847,6 +847,10 @@ UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
     {
         connect(hScroller, SIGNAL(rangeChanged(int, int)), this, SLOT(hSliderRangeChanged(int, int)));
     }
+
+    connect(verticalScrollBar(), SIGNAL(rangeChanged(int,int)), this, SLOT(adjustSize()));
+    connect(this, SIGNAL(collapsed(const QModelIndex&)), this, SLOT(adjustSize()));
+    connect(this, SIGNAL(expanded(const QModelIndex&)), this, SLOT(adjustSize()));
 }
 
 void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand)
@@ -953,6 +957,20 @@ Qt::DropAction UBDocumentTreeView::acceptableAction(const QModelIndex &dragIndex
     }
 
     return Qt::IgnoreAction;
+}
+
+
+void UBDocumentTreeView::adjustSize()
+{
+    resizeColumnToContents(0);
+
+    int headerSizeHint = width();
+
+    if (verticalScrollBar()->isVisible())
+        headerSizeHint -= verticalScrollBar()->width();
+      
+    if (columnWidth(0) < headerSizeHint)
+        setColumnWidth(0, headerSizeHint);
 }
 
 UBDocumentTreeItemDelegate::UBDocumentTreeItemDelegate(QObject *parent)
@@ -1353,9 +1371,18 @@ void UBDocumentController::setupViews()
         mDocumentUI->documentTreeView->setAcceptDrops(true);
         mDocumentUI->documentTreeView->viewport()->setAcceptDrops(true);
         mDocumentUI->documentTreeView->setDropIndicatorShown(true);
-//        mDocumentUI->documentTreeView->header()->setStretchLastSection(false);
-//        mDocumentUI->documentTreeView->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-//        mDocumentUI->documentTreeView->setEditTriggers(QAbstractItemView::dou);
+        mDocumentUI->documentTreeView->header()->setStretchLastSection(false);
+        mDocumentUI->documentTreeView->header()->setResizeMode(0, QHeaderView::Interactive);
+
+        mDocumentUI->documentTreeView->resizeColumnToContents(0);
+
+        int headerSizeHint = headerSizeHint = mDocumentUI->documentTreeView->width();
+
+        if (mDocumentUI->documentTreeView->verticalScrollBar()->isVisible())
+            headerSizeHint = mDocumentUI->documentTreeView->width() - mDocumentUI->documentTreeView->verticalScrollBar()->width();
+          
+        if (mDocumentUI->documentTreeView->columnWidth(0) < headerSizeHint)
+            mDocumentUI->documentTreeView->setColumnWidth(0, headerSizeHint);
 
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(TreeViewSelectionChanged(QItemSelection,QItemSelection)));
@@ -2877,6 +2904,9 @@ QModelIndex UBDocumentController::firstSelectedTreeIndex()
 UBDocumentController::DeletionType
 UBDocumentController::deletionTypeForSelection(LastSelectedElementType pTypeSelection, const QModelIndex &selectedIndex)
 {
+    Q_UNUSED(pTypeSelection)
+    Q_UNUSED(selectedIndex)
+
 //    UBDocumentTreeModel *model
 
     return NoDeletion;

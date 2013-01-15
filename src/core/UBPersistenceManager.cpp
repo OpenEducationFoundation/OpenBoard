@@ -924,7 +924,16 @@ void UBPersistenceManager::purgeEmptyDocuments()
 
     foreach(UBDocumentProxy* docProxy, mDocumentTreeStructureModel->newDocuments())
     {
-        if (isEmpty(docProxy))
+        if (isEmpty(docProxy)
+            && !docProxy->metaData("sessionTitle").toString().size()
+            && !docProxy->metaData("sessionAuthors").toString().size()
+            && !docProxy->metaData("sessionObjectives").toString().size()
+            && !docProxy->metaData("sessionKeywords").toString().size()
+            && !docProxy->metaData("sessionGradeLevel").toString().size()
+            && !docProxy->metaData("sessionSubjects").toString().size()
+            && !docProxy->metaData("sessionType").toString().size()
+            && !docProxy->metaData("sessionLicence").toString().size()
+            )
         {
             toBeDeleted << docProxy;
         }

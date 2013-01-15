@@ -579,9 +579,14 @@ bool UBGraphicsScene::inputDeviceRelease()
 
                 // Add the center cross
                 foreach(QGraphicsItem* item, mAddedItems){
+                    mAddedItems.remove(item);
                     removeItem(item);
                     UBCoreGraphicsScene::removeItemFromDeletion(item);
-                    mArcPolygonItem->setStrokesGroup(pStrokes);
+
+                    UBGraphicsPolygonItem *crossLine = qgraphicsitem_cast<UBGraphicsPolygonItem *>(item);
+                    if (crossLine)
+                        crossLine->setStrokesGroup(pStrokes);
+
                     pStrokes->addToGroup(item);
                 }
 
@@ -843,7 +848,8 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
         //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
         mRemovedItems << intersectedPolygonItem;
-        intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
+        if (intersectedPolygonItem->strokesGroup())
+            intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
         removeItem(intersectedPolygonItem);
     }
 

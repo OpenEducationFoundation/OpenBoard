@@ -454,6 +454,25 @@ QString UBFeaturesWidget::importFromUrl(const QUrl &url) const
     return controller->moveExternalData(url,UBFeature());
 }
 
+void UBFeaturesWidget::switchToElement(const UBFeature &feature)
+{
+    QString newPath = feature.getFullVirtualPath();
+    controller->setCurrentElement(feature);
+    controller->siftElements(newPath);
+
+    centralWidget->switchTo(UBFeaturesCentralWidget::MainList);
+}
+
+void UBFeaturesWidget::switchToRoot()
+{
+    switchToElement(controller->getRootElement());
+}
+
+void UBFeaturesWidget::switchToBookmarks()
+{
+    switchToElement(controller->getBookmarkElement());
+}
+
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     : QListView(parent)
 {

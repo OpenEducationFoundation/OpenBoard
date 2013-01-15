@@ -264,6 +264,8 @@ public:
     const UBFeature& getCurrentElement()const {return currentElement;}
     void setCurrentElement( const UBFeature &elem ) {currentElement = elem;}
     UBFeature getTrashElement () const { return trashData.categoryFeature(); }
+    UBFeature getBookmarkElement() const {return bookmarkData.categoryFeature();}
+    UBFeature getRootElement() const {return rootData.categoryFeature();}
 
     void addDownloadedFile( const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle );
 

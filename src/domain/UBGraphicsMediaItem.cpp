@@ -35,7 +35,6 @@
 UBAudioPresentationWidget::UBAudioPresentationWidget(QWidget *parent)
     : QWidget(parent)
     , mBorderSize(10)
-    , mTitleSize(10)
 {
 
 }
@@ -117,7 +116,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
             borderSize = pAudioWidget->borderSize();
         }
 
-        mAudioWidget->resize(320,26+3*borderSize);
+        mAudioWidget->resize(320,26+2*borderSize); //3*border size with enabled title
         mAudioWidget->setMinimumSize(150,26+borderSize);
 
         haveLinkedImage = false;
@@ -203,7 +202,7 @@ void UBGraphicsMediaItem::setSourceUrl(const QUrl &pSourceUrl)
     UBAudioPresentationWidget* pAudioWidget = dynamic_cast<UBAudioPresentationWidget*>(mAudioWidget);
     if (pAudioWidget)
     {
-        pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
+       // pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
     }
 
     UBItem::setSourceUrl(pSourceUrl);

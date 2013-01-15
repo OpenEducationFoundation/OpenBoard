@@ -426,12 +426,14 @@ void UBApplication::stopScript()
 void UBApplication::showBoard()
 {
     applicationController->showBoard();
+    boardController->paletteManager()->featuresWidget()->switchToRoot();
 }
 
 void UBApplication::showInternet()
 {
     applicationController->showInternet();
     webController->showTabAtTop(true);
+    boardController->paletteManager()->featuresWidget()->switchToBookmarks();
 }
 
 void UBApplication::showDocument()

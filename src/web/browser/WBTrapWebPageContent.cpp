@@ -115,8 +115,18 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     mTrapApplicationHLayout->addWidget(buttonsLayoutWidget);
 
     mTrapApplicationVLayout->addLayout(mTrapApplicationHLayout);
-    QLabel *infoLabel = new QLabel(tr("Open-Sankoré promotes the use of CCbySA work, please consult this page for more informations"));
-    mTrapApplicationVLayout->addWidget(infoLabel);
+    QLabel *infoLabel1 = new QLabel(tr("Restriction and disclaimer. "));
+    QLabel *infoLabel2 = new QLabel(tr("This feature is developed to work on the most common web pages."));
+    QLabel *infoLabel3 = new QLabel(tr("Please respect copyrights for creating links or trapping content from the web."));
+
+
+    infoLabel1->setAlignment(Qt::AlignHCenter);
+    infoLabel2->setAlignment(Qt::AlignHCenter);
+    infoLabel3->setAlignment(Qt::AlignHCenter);
+
+    mTrapApplicationVLayout->addWidget(infoLabel1);
+    mTrapApplicationVLayout->addWidget(infoLabel2);
+    mTrapApplicationVLayout->addWidget(infoLabel3);
 
     connect(mTrapContentPreview, SIGNAL(pixmapCaptured(const QPixmap&, bool)), UBApplication::applicationController, SLOT(addCapturedPixmap(const QPixmap &, bool)));
     connect(mTrapContentPreview, SIGNAL(embedCodeCaptured(const QString&)), UBApplication::applicationController, SLOT(addCapturedEmbedCode(const QString&)));

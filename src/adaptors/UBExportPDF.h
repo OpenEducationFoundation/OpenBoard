@@ -31,7 +31,7 @@ class UBDocumentProxy;
 
 class UBExportPDF : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportPDF(QObject *parent = 0);
@@ -40,6 +40,7 @@ class UBExportPDF : public UBExportAdaptor
         virtual QString exportName();
         virtual QString exportExtention();
         virtual void persist(UBDocumentProxy* pDocument);
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 
         static void persistsDocument(UBDocumentProxy* pDocument, const QString& filename);
 };

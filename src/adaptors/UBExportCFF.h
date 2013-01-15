@@ -43,6 +43,7 @@ public:
     virtual QString exportName();
     virtual QString exportExtention();
     virtual void persist(UBDocumentProxy* pDocument);
+    virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 };
 
 #endif /* UBExportCFF_H_ */

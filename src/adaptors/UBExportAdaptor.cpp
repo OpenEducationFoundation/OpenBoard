@@ -39,6 +39,7 @@
 UBExportAdaptor::UBExportAdaptor(QObject *parent)
     : QObject(parent)
     , mIsVerbose(true)
+    , mAssociatedAction(0)
 {
     // NOOP
 }

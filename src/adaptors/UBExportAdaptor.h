@@ -39,6 +39,9 @@ class UBExportAdaptor : public QObject
         virtual QString exportName() = 0;
         virtual QString exportExtention() { return "";}
         virtual void persist(UBDocumentProxy* pDocument) = 0;
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex) {Q_UNUSED(selectedIndex); return false;}
+        QAction *associatedAction() {return mAssociatedAction;}
+        void setAssociatedAction(QAction *pAssociatedAction) {mAssociatedAction = pAssociatedAction;}
 
         virtual void setVerbode(bool verbose)
         {
@@ -57,6 +60,7 @@ class UBExportAdaptor : public QObject
         void showErrorsList(QList<QString> errorsList);
 
         bool mIsVerbose;
+        QPointer<QAction>mAssociatedAction;
 
 };
 

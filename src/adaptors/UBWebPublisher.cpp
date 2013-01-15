@@ -24,6 +24,7 @@
 #include "UBWebPublisher.h"
 
 #include "document/UBDocumentProxy.h"
+#include "document/UBDocumentController.h"
 
 #include "adaptors/publishing/UBDocumentPublisher.h"
 
@@ -62,6 +63,16 @@ void UBWebPublisher::persist(UBDocumentProxy* pDocumentProxy)
     UBDocumentPublisher* publisher = new UBDocumentPublisher(pDocumentProxy, this); // the publisher will self delete when publication finishes
     publisher->publish();
 
+}
+
+bool UBWebPublisher::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isCatalog(selectedIndex)) {
+        return false;
+    }
+
+    return true;
 }
 
 

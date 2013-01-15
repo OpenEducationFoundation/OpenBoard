@@ -31,7 +31,7 @@ class UBDocumentProxy;
 
 class UBExportFullPDF : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportFullPDF(QObject *parent = 0);
@@ -42,6 +42,7 @@ class UBExportFullPDF : public UBExportAdaptor
         virtual void persist(UBDocumentProxy* pDocument);
 
         virtual void persistsDocument(UBDocumentProxy* pDocument, const QString& filename);
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 
     protected:
         void saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QString& filename);

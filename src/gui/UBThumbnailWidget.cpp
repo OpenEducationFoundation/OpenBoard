@@ -858,7 +858,10 @@ void UBSceneThumbnailNavigPixmap::updateButtonsState()
 
     if(proxy()){
     	int pageIndex = UBDocumentContainer::pageFromSceneIndex(sceneIndex());
-    	UBDocumentController* documentController = UBApplication::documentController;
+        UBDocumentController* documentController = UBApplication::documentController;
+        if (!documentController->selectedDocument()) {
+            documentController->setDocument(UBApplication::boardController->selectedDocument());
+        }
     	bCanDelete = documentController->pageCanBeDeleted(pageIndex);
         bCanMoveUp = documentController->pageCanBeMovedUp(pageIndex);
         bCanMoveDown = documentController->pageCanBeMovedDown(pageIndex);

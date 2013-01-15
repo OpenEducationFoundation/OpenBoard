@@ -32,7 +32,7 @@ class UBDocumentProxy;
 
 class UBExportWeb : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportWeb(QObject *parent = 0);
@@ -41,6 +41,8 @@ class UBExportWeb : public UBExportAdaptor
         virtual QString exportName();
 
         virtual void persist(UBDocumentProxy* pDocument);
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
+
 
 };
 

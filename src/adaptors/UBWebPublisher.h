@@ -36,7 +36,7 @@ class UBServerXMLHttpRequest;
 
 class UBWebPublisher : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBWebPublisher(QObject *parent = 0);
@@ -45,6 +45,8 @@ class UBWebPublisher : public UBExportAdaptor
         virtual QString exportName();
 
         virtual void persist(UBDocumentProxy* pDocument);
+
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 };
 
 

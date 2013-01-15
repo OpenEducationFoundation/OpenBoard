@@ -30,6 +30,7 @@
 #include "core/UBApplication.h"
 
 #include "document/UBDocumentProxy.h"
+#include "document/UBDocumentController.h"
 
 #include "globals/UBGlobals.h"
 
@@ -90,4 +91,14 @@ void UBExportWeb::persist(UBDocumentProxy* pDocumentProxy)
 QString UBExportWeb::exportName()
 {
     return tr("Export to Web Browser");
+}
+
+bool UBExportWeb::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isCatalog(selectedIndex)) {
+        return false;
+    }
+
+    return true;
 }

@@ -103,10 +103,13 @@ void UBGraphicsItemUndoCommand::undo()
         QGraphicsItem* item = itRemoved.next();
         if (item)
         {
-            if (UBItemLayerType::FixedBackground == item->data(UBGraphicsItemData::ItemLayerType))
+            if (UBItemLayerType::FixedBackground == item->data(UBGraphicsItemData::ItemLayerType)) {
                 mScene->setAsBackgroundObject(item);
-            else
+            } else {
+                qreal ownZ = UBGraphicsItem::getOwnZValue(item);
                 mScene->addItem(item);
+                UBGraphicsItem::assignZValue(item, ownZ); //restoring the previous z index
+            }
 
             if (UBGraphicsPolygonItem::Type == item->type())
             {

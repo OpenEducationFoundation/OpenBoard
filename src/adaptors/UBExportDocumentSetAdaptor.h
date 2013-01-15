@@ -29,6 +29,10 @@ class UBExportDocumentSetAdaptor : public UBExportAdaptor
         virtual void persist(UBDocumentProxy* pDocument);
         bool persistData(const QModelIndex &pRootIndex, QString filename);
         bool addDocumentToZip(const QModelIndex &pIndex, UBDocumentTreeModel *model, QuaZip &zip);
+
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
+
+
 };
 
 #endif // UBEXPORTDOCUMENTSETADAPTOR_H

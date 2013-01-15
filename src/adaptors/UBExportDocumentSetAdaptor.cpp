@@ -178,3 +178,14 @@ bool UBExportDocumentSetAdaptor::addDocumentToZip(const QModelIndex &pIndex, UBD
 
     return true;
 }
+
+bool UBExportDocumentSetAdaptor::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isDocument(selectedIndex)) {
+        return false;
+    }
+
+    return true;
+}
+

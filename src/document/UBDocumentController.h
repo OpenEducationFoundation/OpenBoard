@@ -244,6 +244,8 @@ class UBDocumentController : public UBDocumentContainer
         MoveToTrash = 0
         , CompleteDelete
         , EmptyFolder
+        , EmptyTrash
+        , DeletePage
         , NoDeletion
     };
 
@@ -271,7 +273,10 @@ class UBDocumentController : public UBDocumentContainer
 
         void setDocument(UBDocumentProxy *document, bool forceReload = false);
         QModelIndex firstSelectedTreeIndex();
-        DeletionType deletionTypeForSelection(LastSelectedElementType pTypeSelection, const QModelIndex &selectedIndex);
+        inline DeletionType deletionTypeForSelection(LastSelectedElementType pTypeSelection
+                                                     , const QModelIndex &selectedIndex
+                                                     , UBDocumentTreeModel *docModel) const;
+        bool firstSceneSelected() const;
 
     signals:
         void exportDone();
@@ -298,6 +303,7 @@ class UBDocumentController : public UBDocumentContainer
         void paste();
         void focusChanged(QWidget *old, QWidget *current);
         void updateActions();
+        inline void updateExportSubActions(const QModelIndex &selectedIndex);
 
 protected:
         virtual void setupViews();

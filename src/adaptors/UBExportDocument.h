@@ -48,6 +48,10 @@ class UBExportDocument : public UBExportAdaptor, public UBProcessingProgressList
         virtual void persistsDocument(UBDocumentProxy* pDocument, QString filename);
 
         virtual void processing(const QString& pObjectName, int pCurrent, int pTotal);
+
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
+
+
 };
 
 #endif /* UBEXPORTDOCUMENT_H_ */

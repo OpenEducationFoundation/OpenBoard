@@ -35,6 +35,7 @@
 #include "domain/UBGraphicsSvgItem.h"
 
 #include "document/UBDocumentProxy.h"
+#include "document/UBDocumentController.h"
 
 #include "pdf/GraphicsPDFItem.h"
 
@@ -133,4 +134,14 @@ QString UBExportPDF::exportExtention()
 QString UBExportPDF::exportName()
 {
     return tr("Export to PDF");
+}
+
+bool UBExportPDF::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isCatalog(selectedIndex)) {
+        return false;
+    }
+
+    return true;
 }

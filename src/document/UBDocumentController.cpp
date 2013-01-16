@@ -912,6 +912,7 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 {
     event->setDropAction(acceptableAction(selectedIndexes().first(), indexAt(event->pos())));
     QTreeView::dropEvent(event);
+    adjustSize();
 }
 
 void UBDocumentTreeView::paintEvent(QPaintEvent *event)
@@ -970,9 +971,9 @@ void UBDocumentTreeView::adjustSize()
 
     int headerSizeHint = width();
 
-    if (verticalScrollBar()->isVisible())
+    if (verticalScrollBar()->isVisible() && verticalScrollBar()->maximum() > 0)
         headerSizeHint -= verticalScrollBar()->width();
-      
+
     if (columnWidth(0) < headerSizeHint)
         setColumnWidth(0, headerSizeHint);
 }
@@ -1362,7 +1363,8 @@ void UBDocumentController::setupViews()
 //        connect(mDocumentUI->documentTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(itemClicked(QTreeWidgetItem *, int)));
 
         mDocumentUI->documentTreeView->setModel(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel);
-        mDocumentUI->documentTreeView->setItemDelegate(new UBDocumentTreeItemDelegate());
+        mDocumentUI->documentTreeView->setItemDelegate(new UBDocumentTreeItemDelegate(this));
+        connect(mDocumentUI->documentTreeView->itemDelegate(), SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint) ), mDocumentUI->documentTreeView, SLOT(adjustSize()));
 //        mDocumentUI->documentTreeView->setDragDropMode(QAbstractItemView::InternalMove);
         mDocumentUI->documentTreeView->setDragEnabled(true);
         mDocumentUI->documentTreeView->setAcceptDrops(true);

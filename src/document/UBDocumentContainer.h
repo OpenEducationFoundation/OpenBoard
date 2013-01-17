@@ -50,6 +50,7 @@ class UBDocumentContainer : public QObject
         void addPage(int index);
         void updatePage(int index);
         void addEmptyThumbPage();
+        void reloadThumbnails();
 
     private:
         UBDocumentProxy* mCurrentDocument;
@@ -60,7 +61,6 @@ class UBDocumentContainer : public QObject
         void deleteThumbPage(int index);
         void updateThumbPage(int index);
         void insertThumbPage(int index);
-        void reloadThumbnails();
 
     signals:
         void documentSet(UBDocumentProxy* document);

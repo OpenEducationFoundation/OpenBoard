@@ -493,8 +493,6 @@ void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmp
 
     if (scene)
     {
-        UBGraphicsScene* clone = scene->sceneDeepCopy();
-
         if (scene->document() && (scene->document() != selectedDocument()))
         {
             foreach(QUrl relativeFile, scene->relativeDependencies())
@@ -517,7 +515,7 @@ void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmp
         else
         {
             persistCurrentScene();
-            UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(selectedDocument(), clone, mActiveSceneIndex + 1);
+            UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(selectedDocument(), scene, mActiveSceneIndex + 1);
             setActiveDocumentScene(mActiveSceneIndex + 1);
         }
 

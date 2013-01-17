@@ -2477,7 +2477,7 @@ void UBDocumentController::addToDocument()
 
         for (int i = 0; i < pageInfoList.length(); i++)
         {
-            mBoardController->addScene(pageInfoList.at(i).first, pageInfoList.at(i).second, true);
+            mBoardController->addScene(pageInfoList.at(i).first, pageInfoList.at(i).second, false);
         }
 
         int newActiveSceneIndex = selectedItems.count() == mBoardController->selectedDocument()->pageCount() ? 0 : oldActiveSceneIndex + 1;
@@ -2485,8 +2485,12 @@ void UBDocumentController::addToDocument()
         selectDocument(mBoardController->selectedDocument());
         mBoardController->selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
         UBMetadataDcSubsetAdaptor::persist(mBoardController->selectedDocument());
+        mBoardController->reloadThumbnails();
 
+        UBApplication::boardController->documentNavigator()->generateThumbnails(this);
         UBApplication::applicationController->showBoard();
+
+        mBoardController->setActiveDocumentScene(newActiveSceneIndex);
     }
 
     QApplication::restoreOverrideCursor();

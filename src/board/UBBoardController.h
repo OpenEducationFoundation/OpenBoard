@@ -49,6 +49,7 @@ class UBGraphicsWidgetItem;
 class UBBoardPaletteManager;
 class UBItem;
 class UBGraphicsItem;
+class UBDocumentNavigator;
 
 
 class UBBoardController : public UBDocumentContainer
@@ -175,6 +176,8 @@ class UBBoardController : public UBDocumentContainer
 
         QString actionGroupText(){ return mActionGroupText;}
         QString actionUngroupText(){ return mActionUngroupText;}
+        void setDocumentNavigator(UBDocumentNavigator *navigator){mDocumentNavigator = navigator;}
+        UBDocumentNavigator *documentNavigator() const {return mDocumentNavigator;}
 
     public slots:
         void showDocumentsDialog();
@@ -280,6 +283,7 @@ class UBBoardController : public UBDocumentContainer
         UBBoardView *mControlView;
         UBBoardView *mDisplayView;
         QWidget *mControlContainer;
+        UBDocumentNavigator *mDocumentNavigator;
         QHBoxLayout *mControlLayout;
         qreal mZoomFactor;
         bool mIsClosing;

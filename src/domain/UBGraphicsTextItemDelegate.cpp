@@ -380,10 +380,9 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
 
         cursor.setPosition (iCursorPos+1, QTextCursor::KeepAnchor);
         iPointSize = cursor.charFormat().font().pointSize();
-
+        curFont = cursor.charFormat().font();
         cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);
 
-        curFont = cursor.charFormat().font();
 
         do
         {

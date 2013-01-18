@@ -2853,7 +2853,7 @@ void UBDocumentController::updateActions()
 
 }
 
-inline void UBDocumentController::updateExportSubActions(const QModelIndex &selectedIndex)
+void UBDocumentController::updateExportSubActions(const QModelIndex &selectedIndex)
 {
     UBDocumentManager *documentManager = UBDocumentManager::documentManager();
     for (int i = 0; i < documentManager->supportedExportAdaptors().length(); i++)

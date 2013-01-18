@@ -304,7 +304,7 @@ class UBDocumentController : public UBDocumentContainer
         void paste();
         void focusChanged(QWidget *old, QWidget *current);
         void updateActions();
-        inline void updateExportSubActions(const QModelIndex &selectedIndex);
+        void updateExportSubActions(const QModelIndex &selectedIndex);
 
 protected:
         virtual void setupViews();

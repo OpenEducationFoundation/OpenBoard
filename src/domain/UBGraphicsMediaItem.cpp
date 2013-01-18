@@ -35,7 +35,6 @@
 UBAudioPresentationWidget::UBAudioPresentationWidget(QWidget *parent)
     : QWidget(parent)
     , mBorderSize(10)
-    , mTitleSize(10)
 {
 
 }
@@ -44,7 +43,7 @@ void UBAudioPresentationWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.fillRect(rect(), QBrush(Qt::white));
-    
+
     QPen borderPen;
     borderPen.setWidth(2);
     borderPen.setColor(QColor(Qt::black));
@@ -85,7 +84,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
     if ("" == mediaPath)
         mediaPath = pMediaFileUrl.toLocalFile();
 
-    if (mediaPath.toLower().contains("videos")) 
+    if (mediaPath.toLower().contains("videos"))
     {
         mMediaType = mediaType_Video;
 
@@ -102,7 +101,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
 
         haveLinkedImage = true;
     }
-    else    
+    else
     if (mediaPath.toLower().contains("audios"))
     {
         mMediaType = mediaType_Audio;
@@ -117,20 +116,20 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
             borderSize = pAudioWidget->borderSize();
         }
 
-        mAudioWidget->resize(320,26+3*borderSize);
+        mAudioWidget->resize(320,26+2*borderSize); //3*border size with enabled title
         mAudioWidget->setMinimumSize(150,26+borderSize);
 
         haveLinkedImage = false;
     }
 
     Phonon::createPath(mMediaObject, mAudioOutput);
-    
+
     mSource = Phonon::MediaSource(pMediaFileUrl);
     mMediaObject->setCurrentSource(mSource);
 
     // we should create delegate after media objects because delegate uses his properties at creation.
     setDelegate(new UBGraphicsMediaItemDelegate(this, mMediaObject));
-    
+
     // delegate should be created earler because we setWidget calls resize event for graphics proxy widgt.
     // resize uses delegate.
     if (mediaType_Video == mMediaType)
@@ -203,7 +202,7 @@ void UBGraphicsMediaItem::setSourceUrl(const QUrl &pSourceUrl)
     UBAudioPresentationWidget* pAudioWidget = dynamic_cast<UBAudioPresentationWidget*>(mAudioWidget);
     if (pAudioWidget)
     {
-        pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
+       // pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
     }
 
     UBItem::setSourceUrl(pSourceUrl);
@@ -320,13 +319,13 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 QGraphicsItem *curItem = group->getCurrentItem();
                 if (curItem && this != curItem)
-                {   
-                    group->deselectCurrentItem();    
-                }   
+                {
+                    group->deselectCurrentItem();
+                }
                 group->setCurrentItem(this);
                 this->setSelected(true);
                 Delegate()->positionHandles();
-            }       
+            }
 
         }
     }
@@ -339,7 +338,7 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             event->accept();
         }
     }
-    else 
+    else
     {
         mShouldMove = (event->buttons() & Qt::LeftButton);
         mMousePressPos = event->scenePos();

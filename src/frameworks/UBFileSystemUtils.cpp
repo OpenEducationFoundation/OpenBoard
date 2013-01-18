@@ -473,6 +473,8 @@ QString UBFileSystemUtils::mimeTypeFromFileName(const QString& fileName)
     // Apple widget
     if (ext == "wdgt") return "application/vnd.apple-widget"; //mime type invented by us :-(
     if (ext == "swf") return "application/x-shockwave-flash";
+    if (ext == "bkm") return "internal/bookmark";
+    if (ext == "lnk") return "internal/link";
 
     return "";
 
@@ -546,6 +548,8 @@ QString UBFileSystemUtils::fileExtensionFromMimeType(const QString& pMimeType)
     if (pMimeType == "application/widget") return "wgt";
     if (pMimeType == "application/vnd.apple-widget") return "wdgt"; //mime type invented by us :-(
     if (pMimeType == "application/x-shockwave-flash") return "swf";
+    if (pMimeType == "internal/bookmark") return "bkm";
+    if (pMimeType == "internal/link") return "lnk";
 
     return "";
 
@@ -596,7 +600,18 @@ UBMimeType::Enum UBFileSystemUtils::mimeTypeFromString(const QString& typeString
     {
         type = UBMimeType::UniboardTool;
     }
-
+    else if (typeString.startsWith("internal/bookmark"))
+    {
+        type = UBMimeType::Bookmark;
+    }
+    else if (typeString.startsWith("internal/link"))
+    {
+        type = UBMimeType::Link;
+    }
+    else if (typeString.startsWith("text/html"))
+    {
+        type = UBMimeType::Web;
+    }
     return type;
 }
 

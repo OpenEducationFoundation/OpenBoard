@@ -34,7 +34,7 @@ class UBDocumentProxy;
 
 class UBExportCFF : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public:
     UBExportCFF(QObject *parent = 0);
@@ -43,6 +43,7 @@ public:
     virtual QString exportName();
     virtual QString exportExtention();
     virtual void persist(UBDocumentProxy* pDocument);
+    virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 };
 
 #endif /* UBExportCFF_H_ */

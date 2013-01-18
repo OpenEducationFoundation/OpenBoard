@@ -347,14 +347,14 @@ void UBApplicationController::showBoard()
     mMainWindow->tutorialToolBar->hide();
     mMainWindow->boardToolBar->show();
 
-    if (mMainMode == Document)
-    {
-        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
-        if (selectedSceneIndex != -1)
-        {
-            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
-        }
-    }
+//    if (mMainMode == Document)
+//    {
+//        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
+//        if (selectedSceneIndex != -1)
+//        {
+//            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
+//        }
+//    }
 
     mMainMode = Board;
 
@@ -375,6 +375,10 @@ void UBApplicationController::showBoard()
     mMainWindow->show();
 
     emit mainModeChanged(Board);
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if (UBStylusTool::Selector != currentTool)
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
     UBApplication::boardController->freezeW3CWidgets(false);
     UBApplication::boardController->activeScene()->updateGroupButtonState();

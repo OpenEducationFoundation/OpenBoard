@@ -338,6 +338,7 @@ public slots:
         void closeMagnifier();
         void zoomInMagnifier();
         void zoomOutMagnifier();
+        void changeMagnifierMode(int mode);
         void resizedMagnifier(qreal newPercent);
 
     signals:

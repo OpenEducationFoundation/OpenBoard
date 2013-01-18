@@ -73,6 +73,8 @@
 #include "tools/UBGraphicsProtractor.h"
 #include "tools/UBGraphicsAristo.h"
 
+#include "customWidgets/UBGraphicsItemAction.h"
+
 #include "core/memcheck.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
@@ -88,6 +90,7 @@ UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool
 , bIsControl(isControl)
 , bIsDesktop(isDesktop)
 , mRubberBandInPlayMode(false) //enables rubberband with play tool
+, bIsPresentation(false)
 {
   init ();
 
@@ -106,6 +109,7 @@ UBBoardView::UBBoardView (UBBoardController* pController, int pStartLayer, int p
 , mMultipleSelectionIsEnabled(false)
 , bIsControl(isControl)
 , bIsDesktop(isDesktop)
+, bIsPresentation(false)
 {
   init ();
 
@@ -188,6 +192,10 @@ UBBoardView::showEvent (QShowEvent * event)
 void
 UBBoardView::keyPressEvent (QKeyEvent *event)
 {
+    if(bIsPresentation){
+        event->ignore();
+        return;
+    }
   // send to the scene anyway
   QApplication::sendEvent (scene (), event);
 
@@ -342,6 +350,10 @@ UBBoardView::event (QEvent * e)
 
 void UBBoardView::tabletEvent (QTabletEvent * event)
 {
+    if(bIsPresentation){
+        event->ignore();
+        return;
+    }
     if (!mUseHighResTabletEvent) {
         event->setAccepted (false);
         return;
@@ -557,6 +569,8 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsSvgItem::Type:
     case UBGraphicsPixmapItem::Type:
     case UBGraphicsTextItem::Type:
+        if (currentTool == UBStylusTool::Play)
+            return true;
         if ((currentTool == UBStylusTool::Selector) && item->isSelected())
             return true;
         if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
@@ -564,12 +578,16 @@ Here we determines cases when items should to get mouse press event at pressing 
         if (currentTool != UBStylusTool::Selector)
             return false;
         break;
-
+    case UBGraphicsItemType::StrokeItemType:
+        if (currentTool == UBStylusTool::Play)
+            return true;
+        break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
         if(currentTool == UBStylusTool::Play)
         {
             movingItem = NULL;
+            return true;
         }
         return false;
         break;
@@ -589,6 +607,7 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+
     }
 
     return !isUBItem(item); // standard behavior of QGraphicsScene for not UB items. UB items should be managed upper.
@@ -688,6 +707,15 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         // items like polygons placed in two groups nested, so we need to recursive call.
         if(item->parentItem() && UBGraphicsStrokesGroup::Type == item->parentItem()->type())
             return determineItemToPress(item->parentItem());
+
+        //TODO claudio
+        // another chuck of very good code
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()){
+            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
+            if(group && group->Delegate()->action())
+                group->Delegate()->action()->play();
+        }
+
     }
 
     return item;
@@ -878,6 +906,10 @@ void UBBoardView::longPressEvent()
 
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
+    if(bIsPresentation){
+        event->ignore();
+        return;
+    }
     if (!bIsControl && !bIsDesktop) {
         event->ignore();
         return;
@@ -1022,6 +1054,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 void
 UBBoardView::mouseMoveEvent (QMouseEvent *event)
 {
+    if(bIsPresentation){
+        event->ignore();
+        return;
+    }
   if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance()))
   {
       return;
@@ -1131,6 +1167,10 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 void
 UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
+    if(bIsPresentation){
+        event->ignore();
+        return;
+    }
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
 
   setToolCursor (currentTool);
@@ -1161,7 +1201,7 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           movingItem = NULL;
       }
       else
-      if (movingItem && !isCppTool(movingItem))
+      if (movingItem && (!isCppTool(movingItem) || UBGraphicsCurtainItem::Type == movingItem->type()))
       {
           if (suspendedMousePressEvent)
           {

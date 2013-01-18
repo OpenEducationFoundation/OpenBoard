@@ -119,6 +119,8 @@ void UBPreferencesController::wire()
     connect(mPreferencesUI->closeButton, SIGNAL(released()), this, SLOT(close()));
     connect(mPreferencesUI->defaultSettingsButton, SIGNAL(released()), this, SLOT(defaultSettings()));
 
+    connect(mPreferencesUI->startupTipsCheckBox,SIGNAL(clicked(bool)),this,SLOT(onStartupTipsClicked(bool)));
+
 
     // OSK preferences
 
@@ -200,6 +202,8 @@ void UBPreferencesController::init()
             break;
         }
 
+    mPreferencesUI->startupTipsCheckBox->setChecked(settings->appStartupHintsEnabled->get().toBool());
+
     mPreferencesUI->startModeComboBox->setCurrentIndex(settings->appStartMode->get().toInt());
 
     mPreferencesUI->useExternalBrowserCheckBox->setChecked(settings->webUseExternalBrowser->get().toBool());
@@ -237,6 +241,68 @@ void UBPreferencesController::init()
     mPreferencesUI->PSCredentialsPersistenceCheckBox->setChecked(settings->getCommunityDataPersistence());
     persistanceCheckboxUpdate();
 
+    mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
+    mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
+    mIsoCodeAndLanguage.insert(tr("Bulgarian"),"bg");
+    mIsoCodeAndLanguage.insert(tr("Catalan"),"ca");
+    mIsoCodeAndLanguage.insert(tr("Czech"),"cs");
+    mIsoCodeAndLanguage.insert(tr("Danish"),"da");
+    mIsoCodeAndLanguage.insert(tr("German"),"de");
+    mIsoCodeAndLanguage.insert(tr("Greek"),"el");
+    mIsoCodeAndLanguage.insert(tr("English"),"en");
+    mIsoCodeAndLanguage.insert(tr("English UK"),"en_UK");
+    mIsoCodeAndLanguage.insert(tr("Spanish"),"es");
+    mIsoCodeAndLanguage.insert(tr("French"),"fr");
+    mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
+    mIsoCodeAndLanguage.insert(tr("Italian"),"it");
+    mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
+    mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
+    mIsoCodeAndLanguage.insert(tr("Korean"),"ko");
+    mIsoCodeAndLanguage.insert(tr("Malagasy"),"mg");
+    mIsoCodeAndLanguage.insert(tr("Norwegian"),"nb");
+    mIsoCodeAndLanguage.insert(tr("Dutch"),"nl");
+    mIsoCodeAndLanguage.insert(tr("Polish"),"pl");
+    mIsoCodeAndLanguage.insert(tr("Romansh"),"rm");
+    mIsoCodeAndLanguage.insert(tr("Romanian"),"ro");
+    mIsoCodeAndLanguage.insert(tr("Russian"),"ru");
+    mIsoCodeAndLanguage.insert(tr("Slovak"),"sk");
+    mIsoCodeAndLanguage.insert(tr("Swedish"),"sv");
+    mIsoCodeAndLanguage.insert(tr("Turkish"),"tr");
+    mIsoCodeAndLanguage.insert(tr("Chinese"),"zh");
+    mIsoCodeAndLanguage.insert(tr("Chinese Simplified"),"zh_CN");
+    mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TN");
+
+    QStringList list;
+    list << mIsoCodeAndLanguage.keys();
+    list.sort();
+    mPreferencesUI->languageComboBox->addItems(list);
+    QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+    if(currentIsoLanguage.length()){
+        QString language;
+        foreach(QString eachKey, mIsoCodeAndLanguage.keys())
+            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage)
+                language = eachKey;
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(language));
+    }
+    else
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
+
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
+    connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
+    mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
+
+}
+
+void UBPreferencesController::onStartupTipsClicked(bool clicked)
+{
+    UBSettings::settings()->appStartupHintsEnabled->setBool(clicked);
+}
+
+void UBPreferencesController::onLanguageChanged(QString currentItem)
+{
+    QString isoCode = mIsoCodeAndLanguage[currentItem] == "NO_VALUE" ? "" : mIsoCodeAndLanguage[currentItem];
+    UBSettings::settings()->appPreferredLanguage->setString(isoCode);
+    mPreferencesUI->quitOpenSankorePushButton->setEnabled(true);
 }
 
 void UBPreferencesController::onCommunityUsernameChanged()
@@ -326,6 +392,7 @@ void UBPreferencesController::defaultSettings()
         mPreferencesUI->verticalChoice->setChecked(settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->horizontalChoice->setChecked(!settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->startModeComboBox->setCurrentIndex(0);
+        onLanguageChanged("Default");
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->penTab)
     {

@@ -36,21 +36,27 @@ class UBWebKitUtils
         {
 
             public:
-                HtmlObject(const QString& pSource, int pWidth, int pHeight)
-                    : source(pSource)
-                    , width(pWidth)
-                    , height(pHeight)
-                {
-                    // NOOP
-                }
+                HtmlObject();
+                HtmlObject(const QString &pSource, const QString &pObjectName, const QString &pObjectMimeType, const QString &pTagName, int pWidth, int pHeight);
+                HtmlObject(const QString &pSource, const QString &metaDataString);
 
                 QString source;
+                QString tagName;
+                QString objectName;
+                QString objectMimeType;
+                QString embedCode;
                 int width;
                 int height;
 
-        };
 
-        static QList<UBWebKitUtils::HtmlObject> objectsInFrame(QWebFrame* frame);
+                bool operator == (const HtmlObject &obj);
+
+        };
+        static QString widgetNameFromUrl(QString pObjectUrl);
+        static QList<UBWebKitUtils::HtmlObject> objectsInFrameByTag(QWebFrame* frame, QString tagName);
+        static QStringList validUrl(QUrl& baseUrl,QStringList& list);
+        static QStringList getUrls(QUrl& baseUrl,QWebElement& element);
+        static QStringList getArgumentsValues(QString& string);
 
 };
 

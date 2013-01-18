@@ -41,6 +41,8 @@
 #include "gui/UBActionPalette.h"
 #include "gui/UBFavoriteToolPalette.h"
 #include "gui/UBDockTeacherGuideWidget.h"
+#include "gui/UBStartupHintsPalette.h"
+#include "gui/UBCreateLinkPalette.h"
 
 
 #include "web/UBWebPage.h"
@@ -78,6 +80,8 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mBoardControler(pBoardController)
     , mStylusPalette(0)
     , mZoomPalette(0)
+    , mTipPalette(0)
+    , mLinkPalette(0)
     , mLeftPalette(NULL)
     , mRightPalette(NULL)
     , mBackgroundsPalette(0)
@@ -103,8 +107,8 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
 UBBoardPaletteManager::~UBBoardPaletteManager()
 {
 
-// mAddedItemPalette is delete automatically because of is parent 
-// that changes depending on the mode 
+// mAddedItemPalette is delete automatically because of is parent
+// that changes depending on the mode
 
 // mMainWindow->centralWidget is the parent of mStylusPalette
 // do not delete this here.
@@ -129,8 +133,6 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     //------------------------------------------------//
     // Create the widgets for the dock palettes
 
-    mpPageNavigWidget = new UBPageNavigationWidget();
-
     mpCachePropWidget = new UBCachePropertiesWidget();
 
     mpDownloadWidget = new UBDockDownloadWidget();
@@ -153,18 +155,9 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
 
     mRightPalette = new UBRightPalette(mContainer);
     // RIGHT palette widgets
-#ifndef USE_WEB_WIDGET
     mpFeaturesWidget = new UBFeaturesWidget();
     mRightPalette->registerWidget(mpFeaturesWidget);
     mRightPalette->addTab(mpFeaturesWidget);
-#endif
-
-    //Do not show deprecated lib widget to prevent collisions. Uncomment to return lib widget
-
-#ifdef USE_WEB_WIDGET
-    mRightPalette->registerWidget(mpLibWidget);
-    mRightPalette->addTab(mpLibWidget);
-#endif
 
 
     // The cache widget will be visible only if a cache is put on the page
@@ -260,8 +253,9 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
-
     mStylusPalette->stackUnder(mZoomPalette);
+
+    mTipPalette = new UBStartupHintsPalette(mContainer);
 
     QList<QAction*> backgroundsActions;
 
@@ -765,11 +759,12 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
         case eUBDockPaletteWidget_WEB:
             {
                 mAddItemPalette->setParent(UBApplication::mainWindow);
+
+                mRightPalette->assignParent(UBApplication::webController->GetCurrentWebBrowser());
+                mRightPalette->setVisible(rightPaletteVisible);
+
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
-//                    tmp variable?
-//                    WBBrowserWindow* brWnd = UBApplication::webController->GetCurrentWebBrowser();
-
                     if(mKeyboardPalette->m_isVisible)
                     {
                         mKeyboardPalette->hide();
@@ -830,8 +825,6 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
 
     if( !isInit )
         UBApplication::boardController->notifyPageChanged();
-
-    emit signal_changeMode(newMode);
 }
 
 void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos,  qreal scaleFactor, const QUrl& sourceUrl)
@@ -890,14 +883,9 @@ void UBBoardPaletteManager::addItemToLibrary()
         }
         QImage image = mPixmap.toImage();
 
-#ifdef USE_WEB_WIDGET
-        mpLibWidget->libNavigator()->libraryWidget()->libraryController()->importImageOnLibrary(image);
-#else
         QDateTime now = QDateTime::currentDateTime();
         QString capturedName  = tr("CapturedImage") + "-" + now.toString("dd-MM-yyyy hh-mm-ss") + ".png";
         mpFeaturesWidget->importImage(image, capturedName);
-#endif
-
     }
     else
     {
@@ -1014,3 +1002,13 @@ void UBBoardPaletteManager::stopDownloads()
         mRightPalette->removeTab(mpDownloadWidget);
     }
 }
+
+
+UBCreateLinkPalette* UBBoardPaletteManager::linkPalette()
+{
+    if(mLinkPalette)
+        delete mLinkPalette;
+    mLinkPalette = new UBCreateLinkPalette(mContainer);
+    return mLinkPalette;
+}
+

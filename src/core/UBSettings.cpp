@@ -165,7 +165,10 @@ UBSettings::UBSettings(QObject *parent)
 
     mUserSettings = new QSettings(userSettingsFile, QSettings::IniFormat, parent);
 
-    init();
+    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "");
+
+
+//    init();
 }
 
 
@@ -219,12 +222,13 @@ void UBSettings::init()
     appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", true);
     appEnableSoftwareUpdates = new UBSetting(this, "App", "EnableSoftwareUpdates", true);
     appToolBarOrientationVertical = new UBSetting(this, "App", "ToolBarOrientationVertical", false);
-    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "");
 
     rightLibPaletteBoardModeWidth = new UBSetting(this, "Board", "RightLibPaletteBoardModeWidth", 270);
     rightLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteBoardModeIsCollapsed",false);
     rightLibPaletteDesktopModeWidth = new UBSetting(this, "Board", "RightLibPaletteDesktopModeWidth", 270);
     rightLibPaletteDesktopModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteDesktopModeIsCollapsed",false);
+    rightLibPaletteWebModeWidth = new UBSetting(this, "Board", "RightLibPaletteWebModeWidth", 270);
+    rightLibPaletteWebModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteWebModeIsCollapsed",false);
     leftLibPaletteBoardModeWidth = new UBSetting(this, "Board", "LeftLibPaletteBoardModeWidth",270);
     leftLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board","LeftLibPaletteBoardModeIsCollapsed",false);
     leftLibPaletteDesktopModeWidth = new UBSetting(this, "Board", "LeftLibPaletteDesktopModeWidth",270);
@@ -234,6 +238,8 @@ void UBSettings::init()
     appLastSessionDocumentUUID = new UBSetting(this, "App", "LastSessionDocumentUUID", "");
     appLastSessionPageIndex = new UBSetting(this, "App", "LastSessionPageIndex", 0);
     appUseMultiscreen = new UBSetting(this, "App", "UseMusliscreenMode", true);
+
+    appStartupHintsEnabled = new UBSetting(this,"App","EnableStartupHints",true);
 
     appStartMode = new UBSetting(this, "App", "StartMode", "");
 
@@ -253,6 +259,12 @@ void UBSettings::init()
     boardUseHighResTabletEvent = new UBSetting(this, "Board", "UseHighResTabletEvent", true);
 
     boardKeyboardPaletteKeyBtnSize = new UBSetting(this, "Board", "KeyboardPaletteKeyBtnSize", "16x16");
+
+
+    cacheKeepAspectRatio = new UBSetting(this, "Cache", "KeepAspectRatio", true);
+    casheLastHoleSize = new UBSetting(this, "Cache", "LastHoleSize", QSize(20,20));
+    cacheColor = new UBColorListSetting(this, "Cache", "Color", "#000000", 0.75);
+
     ValidateKeyboardPaletteKeyBtnSize();
 
     pageSize = new UBSetting(this, "Board", "DefaultPageSize", documentSizes.value(DocumentSizeRatio::Ratio4_3));
@@ -349,6 +361,7 @@ void UBSettings::init()
     appOnlineUserName = new UBSetting(this, "App", "OnlineUserName", "");
 
     boardShowToolsPalette = new UBSetting(this, "Board", "ShowToolsPalette", "false");
+    magnifierDrawingMode = new UBSetting(this, "Board", "MagnifierDrawingMode", "0");
 
     svgViewBoxMargin = new UBSetting(this, "SVG", "ViewBoxMargin", "50");
 
@@ -889,6 +902,16 @@ QString UBSettings::userDocumentDirectory()
     return documentDirectory;
 }
 
+QString UBSettings::userBookmarkDirectory()
+{
+    static QString bookmarkDirectory = "";
+    if(bookmarkDirectory.isEmpty()){
+        bookmarkDirectory = userDataDirectory() + "/bookmark";
+        checkDirectory(bookmarkDirectory);
+    }
+    return bookmarkDirectory;
+}
+
 QString UBSettings::userFavoriteListFilePath()
 {
     static QString filePath = "";
@@ -1001,6 +1024,34 @@ QString UBSettings::userInteractiveDirectory()
     return interactiveDirectory;
 }
 
+QString UBSettings::userApplicationDirectory()
+{
+    static QString applicationDirectory = "";
+    if(applicationDirectory.isEmpty()){
+        if (sAppSettings && getAppSettings()->contains("App/UserApplicationDirectory")) {
+            applicationDirectory = getAppSettings()->value("App/UserApplicationDirectory").toString();
+            applicationDirectory = replaceWildcard(applicationDirectory);
+            if(checkDirectory(applicationDirectory))
+                return applicationDirectory;
+            else
+                qCritical() << "failed to create directory " << applicationDirectory;
+        }
+        applicationDirectory = userDataDirectory() + "/application";
+        checkDirectory(applicationDirectory);
+    }
+    return applicationDirectory;
+}
+
+QString UBSettings::userWidgetPath()
+{
+    return userInteractiveDirectory() + tr("/Web");
+}
+
+QString UBSettings::userRelativeWidgetPath()
+{
+    QString result = userWidgetPath().replace(userInteractiveDirectory(), "");
+    return result.startsWith("/") ? result.right(result.count() - 1) : result;
+}
 
 QString UBSettings::applicationInteractivesDirectory()
 {
@@ -1071,6 +1122,19 @@ QString UBSettings::applicationAnimationsLibraryDirectory()
     else {
         return configPath;
     }
+}
+
+QString UBSettings::applicationStartupHintsDirectory()
+{
+    QString defaultRelativePath = QString("./startupHints");
+
+    QString configPath = value("StartupHintsDirectory", QVariant(defaultRelativePath)).toString();
+
+    if (configPath.startsWith(".")) {
+        return UBPlatformUtils::applicationResourcesDirectory() + configPath.right(configPath.size() - 1);
+    }
+    else
+        return configPath;
 }
 
 QString UBSettings::userInteractiveFavoritesDirectory()

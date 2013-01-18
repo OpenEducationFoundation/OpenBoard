@@ -29,11 +29,13 @@
 #include "adaptors/UBExportDocument.h"
 #include "adaptors/UBExportWeb.h"
 #include "adaptors/UBExportCFF.h"
+#include "adaptors/UBExportDocumentSetAdaptor.h"
 #include "adaptors/UBWebPublisher.h"
 #include "adaptors/UBImportDocument.h"
 #include "adaptors/UBImportPDF.h"
 #include "adaptors/UBImportImage.h"
 #include "adaptors/UBImportCFF.h"
+#include "adaptors/UBImportDocumentSetAdaptor.h"
 
 #include "domain/UBGraphicsScene.h"
 #include "domain/UBGraphicsSvgItem.h"
@@ -76,15 +78,20 @@ UBDocumentManager::UBDocumentManager(QObject *parent)
     UBExportFullPDF* exportFullPdf = new UBExportFullPDF(this);
     UBExportDocument* exportDocument = new UBExportDocument(this);
     UBWebPublisher* webPublished = new UBWebPublisher(this);
+    UBExportDocumentSetAdaptor *exportDocumentSet = new UBExportDocumentSetAdaptor(this);
     mExportAdaptors.append(exportDocument);
+    mExportAdaptors.append(exportDocumentSet);
     mExportAdaptors.append(webPublished);
     mExportAdaptors.append(exportFullPdf);
     mExportAdaptors.append(cffExporter);
+
 //     UBExportWeb* exportWeb = new UBExportWeb(this);
 //     mExportAdaptors.append(exportWeb);
 
     UBImportDocument* documentImport = new UBImportDocument(this);
     mImportAdaptors.append(documentImport);
+    UBImportDocumentSetAdaptor *documentSetImport = new UBImportDocumentSetAdaptor(this);
+    mImportAdaptors.append(documentSetImport);
     UBImportPDF* pdfImport = new UBImportPDF(this);
     mImportAdaptors.append(pdfImport);
     UBImportImage* imageImport = new UBImportImage(this);
@@ -132,6 +139,21 @@ QString UBDocumentManager::importFileFilter()
     return result;
 }
 
+QFileInfoList UBDocumentManager::importUbx(const QString &Incomingfile, const QString &destination)
+{
+    UBImportDocumentSetAdaptor *docSetAdaptor;
+    foreach (UBImportAdaptor *curAdaptor, mImportAdaptors) {
+        docSetAdaptor = qobject_cast<UBImportDocumentSetAdaptor*>(curAdaptor);
+        if (docSetAdaptor) {
+            break;
+        }
+    }
+    if (!docSetAdaptor) {
+        return QFileInfoList();
+    }
+
+    return docSetAdaptor->importData(Incomingfile, destination);
+}
 
 UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString& pGroup)
 {

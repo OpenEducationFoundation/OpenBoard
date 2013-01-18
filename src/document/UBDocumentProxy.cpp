@@ -38,6 +38,14 @@ UBDocumentProxy::UBDocumentProxy()
     init();
 }
 
+UBDocumentProxy::UBDocumentProxy(const UBDocumentProxy &rValue) :
+    QObject()
+{
+    mPersistencePath = rValue.mPersistencePath;
+    mMetaDatas = rValue.mMetaDatas;
+    mIsModified = rValue.mIsModified;
+    mPageCount = rValue.mPageCount;
+}
 
 UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     : mPageCount(0)

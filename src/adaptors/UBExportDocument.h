@@ -35,7 +35,7 @@ class UBDocumentProxy;
 
 class UBExportDocument : public UBExportAdaptor, public UBProcessingProgressListener
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportDocument(QObject *parent = 0);
@@ -48,6 +48,10 @@ class UBExportDocument : public UBExportAdaptor, public UBProcessingProgressList
         virtual void persistsDocument(UBDocumentProxy* pDocument, QString filename);
 
         virtual void processing(const QString& pObjectName, int pCurrent, int pTotal);
+
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
+
+
 };
 
 #endif /* UBEXPORTDOCUMENT_H_ */

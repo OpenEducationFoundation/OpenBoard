@@ -27,6 +27,10 @@
 #include "core/UBDocumentManager.h"
 #include "core/UBApplication.h"
 #include "core/memcheck.h"
+#include "document/UBDocumentController.h"
+
+#include <QModelIndex>
+#include <QObject>
 
 
 UBExportCFF::UBExportCFF(QObject *parent)
@@ -82,4 +86,14 @@ void UBExportCFF::persist(UBDocumentProxy* pDocument)
     }
 
     
+}
+
+bool UBExportCFF::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isCatalog(selectedIndex)) {
+        return false;
+    }
+
+    return true;
 }

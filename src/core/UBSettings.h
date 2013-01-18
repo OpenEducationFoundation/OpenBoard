@@ -40,6 +40,7 @@ class UBSettings : public QObject
 
         static UBSettings* settings();
         static void destroy();
+        void init();
 
     private:
 
@@ -118,11 +119,10 @@ class UBSettings : public QObject
         int libraryIconSize();
         void setLibraryIconsize(const int& size);
 
-        void init();
-
         //user directories
         static QString userDataDirectory();
         static QString userDocumentDirectory();
+        static QString userBookmarkDirectory();
         static QString userFavoriteListFilePath();
         static QString userTrashDirPath();
         static QString userImageDirectory();
@@ -131,6 +131,9 @@ class UBSettings : public QObject
         static QString userSearchDirectory();
         static QString userAnimationDirectory();
         static QString userInteractiveDirectory();
+        static QString userApplicationDirectory();
+        static QString userWidgetPath();
+        static QString userRelativeWidgetPath();
         static QString userInteractiveFavoritesDirectory();
         static QString userPodcastRecordingDirectory();
 
@@ -146,6 +149,7 @@ class UBSettings : public QObject
         QString applicationAudiosLibraryDirectory();
         QString applicationVideosLibraryDirectory();
         QString applicationAnimationsLibraryDirectory();
+        QString applicationStartupHintsDirectory();
 
         QNetworkProxy* httpProxy();
 
@@ -242,6 +246,8 @@ class UBSettings : public QObject
         UBSetting* appLastSessionPageIndex;
 
         UBSetting* appUseMultiscreen;
+
+        UBSetting* appStartupHintsEnabled;
 
         UBSetting* boardPenFineWidth;
         UBSetting* boardPenMediumWidth;
@@ -350,6 +356,8 @@ class UBSettings : public QObject
         UBSetting* rightLibPaletteBoardModeIsCollapsed;
         UBSetting* rightLibPaletteDesktopModeWidth;
         UBSetting* rightLibPaletteDesktopModeIsCollapsed;
+        UBSetting* rightLibPaletteWebModeWidth;
+        UBSetting* rightLibPaletteWebModeIsCollapsed;
         UBSetting* leftLibPaletteBoardModeWidth;
         UBSetting* leftLibPaletteBoardModeIsCollapsed;
         UBSetting* leftLibPaletteDesktopModeWidth;
@@ -371,6 +379,12 @@ class UBSettings : public QObject
         UBSetting* teacherGuideLessonPagesActivated;
 
         UBSetting* libIconSize;
+
+        UBSetting* magnifierDrawingMode;
+
+        UBSetting *cacheKeepAspectRatio;
+        UBSetting *casheLastHoleSize;
+        UBSetting *cacheColor;
 
     public slots:
 

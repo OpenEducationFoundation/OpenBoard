@@ -31,6 +31,8 @@
 class UBDocument;
 class UBDocumentProxy;
 class UBGraphicsScene;
+class UBDocumentTreeNode;
+class UBDocumentTreeModel;
 
 class UBPersistenceManager : public QObject
 {
@@ -51,10 +53,14 @@ class UBPersistenceManager : public QObject
         static const QString widgetDirectory;
         static const QString teacherGuideDirectory;
 
+        static const QString myDocumentsName;
+        static const QString modelsName;
+        static const QString untitledDocumentsName;
+
         static UBPersistenceManager* persistenceManager();
         static void destroy();
 
-        virtual UBDocumentProxy* createDocument(const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = true);
+        virtual UBDocumentProxy* createDocument(const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = true, QString directory =QString(), int pageCount = 0);
         virtual UBDocumentProxy* createDocumentFromDir(const QString& pDocumentDirectory, const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = false, bool addTitlePage = false);
 
         virtual UBDocumentProxy* persistDocumentMetadata(UBDocumentProxy* pDocumentProxy);
@@ -80,6 +86,8 @@ class UBPersistenceManager : public QObject
         UBGraphicsScene *getDocumentScene(UBDocumentProxy* pDocumentProxy, int sceneIndex) {return mSceneCache.value(pDocumentProxy, sceneIndex);}
 
         QList<QPointer<UBDocumentProxy> > documentProxies;
+        UBDocumentTreeNode *mDocumentTreeStructure;
+        UBDocumentTreeModel *mDocumentTreeStructureModel;
 
         virtual QStringList allShapes();
         virtual QStringList allGips();
@@ -102,6 +110,9 @@ class UBPersistenceManager : public QObject
 
         virtual UBDocumentProxy* documentByUuid(const QUuid& pUuid);
 
+        void createDocumentProxiesStructure();
+        void createDocumentProxiesStructure(const QFileInfoList &contentInfo);
+
         QStringList documentSubDirectories()
         {
             return mDocumentSubDirectories;
@@ -110,7 +121,7 @@ class UBPersistenceManager : public QObject
         virtual bool isEmpty(UBDocumentProxy* pDocumentProxy);
         virtual void purgeEmptyDocuments();
 
-        bool addGraphicsWidgteToDocument(UBDocumentProxy *mDocumentProxy, QString path, QUuid objectUuid, QString& destinationPath);
+        bool addGraphicsWidgetToDocument(UBDocumentProxy *mDocumentProxy, QString path, QUuid objectUuid, QString& destinationPath);
         bool addFileToDocument(UBDocumentProxy* pDocumentProxy, QString path, const QString& subdir,  QUuid objectUuid, QString& destinationPath, QByteArray* data = NULL);
 
         bool mayHaveVideo(UBDocumentProxy* pDocumentProxy);
@@ -118,6 +129,9 @@ class UBPersistenceManager : public QObject
         bool mayHavePDF(UBDocumentProxy* pDocumentProxy);
         bool mayHaveSVGImages(UBDocumentProxy* pDocumentProxy);
         bool mayHaveWidget(UBDocumentProxy* pDocumentProxy);
+
+        QString adjustDocumentVirtualPath(const QString &str);
+
 
     signals:
 
@@ -155,8 +169,6 @@ class UBPersistenceManager : public QObject
         QMutex mDeletedListMutex;
 
         bool mHasPurgedDocuments;
-
-        QList<UBDocumentProxy*> mDocumentCreatedDuringSession;
 
         QString mDocumentRepositoryPath;
 

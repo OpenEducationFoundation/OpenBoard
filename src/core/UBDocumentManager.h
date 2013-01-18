@@ -30,10 +30,9 @@ class UBExportAdaptor;
 class UBImportAdaptor;
 class UBDocumentProxy;
 
-
 class UBDocumentManager : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         static UBDocumentManager* documentManager();
@@ -42,6 +41,7 @@ class UBDocumentManager : public QObject
         QString importFileFilter();
         QStringList importFileExtensions();
 
+        QFileInfoList importUbx(const QString &Incomingfile, const QString &destination);
         UBDocumentProxy* importFile(const QFile& pFile, const QString& pGroup);
 
         int addFilesToDocument(UBDocumentProxy* pDocument, QStringList fileNames);

@@ -336,8 +336,8 @@ void UBGraphicsScene::updateGroupButtonState()
 {
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-    if (UBStylusTool::Selector != currentTool)
-        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+    if (UBStylusTool::Selector != currentTool && UBStylusTool::Play != currentTool)
+        return;
 
     QAction *groupAction = UBApplication::mainWindow->actionGroupItems;
     QList<QGraphicsItem*> selItems = selectedItems();
@@ -579,9 +579,14 @@ bool UBGraphicsScene::inputDeviceRelease()
 
                 // Add the center cross
                 foreach(QGraphicsItem* item, mAddedItems){
+                    mAddedItems.remove(item);
                     removeItem(item);
                     UBCoreGraphicsScene::removeItemFromDeletion(item);
-                    mArcPolygonItem->setStrokesGroup(pStrokes);
+
+                    UBGraphicsPolygonItem *crossLine = qgraphicsitem_cast<UBGraphicsPolygonItem *>(item);
+                    if (crossLine)
+                        crossLine->setStrokesGroup(pStrokes);
+
                     pStrokes->addToGroup(item);
                 }
 
@@ -843,7 +848,8 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
         //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
         mRemovedItems << intersectedPolygonItem;
-        intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
+        if (intersectedPolygonItem->strokesGroup())
+            intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
         removeItem(intersectedPolygonItem);
     }
 
@@ -1488,15 +1494,13 @@ UBGraphicsTextItem* UBGraphicsScene::textForObjectName(const QString& pString, c
     if(!textItem){
         textItem = addTextWithFont(pString,QPointF(0,0) ,72,UBSettings::settings()->fontFamily(),true,false);
         textItem->setObjectName(objectName);
-        QSizeF size = textItem->size();
-        textItem->setPos(QPointF(-size.width()/2.0,-size.height()/2.0));
         textItem->setData(UBGraphicsItemData::ItemEditable,QVariant(false));
+        textItem->adjustSize();
+        textItem->setPlainText(pString);
+        textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     }
 
-    textItem->setPlainText(pString);
-    textItem->adjustSize();
     textItem->clearFocus();
-    textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     return textItem;
 }
 
@@ -1863,6 +1867,7 @@ void UBGraphicsScene::addMagnifier(UBMagnifierParams params)
     connect(magniferControlViewWidget, SIGNAL(magnifierClose_Signal()), this, SLOT(closeMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomIn_Signal()), this, SLOT(zoomInMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomOut_Signal()), this, SLOT(zoomOutMagnifier()));
+    connect(magniferControlViewWidget, SIGNAL(magnifierDrawingModeChange_Signal(int)), this, SLOT(changeMagnifierMode(int)));
     connect(magniferControlViewWidget, SIGNAL(magnifierResized_Signal(qreal)), this, SLOT(resizedMagnifier(qreal)));
 
     setModified(true);
@@ -1927,6 +1932,14 @@ void UBGraphicsScene::zoomOutMagnifier()
         magniferDisplayViewWidget->setZoom(magniferDisplayViewWidget->params.zoom - 0.5);
         setModified(true);
     }
+}
+
+void UBGraphicsScene::changeMagnifierMode(int mode)
+{
+    if(magniferControlViewWidget)
+        magniferControlViewWidget->setDrawingMode(mode);
+    if(magniferDisplayViewWidget)
+        magniferDisplayViewWidget->setDrawingMode(mode);
 }
 
 void UBGraphicsScene::resizedMagnifier(qreal newPercent)

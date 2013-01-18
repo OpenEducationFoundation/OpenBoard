@@ -25,6 +25,7 @@
 #include "gui/UBMainWindow.h"
 
 #include <QtXml>
+#include <QVariant>
 
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
@@ -48,6 +49,8 @@
 
 #include "interfaces/IDataStorage.h"
 
+#include "document/UBDocumentController.h"
+
 #include "core/memcheck.h"
 
 const QString UBPersistenceManager::imageDirectory = "images"; // added to UBPersistenceManager::mAllDirectories
@@ -56,6 +59,10 @@ const QString UBPersistenceManager::widgetDirectory = "widgets"; // added to UBP
 const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects";
+
+const QString UBPersistenceManager::myDocumentsName = "MyDocuments";
+const QString UBPersistenceManager::modelsName = "Models";
+const QString UBPersistenceManager::untitledDocumentsName = "UntitledDocuments";
 
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
@@ -72,6 +79,10 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << teacherGuideDirectory;
 
     documentProxies = allDocumentProxies();
+    mDocumentTreeStructureModel = new UBDocumentTreeModel(this);
+    createDocumentProxiesStructure();
+
+
     emit proxyListChanged();
 }
 
@@ -101,13 +112,78 @@ UBPersistenceManager::~UBPersistenceManager()
     }
 }
 
-QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
+void UBPersistenceManager::createDocumentProxiesStructure()
 {
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
 
     QDir rootDir(mDocumentRepositoryPath);
     rootDir.mkpath(rootDir.path());
 
+    QFileInfoList contentList = rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed);
+    createDocumentProxiesStructure(contentList);
+}
+
+void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &contentInfo)
+{
+    foreach(QFileInfo path, contentInfo)
+    {
+        QString fullPath = path.absoluteFilePath();
+
+        QDir dir(fullPath);
+
+        if (dir.entryList(QDir::Files | QDir::NoDotAndDotDot).size() > 0)
+        {
+            QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(fullPath);
+            QString docGroupName = metadatas.value(UBSettings::documentGroupName, QString()).toString();
+            QString docName = metadatas.value(UBSettings::documentName, QString()).toString();
+
+            if (docName.isEmpty()) {
+                qDebug() << "Group name and document name are empty in UBPersistenceManager::createDocumentProxiesStructure()";
+                continue;
+            }
+
+//            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
+            QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
+            if (!parentIndex.isValid()) {
+                return;
+            }
+
+            UBDocumentProxy* docProxy = new UBDocumentProxy(fullPath); // managed in UBDocumentTreeNode
+            foreach(QString key, metadatas.keys()) {
+                docProxy->setMetaData(key, metadatas.value(key));
+            }
+
+            docProxy->setPageCount(sceneCount(docProxy));
+            mDocumentTreeStructureModel->addNode(new UBDocumentTreeNode(UBDocumentTreeNode::Document, docName, QString(), docProxy), parentIndex);
+//            docParent->addChild();
+        }
+    }
+}
+
+QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)
+{
+    QStringList pathList = str.split("/", QString::SkipEmptyParts);
+
+    if (pathList.isEmpty()) {
+        pathList.append(myDocumentsName);
+        pathList.append(untitledDocumentsName);
+    }
+
+    if (pathList.first() != myDocumentsName
+            && pathList.first() != UBSettings::trashedDocumentGroupNamePrefix
+            && pathList.first() != modelsName) {
+        pathList.prepend(myDocumentsName);
+    }
+
+    return pathList.join("/");
+}
+
+QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
+{
+    mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
+
+    QDir rootDir(mDocumentRepositoryPath);
+    rootDir.mkpath(rootDir.path());
 
     QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
     watcher->addPath(mDocumentRepositoryPath);
@@ -127,15 +203,16 @@ QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
         {
             UBDocumentProxy* proxy = new UBDocumentProxy(fullPath); // deleted in UBPersistenceManager::destructor
 
+            qDebug() << "loading path";
             QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(fullPath);
 
             foreach(QString key, metadatas.keys())
             {
+                qDebug() << key << metadatas.value(key);
                 proxy->setMetaData(key, metadatas.value(key));
             }
 
             proxy->setPageCount(sceneCount(proxy));
-
             proxies << QPointer<UBDocumentProxy>(proxy);
 
         }
@@ -239,11 +316,17 @@ QStringList UBPersistenceManager::allWidgets(const QDir& dir)
 }
 
 
-UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage)
+UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage, QString directory, int pageCount)
 {
-    checkIfDocumentRepositoryExists();
-
-    UBDocumentProxy *doc = new UBDocumentProxy(); // deleted in UBPersistenceManager::destructor
+    UBDocumentProxy *doc;
+    if(directory.length() != 0 ){
+        doc = new UBDocumentProxy(directory); // deleted in UBPersistenceManager::destructor
+        doc->setPageCount(pageCount);
+    }
+    else{
+        checkIfDocumentRepositoryExists();
+        doc = new UBDocumentProxy();
+    }
 
     if (pGroupName.length() > 0)
     {
@@ -264,11 +347,9 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
 
+    mDocumentTreeStructureModel->addDocument(doc);
+
     emit proxyListChanged();
-
-    emit documentCreated(doc);
-
-    mDocumentCreatedDuringSession << doc;
 
     return doc;
 }
@@ -309,6 +390,7 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     }
 
     documentProxies << QPointer<UBDocumentProxy>(doc);
+    mDocumentTreeStructureModel->addDocument(doc);
 
     emit proxyListChanged();
 
@@ -324,19 +406,13 @@ void UBPersistenceManager::deleteDocument(UBDocumentProxy* pDocumentProxy)
 
     emit documentWillBeDeleted(pDocumentProxy);
 
+    Q_ASSERT(QFileInfo(pDocumentProxy->persistencePath()).exists());
     UBFileSystemUtils::deleteDir(pDocumentProxy->persistencePath());
-
-    documentProxies.removeAll(QPointer<UBDocumentProxy>(pDocumentProxy));
-    mDocumentCreatedDuringSession.removeAll(pDocumentProxy);
 
     mSceneCache.removeAllScenes(pDocumentProxy);
 
     pDocumentProxy->deleteLater();
-
-    emit proxyListChanged();
-
 }
-
 
 UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocumentProxy)
 {
@@ -615,7 +691,7 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
     UBBoardPaletteManager* paletteManager = UBApplication::boardController->paletteManager();
     bool teacherGuideModified = false;
     if(UBApplication::app()->boardController->currentPage() == pSceneIndex &&  paletteManager->teacherGuideDockWidget())
-    	teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
+        teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
 
     if (pDocumentProxy->isModified() || teacherGuideModified)
         UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
@@ -761,7 +837,7 @@ bool UBPersistenceManager::addDirectoryContentToDocument(const QString& document
     foreach(QString dir, mDocumentSubDirectories)
     {
         qDebug() << "copying " << documentRootFolder << "/" << dir << " to " << pDocument->persistencePath() << "/" + dir;
-        
+
         QDir srcDir(documentRootFolder + "/" + dir);
         if (srcDir.exists())
             if (!UBFileSystemUtils::copyDir(documentRootFolder + "/" + dir, pDocument->persistencePath() + "/" + dir))
@@ -844,24 +920,28 @@ bool UBPersistenceManager::isEmpty(UBDocumentProxy* pDocumentProxy)
 
 void UBPersistenceManager::purgeEmptyDocuments()
 {
-    if(!mHasPurgedDocuments) // hack to workaround the fact that app closing is called twice :-(
+    QList<UBDocumentProxy*> toBeDeleted;
+
+    foreach(UBDocumentProxy* docProxy, mDocumentTreeStructureModel->newDocuments())
     {
-        QList<UBDocumentProxy*> toBeDeleted;
-
-        foreach(UBDocumentProxy* docProxy, mDocumentCreatedDuringSession)
+        if (isEmpty(docProxy)
+            && !docProxy->metaData("sessionTitle").toString().size()
+            && !docProxy->metaData("sessionAuthors").toString().size()
+            && !docProxy->metaData("sessionObjectives").toString().size()
+            && !docProxy->metaData("sessionKeywords").toString().size()
+            && !docProxy->metaData("sessionGradeLevel").toString().size()
+            && !docProxy->metaData("sessionSubjects").toString().size()
+            && !docProxy->metaData("sessionType").toString().size()
+            && !docProxy->metaData("sessionLicence").toString().size()
+            )
         {
-            if (isEmpty(docProxy))
-            {
-                toBeDeleted << docProxy;
-            }
+            toBeDeleted << docProxy;
         }
+    }
 
-        foreach(UBDocumentProxy* docProxy, toBeDeleted)
-        {
-            deleteDocument(docProxy);
-        }
-
-        mHasPurgedDocuments = true;
+    foreach(UBDocumentProxy* docProxy, toBeDeleted)
+    {
+        deleteDocument(docProxy);
     }
 }
 
@@ -873,7 +953,7 @@ QString UBPersistenceManager::teacherGuideAbsoluteObjectPath(UBDocumentProxy* pD
 QString UBPersistenceManager::addObjectToTeacherGuideDirectory(UBDocumentProxy* pDocumentProxy, QString pPath)
 {
     QString path = UBFileSystemUtils::removeLocalFilePrefix(pPath);
-	QFileInfo fi(path);
+    QFileInfo fi(path);
     QString uuid = QUuid::createUuid();
 
     if (!fi.exists() || !pDocumentProxy)
@@ -923,8 +1003,8 @@ QString UBPersistenceManager::addWidgetToTeacherGuideDirectory(UBDocumentProxy* 
     return destPath;
 }
 
-bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy, 
-                                                     QString path, 
+bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy,
+                                                     QString path,
                                                      const QString& subdir,
                                                      QUuid objectUuid,
                                                      QString& destinationPath,
@@ -975,12 +1055,12 @@ bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy,
     }
     else
     {
-        return false;    
+        return false;
     }
 }
 
-bool UBPersistenceManager::addGraphicsWidgteToDocument(UBDocumentProxy *pDocumentProxy, 
-                                                       QString path, 
+bool UBPersistenceManager::addGraphicsWidgetToDocument(UBDocumentProxy *pDocumentProxy,
+                                                       QString path,
                                                        QUuid objectUuid,
                                                        QString& destinationPath)
 {

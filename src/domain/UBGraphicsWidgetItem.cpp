@@ -924,7 +924,7 @@ UBGraphicsW3CWidgetItem::Metadata UBGraphicsW3CWidgetItem::metadatas() const
 
 QString UBGraphicsW3CWidgetItem::createNPAPIWrapper(const QString& url, const QString& pMimeType, const QSize& sizeHint, const QString& pName)
 {
-    const QString userWidgetPath = UBSettings::settings()->userInteractiveDirectory() + "/" + tr("Web");
+    const QString userWidgetPath = UBSettings::settings()->userWidgetPath();
     QDir userWidgetDir(userWidgetPath);
 
     return createNPAPIWrapperInDir(url, userWidgetDir, pMimeType, sizeHint, pName);
@@ -1141,6 +1141,8 @@ void UBGraphicsW3CWidgetItem::loadNPAPIWrappersTemplates()
         QString etcPath = UBPlatformUtils::applicationResourcesDirectory() + "/etc/";
 
         QDir etcDir(etcPath);
+
+        qDebug() << etcDir.entryList().count();
 
         foreach(QString fileName, etcDir.entryList()) {
             if (fileName.startsWith("npapi-wrapper") && (fileName.endsWith(".htm") || fileName.endsWith(".html"))) {

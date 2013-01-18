@@ -49,6 +49,7 @@ class UBGraphicsWidgetItem;
 class UBBoardPaletteManager;
 class UBItem;
 class UBGraphicsItem;
+class UBDocumentNavigator;
 
 
 class UBBoardController : public UBDocumentContainer
@@ -68,6 +69,7 @@ class UBBoardController : public UBDocumentContainer
         QSize controlViewport();
         QRectF controlGeometry();
         void closing();
+        void addLinkToPage(QString sourceUrl, QSize size = QSize(340,200), QPointF pos = QPointF(0,0), const QString &embedCode = QString());
 
         int currentPage();
 
@@ -174,6 +176,8 @@ class UBBoardController : public UBDocumentContainer
 
         QString actionGroupText(){ return mActionGroupText;}
         QString actionUngroupText(){ return mActionUngroupText;}
+        void setDocumentNavigator(UBDocumentNavigator *navigator){mDocumentNavigator = navigator;}
+        UBDocumentNavigator *documentNavigator() const {return mDocumentNavigator;}
 
     public slots:
         void showDocumentsDialog();
@@ -204,7 +208,7 @@ class UBBoardController : public UBDocumentContainer
         void downloadURL(const QUrl& url, QString contentSourceUrl = QString(), const QPointF& pPos = QPointF(0.0, 0.0), const QSize& pSize = QSize(), bool isBackground = false, bool internalData = false);
         UBItem *downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pHeader,
                                  QByteArray pData, QPointF pPos, QSize pSize,
-                                 bool isBackground = false, bool internalData = false);
+                                 bool isSyncOperation = true, bool isBackground = false, bool internalData = false);
         void changeBackground(bool isDark, bool isCrossed);
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
@@ -279,6 +283,7 @@ class UBBoardController : public UBDocumentContainer
         UBBoardView *mControlView;
         UBBoardView *mDisplayView;
         QWidget *mControlContainer;
+        UBDocumentNavigator *mDocumentNavigator;
         QHBoxLayout *mControlLayout;
         qreal mZoomFactor;
         bool mIsClosing;

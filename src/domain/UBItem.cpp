@@ -80,6 +80,11 @@ QUuid UBGraphicsItem::getOwnUuid(QGraphicsItem *item)
     return idCandidate == QUuid().toString() ? QUuid() : QUuid(idCandidate);
 }
 
+qreal UBGraphicsItem::getOwnZValue(QGraphicsItem *item)
+{
+    return item->data(UBGraphicsItemData::ItemOwnZValue).toReal();
+}
+
 void UBGraphicsItem::remove(bool canUndo)
 {
     if (Delegate())

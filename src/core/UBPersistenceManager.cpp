@@ -26,6 +26,9 @@
 
 #include <QtXml>
 #include <QVariant>
+#include <QDomDocument>
+#include <QXmlStreamWriter>
+#include <QModelIndex>
 
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
@@ -63,6 +66,9 @@ const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects
 const QString UBPersistenceManager::myDocumentsName = "MyDocuments";
 const QString UBPersistenceManager::modelsName = "Models";
 const QString UBPersistenceManager::untitledDocumentsName = "UntitledDocuments";
+const QString UBPersistenceManager::foldersXmlStorageName = "folders.xml";
+const QString UBPersistenceManager::tFolder = "folder";
+const QString UBPersistenceManager::aName = "name";
 
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
@@ -70,6 +76,8 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     : QObject(pParent)
     , mHasPurgedDocuments(false)
 {
+
+    xmlFolderStructureFilename = "model";
 
     mDocumentSubDirectories << imageDirectory;
     mDocumentSubDirectories << objectDirectory;
@@ -119,8 +127,24 @@ void UBPersistenceManager::createDocumentProxiesStructure()
     QDir rootDir(mDocumentRepositoryPath);
     rootDir.mkpath(rootDir.path());
 
-    QFileInfoList contentList = rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed);
-    createDocumentProxiesStructure(contentList);
+    foreach(QFileInfo path, rootDir.entryInfoList(QDir::Files | QDir::NoDotAndDotDot))
+    {
+        QString foundName = path.fileName();
+        if (foldersXmlStorageName == foundName)
+        {
+            QDomDocument xmlDom;
+            QFile inFile;
+            inFile.setFileName(path.filePath());
+            inFile.open(QIODevice::ReadOnly);
+            QString domString(inFile.readAll());
+            if (xmlDom.setContent(domString))
+                loadFolderTreeFromXml("", xmlDom.firstChildElement());
+
+            inFile.close();
+        }
+    }
+
+    createDocumentProxiesStructure(rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed));
 }
 
 void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &contentInfo)
@@ -176,6 +200,27 @@ QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)
     }
 
     return pathList.join("/");
+}
+
+void UBPersistenceManager::closing()
+{
+    QDir rootDir(mDocumentRepositoryPath);
+    rootDir.mkpath(rootDir.path());
+
+    QFile outFile;
+    outFile.setFileName(mDocumentRepositoryPath+"/"+foldersXmlStorageName);
+    outFile.open(QIODevice::WriteOnly);
+
+    QXmlStreamWriter writer(&outFile);
+    writer.setAutoFormatting(true);
+    writer.writeStartDocument();
+    writer.writeStartElement("content");
+    saveFoldersTreeToXml(writer, mDocumentTreeStructureModel->indexForNode(mDocumentTreeStructureModel->rootNode()));
+    writer.writeEndElement();
+    writer.writeEndDocument();
+
+    outFile.close();
+
 }
 
 QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
@@ -1109,6 +1154,42 @@ void UBPersistenceManager::checkIfDocumentRepositoryExists()
     }
 }
 
+void UBPersistenceManager::saveFoldersTreeToXml(QXmlStreamWriter &writer, const QModelIndex &parentIndex)
+{
+    for (int i = 0; i < mDocumentTreeStructureModel->rowCount(parentIndex); i++) 
+    {
+        QModelIndex currentIndex = mDocumentTreeStructureModel->index(i, 0, parentIndex);
+        if (mDocumentTreeStructureModel->isCatalog(currentIndex))
+        {
+            writer.writeStartElement(tFolder);
+            writer.writeAttribute(aName, mDocumentTreeStructureModel->nodeFromIndex(currentIndex)->nodeName());            
+            saveFoldersTreeToXml(writer, currentIndex);
+            writer.writeEndElement();
+        }
+    }
+}
+
+void UBPersistenceManager::loadFolderTreeFromXml(const QString &path, const QDomElement &element)
+{
+
+    QDomElement iterElement = element.firstChildElement();
+    while(!iterElement.isNull())
+    {
+        QString leafPath;
+        if (tFolder == iterElement.tagName())
+        {
+            leafPath = iterElement.attribute(aName);
+
+            if (!leafPath.isEmpty())
+            {
+                mDocumentTreeStructureModel->goTo(path + "/" + leafPath);
+                if (!iterElement.firstChildElement().isNull())
+                    loadFolderTreeFromXml(path + "/" +  leafPath, iterElement);
+            }
+        }
+        iterElement = iterElement.nextSiblingElement();
+    }
+}
 
 bool UBPersistenceManager::mayHaveVideo(UBDocumentProxy* pDocumentProxy)
 {

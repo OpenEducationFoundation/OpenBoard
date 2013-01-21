@@ -2450,6 +2450,7 @@ void UBDocumentController::closing()
 
     UBSettings::settings()->setValue("Document/EmptyGroupNames", emptyGroups);
 
+    UBPersistenceManager::persistenceManager()->closing();
 }
 
 void UBDocumentController::addToDocument()

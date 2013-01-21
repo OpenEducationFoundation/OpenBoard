@@ -28,6 +28,8 @@
 
 #include "UBSceneCache.h"
 
+class QDomNode;
+class QDomElement;
 class UBDocument;
 class UBDocumentProxy;
 class UBGraphicsScene;
@@ -56,6 +58,9 @@ class UBPersistenceManager : public QObject
         static const QString myDocumentsName;
         static const QString modelsName;
         static const QString untitledDocumentsName;
+        static const QString foldersXmlStorageName;
+        static const QString tFolder;
+        static const QString aName;
 
         static UBPersistenceManager* persistenceManager();
         static void destroy();
@@ -132,6 +137,7 @@ class UBPersistenceManager : public QObject
 
         QString adjustDocumentVirtualPath(const QString &str);
 
+        void closing();
 
     signals:
 
@@ -161,6 +167,11 @@ class UBPersistenceManager : public QObject
         void generatePathIfNeeded(UBDocumentProxy* pDocumentProxy);
 
         void checkIfDocumentRepositoryExists();
+
+        void saveFoldersTreeToXml(QXmlStreamWriter &writer, const QModelIndex &parentIndex);
+        void loadFolderTreeFromXml(const QString &path, const QDomElement &element);
+
+        QString xmlFolderStructureFilename;
 
         UBSceneCache mSceneCache;
 

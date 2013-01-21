@@ -127,6 +127,7 @@ public:
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
     void setCurrentDocument(UBDocumentProxy *pDocument);
     void setRootNode(UBDocumentTreeNode *pRoot);
+    UBDocumentTreeNode *rootNode() const {return mRootNode;}
     UBDocumentProxy *proxyForIndex(const QModelIndex &pIndex) const;
     QString virtualDirForIndex(const QModelIndex &pIndex) const;
     QString virtualPathForIndex(const QModelIndex &pIndex) const;

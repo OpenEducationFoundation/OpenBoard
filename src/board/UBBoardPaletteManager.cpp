@@ -581,8 +581,6 @@ void UBBoardPaletteManager::toggleBackgroundPalette(bool checked)
         UBApplication::mainWindow->actionNewPage->setChecked(false);
 
         mBackgroundsPalette->adjustSizeAndPosition();
-        mBackgroundsPalette->move((mContainer->width() - mBackgroundsPalette->width()) / 2,
-            (mContainer->height() - mBackgroundsPalette->height()) / 5);
     }
 }
 
@@ -608,8 +606,6 @@ void UBBoardPaletteManager::toggleErasePalette(bool checked)
         UBApplication::mainWindow->actionNewPage->setChecked(false);
 
         mErasePalette->adjustSizeAndPosition();
-        mErasePalette->move((mContainer->width() - mErasePalette->width()) / 2,
-            (mContainer->height() - mErasePalette->height()) / 5);
     }
 }
 
@@ -629,8 +625,6 @@ void UBBoardPaletteManager::togglePagePalette(bool checked)
         UBApplication::mainWindow->actionErase->setChecked(false);
 
         mPagePalette->adjustSizeAndPosition();
-        mPagePalette->move((mContainer->width() - mPagePalette->width()) / 2,
-            (mContainer->height() - mPagePalette->height()) / 5);
     }
 }
 
@@ -656,15 +650,44 @@ void UBBoardPaletteManager::addItem(const QUrl& pUrl)
 
     mAddItemPalette->show();
     mAddItemPalette->adjustSizeAndPosition();
-
-    mAddItemPalette->move((mContainer->width() - mAddItemPalette->width()) / 2,
-        (mContainer->height() - mAddItemPalette->height()) / 5);
 }
 
 void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool isInit)
 {
     bool rightPaletteVisible = mRightPalette->switchMode(newMode);
     bool leftPaletteVisible = mLeftPalette->switchMode(newMode);
+
+    if (newMode != eUBDockPaletteWidget_BOARD)
+    {
+        if (mBackgroundsPalette)
+            mBackgroundsPalette->savePos();
+        if (mKeyboardPalette)
+            mKeyboardPalette->savePos();
+        if (mZoomPalette)
+            mZoomPalette->savePos();
+        if (mPagePalette)
+            mPagePalette->savePos();
+        if (mErasePalette)
+            mErasePalette->savePos();
+        if (mAddItemPalette)
+            mAddItemPalette->savePos();
+    }
+    else
+    {
+        if (mBackgroundsPalette)
+            mBackgroundsPalette->restorePos();
+        if (mKeyboardPalette)
+            mKeyboardPalette->restorePos();
+        if (mZoomPalette)
+            mZoomPalette->restorePos();
+        if (mPagePalette)
+            mPagePalette->restorePos();
+        if (mErasePalette)
+            mErasePalette->restorePos();
+        if (mAddItemPalette)
+            mAddItemPalette->restorePos();
+    }
+
 
     switch( newMode )
     {
@@ -836,9 +859,6 @@ void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos, 
 
     mAddItemPalette->show();
     mAddItemPalette->adjustSizeAndPosition();
-
-    mAddItemPalette->move((mContainer->width() - mAddItemPalette->width()) / 2,
-        (mContainer->height() - mAddItemPalette->height()) / 5);
 }
 
 

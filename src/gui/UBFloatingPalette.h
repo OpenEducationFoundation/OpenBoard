@@ -66,6 +66,9 @@ class UBFloatingPalette : public QWidget
 
         void setMinimizePermission(bool permission);
 
+        void savePos();
+        void restorePos();
+
     protected:
 
         virtual void enterEvent(QEvent *event);
@@ -97,6 +100,8 @@ class UBFloatingPalette : public QWidget
         bool mCanBeMinimized;
         eMinimizedLocation mMinimizedLocation;
         Qt::Corner mDefaultPosition;
+
+        QPoint mOldPos;
 
     signals:
         void mouseEntered();

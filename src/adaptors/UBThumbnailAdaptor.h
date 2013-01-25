@@ -41,6 +41,7 @@ public:
 
     static const QPixmap* get(UBDocumentProxy* proxy, int index);
     static void load(UBDocumentProxy* proxy, QList<const QPixmap*>& list);
+    static void clearThumbs(QList<const QPixmap*>& list);
 
 private:
     static void generateMissingThumbnails(UBDocumentProxy* proxy);

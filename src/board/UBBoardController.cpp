@@ -1628,11 +1628,11 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
 
     if (targetScene)
     {
-        freezeW3CWidgets(true);
-
-        persistCurrentScene();
-
-        ClearUndoStack();
+        if (mActiveScene) {
+            freezeW3CWidgets(true);
+            persistCurrentScene();
+            ClearUndoStack();
+        }
 
         mActiveScene = targetScene;
         mActiveSceneIndex = index;
@@ -1817,8 +1817,12 @@ void UBBoardController::documentWillBeDeleted(UBDocumentProxy* pProxy)
 {
     if (selectedDocument() == pProxy)
     {
-        if (!mIsClosing)
-            setActiveDocumentScene(UBPersistenceManager::persistenceManager()->createDocument());
+        if (!mIsClosing) {
+//            setActiveDocumentScene(UBPersistenceManager::persistenceManager()->createDocument());
+            mActiveScene = 0;
+            mActiveSceneIndex = -1;
+//            mActiveScene->deleteLater();
+        }
     }
 }
 

@@ -78,7 +78,6 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << audioDirectory;
     mDocumentSubDirectories << teacherGuideDirectory;
 
-    documentProxies = allDocumentProxies();
     mDocumentTreeStructureModel = new UBDocumentTreeModel(this);
     createDocumentProxiesStructure();
 
@@ -105,11 +104,6 @@ void UBPersistenceManager::destroy()
 
 UBPersistenceManager::~UBPersistenceManager()
 {
-    foreach(QPointer<UBDocumentProxy> proxyGuard, documentProxies)
-    {
-        if (!proxyGuard.isNull())
-            delete proxyGuard.data();
-    }
 }
 
 void UBPersistenceManager::createDocumentProxiesStructure(bool interactive)
@@ -402,7 +396,6 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName
 
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
-    documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
     bool addDoc = false;
     if (!promptDialogIfExists) {
         addDoc = true;
@@ -463,7 +456,6 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     }
 
     //work around the
-    documentProxies << QPointer<UBDocumentProxy>(doc);
     bool addDoc = false;
     if (!promptDialogIfExists) {
         addDoc = true;
@@ -526,8 +518,6 @@ UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocum
     persistDocumentMetadata(copy);
 
     copy->setPageCount(sceneCount(copy));
-
-    documentProxies << QPointer<UBDocumentProxy>(copy);
 
     emit proxyListChanged();
 
@@ -935,48 +925,6 @@ bool UBPersistenceManager::addDirectoryContentToDocument(const QString& document
     pDocument->setPageCount(sceneCount(pDocument));
 
     return false;
-}
-
-
-void UBPersistenceManager::upgradeDocumentIfNeeded(UBDocumentProxy* pDocumentProxy)
-{
-    int pageCount = pDocumentProxy->pageCount();
-
-    for(int index = 0 ; index < pageCount; index++)
-    {
-        UBSvgSubsetAdaptor::upgradeScene(pDocumentProxy, index);
-    }
-
-    pDocumentProxy->setMetaData(UBSettings::documentVersion, UBSettings::currentFileVersion);
-
-    UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
-}
-
-
-void UBPersistenceManager::upgradeAllDocumentsIfNeeded()
-{
-    foreach(QPointer<UBDocumentProxy> proxy, documentProxies)
-    {
-        upgradeDocumentIfNeeded(proxy);
-    }
-}
-
-
-
-UBDocumentProxy* UBPersistenceManager::documentByUuid(const QUuid& pUuid)
-{
-    for(int i = 0 ; i < documentProxies.length(); i++)
-    {
-        UBDocumentProxy* proxy = documentProxies.at(i);
-
-        if (proxy && proxy->uuid() == pUuid)
-        {
-            return proxy;
-        }
-    }
-
-    return 0;
-
 }
 
 

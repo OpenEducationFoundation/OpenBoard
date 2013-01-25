@@ -114,12 +114,13 @@ void UBDocumentContainer::insertThumbPage(int index)
 
 void UBDocumentContainer::reloadThumbnails()
 {
-    if (mCurrentDocument)
-    {
+    if (mCurrentDocument) {
         UBThumbnailAdaptor::load(mCurrentDocument, mDocumentThumbs);
         qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs.size();
-        emit documentThumbnailsUpdated(this);
+    } else {
+        UBThumbnailAdaptor::clearThumbs(mDocumentThumbs);
     }
+    emit documentThumbnailsUpdated(this);
 }
 
 int UBDocumentContainer::pageFromSceneIndex(int sceneIndex)

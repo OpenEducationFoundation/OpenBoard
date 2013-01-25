@@ -158,7 +158,9 @@ public:
     void addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent);
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
     QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
+    void moveIndex(const QModelIndex &source, const QModelIndex &newParent);
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
+    QModelIndex currentIndex() {return indexForNode(mCurrentNode);} //index representing a current document
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
     void setCurrentDocument(UBDocumentProxy *pDocument);
     void setRootNode(UBDocumentTreeNode *pRoot);
@@ -386,7 +388,6 @@ protected:
 
     private slots:
         void documentZoomSliderValueChanged (int value);
-        void loadDocumentProxies();
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
         void itemSelectionChanged(LastSelectedElementType newSelection);

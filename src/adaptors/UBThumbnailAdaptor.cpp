@@ -123,8 +123,15 @@ void UBThumbnailAdaptor::load(UBDocumentProxy* proxy, QList<const QPixmap*>& lis
     foreach(const QPixmap* pm, list)
         delete pm;
     list.clear();
-    for(int i=0; i<proxy->pageCount(); i++)
+    for(int i=0; proxy && i<proxy->pageCount(); i++)
         list.append(get(proxy, i));
+}
+
+void UBThumbnailAdaptor::clearThumbs(QList<const QPixmap *> &list)
+{
+    foreach(const QPixmap* pm, list)
+        delete pm;
+    list.clear();
 }
 
 void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* pScene, int pageIndex, bool overrideModified)

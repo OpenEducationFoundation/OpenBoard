@@ -28,6 +28,8 @@
 
 class UBCoreGraphicsScene : public QGraphicsScene
 {
+    Q_OBJECT
+
     public:
         UBCoreGraphicsScene(QObject * parent = 0);
         virtual ~UBCoreGraphicsScene();

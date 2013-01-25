@@ -685,6 +685,16 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
     return newParentIndex;
 }
 
+void UBDocumentTreeModel::moveIndex(const QModelIndex &source, const QModelIndex &newParent)
+{
+    UBDocumentTreeNode *sourceNode = nodeFromIndex(source);
+    QPersistentModelIndex clonedTopLevel = copyIndexToNewParent(source, newParent);
+    if (sourceNode == mCurrentNode) {
+        emit currentIndexMoved(clonedTopLevel, source);
+    }
+    removeRow(source.row(), source.parent());
+}
+
 void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
 {
     UBDocumentTreeNode *testCurNode = findProxy(pDocument, mRootNode);
@@ -1464,8 +1474,6 @@ void UBDocumentController::setupViews()
         connect(mMainWindow->actionRename, SIGNAL(triggered()), this, SLOT(renameSelectedItem()));
         connect(mMainWindow->actionAddToWorkingDocument, SIGNAL(triggered()), this, SLOT(addToDocument()));
 
-        loadDocumentProxies();
-
         mDocumentUI->documentTreeWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         mDocumentUI->documentTreeWidget->setDragEnabled(true);
         mDocumentUI->documentTreeWidget->viewport()->setAcceptDrops(true);
@@ -1504,6 +1512,8 @@ void UBDocumentController::setupViews()
                 ,mDocumentUI->documentTreeView, SLOT(onModelIndexChanged(QModelIndex,QModelIndex)));
         connect(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel, SIGNAL(currentIndexMoved(QModelIndex,QModelIndex))
                 ,this, SLOT(currentIndexMoved(QModelIndex,QModelIndex)));
+        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)),
+                mBoardController, SLOT(documentWillBeDeleted(UBDocumentProxy*)));
 
         connect(mDocumentUI->thumbnailWidget, SIGNAL(sceneDropped(UBDocumentProxy*, int, int)), this, SLOT(moveSceneToIndex ( UBDocumentProxy*, int, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(resized()), this, SLOT(thumbnailViewResized()));
@@ -1529,7 +1539,6 @@ void UBDocumentController::setupViews()
 
         mMessageWindow->hide();
         mDocumentUI->documentTreeWidget->hide();
-
     }
 }
 
@@ -1561,7 +1570,6 @@ void UBDocumentController::setupPalettes()
         mMainWindow->actionDocumentTools->trigger();
     }
 }
-
 
 void UBDocumentController::show()
 {
@@ -1833,8 +1841,7 @@ void UBDocumentController::deleteSelectedItem()
         break;
 
     case MoveToTrash :
-        docModel->copyIndexToNewParent(currentIndex, docModel->trashIndex());
-        docModel->removeRow(currentIndex.row(), currentIndex.parent());
+        docModel->moveIndex(currentIndex, docModel->trashIndex());
         break;
 
     case CompleteDelete :
@@ -1854,8 +1861,7 @@ void UBDocumentController::deleteSelectedItem()
                 if (!testSubINdecurrentIndex.isValid()) {
                     break;
                 }
-                docModel->copyIndexToNewParent(testSubINdecurrentIndex, docModel->trashIndex());
-                docModel->removeRow(startInd, testSubINdecurrentIndex.parent());
+                docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
             }
         } else {
             emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
@@ -1989,8 +1995,7 @@ void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pD
         QModelIndex subIndex = docModel->index(0, 0, index);
         switch (static_cast<int>(pDeletionType)) {
         case MoveToTrash :
-            docModel->copyIndexToNewParent(subIndex, docModel->trashIndex());
-            docModel->removeRow(0, subIndex.parent());
+            docModel->moveIndex(subIndex, docModel->trashIndex());
             break;
 
         case CompleteDelete :
@@ -2013,10 +2018,9 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
         if (proxyData) {
             UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
             if (proxyData == mBoardController->selectedDocument()) {
-                mBoardController->pureSetDocument(proxyData);
+                mBoardController->pureSetDocument(0);
             }
         }
-
     }
     docModel->removeRow(pIndex.row(), pIndex.parent());
 }
@@ -2053,99 +2057,6 @@ void UBDocumentController::documentZoomSliderValueChanged (int value)
 
     UBSettings::settings()->documentThumbnailWidth->set(value);
 }
-
-
-void UBDocumentController::loadDocumentProxies()
-{
-    QList<QPointer<UBDocumentProxy> > proxies = UBPersistenceManager::persistenceManager()->documentProxies;
-
-    QStringList emptyGroupNames = UBSettings::settings()->value("Document/EmptyGroupNames", QStringList()).toStringList();
-
-    mDocumentUI->documentTreeWidget->clear();
-
-    QMap<QString, UBDocumentGroupTreeItem*> groupNamesMap;
-
-    UBDocumentGroupTreeItem* emptyGroupNameTi = 0;
-
-    mTrashTi = new UBDocumentGroupTreeItem(0, false); // deleted by the tree widget
-    mTrashTi->setGroupName(mDocumentTrashGroupName);
-    mTrashTi->setIcon(0, QIcon(":/images/trash.png"));
-
-    foreach (QPointer<UBDocumentProxy> proxy, proxies)
-    {
-        if (proxy)
-        {
-            QString docGroup = proxy->metaData(UBSettings::documentGroupName).toString();
-
-            bool isEmptyGroupName = false;
-            bool isInTrash = false;
-
-            if (docGroup.isEmpty()) // #see https://trac.assembla.com/uniboard/ticket/426
-            {
-                docGroup = mDefaultDocumentGroupName;
-                isEmptyGroupName = true;
-            }
-            else if (docGroup.startsWith(UBSettings::trashedDocumentGroupNamePrefix))
-            {
-                isInTrash = true;
-            }
-
-            QString docName = proxy->metaData(UBSettings::documentName).toString();
-
-            if (emptyGroupNames.contains(docGroup))
-                emptyGroupNames.removeAll(docGroup);
-
-            if (!groupNamesMap.contains(docGroup) && !isInTrash)
-            {
-                UBDocumentGroupTreeItem* docGroupItem = new UBDocumentGroupTreeItem(0, !isEmptyGroupName); // deleted by the tree widget
-                groupNamesMap.insert(docGroup, docGroupItem);
-                docGroupItem->setGroupName(docGroup);
-
-                if (isEmptyGroupName)
-                    emptyGroupNameTi = docGroupItem;
-            }
-
-            UBDocumentGroupTreeItem* docGroupItem;
-            if (isInTrash)
-                docGroupItem = mTrashTi;
-            else
-                docGroupItem = groupNamesMap.value(docGroup);
-
-            QTreeWidgetItem* docItem = new UBDocumentProxyTreeItem(docGroupItem, proxy, !isInTrash);
-            docItem->setText(0, docName);
-
-            if (mBoardController->selectedDocument() == proxy)
-            {
-                mDocumentUI->documentTreeWidget->expandItem(docGroupItem);
-                mDocumentUI->documentTreeWidget->setCurrentItem(docGroupItem);
-            }
-        }
-    }
-
-    foreach (const QString emptyGroupName, emptyGroupNames)
-    {
-        UBDocumentGroupTreeItem* docGroupItem = new UBDocumentGroupTreeItem(0); // deleted by the tree widget
-        groupNamesMap.insert(emptyGroupName, docGroupItem);
-        docGroupItem->setGroupName(emptyGroupName);
-    }
-
-    QList<QString> groupNamesList = groupNamesMap.keys();
-    qSort(groupNamesList);
-
-    foreach (const QString groupName, groupNamesList)
-    {
-        UBDocumentGroupTreeItem* ti = groupNamesMap.value(groupName);
-
-        if (ti != emptyGroupNameTi)
-            mDocumentUI->documentTreeWidget->addTopLevelItem(ti);
-    }
-
-    if (emptyGroupNameTi)
-        mDocumentUI->documentTreeWidget->addTopLevelItem(emptyGroupNameTi);
-
-    mDocumentUI->documentTreeWidget->addTopLevelItem(mTrashTi);
-}
-
 
 void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
 {

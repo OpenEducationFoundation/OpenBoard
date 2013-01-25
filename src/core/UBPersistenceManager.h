@@ -86,7 +86,7 @@ class UBPersistenceManager : public QObject
         UBGraphicsScene *getDocumentScene(UBDocumentProxy* pDocumentProxy, int sceneIndex) {return mSceneCache.value(pDocumentProxy, sceneIndex);}
         void reassignDocProxy(UBDocumentProxy *newDocument, UBDocumentProxy *oldDocument);
 
-        QList<QPointer<UBDocumentProxy> > documentProxies;
+//        QList<QPointer<UBDocumentProxy> > documentProxies;
         UBDocumentTreeNode *mDocumentTreeStructure;
         UBDocumentTreeModel *mDocumentTreeStructureModel;
 
@@ -104,12 +104,6 @@ class UBPersistenceManager : public QObject
         QString addWidgetToTeacherGuideDirectory(UBDocumentProxy* pDocumentProxy, QString pPath);
 
         bool addDirectoryContentToDocument(const QString& documentRootFolder, UBDocumentProxy* pDocument);
-
-        virtual void upgradeDocumentIfNeeded(UBDocumentProxy* pDocumentProxy);
-
-        virtual void upgradeAllDocumentsIfNeeded();
-
-        virtual UBDocumentProxy* documentByUuid(const QUuid& pUuid);
 
         void createDocumentProxiesStructure(bool interactive = false);
         void createDocumentProxiesStructure(const QFileInfoList &contentInfo, bool interactive = false);
@@ -147,33 +141,21 @@ class UBPersistenceManager : public QObject
         void documentSceneWillBeDeleted(UBDocumentProxy* pDocumentProxy, int pIndex);
 
     private:
-
         int sceneCount(const UBDocumentProxy* pDocumentProxy);
-
         static QStringList getSceneFileNames(const QString& folder);
-
         QList<QPointer<UBDocumentProxy> > allDocumentProxies();
-
         void renamePage(UBDocumentProxy* pDocumentProxy,
                 const int sourceIndex, const int targetIndex);
-
         void copyPage(UBDocumentProxy* pDocumentProxy,
                 const int sourceIndex, const int targetIndex);
-
         void generatePathIfNeeded(UBDocumentProxy* pDocumentProxy);
-
         void checkIfDocumentRepositoryExists();
 
         UBSceneCache mSceneCache;
-
         QStringList mDocumentSubDirectories;
-
         QMutex mDeletedListMutex;
-
         bool mHasPurgedDocuments;
-
         QString mDocumentRepositoryPath;
-
         QHash<int,QString>teacherBarNodeString;
 
     private slots:

@@ -562,7 +562,7 @@ QPersistentModelIndex UBDocumentTreeModel::persistentIndexForNode(UBDocumentTree
 UBDocumentTreeNode *UBDocumentTreeModel::findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const
 {
     foreach (UBDocumentTreeNode *curNode, pParent->children()) {
-        qDebug() << "current proxy is " << curNode;
+//        qDebug() << "current proxy is " << curNode;
         if (curNode->proxyData() == pSearch) {
             return curNode;
         } else if (curNode->children().count()) {
@@ -2478,6 +2478,7 @@ void UBDocumentController::closing()
 
     UBSettings::settings()->setValue("Document/EmptyGroupNames", emptyGroups);
 
+    UBPersistenceManager::persistenceManager()->closing();
 }
 
 void UBDocumentController::addToDocument()

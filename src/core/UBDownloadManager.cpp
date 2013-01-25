@@ -394,6 +394,7 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
         UBDownloadHttpFile* http = new UBDownloadHttpFile(desc.id, this);
         connect(http, SIGNAL(downloadProgress(int, qint64,qint64)), this, SLOT(onDownloadProgress(int,qint64,qint64)));
         connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)));
+        connect(http, SIGNAL(downloadError(int)), this, SLOT(onDownloadError(int)));
 
         //the desc.srcUrl is encoded. So we have to decode it before.
         QUrl url;
@@ -474,17 +475,85 @@ void UBDownloadManager::onDownloadError(int id)
 
     if(NULL != pReply)
     {
+        QString errorString = tr("Download failed.");
         // Check which error occured:
         switch(pReply->error())
         {
+            case QNetworkReply::ConnectionRefusedError:
+                errorString += " " + (tr("the remote server refused the connection (the server is not accepting requests)"));
+                break;
+            case QNetworkReply::RemoteHostClosedError:
+                errorString += " " + (tr("the remote server closed the connection prematurely, before the entire reply was received and processed"));
+                break;
+            case QNetworkReply::HostNotFoundError:
+                errorString += " " + (tr("the remote host name was not found (invalid hostname)"));
+                break;
+            case QNetworkReply::TimeoutError:
+                errorString += " " + (tr("the connection to the remote server timed out"));
+                break;
             case QNetworkReply::OperationCanceledError:
-                // For futur developments: do something in case of download aborting (message? remove the download?)
-            break;
-
+                errorString += " " + (tr("the operation was canceled via calls to abort() or close() before it was finished."));
+                break;
+            case QNetworkReply::SslHandshakeFailedError:
+                errorString += " " + (tr("the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted."));
+                break;
+            case QNetworkReply::TemporaryNetworkFailureError:
+                errorString += " " + (tr("the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established."));
+                break;
+            case QNetworkReply::ProxyConnectionRefusedError:
+                errorString += " " + (tr("the connection to the proxy server was refused (the proxy server is not accepting requests)"));
+                break;
+            case QNetworkReply::ProxyConnectionClosedError:
+                errorString += " " + (tr("the proxy server closed the connection prematurely, before the entire reply was received and processed"));
+                break;
+            case QNetworkReply::ProxyNotFoundError:
+                errorString += " " + (tr("the proxy host name was not found (invalid proxy hostname)"));
+                break;
+            case QNetworkReply::ProxyTimeoutError:
+                errorString += " " + (tr("the connection to the proxy timed out or the proxy did not reply in time to the request sent"));
+                break;
+            case QNetworkReply::ProxyAuthenticationRequiredError:
+                errorString += " " + (tr("the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)"));
+                break;
+            case QNetworkReply::ContentAccessDenied:
+                errorString += " " + (tr("the access to the remote content was denied (similar to HTTP error 401)"));
+                break;
+            case QNetworkReply::ContentOperationNotPermittedError:
+                errorString += " " + (tr("the operation requested on the remote content is not permitted"));
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                errorString += " " + (tr("the remote content was not found at the server (similar to HTTP error 404)"));
+                break;
+            case QNetworkReply::AuthenticationRequiredError:
+                errorString += " " + (tr("the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)"));
+                break;
+            case QNetworkReply::ContentReSendError:
+                errorString += " " + (tr("the request needed to be sent again, but this failed for example because the upload data could not be read a second time."));
+                break;
+            case QNetworkReply::ProtocolUnknownError:
+                errorString += " " + (tr("the Network Access API cannot honor the request because the protocol is not known"));
+                break;
+            case QNetworkReply::ProtocolInvalidOperationError:
+                errorString += " " + (tr("the requested operation is invalid for this protocol"));
+                break;
+            case QNetworkReply::UnknownNetworkError:
+                errorString += " " + (tr("an unknown network-related error was detected"));
+                break;
+            case QNetworkReply::UnknownProxyError:
+                errorString += " " + (tr("an unknown proxy-related error was detected"));
+                break;
+            case QNetworkReply::UnknownContentError:
+                errorString += " " + (tr("an unknown error related to the remote content was detected"));
+                break;
+            case QNetworkReply::ProtocolFailure:
+                errorString += " " + (tr("a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)"));
+                break;
             default:
                 // Check the documentation of QNetworkReply in Qt Assistant for the different error cases
             break;
         }
+        UBApplication::showMessage(errorString);
+        cancelDownload(id);
     }
 }
 

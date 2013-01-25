@@ -235,6 +235,9 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp)
             palette->resize(newPreferredSize.width(), palette->size().height());
         }
     }
+
+    if (parentWidget())
+        move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
 }
 
 void UBFloatingPalette::removeAllAssociatedPalette()
@@ -330,4 +333,14 @@ void UBFloatingPalette::minimizePalette(const QPoint& pos)
 void UBFloatingPalette::setMinimizePermission(bool permission)
 {
     mCanBeMinimized = permission;
+}
+
+void UBFloatingPalette::savePos()
+{
+    mOldPos = pos();
+}
+
+void UBFloatingPalette::restorePos()
+{
+    move(mOldPos);
 }

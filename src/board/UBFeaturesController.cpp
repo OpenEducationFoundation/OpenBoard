@@ -122,7 +122,7 @@ void UBFeaturesComputingThread::scanAll(QList<CategoryData> pScanningData
 
             QList<QUrl> curScanPaths = curData.pathData().values(static_cast<CategoryData::pathType>(n));
             foreach (QUrl curUrl, curScanPaths) {
-                qDebug() << "location" << i << "is" << curUrl.toLocalFile();
+//                qDebug() << "location" << i << "is" << curUrl.toLocalFile();R
                 scanFS(curUrl, curData.categoryFeature().getFullVirtualPath(), pFavoriteInfo, curData.subFolderPermissions(), extData);
             }
         }

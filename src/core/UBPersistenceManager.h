@@ -28,6 +28,8 @@
 
 #include "UBSceneCache.h"
 
+class QDomNode;
+class QDomElement;
 class UBDocument;
 class UBDocumentProxy;
 class UBGraphicsScene;
@@ -56,6 +58,9 @@ class UBPersistenceManager : public QObject
         static const QString myDocumentsName;
         static const QString modelsName;
         static const QString untitledDocumentsName;
+        static const QString fFolders;
+        static const QString tFolder;
+        static const QString aName;
 
         static UBPersistenceManager* persistenceManager();
         static void destroy();
@@ -128,6 +133,7 @@ class UBPersistenceManager : public QObject
 
         QString adjustDocumentVirtualPath(const QString &str);
 
+        void closing();
 
     signals:
 
@@ -140,16 +146,20 @@ class UBPersistenceManager : public QObject
         void documentSceneCreated(UBDocumentProxy* pDocumentProxy, int pIndex);
         void documentSceneWillBeDeleted(UBDocumentProxy* pDocumentProxy, int pIndex);
 
-    private:
+private:
         int sceneCount(const UBDocumentProxy* pDocumentProxy);
         static QStringList getSceneFileNames(const QString& folder);
-        QList<QPointer<UBDocumentProxy> > allDocumentProxies();
         void renamePage(UBDocumentProxy* pDocumentProxy,
-                const int sourceIndex, const int targetIndex);
+                        const int sourceIndex, const int targetIndex);
         void copyPage(UBDocumentProxy* pDocumentProxy,
-                const int sourceIndex, const int targetIndex);
+                      const int sourceIndex, const int targetIndex);
         void generatePathIfNeeded(UBDocumentProxy* pDocumentProxy);
         void checkIfDocumentRepositoryExists();
+
+        void saveFoldersTreeToXml(QXmlStreamWriter &writer, const QModelIndex &parentIndex);
+        void loadFolderTreeFromXml(const QString &path, const QDomElement &element);
+
+        QString xmlFolderStructureFilename;
 
         UBSceneCache mSceneCache;
         QStringList mDocumentSubDirectories;
@@ -157,6 +167,7 @@ class UBPersistenceManager : public QObject
         bool mHasPurgedDocuments;
         QString mDocumentRepositoryPath;
         QHash<int,QString>teacherBarNodeString;
+        QString mFoldersXmlStorageName;
 
     private slots:
         void documentRepositoryChanged(const QString& path);

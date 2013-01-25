@@ -107,6 +107,9 @@ public:
     int scrollbarHorisontalPadding() const { return 10;}
     int scrollbarVerticalIndent() const { return 0;}
 
+    QPixmap iconToLeft() const {return QPixmap(":images/library_open.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/library_close.png");}
+
 signals:
     void sendFileNameList(const QStringList lst);
     void allowNewFolderButton(bool pAllow);

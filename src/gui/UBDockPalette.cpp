@@ -652,11 +652,11 @@ void UBTabDockPalette::paintEvent(QPaintEvent *)
 
 		painter.save();
 		QPixmap transparencyPix(":/images/tab_mask.png");
-		if (dock->mCurrentTab != i) {
+                if (dock->mCurrentTab != i) {
 			iconPixmap.setAlphaChannel(transparencyPix);
 			QColor color(0x7F, 0x7F, 0x7F, 0x3F);
 			painter.setBrush(QBrush(color));
-		}
+        }
 
 		painter.drawPath(path);
 		painter.drawPixmap(2, yFrom + 2, width() - 4, TABSIZE - 4, iconPixmap);

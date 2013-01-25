@@ -42,6 +42,8 @@ public:
         return mode == eUBDockPaletteWidget_BOARD;
     }
 
+    QPixmap iconToLeft() const {return QPixmap(":images/download_open.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/download_close.png");}
 
 private:
     QVBoxLayout* mpLayout;

@@ -45,6 +45,7 @@ public:
     
     void setHoleSize(QSize size);
     void setMaskColor(QColor color);
+
 private:
     QSize sizeHint() const;
     void paintEvent(QPaintEvent *event);
@@ -66,6 +67,9 @@ public:
     {
         return mode == eUBDockPaletteWidget_BOARD;
     }
+
+    QPixmap iconToLeft() const {return QPixmap(":images/cache_open.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/cache_open.png");}
 
 public slots:
     void updateCurrentCache();

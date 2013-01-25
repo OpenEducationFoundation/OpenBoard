@@ -50,9 +50,6 @@ UBPageNavigationWidget::UBPageNavigationWidget(QWidget *parent, const char *name
 
     SET_STYLE_SHEET();
 
-    mIconToRight = QPixmap(":images/pages_open.png");
-    mIconToLeft = QPixmap(":images/pages_close.png");
-
     // Build the gui
     mLayout = new QVBoxLayout(this);
     setLayout(mLayout);

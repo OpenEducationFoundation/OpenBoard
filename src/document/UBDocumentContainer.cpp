@@ -51,8 +51,7 @@ void UBDocumentContainer::setDocument(UBDocumentProxy* document, bool forceReloa
 void UBDocumentContainer::duplicatePages(QList<int>& pageIndexes)
 {
     int offset = 0;
-    foreach(int sceneIndex, pageIndexes)
-    {
+    foreach(int sceneIndex, pageIndexes) {
         UBPersistenceManager::persistenceManager()->duplicateDocumentScene(mCurrentDocument, sceneIndex + offset);
         offset++;
     }

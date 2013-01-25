@@ -94,6 +94,7 @@ class UBSceneCache : public QHash<UBSceneCacheID, UBGraphicsScene*>
 
         void shiftUpScenes(UBDocumentProxy* proxy, int startIncIndex, int endIncIndex);
 
+        void reassignDocProxy(UBDocumentProxy *newDocument, UBDocumentProxy *oldDocument);
 
     private:
 

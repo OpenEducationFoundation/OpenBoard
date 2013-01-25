@@ -24,6 +24,7 @@
 #include "UBDockPaletteWidget.h"
 
 #include "core/memcheck.h"
+#include <QIcon>
 
 UBDockPaletteWidget::UBDockPaletteWidget(QWidget *parent, const char *name):QWidget(parent)
 {
@@ -35,14 +36,14 @@ UBDockPaletteWidget::~UBDockPaletteWidget()
 
 }
 
-QPixmap UBDockPaletteWidget::iconToRight()
+QPixmap UBDockPaletteWidget::iconToRight() const
 {
-    return mIconToRight;
+    return QPixmap();
 }
 
-QPixmap UBDockPaletteWidget::iconToLeft()
+QPixmap UBDockPaletteWidget::iconToLeft() const
 {
-    return mIconToLeft;
+    return QPixmap();
 }
 
 QString UBDockPaletteWidget::name()

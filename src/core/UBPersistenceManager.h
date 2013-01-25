@@ -60,8 +60,8 @@ class UBPersistenceManager : public QObject
         static UBPersistenceManager* persistenceManager();
         static void destroy();
 
-        virtual UBDocumentProxy* createDocument(const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = true, QString directory =QString(), int pageCount = 0);
-        virtual UBDocumentProxy* createDocumentFromDir(const QString& pDocumentDirectory, const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = false, bool addTitlePage = false);
+        virtual UBDocumentProxy* createDocument(const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = true, QString directory =QString(), int pageCount = 0, bool promptDialogIfExists = false);
+        virtual UBDocumentProxy* createDocumentFromDir(const QString& pDocumentDirectory, const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = false, bool addTitlePage = false,  bool promptDialogIfExists = false);
 
         virtual UBDocumentProxy* persistDocumentMetadata(UBDocumentProxy* pDocumentProxy);
 
@@ -84,6 +84,7 @@ class UBPersistenceManager : public QObject
 
         virtual UBGraphicsScene* loadDocumentScene(UBDocumentProxy* pDocumentProxy, int sceneIndex);
         UBGraphicsScene *getDocumentScene(UBDocumentProxy* pDocumentProxy, int sceneIndex) {return mSceneCache.value(pDocumentProxy, sceneIndex);}
+        void reassignDocProxy(UBDocumentProxy *newDocument, UBDocumentProxy *oldDocument);
 
         QList<QPointer<UBDocumentProxy> > documentProxies;
         UBDocumentTreeNode *mDocumentTreeStructure;
@@ -110,8 +111,9 @@ class UBPersistenceManager : public QObject
 
         virtual UBDocumentProxy* documentByUuid(const QUuid& pUuid);
 
-        void createDocumentProxiesStructure();
-        void createDocumentProxiesStructure(const QFileInfoList &contentInfo);
+        void createDocumentProxiesStructure(bool interactive = false);
+        void createDocumentProxiesStructure(const QFileInfoList &contentInfo, bool interactive = false);
+        QDialog::DialogCode processInteractiveReplacementDialog(UBDocumentProxy *pProxy);
 
         QStringList documentSubDirectories()
         {

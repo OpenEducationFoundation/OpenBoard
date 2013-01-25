@@ -45,6 +45,41 @@ class UBMainWindow;
 class UBDocumentToolsPalette;
 
 
+class UBDocumentReplaceDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    UBDocumentReplaceDialog(const QString &pIncommingName, const QStringList &pFileList, QWidget *parent = 0, Qt::WindowFlags pFlags = 0);
+    void setRegexp(const QRegExp pRegExp);
+    bool validString(const QString &pStr);
+    void setFileNameAndList(const QString &fileName, const QStringList &pLst);
+    QString  labelTextWithName(const QString &documentName) const;
+    QString lineEditText() const {return mLineEdit->text();}
+
+signals:
+    void createNewFolder(QString str);
+    void closeDialog();
+
+private slots:
+    void accept();
+    void reject();
+
+    void reactOnTextChanged(const QString &pStr);
+
+private:
+    QLineEdit *mLineEdit;
+    QRegExpValidator *mValidator;
+    QStringList mFileNameList;
+    QString mIncommingName;
+    QPushButton *acceptButton;
+    const QString acceptText;
+    const QString replaceText;
+    const QString cancelText;
+    QLabel *mLabelText;
+};
+
+
 class UBDocumentTreeNode
 {
 public:
@@ -156,6 +191,9 @@ public:
 
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
+    void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &previous); /* Be aware that when you got the signal
+                                                                                       "previous" index would have allready been deleted.
+                                                                                        check it for "valid" first */
 
 private:
     UBDocumentTreeNode *mRootNode;
@@ -278,6 +316,7 @@ class UBDocumentController : public UBDocumentContainer
                                                      , const QModelIndex &selectedIndex
                                                      , UBDocumentTreeModel *docModel) const;
         bool firstSceneSelected() const;
+        QWidget *mainWidget() const {return mDocumentWidget;}
 
     signals:
         void exportDone();
@@ -304,7 +343,8 @@ class UBDocumentController : public UBDocumentContainer
         void paste();
         void focusChanged(QWidget *old, QWidget *current);
         void updateActions();
-        inline void updateExportSubActions(const QModelIndex &selectedIndex);
+        void updateExportSubActions(const QModelIndex &selectedIndex);
+        void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &PreviousIndex);
 
 protected:
         virtual void setupViews();
@@ -342,6 +382,7 @@ protected:
         QString mDefaultDocumentGroupName;
 
         UBDocumentProxy *mCurrentTreeDocument;
+        bool mCurrentIndexMoved;
 
     private slots:
         void documentZoomSliderValueChanged (int value);

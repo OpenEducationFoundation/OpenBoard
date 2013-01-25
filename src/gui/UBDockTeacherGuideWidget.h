@@ -39,6 +39,9 @@ public:
 
     bool visibleInMode(eUBDockPaletteWidgetMode mode){ return mode == eUBDockPaletteWidget_BOARD; }
 
+    QPixmap iconToLeft() const {return QPixmap(":images/teacher_close.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/teacher_open");}
+
     UBTeacherGuideWidget* teacherGuideWidget();
 
 private:

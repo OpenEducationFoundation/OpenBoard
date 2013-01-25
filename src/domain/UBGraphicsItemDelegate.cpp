@@ -171,15 +171,15 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mFrameWidth(UBSettings::settings()->objectFrameWidth)
     , mAntiScaleRatio(1.0)
     , mToolBarItem(NULL)
+    , mAction(0)
     , mCanRotate(canRotate)
     , mCanDuplicate(true)
     , mRespectRatio(respectRatio)
+    , mCanTrigAnAction(false)
     , mMimeData(NULL)
     , mFlippable(false)
-    , mCanTrigAnAction(false)
     , mToolBarUsed(useToolBar)
     , mShowGoContentButton(showGoContentButton)
-    , mAction(0)
 {
     connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
 }

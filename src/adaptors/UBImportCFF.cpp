@@ -271,7 +271,13 @@ UBDocumentProxy* UBImportCFF::importFile(const QFile& pFile, const QString& pGro
         //try to import cff to document
         if (UBCFFSubsetAdaptor::ConvertCFFFileToUbz(contentFile, destDocument))
         {
-            newDocument = UBPersistenceManager::persistenceManager()->createDocumentFromDir(destDocument->persistencePath());
+            newDocument = UBPersistenceManager::persistenceManager()->createDocumentFromDir(destDocument->persistencePath()
+                                                                                            ,""
+                                                                                            ,""
+                                                                                            ,false
+                                                                                            ,false
+                                                                                            ,true);
+
             UBApplication::showMessage(tr("Import successful."));
         }
         else

@@ -205,6 +205,11 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
 
 void UBTrapWebPageContentController::oEmbedRequestFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)
 {
+    Q_UNUSED(pContentTypeHeader)
+    Q_UNUSED(pPos)
+    Q_UNUSED(pSize)
+    Q_UNUSED(isBackground)
+
     if (pSuccess)
     {
         QDomDocument response;

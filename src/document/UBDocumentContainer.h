@@ -36,10 +36,11 @@ class UBDocumentContainer : public QObject
         virtual ~UBDocumentContainer();
 
         virtual void setDocument(UBDocumentProxy* document, bool forceReload = false);
+        void pureSetDocument(UBDocumentProxy *document) {mCurrentDocument = document;}
 
-        UBDocumentProxy* selectedDocument(){return mCurrentDocument;}
-        int pageCount(){return mDocumentThumbs.size();}
-        const QPixmap* pageAt(int index){return mDocumentThumbs[index];}
+        UBDocumentProxy* selectedDocument() {return mCurrentDocument;}
+        int pageCount() {return mDocumentThumbs.size();}
+        const QPixmap* pageAt(int index) {return mDocumentThumbs[index];}
 
         static int pageFromSceneIndex(int sceneIndex);    
         static int sceneIndexFromPage(int sceneIndex); 

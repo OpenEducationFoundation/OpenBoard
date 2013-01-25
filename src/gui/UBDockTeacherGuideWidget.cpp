@@ -38,9 +38,6 @@ UBDockTeacherGuideWidget::UBDockTeacherGuideWidget(QWidget* parent, const char* 
     mVisibleState = true;
     SET_STYLE_SHEET();
 
-    mIconToLeft = QPixmap(":images/teacher_open.png");
-    mIconToRight = QPixmap(":images/teacher_close.png");
-
     mpLayout = new QVBoxLayout(this);
     setLayout(mpLayout);
     mpTeacherGuideWidget = new UBTeacherGuideWidget(this);

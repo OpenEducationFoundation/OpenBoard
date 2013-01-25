@@ -37,7 +37,7 @@ typedef enum
     eUBDockPaletteWidget_BOARD,
     eUBDockPaletteWidget_WEB,
     eUBDockPaletteWidget_DOCUMENT,
-    eUBDockPaletteWidget_DESKTOP,
+    eUBDockPaletteWidget_DESKTOP
 } eUBDockPaletteWidgetMode;
 
 class UBDockPaletteWidget : public QWidget
@@ -48,8 +48,8 @@ public:
     UBDockPaletteWidget(QWidget* parent=0, const char* name="UBDockPaletteWidget");
     ~UBDockPaletteWidget();
 
-    QPixmap iconToRight();
-    QPixmap iconToLeft();
+    virtual QPixmap iconToRight() const;
+    virtual QPixmap iconToLeft() const;
     QString name();
 
     virtual bool visibleInMode(eUBDockPaletteWidgetMode mode) = 0;
@@ -68,8 +68,8 @@ public slots:
 
 
 protected:
-    QPixmap mIconToRight;   // arrow like this: >
-    QPixmap mIconToLeft;    // arrow like this: <
+//    QPixmap mIconToRight;   // arrow like this: >
+//    QPixmap mIconToLeft;    // arrow like this: <
     QString mName;
 
     /* The current widget available mode list */

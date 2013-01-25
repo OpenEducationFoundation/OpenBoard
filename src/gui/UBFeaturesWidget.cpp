@@ -51,8 +51,6 @@ UBFeaturesWidget::UBFeaturesWidget(QWidget *parent, const char *name)
 
     SET_STYLE_SHEET();
 
-    mIconToLeft = QPixmap(":images/library_open.png");
-    mIconToRight = QPixmap(":images/library_close.png");
     setAcceptDrops(true);
 
     //Main UBFeature functionality

@@ -112,7 +112,7 @@ UBPersistenceManager::~UBPersistenceManager()
     }
 }
 
-void UBPersistenceManager::createDocumentProxiesStructure()
+void UBPersistenceManager::createDocumentProxiesStructure(bool interactive)
 {
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
 
@@ -120,10 +120,10 @@ void UBPersistenceManager::createDocumentProxiesStructure()
     rootDir.mkpath(rootDir.path());
 
     QFileInfoList contentList = rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed);
-    createDocumentProxiesStructure(contentList);
+    createDocumentProxiesStructure(contentList, interactive);
 }
 
-void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &contentInfo)
+void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &contentInfo, bool interactive)
 {
     foreach(QFileInfo path, contentInfo)
     {
@@ -142,7 +142,6 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
                 continue;
             }
 
-//            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
             QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
             if (!parentIndex.isValid()) {
                 return;
@@ -154,10 +153,63 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
             }
 
             docProxy->setPageCount(sceneCount(docProxy));
-            mDocumentTreeStructureModel->addNode(new UBDocumentTreeNode(UBDocumentTreeNode::Document, docName, QString(), docProxy), parentIndex);
-//            docParent->addChild();
+            bool addDoc = false;
+            if (!interactive) {
+                addDoc = true;
+            } else if (processInteractiveReplacementDialog(docProxy) == QDialog::Accepted) {
+                addDoc = true;
+            }
+            if (addDoc) {
+                mDocumentTreeStructureModel->addDocument(docProxy, parentIndex);
+            }
         }
     }
+}
+
+QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UBDocumentProxy *pProxy)
+{
+    QDialog::DialogCode result = QDialog::Rejected;
+
+    if (UBApplication::documentController
+            && UBApplication::documentController->mainWidget()) {
+        QString docGroupName = pProxy->metaData(UBSettings::documentGroupName).toString();
+        QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
+        if (!parentIndex.isValid()) {
+            return QDialog::Rejected;
+        }
+
+        QStringList docList = mDocumentTreeStructureModel->nodeNameList(parentIndex);
+        QString docName = pProxy->metaData(UBSettings::documentName).toString();
+
+        if (docList.contains(docName)) {
+            UBDocumentReplaceDialog *replaceDialog = new UBDocumentReplaceDialog(docName
+                                                                                 , docList
+                                                                                 , UBApplication::documentController->mainWidget()
+                                                                                 , Qt::Widget);
+            if (replaceDialog->exec() == QDialog::Accepted) {
+                result = QDialog::Accepted;
+                QString resultName = replaceDialog->lineEditText();
+                int i = docList.indexOf(resultName);
+                if (i != -1) { //replace
+                    QModelIndex replaceIndex = mDocumentTreeStructureModel->index(i, 0, parentIndex);
+                    UBDocumentProxy *replaceProxy = mDocumentTreeStructureModel->proxyData(replaceIndex);
+                    if (replaceProxy) {
+                        deleteDocument(replaceProxy);
+                    }
+                    if (replaceIndex.isValid()) {
+                        mDocumentTreeStructureModel->removeRow(i, parentIndex);
+                    }
+                }
+                pProxy->setMetaData(UBSettings::documentName, resultName);
+            }
+            replaceDialog->setParent(0);
+            delete replaceDialog;
+        } else {
+            result = QDialog::Accepted;
+        }
+    }
+
+    return result;
 }
 
 QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)
@@ -316,7 +368,12 @@ QStringList UBPersistenceManager::allWidgets(const QDir& dir)
 }
 
 
-UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage, QString directory, int pageCount)
+UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName
+                                                      , const QString& pName
+                                                      , bool withEmptyPage
+                                                      , QString directory
+                                                      , int pageCount
+                                                      , bool promptDialogIfExists)
 {
     UBDocumentProxy *doc;
     if(directory.length() != 0 ){
@@ -346,15 +403,31 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
+    bool addDoc = false;
+    if (!promptDialogIfExists) {
+        addDoc = true;
+    } else if (processInteractiveReplacementDialog(doc) == QDialog::Accepted) {
+        addDoc = true;
+    }
+    if (addDoc) {
+        mDocumentTreeStructureModel->addDocument(doc);
+        emit proxyListChanged();
+    } else {
+        deleteDocument(doc);
+        doc = 0;
+    }
 
-    mDocumentTreeStructureModel->addDocument(doc);
 
-    emit proxyListChanged();
 
     return doc;
 }
 
-UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDocumentDirectory, const QString& pGroupName, const QString& pName, bool withEmptyPage, bool addTitlePage)
+UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDocumentDirectory
+                                                             , const QString& pGroupName
+                                                             , const QString& pName
+                                                             , bool withEmptyPage
+                                                             , bool addTitlePage
+                                                             , bool promptDialogIfExists)
 {
     checkIfDocumentRepositoryExists();
 
@@ -389,12 +462,22 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
         UBSvgSubsetAdaptor::setSceneUuid(doc, i, QUuid::createUuid());
     }
 
+    //work around the
     documentProxies << QPointer<UBDocumentProxy>(doc);
-    mDocumentTreeStructureModel->addDocument(doc);
-
-    emit proxyListChanged();
-
-    emit documentCreated(doc);
+    bool addDoc = false;
+    if (!promptDialogIfExists) {
+        addDoc = true;
+    } else if (processInteractiveReplacementDialog(doc) == QDialog::Accepted) {
+        addDoc = true;
+    }
+    if (addDoc) {
+        mDocumentTreeStructureModel->addDocument(doc);
+        emit proxyListChanged();
+        emit documentCreated(doc);
+    } else {
+        deleteDocument(doc);
+        doc = 0;
+    }
 
     return doc;
 }
@@ -675,6 +758,11 @@ UBGraphicsScene* UBPersistenceManager::loadDocumentScene(UBDocumentProxy* proxy,
 
         return scene;
     }
+}
+
+void UBPersistenceManager::reassignDocProxy(UBDocumentProxy *newDocument, UBDocumentProxy *oldDocument)
+{
+    return mSceneCache.reassignDocProxy(newDocument, oldDocument);
 }
 
 void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* pScene, const int pSceneIndex)

@@ -465,8 +465,6 @@ void UBMagnifier::setDrawingMode(int mode)
         sMode = "circle";
         resize(width(), height()/3);
 
-        QPoint currGlobalPos = pos();
-
         if (mView)
         {
             qreal newPercentSize = size().width()/3 * 100 / mView->width();

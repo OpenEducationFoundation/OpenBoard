@@ -104,9 +104,9 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpWidthSlider(NULL)
   , mpColorLayout(NULL)
   , mpShapeLayout(NULL)
-  , mpSizeLayout(NULL)
   , mpCloseLayout(NULL)
   , mpProperties(NULL)
+  , mpSizeLayout(NULL)
   , mpPropertiesLayout(NULL)
   , mpCurrentCache(NULL)
   , mKeepAspectRatio(true)
@@ -118,8 +118,6 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
 
     mName = "CachePropWidget";
     mVisibleState = false;
-    mIconToLeft = QPixmap(":images/cache_open.png");
-    mIconToRight = QPixmap(":images/cache_close.png");
     setContentsMargins(10, 10, 10, 10);
 
     // Build the UI

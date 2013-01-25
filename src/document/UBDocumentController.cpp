@@ -64,6 +64,108 @@
 
 #include "core/memcheck.h"
 
+UBDocumentReplaceDialog::UBDocumentReplaceDialog(const QString &pIncommingName, const QStringList &pFileList, QWidget *parent, Qt::WindowFlags pFlags)
+    : QDialog(parent, pFlags)
+    , mFileNameList(pFileList)
+    , mIncommingName(pIncommingName)
+    , acceptText(tr("Accept"))
+    , replaceText(tr("Replace"))
+    , cancelText(tr("Cancel"))
+    , mLabelText(0)
+{
+    this->setStyleSheet("background:white;");
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+    QVBoxLayout *labelLayout = new QVBoxLayout();
+
+    mLabelText = new QLabel(labelTextWithName(pIncommingName), this);
+    mLineEdit = new QLineEdit(this);
+    mLineEdit->setText(pIncommingName);
+    mLineEdit->selectedText();
+
+    mValidator = new QRegExpValidator(QRegExp("[^\\/\\:\\?\\*\\|\\<\\>\\\"]{1,}"), this);
+    mLineEdit->setValidator(mValidator);
+    labelLayout->addWidget(mLabelText);
+    labelLayout->addWidget(mLineEdit);
+
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
+
+    acceptButton = new QPushButton(acceptText, this);
+    QPushButton *cancelButton = new QPushButton(cancelText, this);
+    buttonLayout->addWidget(acceptButton);
+    buttonLayout->addWidget(cancelButton);
+
+    mainLayout->addLayout(labelLayout);
+    mainLayout->addLayout(buttonLayout);
+
+    acceptButton->setEnabled(false);
+
+    connect(acceptButton, SIGNAL(clicked()), this, SLOT(accept()));
+    connect(cancelButton, SIGNAL(clicked()), this, SLOT(reject()));
+    connect(mLineEdit, SIGNAL(textEdited(QString)), this, SLOT(reactOnTextChanged(QString)));
+
+    reactOnTextChanged(mIncommingName);
+}
+
+void UBDocumentReplaceDialog::setRegexp(const QRegExp pRegExp)
+{
+    mValidator->setRegExp(pRegExp);
+}
+bool UBDocumentReplaceDialog::validString(const QString &pStr)
+{
+    Q_UNUSED(pStr);
+    return mLineEdit->hasAcceptableInput();
+}
+
+void UBDocumentReplaceDialog::setFileNameAndList(const QString &fileName, const QStringList &pLst)
+{
+    mFileNameList = pLst;
+    mIncommingName = fileName;
+    mLabelText->setText(labelTextWithName(fileName));
+    mLineEdit->setText(fileName);
+    mLineEdit->selectedText();
+}
+
+QString UBDocumentReplaceDialog::labelTextWithName(const QString &documentName) const
+{
+    return tr("The name %1 is allready used.\nKeeping this name will replace the document.\nProviding a new name will create a new document.")
+            .arg(documentName);
+}
+
+void UBDocumentReplaceDialog::accept()
+{
+    QDialog::accept();
+}
+void UBDocumentReplaceDialog::reject()
+{
+    mLineEdit->clear();
+    emit closeDialog();
+
+    QDialog::reject();
+}
+
+void UBDocumentReplaceDialog::reactOnTextChanged(const QString &pStr)
+{
+//     if !mFileNameList.contains(pStr.trimmed(), Qt::CaseSensitive)
+
+    if (!validString(pStr)) {
+        acceptButton->setEnabled(false);
+        mLineEdit->setStyleSheet("background:#FFB3C8;");
+        acceptButton->setEnabled(false);
+
+    } else if (mFileNameList.contains(pStr.trimmed(), Qt::CaseSensitive)) {
+        acceptButton->setEnabled(true);
+        mLineEdit->setStyleSheet("background:#FFB3C8;");
+        acceptButton->setText(replaceText);
+
+    } else {
+        acceptButton->setEnabled(true);
+        mLineEdit->setStyleSheet("background:white;");
+        acceptButton->setText(acceptText);
+    }
+}
+
 UBDocumentTreeNode::UBDocumentTreeNode(Type pType, const QString &pName, const QString &pDisplayName, UBDocumentProxy *pProxy ) :
     mType(pType)
   , mName(pName)
@@ -402,8 +504,10 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
     QList<QModelIndex> incomingIndexes = mimeData->indexes();
 
     foreach (QModelIndex curIndex, incomingIndexes) {
-        copyIndexToNewParent(curIndex, parent, action == Qt::MoveAction ? aReference : aContentCopy);
-
+        QModelIndex clonedTopLevel = copyIndexToNewParent(curIndex, parent, action == Qt::MoveAction ? aReference : aContentCopy);
+        if (nodeFromIndex(curIndex) == mCurrentNode && action == Qt::MoveAction) {
+            emit currentIndexMoved(clonedTopLevel, curIndex);
+        }
     }
 
     Q_UNUSED(action)
@@ -532,6 +636,8 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
         clonedNodeSource = nodeSource->clone();
         if (mNewDocuments.contains(nodeSource->proxyData())) { //update references for session documents
             mNewDocuments << clonedNodeSource->proxyData();
+
+            UBPersistenceManager::persistenceManager()->reassignDocProxy(clonedNodeSource->proxyData(), nodeSource->proxyData());
         }
         break;
 
@@ -551,10 +657,9 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
 
     // Determine whether to provide a name with postfix if the name in current level allready exists
     QString newName = clonedNodeSource->nodeName();
-    if (source.parent() != newParent
-            || pMode != aReference
-            || newParent != trashIndex()
-            || !inTrash(newParent)) {
+    if ((source.parent() != newParent
+            || pMode != aReference)
+            && (newParent != trashIndex() || !inTrash(newParent))) {
         newName = adjustNameForParentIndex(newName, newParent);
         clonedNodeSource->setNodeName(newName);
     }
@@ -568,7 +673,7 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
     nodeParent->addChild(clonedNodeSource);
     endInsertRows();
 
-    QModelIndex newParentIndex = createIndex(rowCount(newParent), 0, clonedNodeSource);
+    QPersistentModelIndex newParentIndex = createIndex(rowCount(newParent), 0, clonedNodeSource);
 
     if (rowCount(source)) {
         for (int i = 0; i < rowCount(source); i++) {
@@ -1069,6 +1174,7 @@ UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
    , mDocumentTrashGroupName(tr("Trash"))
    , mDefaultDocumentGroupName(tr("Untitled Documents"))
    , mCurrentTreeDocument(0)
+   , mCurrentIndexMoved(false)
 {
 
     setupViews();
@@ -1239,6 +1345,15 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
     UBDocumentProxy *currentDocumentProxy = docModel->proxyData(current);
     setDocument(currentDocumentProxy, false);
 
+    if (mCurrentIndexMoved) {
+        if (docModel->isDocument(current)) {
+            docModel->setCurrentDocument(currentDocumentProxy);
+        } else if (docModel->isCatalog(current)) {
+            docModel->setCurrentDocument(0);
+        }
+        mCurrentIndexMoved = false;
+    }
+
     itemSelectionChanged(docModel->isCatalog(current) ? Folder : Document);
 }
 
@@ -1374,7 +1489,7 @@ void UBDocumentController::setupViews()
 
         mDocumentUI->documentTreeView->resizeColumnToContents(0);
 
-        int headerSizeHint = headerSizeHint = mDocumentUI->documentTreeView->width();
+        int headerSizeHint = mDocumentUI->documentTreeView->width();
 
         if (mDocumentUI->documentTreeView->verticalScrollBar()->isVisible())
             headerSizeHint = mDocumentUI->documentTreeView->width() - mDocumentUI->documentTreeView->verticalScrollBar()->width();
@@ -1383,10 +1498,12 @@ void UBDocumentController::setupViews()
             mDocumentUI->documentTreeView->setColumnWidth(0, headerSizeHint);
 
         connect(mDocumentUI->documentTreeView->itemDelegate(), SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint) ), mDocumentUI->documentTreeView, SLOT(adjustSize()));
-        connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
+//        connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(TreeViewSelectionChanged(QItemSelection,QItemSelection)));
         connect(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel, SIGNAL(indexChanged(QModelIndex,QModelIndex))
                 ,mDocumentUI->documentTreeView, SLOT(onModelIndexChanged(QModelIndex,QModelIndex)));
+        connect(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel, SIGNAL(currentIndexMoved(QModelIndex,QModelIndex))
+                ,this, SLOT(currentIndexMoved(QModelIndex,QModelIndex)));
 
         connect(mDocumentUI->thumbnailWidget, SIGNAL(sceneDropped(UBDocumentProxy*, int, int)), this, SLOT(moveSceneToIndex ( UBDocumentProxy*, int, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(resized()), this, SLOT(thumbnailViewResized()));
@@ -1397,7 +1514,6 @@ void UBDocumentController::setupViews()
         connect(mDocumentUI->thumbnailWidget->scene(), SIGNAL(selectionChanged()), this, SLOT(pageSelectionChanged()));
 
 //        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentCreated(UBDocumentProxy*)), this, SLOT(addDocumentInTree(UBDocumentProxy*)));
-
 //        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentMetadataChanged(UBDocumentProxy*)), this, SLOT(updateDocumentInTree(UBDocumentProxy*)));
 
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneCreated(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
@@ -1896,6 +2012,9 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
         UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
         if (proxyData) {
             UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
+            if (proxyData == mBoardController->selectedDocument()) {
+                mBoardController->pureSetDocument(proxyData);
+            }
         }
 
     }
@@ -2098,7 +2217,7 @@ void UBDocumentController::importFile()
 
             QString groupName = UBPersistenceManager::myDocumentsName;
 
-            if (groupName == mDefaultDocumentGroupName || fileInfo.suffix() != "ubz")
+//            if (groupName == mDefaultDocumentGroupName || fileInfo.suffix() != "ubz")
                 groupName = "";
 
             showMessage(tr("Importing file %1...").arg(fileInfo.baseName()), true);
@@ -2106,12 +2225,10 @@ void UBDocumentController::importFile()
             createdDocument = docManager->importFile(selectedFile, groupName);
 
 
-            if (createdDocument)
-            {
+            if (createdDocument) {
                 selectDocument(createdDocument, true);
-            }
-            else
-            {
+
+            } else {
                 showMessage(tr("Failed to import file ... "));
             }
         }
@@ -2853,7 +2970,7 @@ void UBDocumentController::updateActions()
 
 }
 
-inline void UBDocumentController::updateExportSubActions(const QModelIndex &selectedIndex)
+void UBDocumentController::updateExportSubActions(const QModelIndex &selectedIndex)
 {
     UBDocumentManager *documentManager = UBDocumentManager::documentManager();
     for (int i = 0; i < documentManager->supportedExportAdaptors().length(); i++)
@@ -2863,6 +2980,19 @@ inline void UBDocumentController::updateExportSubActions(const QModelIndex &sele
             adaptor->associatedAction()->setEnabled(adaptor->associatedActionactionAvailableFor(selectedIndex));
         }
     }
+}
+
+void UBDocumentController::currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &PreviousIndex)
+{
+    Q_UNUSED(newIndex);
+    Q_UNUSED(PreviousIndex);
+
+    UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+    UBDocumentProxy *newProxy = docModel->proxyData(newIndex);
+    if (newProxy) {
+        mBoardController->pureSetDocument(newProxy);
+    }
+    mCurrentIndexMoved = true;
 }
 
 void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)

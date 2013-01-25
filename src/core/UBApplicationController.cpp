@@ -443,8 +443,13 @@ void UBApplicationController::showDocument()
         UBApplication::boardController->hide();
     }
 
-    if (UBApplication::documentController)
-        UBApplication::documentController->show();
+    UBDocumentController *docCtrl = UBApplication::documentController;
+    if (docCtrl) {
+        docCtrl->show();
+        if (docCtrl->firstSelectedTreeProxy()) {
+            docCtrl->setDocument(docCtrl->firstSelectedTreeProxy(), true);
+        }
+    }
 
     mMainWindow->show();
 

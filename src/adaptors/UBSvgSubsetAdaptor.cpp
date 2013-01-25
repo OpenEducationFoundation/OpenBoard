@@ -1134,11 +1134,11 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot()
             }
             else {
                 mXmlReader.skipCurrentElement();
-                qDebug() << "skypped elements :" << mXmlReader.name();
+//                qDebug() << "skypped elements :" << mXmlReader.name();
             }
         }
         else {
-            qDebug() << "read next " << mXmlReader.name();
+//            qDebug() << "read next " << mXmlReader.name();
             mXmlReader.readNext();
         }
     }

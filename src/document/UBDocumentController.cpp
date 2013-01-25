@@ -706,7 +706,7 @@ void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
 
 QModelIndex UBDocumentTreeModel::indexForProxy(UBDocumentProxy *pSearch) const
 {
-    qDebug() << "looking for proxy" << pSearch;
+//    qDebug() << "looking for proxy" << pSearch;
     UBDocumentTreeNode *proxy = findProxy(pSearch, mRootNode);
     if (!proxy) {
         return QModelIndex();
@@ -1512,8 +1512,6 @@ void UBDocumentController::setupViews()
                 ,mDocumentUI->documentTreeView, SLOT(onModelIndexChanged(QModelIndex,QModelIndex)));
         connect(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel, SIGNAL(currentIndexMoved(QModelIndex,QModelIndex))
                 ,this, SLOT(currentIndexMoved(QModelIndex,QModelIndex)));
-        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)),
-                mBoardController, SLOT(documentWillBeDeleted(UBDocumentProxy*)));
 
         connect(mDocumentUI->thumbnailWidget, SIGNAL(sceneDropped(UBDocumentProxy*, int, int)), this, SLOT(moveSceneToIndex ( UBDocumentProxy*, int, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(resized()), this, SLOT(thumbnailViewResized()));
@@ -1528,6 +1526,8 @@ void UBDocumentController::setupViews()
 
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneCreated(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneWillBeDeleted(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
+        connect(UBApplication::applicationController, SIGNAL(mainModeChanged(UBApplicationController::MainMode))
+                , this, SLOT(onMainModeChanged(UBApplicationController::MainMode)));
 
         mDocumentUI->thumbnailWidget->setBackgroundBrush(UBSettings::documentViewLightColor);
 
@@ -2017,9 +2017,6 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
         UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
         if (proxyData) {
             UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
-            if (proxyData == mBoardController->selectedDocument()) {
-                mBoardController->pureSetDocument(0);
-            }
         }
     }
     docModel->removeRow(pIndex.row(), pIndex.parent());
@@ -2704,7 +2701,6 @@ void UBDocumentController::addImages()
         }
     }
 }
-
 
 void UBDocumentController::toggleDocumentToolsPalette()
 {

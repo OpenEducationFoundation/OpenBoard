@@ -26,6 +26,8 @@
 
 #include <QtGui>
 #include "document/UBDocumentContainer.h"
+#include "core/UBApplicationController.h"
+#include "core/UBApplication.h"
 
 namespace Ui
 {
@@ -315,6 +317,7 @@ class UBDocumentController : public UBDocumentContainer
 
         void setDocument(UBDocumentProxy *document, bool forceReload = false);
         QModelIndex firstSelectedTreeIndex();
+        UBDocumentProxy *firstSelectedTreeProxy();
         inline DeletionType deletionTypeForSelection(LastSelectedElementType pTypeSelection
                                                      , const QModelIndex &selectedIndex
                                                      , UBDocumentTreeModel *docModel) const;
@@ -355,7 +358,6 @@ protected:
         void setupPalettes();
         bool isOKToOpenDocument(UBDocumentProxy* proxy);
         UBDocumentProxy* selectedDocumentProxy();
-        UBDocumentProxy *firstSelectedTreeProxy();
         QList<UBDocumentProxy*> selectedProxies();
         QModelIndexList selectedTreeIndexes();
         UBDocumentProxyTreeItem* selectedDocumentProxyTreeItem();
@@ -408,7 +410,6 @@ protected:
         void addFolderOfImages();
         void addFileToDocument();
         void addImages();
-
         void refreshDocumentThumbnailsView(UBDocumentContainer* source);
 };
 

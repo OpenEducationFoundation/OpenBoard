@@ -66,6 +66,8 @@
 #define WBTABWIDGET_H
 
 #include <QtGui>
+#include <QtWebKit>
+
 /*
     Tab bar with a few more features such as a context menu and shortcuts
  */
@@ -103,9 +105,6 @@ class WBTabBar : public QTabBar
 
         QPoint mDragStartPos;
 };
-
-#include <QtWebKit>
-
 
 class WBWebView;
 /*!
@@ -188,7 +187,6 @@ class WBTabWidget : public QTabWidget
         void mouseDoubleClickEvent(QMouseEvent *event);
         void contextMenuEvent(QContextMenuEvent *event);
         void mouseReleaseEvent(QMouseEvent *event);
-        void paintEvent(QPaintEvent * event);
         QRect addTabButtonRect();
 
     public slots:

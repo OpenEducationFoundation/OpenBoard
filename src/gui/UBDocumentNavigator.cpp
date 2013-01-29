@@ -106,6 +106,8 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
         QString label = pageIndex == 0 ? tr("Title page") : tr("Page %0").arg(pageIndex);
         UBThumbnailTextItem *labelItem = new UBThumbnailTextItem(label);
 
+        pixmapItem->setLabel(labelItem);
+
 		UBImgTextThumbnailElement thumbWithText(pixmapItem, labelItem);
 		thumbWithText.setBorder(border());
 		mThumbsWithLabels.append(thumbWithText);
@@ -174,8 +176,12 @@ void UBDocumentNavigator::refreshScene()
         int columnIndex = i % mNbColumns;
         int rowIndex = i / mNbColumns;
 		item.Place(rowIndex, columnIndex, mThumbnailWidth, thumbnailHeight);
+        item.getCaption()->highlight(false);
     }
     scene()->setSceneRect(scene()->itemsBoundingRect());
+
+    mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getThumbnail()->setSelected(true);
+    mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getCaption()->highlight(true);
 }
 
 /**

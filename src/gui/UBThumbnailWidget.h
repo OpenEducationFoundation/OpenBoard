@@ -146,41 +146,9 @@ class UBThumbnail
             return styleOption;
         }
 
-         virtual void itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value)
-        {
-            Q_UNUSED(value);
+         virtual void itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
-            if ((change == QGraphicsItem::ItemSelectedHasChanged
-                    || change == QGraphicsItem::ItemTransformHasChanged
-                    || change == QGraphicsItem::ItemPositionHasChanged)
-                    &&  item->scene())
-            {
-                if (item->isSelected())
-                {
-                    if (!mSelectionItem->scene())
-                    {
-                        item->scene()->addItem(mSelectionItem);
-                        mSelectionItem->setZValue(item->zValue() - 1);
-//                        UBGraphicsItem::assignZValue(mSelectionItem, item->zValue() - 1);
-                        mAddedToScene = true;
-                    }
-
-                    mSelectionItem->setRect(
-                        item->sceneBoundingRect().x() - 5,
-                        item->sceneBoundingRect().y() - 5,
-                        item->sceneBoundingRect().width() + 10,
-                        item->sceneBoundingRect().height() + 10);
-
-                    mSelectionItem->show();
-
-                }
-                else
-                {
-                    mSelectionItem->hide();
-                }
-            }
-        }
-
+        void setLabel(UBThumbnailTextItem *label){mLabel = label;}
         int column() { return mColumn; }
         void setColumn(int column) { mColumn = column; }
         int row() { return mRow; }
@@ -193,6 +161,8 @@ class UBThumbnail
 
         int mColumn;
         int mRow;
+
+        UBThumbnailTextItem *mLabel;
 };
 
 
@@ -286,11 +256,6 @@ class UBSceneThumbnailPixmap : public UBThumbnailPixmap
             return mSceneIndex;
         }
 
-        void highlight()
-        {
-            //NOOP
-        }
-
     private:
         UBDocumentProxy* mProxy;
         int mSceneIndex;
@@ -353,7 +318,7 @@ class UBThumbnailTextItem : public QGraphicsTextItem
         UBThumbnailTextItem(const QString& text)
             : QGraphicsTextItem(text)
             , mUnelidedText(text)
-            , mIsHighlighted(false)
+            , mIsHighlighted(true)
         {
             setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
         }
@@ -372,13 +337,10 @@ class UBThumbnailTextItem : public QGraphicsTextItem
 
         qreal width() {return mWidth;}
 
-        void highlight()
+        void highlight(bool enable = true)
         {
-                if (!mIsHighlighted)
-                {
-                        mIsHighlighted = true;
-                        computeText();
-                }
+            mIsHighlighted = enable;
+            computeText();
         }
 
         void computeText()

@@ -308,16 +308,5 @@ bool UBDocumentThumbnailWidget::dragEnabled() const
 
 void UBDocumentThumbnailWidget::hightlightItem(int index)
 {
-    if (0 <= index && index < mLabelsItems.length())
-    {
-        mLabelsItems.at(index)->highlight();
-    }
-    if (0 <= index && index < mGraphicItems.length())
-    {
-        UBSceneThumbnailPixmap *thumbnail = dynamic_cast<UBSceneThumbnailPixmap*>(mGraphicItems.at(index));
-        if (thumbnail)
-            thumbnail->highlight();
-    }
-
     selectItemAt(index);
 }

@@ -118,7 +118,15 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
             
             UBWebKitUtils::HtmlObject obj(source, name, mimeType, tagName, width, heigth);
             if (!htmlObjects.contains(obj))
-                htmlObjects << obj;
+            {
+                // filtering wanted content
+                if (obj.objectMimeType.contains("html")
+                    ||obj.objectMimeType.contains("audio")
+                    || obj.objectMimeType.contains("video")
+                    || obj.objectMimeType.contains("flash")
+                    || obj.objectMimeType.contains("image"))
+                        htmlObjects << obj;
+            }
         }
         if(htmlObjects.count() != 0)
             htmlObjects << UBWebKitUtils::HtmlObject(QString(),QString(),QString(),"separator",0,0);

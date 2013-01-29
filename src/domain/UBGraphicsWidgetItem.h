@@ -142,6 +142,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         int mCanBeContent;
         int mCanBeTool;
         QSize mNominalSize;
+        QSize mMinimumSize;
         QString mMainHtmlFileName;
         QUrl mMainHtmlUrl;
         QUrl mWidgetUrl;

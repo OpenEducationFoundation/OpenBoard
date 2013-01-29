@@ -644,8 +644,11 @@ void UBGraphicsWidgetItem::resize(qreal w, qreal h)
 void UBGraphicsWidgetItem::resize(const QSizeF & pSize)
 {
     if (pSize != size()) {
-        QGraphicsWebView::setMaximumSize(pSize.width(), pSize.height());
-        QGraphicsWebView::resize(pSize.width(), pSize.height());
+        qreal w = qMax((qreal)mMinimumSize.width(), pSize.width());
+        qreal h = qMax((qreal)mMinimumSize.height(), pSize.height());
+        QGraphicsWebView::setMaximumSize(w, h);
+        QGraphicsWebView::page()->setViewportSize(QSize(w, h));
+        QGraphicsWebView::resize(QSizeF(w, h));
         if (Delegate())
             Delegate()->positionHandles();
         if (scene())
@@ -765,6 +768,8 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     int width = 300;
     int height = 150;
+    int minWidth = 10;
+    int minHeight = 10;
 
     QFile configFile(path + "config.xml");
     configFile.open(QFile::ReadOnly);
@@ -778,6 +783,9 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
         width = widgetElement.attribute("width", "300").toInt();
         height = widgetElement.attribute("height", "150").toInt();
+
+        minWidth = widgetElement.attribute("minimum_width", "10").toInt();
+        minHeight = widgetElement.attribute("minimum_height", "10").toInt();
 
         mMetadatas.id = widgetElement.attribute("id", "");
 
@@ -886,6 +894,7 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     setMaximumSize(QSize(width, height));
 
+    mMinimumSize = QSize(minWidth, minHeight);
     mNominalSize = QSize(width, height);
 
     initialize();

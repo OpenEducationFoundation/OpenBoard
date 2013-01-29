@@ -1020,6 +1020,7 @@ void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
     event->accept();
     event->acceptProposedAction();
+    QTreeView::dragEnterEvent(event);
 }
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)

@@ -200,6 +200,7 @@ void UBThumbnailWidget::refreshScene()
             qreal labelWidth = fm.width(elidedText);
             pos.setX(mSpacing + (mThumbnailWidth - labelWidth) / 2 + columnIndex * (mThumbnailWidth + mSpacing));
             mLabelsItems.at(i)->setPos(pos);
+            mLabelsItems.at(i)->highlight(false);
         }
     }
 
@@ -212,8 +213,9 @@ void UBThumbnailWidget::refreshScene()
             geometry().width() - scrollBarThickness,
             mSpacing + ((((mGraphicItems.size() - 1) / nbColumns) + 1) * (thumbnailHeight + mSpacing + labelSpacing)));
 
-    if (mLabelsItems.count())
-        mLabelsItems.at(UBApplication::boardController->currentPage())->highlight(true);
+    int page = UBApplication::boardController->currentPage();
+    if (mLabelsItems.count() > page && mGraphicItems.count() > page)
+        mLabelsItems.at(page)->highlight(mGraphicItems.at(page)->isSelected());
 }
 
 
@@ -672,6 +674,10 @@ void UBThumbnailWidget::selectItemAt(int pIndex, bool extend)
     if (!extend)
     foreach (QGraphicsItem* item, items())
     {
+        UBThumbnail *thumb = dynamic_cast<UBThumbnail*>(item);
+        if (thumb && thumb->label())
+            thumb->label()->highlight(false);
+            
         item->setSelected(false);
     }
  

@@ -148,6 +148,7 @@ class UBThumbnail
 
          virtual void itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
+        UBThumbnailTextItem *label(){return mLabel;}
         void setLabel(UBThumbnailTextItem *label){mLabel = label;}
         int column() { return mColumn; }
         void setColumn(int column) { mColumn = column; }

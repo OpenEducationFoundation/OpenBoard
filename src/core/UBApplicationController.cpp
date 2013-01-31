@@ -68,9 +68,9 @@
 
 #include "core/memcheck.h"
 
-UBApplicationController::UBApplicationController(UBBoardView *pControlView, 
+UBApplicationController::UBApplicationController(UBBoardView *pControlView,
                                                  UBBoardView *pDisplayView,
-                                                 UBMainWindow* pMainWindow, 
+                                                 UBMainWindow* pMainWindow,
                                                  QObject* parent,
                                                  UBRightPalette* rightPalette)
     : QObject(parent)
@@ -120,6 +120,16 @@ UBApplicationController::UBApplicationController(UBBoardView *pControlView,
 #ifdef Q_WS_X11
     mMainWindow->setStyleSheet("QToolButton { font-size: 11px}");
 #endif
+
+    if(QDate::currentDate() > QDate(2013,2,28)){
+        QMessageBox messageBox;
+        messageBox.setWindowFlags(Qt::Dialog);
+        messageBox.setWindowTitle("Open-Sankore");
+        messageBox.setText("This version of Open-Sankore has expired. Please download the last version from the Open-Sankore web site.");
+        messageBox.addButton("Ok",QMessageBox::YesRole);
+        messageBox.exec();
+        exit(0);
+    }
 
 }
 
@@ -233,10 +243,10 @@ void UBApplicationController::adjustDisplayView()
         QRect rect = mControlView->rect();
         QPoint center(rect.x() + rect.width() / 2, rect.y() + rect.height() / 2);
 
-		QTransform recentTransform = mDisplayView->transform();
+        QTransform recentTransform = mDisplayView->transform();
 
-		if (recentTransform != tr)
-			mDisplayView->setTransform(tr);
+        if (recentTransform != tr)
+            mDisplayView->setTransform(tr);
 
         mDisplayView->centerOn(mControlView->mapToScene(center));
     }
@@ -371,7 +381,7 @@ void UBApplicationController::showBoard()
     UBPlatformUtils::setDesktopMode(false);
 
     mUninoteController->hideWindow();
-    
+
     mMainWindow->show();
 
     emit mainModeChanged(Board);
@@ -502,22 +512,22 @@ void UBApplicationController::showTutorial()
 
     }
     else{
-    	mMainWindow->webToolBar->hide();
-    	mMainWindow->boardToolBar->hide();
-    	mMainWindow->documentToolBar->hide();
-    	mMainWindow->tutorialToolBar->show();
+        mMainWindow->webToolBar->hide();
+        mMainWindow->boardToolBar->hide();
+        mMainWindow->documentToolBar->hide();
+        mMainWindow->tutorialToolBar->show();
 
 
-    	mMainMode = Tutorial;
+        mMainMode = Tutorial;
 
-    	adaptToolBar();
+        adaptToolBar();
 
-    	mUninoteController->hideWindow();
+        mUninoteController->hideWindow();
 
-    	UBApplication::webController->show(UBWebController::Tutorial);
+        UBApplication::webController->show(UBWebController::Tutorial);
 
-    	mirroringEnabled(false);
-    	emit mainModeChanged(mMainMode);
+        mirroringEnabled(false);
+        emit mainModeChanged(mMainMode);
     }
 }
 
@@ -552,7 +562,7 @@ void UBApplicationController::showSankoreEditor()
 
 void UBApplicationController::checkUpdate()
 {
-	if(mHttp)
+    if(mHttp)
         delete mHttp;
     QUrl url("http://ftp.open-sankore.org/update.json");
     mHttp = new QHttp(url.host());

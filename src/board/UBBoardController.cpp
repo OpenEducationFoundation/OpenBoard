@@ -469,8 +469,6 @@ void UBBoardController::stylusToolDoubleClicked(int tool)
     }
 }
 
-
-
 void UBBoardController::addScene()
 {
     if(selectedDocument()->groupName()  == "Models")

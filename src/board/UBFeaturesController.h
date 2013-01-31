@@ -175,7 +175,17 @@ struct CategoryData
         }
     };
 
-    CategoryData (const PathData &pPathData, UBFeature pFeature,UBFeature::Permissions psubFolderPermissions)
+    struct PermissionsData : public QMap<pathType, UBFeature::Permissions>
+    {
+        PermissionsData& insertr (pathType pType, UBFeature::Permissions pPermissions) {
+            insert(pType, pPermissions);
+            return *this;
+        }
+    };
+
+    CategoryData (const PathData &pPathData
+                  , UBFeature pFeature
+                  , PermissionsData psubFolderPermissions)
         : mPathData(pPathData)
         , mCategoryFeature(pFeature)
         , mSubFolderPermissions(psubFolderPermissions)
@@ -184,14 +194,18 @@ struct CategoryData
 
     PathData pathData() const {return mPathData;}
     UBFeature categoryFeature() const {return mCategoryFeature;}
-    UBFeature::Permissions subFolderPermissions() const {return mSubFolderPermissions;}
+//    UBFeature::Permissions subFolderPermissions() const {return mSubFolderPermissions;}
+    UBFeature::Permissions librarySubPermissions() const {return mSubFolderPermissions.value(Library, UBFeature::ALL_P);}
+    UBFeature::Permissions UserSubPermissions() const {return mSubFolderPermissions.value(UserDefined, UBFeature::ALL_P);}
+    UBFeature::Permissions subFolderPermissionsForType(pathType pType) const {return mSubFolderPermissions.value(pType, UBFeature::ALL_P);}
     bool isNull() const {return mIsNull;}
 
 private:
     PathData mPathData;
     //Permissions for all subdirectories
     UBFeature mCategoryFeature;
-    UBFeature::Permissions mSubFolderPermissions;
+//    UBFeature::Permissions mSubFolderPermissions;
+    PermissionsData mSubFolderPermissions;
     bool mIsNull;
 };
 

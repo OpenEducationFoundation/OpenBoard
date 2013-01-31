@@ -81,7 +81,7 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
                     testPermissions = curException.categoryFeature().getPermissions();
                 //subfolder
                 } else {
-                    testPermissions = curException.subFolderPermissions();
+                    testPermissions = curException.UserSubPermissions();
                 }
             }
         }
@@ -98,7 +98,7 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
                                        , fileName
                                        , QUrl::fromLocalFile(fullFileName)
                                        , featureType
-                                       , pfavoriteInfo.first.subFolderPermissions())); //permissions for favorites subfolders
+                                       , pfavoriteInfo.first.librarySubPermissions())); //permissions for favorites subfolders
         }
 
         if (featureType == FEATURE_FOLDER) {
@@ -120,10 +120,15 @@ void UBFeaturesComputingThread::scanAll(QList<CategoryData> pScanningData
 
             emit scanCategory(curData.categoryFeature().getDisplayName());
 
-            QList<QUrl> curScanPaths = curData.pathData().values(static_cast<CategoryData::pathType>(n));
+            CategoryData::pathType pType = static_cast<CategoryData::pathType>(n);
+            QList<QUrl> curScanPaths = curData.pathData().values(pType);
             foreach (QUrl curUrl, curScanPaths) {
-//                qDebug() << "location" << i << "is" << curUrl.toLocalFile();R
-                scanFS(curUrl, curData.categoryFeature().getFullVirtualPath(), pFavoriteInfo, curData.subFolderPermissions(), extData);
+//                qDebug() << "location" << i << "is" << curUrl.toLocalFile();
+                scanFS(curUrl
+                       , curData.categoryFeature().getFullVirtualPath()
+                       , pFavoriteInfo
+                       , curData.subFolderPermissionsForType(pType)
+                       , extData);
             }
         }
     }
@@ -426,7 +431,7 @@ void UBFeaturesController::createNpApiFeature(const QString &str)
 void UBFeaturesController::initHardcodedData()
 {
     rootData = CategoryData(CategoryData::PathData() //Static library paths for root category. Scanning data
-                                .insertr(CategoryData::Library, QUrl())
+                            .insertr(CategoryData::Library, QUrl())
                             //UBFeature represented root element
                             , UBFeature("/root"                                   //Virtual Path
                                         ,QImage(":images/libpalette/home.png")     //Icon
@@ -435,168 +440,195 @@ void UBFeaturesController::initHardcodedData()
                                         , FEATURE_CATEGORY                         //UBFeature's type
                                         , UBFeature::NO_P)                         //UBFeature's permissions
                             //permissions for category subfolders. Scanning data
-                            , UBFeature::NO_P);
+                            , CategoryData::PermissionsData()
+                            .insertr(CategoryData::Library, UBFeature::NO_P)
+                            .insertr(CategoryData::UserDefined, UBFeature::NO_P));
 
     audiosData = CategoryData(CategoryData::PathData() //Static library paths for Audios category. Scanning data
-                                .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationAudiosLibraryDirectory()))
-                                .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userAudioDirectory()))
-                            //UBFeature represented Audios element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Audios"   //Virtual Path
-                                           ,QImage(":images/libpalette/AudiosCategory.svg")           //Icon
-                                           , tr("Audios")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationAudiosLibraryDirectory()) //Main path in file system
-                                           , FEATURE_CATEGORY                                         //UBFeature's type
-                                           , UBFeature::WRITE_P)                                      //UBFeature's permissions
-                            //permissions for category subfolders. Scanning data
-                            , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                              .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationAudiosLibraryDirectory()))
+                              .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userAudioDirectory()))
+                              //UBFeature represented Audios element
+                              , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Audios"   //Virtual Path
+                                          ,QImage(":images/libpalette/AudiosCategory.svg")           //Icon
+                                          , tr("Audios")                                             //Translation name
+                                          , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                applicationAudiosLibraryDirectory()) //Main path in file system
+                                          , FEATURE_CATEGORY                                         //UBFeature's type
+                                          , UBFeature::WRITE_P)                                      //UBFeature's permissions
+                              //permissions for category subfolders. Scanning data
+                              , CategoryData::PermissionsData()
+                              .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                              .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     moviesData = CategoryData(CategoryData::PathData()  //Static library paths for Videos category. Scanning data
-                                .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationVideosLibraryDirectory()))
-                                .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userVideoDirectory()))
-                            //UBFeature represented Movies element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Movies"   //Virtual Path
-                                           ,QImage(":images/libpalette/MoviesCategory.svg")           //Icon
-                                           , tr("Movies")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationVideosLibraryDirectory()) //Main path in file system
-                                           , FEATURE_CATEGORY                                         //UBFeature's type
-                                           , UBFeature::WRITE_P)                                      //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                              .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationVideosLibraryDirectory()))
+                              .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userVideoDirectory()))
+                              //UBFeature represented Movies element
+                              , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Movies"   //Virtual Path
+                                          ,QImage(":images/libpalette/MoviesCategory.svg")           //Icon
+                                          , tr("Movies")                                             //Translation name
+                                          , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                applicationVideosLibraryDirectory()) //Main path in file system
+                                          , FEATURE_CATEGORY                                         //UBFeature's type
+                                          , UBFeature::WRITE_P)                                      //UBFeature's permissions
+                              //permissions for category subfolders. Scanning data
+                              , CategoryData::PermissionsData()
+                              .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                              .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     picturesData = CategoryData(CategoryData::PathData()  //Static library paths for Pictures category. Scanning data
-                                    .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationImageLibraryDirectory()))
-                                    .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userImageDirectory()))
-                            //UBFeature represented Pictures element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Pictures" //Virtual Path
-                                           ,QImage(":images/libpalette/PicturesCategory.svg")         //Icon
-                                           , tr("Pictures")                                           //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationImageLibraryDirectory())  //Main path in file system
-                                           , FEATURE_CATEGORY                                         //UBFeature's type
-                                           , UBFeature::WRITE_P)                                      //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                                .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationImageLibraryDirectory()))
+                                .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userImageDirectory()))
+                                //UBFeature represented Pictures element
+                                , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Pictures" //Virtual Path
+                                            ,QImage(":images/libpalette/PicturesCategory.svg")         //Icon
+                                            , tr("Pictures")                                           //Translation name
+                                            , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                  applicationImageLibraryDirectory())  //Main path in file system
+                                            , FEATURE_CATEGORY                                         //UBFeature's type
+                                            , UBFeature::WRITE_P)                                      //UBFeature's permissions
+                                //permissions for category subfolders. Scanning data
+                                , CategoryData::PermissionsData()
+                                .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                                .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     flashData = CategoryData(CategoryData::PathData() //Static library paths for Flash category. Scanning data
-                                .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationAnimationsLibraryDirectory()))
-                                .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userAnimationDirectory()))
-                            //UBFeature represented Animations element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Animations"   //Virtual Path
-                                           ,QImage(":images/libpalette/FlashCategory.svg")                //Icon
-                                           , tr("Animations")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationAnimationsLibraryDirectory()) //Main path in file system
-                                           , FEATURE_CATEGORY                                             //UBFeature's type
-                                           , UBFeature::NO_P)                                             //UBFeature's permissions
+                             .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationAnimationsLibraryDirectory()))
+                             .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userAnimationDirectory()))
+                             //UBFeature represented Animations element
+                             , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Animations"   //Virtual Path
+                                         ,QImage(":images/libpalette/FlashCategory.svg")                //Icon
+                                         , tr("Animations")                                             //Translation name
+                                         , QUrl::fromLocalFile(UBSettings::settings()->
+                                                               applicationAnimationsLibraryDirectory()) //Main path in file system
+                                         , FEATURE_CATEGORY                                             //UBFeature's type
+                                         , UBFeature::NO_P)                                             //UBFeature's permissions
                              //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                             , CategoryData::PermissionsData()
+                             .insertr(CategoryData::Library, UBFeature::NO_P)
+                             .insertr(CategoryData::UserDefined, UBFeature::NO_P));
 
     appData = CategoryData(CategoryData::PathData()   //Static library paths for Applications category. Scanning data
-                                     .insertr(CategoryData::Library,  QUrl::fromLocalFile(UBSettings::settings()->applicationApplicationsLibraryDirectory()))
-                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userApplicationDirectory()))
-                            //UBFeature represented Applications element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Applications"   //Virtual Path
-                                           ,QImage(":images/libpalette/ApplicationsCategory.svg")           //Icon
-                                           , tr("Applications")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                          applicationApplicationsLibraryDirectory())        //Main path in file system
-                                           , FEATURE_CATEGORY                                               //UBFeature's type
-                                           , UBFeature::NO_P)                                               //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                           .insertr(CategoryData::Library,  QUrl::fromLocalFile(UBSettings::settings()->applicationApplicationsLibraryDirectory()))
+                           .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userApplicationDirectory()))
+                           //UBFeature represented Applications element
+                           , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Applications"   //Virtual Path
+                                       ,QImage(":images/libpalette/ApplicationsCategory.svg")           //Icon
+                                       , tr("Applications")                                             //Translation name
+                                       , QUrl::fromLocalFile(UBSettings::settings()->
+                                                             applicationApplicationsLibraryDirectory())        //Main path in file system
+                                       , FEATURE_CATEGORY                                               //UBFeature's type
+                                       , UBFeature::NO_P)                                               //UBFeature's permissions
+                           //permissions for category subfolders. Scanning data
+                           , CategoryData::PermissionsData()
+                           .insertr(CategoryData::Library, UBFeature::NO_P)
+                           .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     interactivityData = CategoryData(CategoryData::PathData() //Static library paths for Interactivities category. Scanning data
                                      .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationInteractivesDirectory()))
                                      .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userInteractiveDirectory()))
-                            //UBFeature represented Interactivities element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Interactivities"     //Virtual Path
-                                           ,QImage(":images/libpalette/InteractivesCategory.svg")                //Icon
-                                           , tr("Interactivities")                                               //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationInteractivesDirectory())             //Main path in file system
-                                           , FEATURE_CATEGORY                                                    //UBFeature's type
-                                           , UBFeature::NO_P)                                                    //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                                     //UBFeature represented Interactivities element
+                                     , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Interactivities"     //Virtual Path
+                                                 ,QImage(":images/libpalette/InteractivesCategory.svg")                //Icon
+                                                 , tr("Interactivities")                                               //Translation name
+                                                 , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                       applicationInteractivesDirectory())             //Main path in file system
+                                                 , FEATURE_CATEGORY                                                    //UBFeature's type
+                                                 , UBFeature::NO_P)                                                    //UBFeature's permissions
+                                     //permissions for category subfolders. Scanning data
+                                     , CategoryData::PermissionsData()
+                                     .insertr(CategoryData::Library, UBFeature::NO_P)
+                                     .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     shapesData = CategoryData(CategoryData::PathData() //Static library paths for Shapes category. Scanning data
-                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->applicationShapeLibraryDirectory()))
-                            //UBFeature represented Shapes element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Shapes"   //Virtual Path
-                                           ,QImage(":images/libpalette/ShapesCategory.svg")           //Icon
-                                           , tr("Shapes")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 applicationShapeLibraryDirectory())  //Main path in file system
-                                           , FEATURE_CATEGORY                                         //UBFeature's type
-                                           , UBFeature::NO_P)                                         //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                              .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->applicationShapeLibraryDirectory()))
+                              //UBFeature represented Shapes element
+                              , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Shapes"   //Virtual Path
+                                          ,QImage(":images/libpalette/ShapesCategory.svg")           //Icon
+                                          , tr("Shapes")                                             //Translation name
+                                          , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                applicationShapeLibraryDirectory())  //Main path in file system
+                                          , FEATURE_CATEGORY                                         //UBFeature's type
+                                          , UBFeature::NO_P)                                         //UBFeature's permissions
+                              //permissions for category subfolders. Scanning data
+                              , CategoryData::PermissionsData()
+                              .insertr(CategoryData::Library, UBFeature::NO_P)
+                              .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     favoriteData = CategoryData(CategoryData::PathData() //Static library paths for Favorites category. Scanning data
-                            //UBFeature represented Favorites element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Favorites"   //Virtual Path
-                                           ,QImage(":images/libpalette/FavoritesCategory.svg")           //Icon
-                                           , tr("Favorites")                                             //Translation name
-                                           , QUrl()                                                      //Main path in file system
-                                           , FEATURE_FAVORITE                                             //UBFeature's type
-                                           , UBFeature::NO_P)                                            //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                                //UBFeature represented Favorites element
+                                , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Favorites"   //Virtual Path
+                                            ,QImage(":images/libpalette/FavoritesCategory.svg")           //Icon
+                                            , tr("Favorites")                                             //Translation name
+                                            , QUrl()                                                      //Main path in file system
+                                            , FEATURE_FAVORITE                                             //UBFeature's type
+                                            , UBFeature::NO_P)                                            //UBFeature's permissions
+                                //permissions for category subfolders. Scanning data
+                                , CategoryData::PermissionsData()
+                                .insertr(CategoryData::Library, UBFeature::NO_P)
+                                .insertr(CategoryData::UserDefined, UBFeature::NO_P));
 
     webSearchData = CategoryData(CategoryData::PathData()  //Static library paths for Web search category. Scanning data
                                  .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userSearchDirectory()))
-                            //UBFeature represented Web search element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Web search"   //Virtual Path
-                                           ,QImage(":images/libpalette/WebSearchCategory.svg")            //Icon
-                                           , tr("Web search")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 userSearchDirectory())                   //Main path in file system
-                                           , FEATURE_CATEGORY                                             //UBFeature's type
-                                           , UBFeature::NO_P)                                             //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                                 //UBFeature represented Web search element
+                                 , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Web search"   //Virtual Path
+                                             ,QImage(":images/libpalette/WebSearchCategory.svg")            //Icon
+                                             , tr("Web search")                                             //Translation name
+                                             , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                   userSearchDirectory())                   //Main path in file system
+                                             , FEATURE_CATEGORY                                             //UBFeature's type
+                                             , UBFeature::NO_P)                                             //UBFeature's permissions
+                                 //permissions for category subfolders. Scanning data
+                                 , CategoryData::PermissionsData()
+                                 .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                                 .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
+
 
     bookmarkData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
-        .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
-        //UBFeature represented Trash element
-        , UBFeature(rootData.categoryFeature().getFullVirtualPath()
-        + "/Bookmarks"                //Virtual Path
-        , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
-        , tr("Bookmarks")                                             //Translation name
-        , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
-        , FEATURE_CATEGORY                                      //UBFeature's type
-        , UBFeature::WRITE_P)                                   //UBFeature's permissions
-        //permissions for category subfolders. Scanning data
-        , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory()))
+                                //UBFeature represented Trash element
+                                , UBFeature(rootData.categoryFeature().getFullVirtualPath()
+                                            + "/Bookmarks"                //Virtual Path
+                                            , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
+                                            , tr("Bookmarks")                                             //Translation name
+                                            , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())  //Main path in file system
+                                            , FEATURE_CATEGORY                                      //UBFeature's type
+                                            , UBFeature::WRITE_P)                                   //UBFeature's permissions
+                                //permissions for category subfolders. Scanning data
+                                , CategoryData::PermissionsData()
+                                .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                                .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     trashData = CategoryData(CategoryData::PathData() //Static library paths for Trash category. Scanning data
-                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::userTrashDirPath()))
-                            //UBFeature represented Trash element
-                            , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Trash"   //Virtual Path
-                                           ,QImage(":images/libpalette/TrashCategory.svg")           //Icon
-                                           , tr("Trash")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::userTrashDirPath())     //Main path in file system
-                                           , FEATURE_TRASH                                           //UBFeature's type
-                                           , UBFeature::WRITE_P)                                     //UBFeature's permissions
+                             .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::userTrashDirPath()))
+                             //UBFeature represented Trash element
+                             , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Trash"   //Virtual Path
+                                         ,QImage(":images/libpalette/TrashCategory.svg")           //Icon
+                                         , tr("Trash")                                             //Translation name
+                                         , QUrl::fromLocalFile(UBSettings::userTrashDirPath())     //Main path in file system
+                                         , FEATURE_TRASH                                           //UBFeature's type
+                                         , UBFeature::WRITE_P)                                     //UBFeature's permissions
                              //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                             , CategoryData::PermissionsData()
+                             .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                             .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     webFolderData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
-                                .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userWidgetPath()))
+                                 .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userWidgetPath()))
                                  //UBFeature represented Trash element
                                  , UBFeature(appData.categoryFeature().getFullVirtualPath()
                                              + "/"
                                              + UBSettings::userRelativeWidgetPath()                //Virtual Path
-                                           ,QImage(":images/libpalette/TrashCategory.svg")         //Icon
-                                           , tr("Web")                                             //Translation name
-                                           , QUrl::fromLocalFile(UBSettings::settings()->
-                                                                 userWidgetPath())                 //Main path in file system
-                                           , FEATURE_CATEGORY                                      //UBFeature's type
-                                           , UBFeature::WRITE_P)                                   //UBFeature's permissions
-                             //permissions for category subfolders. Scanning data
-                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
+                                             ,QImage(":images/libpalette/TrashCategory.svg")         //Icon
+                                             , tr("Web")                                             //Translation name
+                                             , QUrl::fromLocalFile(UBSettings::settings()->
+                                                                   userWidgetPath())                 //Main path in file system
+                                             , FEATURE_CATEGORY                                      //UBFeature's type
+                                             , UBFeature::WRITE_P)                                   //UBFeature's permissions
+                                 //permissions for category subfolders. Scanning data
+                                 , CategoryData::PermissionsData()
+                                 .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
+                                 .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
     
 

@@ -1029,7 +1029,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                 if (curGroup)
                     groupContainer.append(curGroup);
                 else
-                    qDebug() << "this is an error" << __func__;
+                    qDebug() << "this is an error if readGroup(UBGraphicsItemAction* action, QString uuid)";
             }
             else if (mXmlReader.name() == tElement){
                 QString id = mXmlReader.attributes().value(aId).toString();
@@ -1050,7 +1050,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                     if(curItem)
                         groupContainer.append(curItem);
                     else
-                        qDebug() << "this is an error" << __func__;
+                        qDebug() << "this is an error if readGroup(UBGraphicsItemAction* action, QString uuid)";
                  }
             }
             else

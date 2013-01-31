@@ -65,8 +65,26 @@ class UBPersistenceManager : public QObject
         static UBPersistenceManager* persistenceManager();
         static void destroy();
 
-        virtual UBDocumentProxy* createDocument(const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = true, QString directory =QString(), int pageCount = 0, bool promptDialogIfExists = false);
-        virtual UBDocumentProxy* createDocumentFromDir(const QString& pDocumentDirectory, const QString& pGroupName = "", const QString& pName = "", bool withEmptyPage = false, bool addTitlePage = false,  bool promptDialogIfExists = false);
+        virtual UBDocumentProxy* createDocument(const QString& pGroupName = ""
+                , const QString& pName = ""
+                , bool withEmptyPage = true
+                , QString directory =QString()
+                , int pageCount = 0
+                , bool promptDialogIfExists = false);
+
+        virtual UBDocumentProxy *createNewDocument(const QString& pGroupName = ""
+                , const QString& pName = ""
+                , bool withEmptyPage = true
+                , QString directory =QString()
+                , int pageCount = 0
+                , bool promptDialogIfExists = false);
+
+        virtual UBDocumentProxy* createDocumentFromDir(const QString& pDocumentDirectory
+                                                       , const QString& pGroupName = ""
+                , const QString& pName = ""
+                , bool withEmptyPage = false
+                , bool addTitlePage = false
+                , bool promptDialogIfExists = false);
 
         virtual UBDocumentProxy* persistDocumentMetadata(UBDocumentProxy* pDocumentProxy);
 

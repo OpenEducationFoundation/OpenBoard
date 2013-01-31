@@ -251,7 +251,7 @@ QString UBSvgSubsetAdaptor::uniboardDocumentNamespaceUriFromVersion(int mFileVer
 UBGraphicsScene* UBSvgSubsetAdaptor::loadScene(UBDocumentProxy* proxy, const int pageIndex)
 {
     QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", pageIndex);
-    qDebug() << fileName;
+    qDebug() << "loading scene from" << fileName;
     QFile file(fileName);
 
     if (file.exists())
@@ -1029,7 +1029,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                 if (curGroup)
                     groupContainer.append(curGroup);
                 else
-                    qDebug() << "this is an error";
+                    qDebug() << "this is an error" << __func__;
             }
             else if (mXmlReader.name() == tElement){
                 QString id = mXmlReader.attributes().value(aId).toString();
@@ -1050,7 +1050,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                     if(curItem)
                         groupContainer.append(curItem);
                     else
-                        qDebug() << "this is an error";
+                        qDebug() << "this is an error" << __func__;
                  }
             }
             else

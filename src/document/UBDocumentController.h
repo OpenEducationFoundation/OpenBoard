@@ -183,8 +183,10 @@ public:
     bool isOkToRename(const QModelIndex &index) const {return flags(index) & Qt::ItemIsEditable;}
     UBDocumentProxy *proxyData(const QModelIndex &index) const {return nodeFromIndex(index)->proxyData();}
     void addDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent = QModelIndex());
+    void addNewDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent = QModelIndex());
     void addCatalog(const QString &pName, const QModelIndex &pParent);
     QList<UBDocumentProxy*> newDocuments() {return mNewDocuments;}
+    void markDocumentAsNew(UBDocumentProxy *pDoc) {if (indexForProxy(pDoc).isValid()) mNewDocuments << pDoc;}
     void setNewName(const QModelIndex &index, const QString &newName);
     QString adjustNameForParentIndex(const QString &pName, const QModelIndex &pIndex);
 

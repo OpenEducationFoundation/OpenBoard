@@ -197,6 +197,8 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
 
 QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UBDocumentProxy *pProxy)
 {
+    Qt::CursorShape saveShape = UBApplication::overrideCursor()->shape();
+    UBApplication::overrideCursor()->setShape(Qt::ArrowCursor);
     QDialog::DialogCode result = QDialog::Rejected;
 
     if (UBApplication::documentController
@@ -204,6 +206,7 @@ QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UB
         QString docGroupName = pProxy->metaData(UBSettings::documentGroupName).toString();
         QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
         if (!parentIndex.isValid()) {
+            UBApplication::overrideCursor()->setShape(saveShape);
             return QDialog::Rejected;
         }
 
@@ -213,7 +216,7 @@ QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UB
         if (docList.contains(docName)) {
             UBDocumentReplaceDialog *replaceDialog = new UBDocumentReplaceDialog(docName
                                                                                  , docList
-                                                                                 , UBApplication::documentController->mainWidget()
+                                                                                 , /*UBApplication::documentController->mainWidget()*/0
                                                                                  , Qt::Widget);
             if (replaceDialog->exec() == QDialog::Accepted) {
                 result = QDialog::Accepted;
@@ -237,6 +240,7 @@ QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UB
             result = QDialog::Accepted;
         }
     }
+    UBApplication::overrideCursor()->setShape(saveShape);
 
     return result;
 }
@@ -423,9 +427,22 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName
         doc = 0;
     }
 
-
-
     return doc;
+}
+
+UBDocumentProxy* UBPersistenceManager::createNewDocument(const QString& pGroupName
+                                                      , const QString& pName
+                                                      , bool withEmptyPage
+                                                      , QString directory
+                                                      , int pageCount
+                                                      , bool promptDialogIfExists)
+{
+    UBDocumentProxy *resultDoc = createDocument(pGroupName, pName, withEmptyPage, directory, pageCount, promptDialogIfExists);
+    if (resultDoc) {
+        mDocumentTreeStructureModel->markDocumentAsNew(resultDoc);
+    }
+
+    return resultDoc;
 }
 
 UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDocumentDirectory

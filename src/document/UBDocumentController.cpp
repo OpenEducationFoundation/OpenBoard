@@ -863,6 +863,11 @@ void UBDocumentTreeModel::addDocument(UBDocumentProxy *pProxyData, const QModelI
     }
 
     addNode(freeNode, lParent);
+}
+
+void UBDocumentTreeModel::addNewDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent)
+{
+    addDocument(pProxyData, pParent);
     mNewDocuments << pProxyData;
 }
 
@@ -1210,7 +1215,7 @@ void UBDocumentController::createNewDocument()
                 ? docModel->virtualPathForIndex(selectedIndex)
                 : docModel->virtualDirForIndex(selectedIndex);
 
-        UBDocumentProxy *document = pManager->createDocument(groupName);
+        UBDocumentProxy *document = pManager->createNewDocument(groupName);
         selectDocument(document);
     }
 }
@@ -1526,8 +1531,6 @@ void UBDocumentController::setupViews()
 
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneCreated(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneWillBeDeleted(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
-        connect(UBApplication::applicationController, SIGNAL(mainModeChanged(UBApplicationController::MainMode))
-                , this, SLOT(onMainModeChanged(UBApplicationController::MainMode)));
 
         mDocumentUI->thumbnailWidget->setBackgroundBrush(UBSettings::documentViewLightColor);
 
@@ -2112,7 +2115,7 @@ void UBDocumentController::importFile()
     QFileInfo fileInfo(filePath);
 
     if (fileInfo.suffix().toLower() == "ubx") {
-        UBPersistenceManager::persistenceManager()->createDocumentProxiesStructure(docManager->importUbx(filePath, UBSettings::userDocumentDirectory()));
+        UBPersistenceManager::persistenceManager()->createDocumentProxiesStructure(docManager->importUbx(filePath, UBSettings::userDocumentDirectory()), true);
 
     } else {
         UBSettings::settings()->lastImportFilePath->set(QVariant(fileInfo.absolutePath()));

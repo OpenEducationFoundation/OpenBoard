@@ -152,7 +152,7 @@ void UBBoardController::init()
     connect(UBDownloadManager::downloadManager(), SIGNAL(downloadModalFinished()), this, SLOT(onDownloadModalFinished()));
     connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
-    UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createDocument();
+    UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
 
     setActiveDocumentScene(doc);
 
@@ -1614,7 +1614,6 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
 
     bool documentChange = selectedDocument() != pDocumentProxy;
 
-    qDebug() << pDocumentProxy->groupName();
     mControlView->setPresentationMode(pDocumentProxy->groupName() == "Models");
 
     int index = pSceneIndex;

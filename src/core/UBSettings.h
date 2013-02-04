@@ -383,6 +383,7 @@ class UBSettings : public QObject
         UBSetting* magnifierDrawingMode;
 
         UBSetting *cacheKeepAspectRatio;
+        UBSetting *cacheMode;
         UBSetting *casheLastHoleSize;
         UBSetting *cacheColor;
 

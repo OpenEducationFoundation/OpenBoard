@@ -357,15 +357,17 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 emit showTab(this);
                 mpCurrentCache = dynamic_cast<UBGraphicsCache*>(it);
                 if((NULL != mpCurrentCache) && (!mCaches.contains(mpCurrentCache)))
-                {
                     mCaches.append(mpCurrentCache);
-                }
+                else
+                    return;
 
                 // Update the values of the cache properties
                 mpWidthSlider->setValue(mpCurrentCache->holeWidth());
                 mpHeightSlider->setValue(mpCurrentCache->holeHeight());
                 syncCacheColor(mpCurrentCache->maskColor());
                 mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
+                mpCurrentCache->setMode(UBSettings::settings()->cacheMode->get().toInt());
+
                 switch(mpCurrentCache->maskshape())
                 {
                     case eMaskShape_Circle:
@@ -456,6 +458,7 @@ void UBCachePropertiesWidget::onCacheEnabled()
 void UBCachePropertiesWidget::onModeChanged(int mode)
 {
     mpCurrentCache->setMode(mode);
+    UBSettings::settings()->cacheMode->set(mode);
 }
 
 void UBCachePropertiesWidget::onAlphaChanged(int alpha)

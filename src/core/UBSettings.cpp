@@ -262,6 +262,7 @@ void UBSettings::init()
 
 
     cacheKeepAspectRatio = new UBSetting(this, "Cache", "KeepAspectRatio", true);
+    cacheMode = new UBSetting(this, "Cache", "CasheMode", 0);
     casheLastHoleSize = new UBSetting(this, "Cache", "LastHoleSize", QSize(20,20));
     cacheColor = new UBColorListSetting(this, "Cache", "Color", "#000000", 0.75);
 

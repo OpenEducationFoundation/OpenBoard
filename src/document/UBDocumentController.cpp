@@ -966,11 +966,11 @@ UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
     setObjectName("UBDocumentTreeView");
     setRootIsDecorated(true);
 
-    QScrollBar *hScroller = horizontalScrollBar();
-    if (hScroller)
-    {
-        connect(hScroller, SIGNAL(rangeChanged(int, int)), this, SLOT(hSliderRangeChanged(int, int)));
-    }
+//    QScrollBar *hScroller = horizontalScrollBar();
+//    if (hScroller)
+//    {
+//        connect(hScroller, SIGNAL(rangeChanged(int, int)), this, SLOT(hSliderRangeChanged(int, int)));
+//    }
 
     connect(verticalScrollBar(), SIGNAL(rangeChanged(int,int)), this, SLOT(adjustSize()));
     connect(this, SIGNAL(collapsed(const QModelIndex&)), this, SLOT(adjustSize()));

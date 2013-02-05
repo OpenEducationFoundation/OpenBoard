@@ -28,7 +28,10 @@ class QCheckBox;
 class QVBoxLayout;
 class QHBoxLayout;
 
+#include <QWebView>
+
 #include "UBFloatingPalette.h"
+#include "api/UBWidgetUniboardAPI.h"
 
 class UBStartupHintsPalette : public UBFloatingPalette
 {
@@ -53,9 +56,12 @@ private:
     QCheckBox* mShowNextTime;
     QVBoxLayout* mLayout;
     QHBoxLayout* mButtonLayout;
+    UBWidgetUniboardAPI *mpSankoreAPI;
+    QWebView* mpWebView;
 
 private slots:
     void onShowNextTimeStateChanged(int state);
+    void javaScriptWindowObjectCleared();
 };
 
 #endif // UBSTARTUPTIPSPALETTE_H

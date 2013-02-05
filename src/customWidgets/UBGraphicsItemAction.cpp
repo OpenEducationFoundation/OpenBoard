@@ -28,7 +28,9 @@
 #include "web/UBWebController.h"
 #include "document/UBDocumentController.h"
 #include "document/UBDocumentProxy.h"
+#include "document/UBDocumentContainer.h"
 
+#include "board/UBBoardController.h"
 
 
 UBGraphicsItemAction::UBGraphicsItemAction(eUBGraphicsItemLinkType linkType, QObject *parent) :
@@ -50,16 +52,17 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
 {
     Q_ASSERT(audioFile.length() > 0);
     if(isNewAction){
+        qDebug() << UBApplication::boardController->selectedDocument();
         QString extension = QFileInfo(audioFile).completeSuffix();
-        QString destDir = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
+        QString destDir = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
         QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
         if(!QDir(destDir).exists())
-            QDir(UBApplication::documentController->selectedDocument()->persistencePath()).mkdir(destDir);
+            QDir(UBApplication::boardController->selectedDocument()->persistencePath()).mkdir(destDir);
         QFile(audioFile).copy(destFile);
         mAudioPath = destFile;
     }
     else
-        mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
+        mAudioPath = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + audioFile;
 
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
@@ -85,7 +88,7 @@ void UBGraphicsItemPlayAudioAction::play()
 
 QStringList UBGraphicsItemPlayAudioAction::save()
 {
-    QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" ;
+    QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath() + "/" ;
     return QStringList() << QString("%1").arg(eLinkToAudio) <<  mAudioPath.replace(documentPath,"");
 }
 

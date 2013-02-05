@@ -181,13 +181,6 @@
             $(window).resize(function(){
                 $("#web-browser").height($(window).height() - $("#toolbar").height() - 2);
                 $("#web-browser").width($(window).width() - 2);
-
-                if($(window).width() < 370)
-                    window.resizeTo(370, $(window).height());                
-                
-                if($(window).height() < 150)
-                    window.resizeTo($(window).width(), 150);
-
             });
 
             function wikiReq(kword){

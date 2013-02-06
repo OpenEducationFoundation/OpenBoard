@@ -846,11 +846,30 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
             }
         }
 
-        //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
-        mRemovedItems << intersectedPolygonItem;
+        //remove full polygon item for replace it by couple of polygons which creates the same stroke without a part intersects with eraser
+         mRemovedItems << intersectedPolygonItem;
+
+        QTransform t;
+        bool bApplyTransform = false;
         if (intersectedPolygonItem->strokesGroup())
+        {
+            if (intersectedPolygonItem->strokesGroup()->parentItem())
+            {   
+                bApplyTransform = true;
+                t = intersectedPolygonItem->sceneTransform();
+            }
             intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
+        }
+
         removeItem(intersectedPolygonItem);
+        if (bApplyTransform)
+            intersectedPolygonItem->setTransform(t);
+
+
+        removeItem(intersectedPolygonItem);
+        
+        if (bApplyTransform)
+            intersectedPolygonItem->setTransform(t);
     }
 
     if (!intersectedItems.empty())

@@ -218,7 +218,7 @@ void UBWidgetUniboardAPI::addObject(QString pUrl, int width, int height, int x, 
 void UBWidgetUniboardAPI::setBackground(bool pIsDark, bool pIsCrossed)
 {
     if (mScene)
-    mScene->setBackground(pIsDark, pIsCrossed);
+        mScene->setBackground(pIsDark, pIsCrossed);
 }
 
 
@@ -240,8 +240,8 @@ void UBWidgetUniboardAPI::drawLineTo(const qreal x, const qreal y, const qreal p
         return;
 
     if (mScene)
-    mScene->drawLineTo(QPointF(x, y), pWidth, 
-		UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+    mScene->drawLineTo(QPointF(x, y), pWidth,
+        UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
 }
 
 

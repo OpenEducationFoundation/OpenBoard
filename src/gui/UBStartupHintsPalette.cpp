@@ -25,12 +25,16 @@
 #include <QLabel>
 #include <QPainter>
 #include <QMouseEvent>
-#include <QWebView>
 #include <QCheckBox>
+#include <QWebFrame>
 #include "UBStartupHintsPalette.h"
 
 #include "globals/UBGlobals.h"
 #include "core/UBSettings.h"
+
+
+
+
 
 UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
     UBFloatingPalette(Qt::TopRightCorner,parent)
@@ -42,10 +46,13 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
         mLayout->setContentsMargins(10,28,10,10);
         setLayout(mLayout);
         QString url = UBSettings::settings()->applicationStartupHintsDirectory() + "/index.html";
-        QWebView* webView = new QWebView(this);
-        webView->setUrl(QUrl::fromLocalFile(url));
-        webView->setAcceptDrops(false);
-        mLayout->addWidget(webView);
+        mpWebView = new QWebView(this);
+        mpSankoreAPI = new UBWidgetUniboardAPI(0);
+        mpWebView->page()->mainFrame()->addToJavaScriptWindowObject("sankore", mpSankoreAPI);
+        connect(mpWebView->page()->mainFrame(), SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(javaScriptWindowObjectCleared()));
+        mpWebView->setUrl(QUrl::fromLocalFile(url));
+        mpWebView->setAcceptDrops(false);
+        mLayout->addWidget(mpWebView);
         mButtonLayout = new QHBoxLayout();
         mLayout->addLayout(mButtonLayout);
         mShowNextTime = new QCheckBox(tr("Visible next time"),this);
@@ -107,4 +114,9 @@ void UBStartupHintsPalette::showEvent(QShowEvent *event)
 int UBStartupHintsPalette::border()
 {
     return 40;
+}
+
+void UBStartupHintsPalette::javaScriptWindowObjectCleared()
+{
+    mpWebView->page()->mainFrame()->addToJavaScriptWindowObject("sankore", mpSankoreAPI);
 }

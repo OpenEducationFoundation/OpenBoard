@@ -199,7 +199,7 @@ void UBCreateLinkPalette::init()
     if(activeIndex == 0)
         previousPageCheckBox->setEnabled(false);
     pageLinkWidgetLayout->addWidget(previousPageCheckBox);
-    QCheckBox* firstPageCheckBox = new QCheckBox(tr("First Page"),this);
+    QCheckBox* firstPageCheckBox = new QCheckBox(tr("Title Page"),this);
     mButtonGroup->addButton(firstPageCheckBox,eMoveToFirstPage);
     pageLinkWidgetLayout->addWidget(firstPageCheckBox);
     QCheckBox* lastPageCheckBox = new QCheckBox(tr("Last Page"),this);

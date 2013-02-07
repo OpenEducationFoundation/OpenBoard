@@ -1690,6 +1690,7 @@ void UBDocumentController::openSelectedItem()
 
             if (proxy && isOKToOpenDocument(proxy))
             {
+                mBoardController->setActiveDocumentScene(proxy, thumb->sceneIndex());
                 UBApplication::applicationController->showBoard();
             }
         }
@@ -3015,7 +3016,7 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
         if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"), tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
             UBDocumentContainer::deletePages(sceneIndexes);
-
+            mBoardController->deletePages(sceneIndexes);
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
             UBMetadataDcSubsetAdaptor::persist(proxy);
 

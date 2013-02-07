@@ -72,6 +72,8 @@ class UBDocumentProxy : public QObject
 
         int pageCount();
 
+        bool theSameDocument(UBDocumentProxy *proxy);
+
     protected:
         void setPageCount(int pPageCount);
         int incPageCount();

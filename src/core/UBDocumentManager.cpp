@@ -193,7 +193,6 @@ UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString
                     bool b = UBPersistenceManager::persistenceManager()->addFileToDocument(document, pFile.fileName(), importAdaptor->folderToCopy() , uuid, filepath);
                     if (!b)
                     {
-                        UBPersistenceManager::persistenceManager()->deleteDocument(document);
                         UBApplication::setDisabled(false);
                         return NULL;
                     }

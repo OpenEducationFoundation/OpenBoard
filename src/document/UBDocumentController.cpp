@@ -290,6 +290,7 @@ UBDocumentTreeModel::UBDocumentTreeModel(QObject *parent) :
 
     setRootNode(rootNode);
 
+    mRoot = index(0, 0, QModelIndex());
     mMyDocuments =  index(0, 0, QModelIndex());
     mModels =  index(1, 0, QModelIndex());
     mTrash =  index(2, 0, QModelIndex());
@@ -561,15 +562,18 @@ QPersistentModelIndex UBDocumentTreeModel::persistentIndexForNode(UBDocumentTree
 
 UBDocumentTreeNode *UBDocumentTreeModel::findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const
 {
-    foreach (UBDocumentTreeNode *curNode, pParent->children()) {
-//        qDebug() << "current proxy is " << curNode;
-        if (curNode->proxyData() == pSearch) {
-            return curNode;
-        } else if (curNode->children().count()) {
+    foreach (UBDocumentTreeNode *curNode, pParent->children()) 
+    {
+        if (UBDocumentTreeNode::Catalog != curNode->nodeType())
+        {
+            if (curNode->proxyData()->theSameDocument(pSearch)) 
+                return curNode;
+        }
+        else if (curNode->children().count()) 
+        {
             UBDocumentTreeNode *recursiveDescendResult = findProxy(pSearch, curNode);
-            if (recursiveDescendResult) {
+            if (recursiveDescendResult) 
                 return findProxy(pSearch, curNode);
-            }
         }
     }
 
@@ -690,6 +694,7 @@ void UBDocumentTreeModel::moveIndex(const QModelIndex &source, const QModelIndex
     UBDocumentTreeNode *sourceNode = nodeFromIndex(source);
     QPersistentModelIndex clonedTopLevel = copyIndexToNewParent(source, newParent);
     if (sourceNode == mCurrentNode) {
+        mCurrentNode = nodeFromIndex(clonedTopLevel);
         emit currentIndexMoved(clonedTopLevel, source);
     }
     removeRow(source.row(), source.parent());
@@ -956,6 +961,65 @@ UBDocumentTreeNode *UBDocumentTreeModel::nodeFromIndex(const QModelIndex &pIndex
     }
 }
 
+void UBDocumentTreeModel::sort(int column, Qt::SortOrder order)
+{
+    Q_UNUSED(order)
+
+//  QModelIndex parentIndex = index(0, column, QModelIndex());
+    sortChilds(mRoot);
+}
+
+void UBDocumentTreeModel::sortChilds(const QModelIndex &parentIndex)
+{
+    int current_column = 0;
+    int current_row = 0;
+
+    QList <UBDocumentTreeNode*> catalogsForSort;
+    QList <UBDocumentTreeNode*> documentsForSort;
+
+    for (current_row = 0; current_row < rowCount(parentIndex); current_row++)
+    {
+        QModelIndex currentIndex = index(current_row, current_column, parentIndex);
+        if (isCatalog(currentIndex))
+            catalogsForSort << nodeFromIndex(currentIndex);           
+        else 
+            documentsForSort << nodeFromIndex(currentIndex);
+    }
+
+    sortIndexes(catalogsForSort);
+    sortIndexes(documentsForSort);
+
+
+
+    foreach (UBDocumentTreeNode *node, catalogsForSort)
+    {
+        sortChilds(indexForNode(node));
+    }
+
+    foreach(UBDocumentTreeNode *node, catalogsForSort)
+    {
+        QModelIndex currentIndex = indexForNode(node);
+        moveIndex(currentIndex, parentIndex);
+    }
+
+    for (int i = documentsForSort.count()-1; i >= 0 ; i--)
+    {
+        QModelIndex currentIndex = indexForNode(documentsForSort.at(i));
+        moveIndex(currentIndex, parentIndex);
+    }
+}
+
+
+void UBDocumentTreeModel::sortIndexes(QList<UBDocumentTreeNode *> &unsortedIndexList)
+{
+    qStableSort(unsortedIndexList.begin(), unsortedIndexList.end(), nodeLessThan);
+}
+
+bool UBDocumentTreeModel::nodeLessThan(const UBDocumentTreeNode *firstIndex, const UBDocumentTreeNode *secondIndex)
+{
+    return firstIndex->nodeName() < secondIndex->nodeName();
+}
+
 UBDocumentTreeModel::~UBDocumentTreeModel()
 {
     delete mRootNode;
@@ -1216,7 +1280,14 @@ void UBDocumentController::createNewDocument()
                 ? docModel->virtualPathForIndex(selectedIndex)
                 : docModel->virtualDirForIndex(selectedIndex);
 
-        UBDocumentProxy *document = pManager->createNewDocument(groupName);
+        
+        /* disabled model sorting. We cannot use it because of lot os troubles with internal Qt implementation related QPerisstentModelIndex which becomes invalid on index move.
+        UBDocumentProxy *document = new UBDocumentProxy(*pManager->createDocument(groupName)); // work around with memory leak.
+        mBoardController->setActiveDocumentScene(document);
+        UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->sort(0);
+        */
+
+        UBDocumentProxy *document = pManager->createDocument(groupName);
         selectDocument(document);
     }
 }
@@ -1277,6 +1348,12 @@ void UBDocumentController::createNewDocumentGroup()
     QString newFolderName = docModel->adjustNameForParentIndex(tr("New Folder"), parentIndex);
 
     docModel->addCatalog(newFolderName, parentIndex);
+/*  disabled model sorting. We cannot use it because of lot os troubles with internal Qt implementation related QPerisstentModelIndex which becomes invalid on index move.
+    UBDocumentProxy *document = new UBDocumentProxy(*selectedDocument()); // work around with memory leak.
+    mBoardController->setActiveDocumentScene(document);
+    UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->sort(0);
+    selectDocument(document);
+*/
 }
 
 
@@ -1535,6 +1612,10 @@ void UBDocumentController::setupViews()
 
         mDocumentUI->thumbnailWidget->setBackgroundBrush(UBSettings::documentViewLightColor);
 
+/*disabled model sorting. We cannot use it because of lot os troubles with internal Qt implementation related QPerisstentModelIndex which becomes invalid on index move.
+        selectDocument(new UBDocumentProxy (*mBoardController->selectedDocument())); // work around with memory leak 
+        UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->sort(0);
+*/
         #ifdef Q_WS_MACX
             mMessageWindow = new UBMessageWindow(NULL);
         #else
@@ -2902,6 +2983,9 @@ void UBDocumentController::currentIndexMoved(const QModelIndex &newIndex, const 
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
     UBDocumentProxy *newProxy = docModel->proxyData(newIndex);
     if (newProxy) {
+        UBDocumentProxy *cp = new UBDocumentProxy(*newProxy); // we cannot use newProxy because it will be destroyed later
+        pureSetDocument(cp);
+        mBoardController->pureSetDocument(cp);
         mBoardController->pureSetDocument(newProxy);
     }
     mCurrentIndexMoved = true;

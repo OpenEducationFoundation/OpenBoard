@@ -1289,6 +1289,9 @@ void UBDocumentController::createNewDocument()
 
         UBDocumentProxy *document = pManager->createDocument(groupName);
         selectDocument(document);
+
+        if (document)
+            UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->markDocumentAsNew(document);
     }
 }
 

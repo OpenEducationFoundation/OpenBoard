@@ -308,7 +308,8 @@ void UBCachePropertiesWidget::onColorClicked()
 {
     // Show the color picker
     QColor newColor = QColorDialog::getColor(mActualColor,this);
-    syncCacheColor(newColor);
+    if (QColor::Invalid	 != newColor.spec())
+        syncCacheColor(newColor);
 }
 
 void UBCachePropertiesWidget::updateShapeButtons()

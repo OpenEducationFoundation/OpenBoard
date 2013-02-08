@@ -106,7 +106,7 @@
     </message>
     <message>
         <source>Home</source>
-        <translation>Úvodná stránka</translation>
+        <translation>Domov</translation>
     </message>
     <message>
         <source>Left</source>
@@ -827,39 +827,39 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pridať záložku&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stiahnúť do&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;knižnice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Stiahnúť do knižnice</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stiahnúť na&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;aktuálnu stránku&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Stiahnúť na aktuálnu stránku</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pridať odkaz do&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;knižnice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať odkaz do knižnice</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pridať odkaz na&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;aktuálnu stránku&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať odkaz na aktuálnu stránku</translation>
     </message>
 </context>
 <context>
@@ -1035,101 +1035,101 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfa:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>Geometria:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>Šírka:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výška:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachovať pomer strán</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukážka:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatvoriť cache</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;pustite obsah&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázky nie sú akceptované</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dáta sa nedajú zobraziť</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Skopírovaný súbor nebol rozoznaný ako zvukový súbor</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Prehrať zvukový súbor</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať odkaz na stránku</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať odkaz na webovú stránku</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknite na zvukový súbor a preneste ho z knižnice do tohto poľa</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">Ďalšia stránka</translation>
+        <translation>Ďalšia stránka</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">Predchádzajúca stránka</translation>
+        <translation>Predchádzajúca stránka</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulná stránka</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Posledná stránka</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Číslo stránky</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>Sem vložte text pre www adresu</translation>
     </message>
 </context>
 <context>
@@ -1163,7 +1163,7 @@
     <name>UBDocumentController</name>
     <message>
         <source>Empty</source>
-        <translation>Vyprázdniť</translation>
+        <translation>Prázdny</translation>
     </message>
     <message>
         <source>Trash</source>
@@ -1387,40 +1387,42 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">Prijať</translation>
+        <translation>Prijať</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahradiť</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušiť</translation>
+        <translation>Zrušiť</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation>Názov %1 sa už používa.
+Ak tento názov necháte, starý dokument bude nahradený.
+Ak zadaáte nový názov, vytvorí sa nový dokument.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Moje dokumenty</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Šablóny</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">Kôš</translation>
+        <translation>Kôš</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumenty bez názvu</translation>
     </message>
 </context>
 <context>
@@ -1446,99 +1448,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sťahovanie zlyhalo.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>vzdialený server odmietol spojenie (server neprijíma žiadosti)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>vzdialený server ukončil spojenie predčasne, pred prijatím a spracovaním celej odpovede</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>vzdialený server sa nenašiel (neplatný názov servera)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>pripojenie k vzdialenému serveru vypršalo</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Operácia bola zrušený vyvolaním funkcie abort() alebo close() pred jej ukončením.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL/TLS handshake zlyhal a zaheslovaný kanál sa nepodarilo vytvoriť. Mal by vyslaný signál sslErrors().</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>pripojenie bolo prerušené kvôli odpojeniu zo siete, systém sa však začal pripájať na iný prístupový bod. Požiadavku treba znova odoslať a bude spracovaná, len čo sa spojenie znova obnoví.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>pripojenie k proxy serveru bolo zamietnuté (proxy server neprijíma žiadosti)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy server ukončil spojenie predčasne, pred prijatím a spracovaním celej odpovede</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy server sa nenašiel (neplatný názov proxy servera)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>pripojenie k proxy serveru vypršalo alebo proxy server nezareagoval včas na odoslanú požiadavku</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy server vyžaduje overenie totožnosti na vybavenie požiadavky, ale neprijal žiadne odoslané údaje (ak ste nejaké poslali)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>prístup k vzdialenému obsahu bol zamietnutý (podobné ako chyba 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>operácia, ktorú chcete vykonať so vzdialeným obsahom, nie je povolená</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>vzdialený obsah sa nenašiel na serveri (podobné ako chyby 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>vzdialený server vyžaduje overenie totožnosti na poskytnutie obsahu, ale poskytnuté údaje (ak ste nejaké zadali) neprijal</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>požiadavku bolo treba poslať znova, ale to sa nepodarilo napríklad preto, lebo nahrávané údaje sa nedali druhýkrát prečítať.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikácia na prístup k sieti nemôže vybaviť požiadavku, lebo nepozná zadaný protokol</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>zadaná operácia je pre tento protokol neplatná</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Bola zistená neznáma chyba súvisiaca so sieťou</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Bola zistená neznáma chyba súvisiaca s proxy</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Bola zistená neznáma chyba súvisiaca so vzdialeným obsahom</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>bola zistená porucha protokolu (analytická chyba, neznáme alebo nečakané odpovede a pod.)</translation>
     </message>
 </context>
 <context>
@@ -1613,27 +1615,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export sa nepodaril...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovať ako súbor UBX</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">Exportuje sa dokument...</translation>
+        <translation>Exportuje sa dokument...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Export bol úspešný.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">Export sa nepodaril.</translation>
+        <translation>Export sa nepodaril.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovať do formátu Sankore UBX</translation>
     </message>
 </context>
 <context>
@@ -1807,11 +1809,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">Záložky</translation>
+        <translation>Záložky</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished">Web</translation>
+        <translation>Web</translation>
     </message>
 </context>
 <context>
@@ -1848,19 +1850,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Pridať akciu</translation>
+        <translation>Pridať akciu</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na zvuk</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na stránku</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na www adresu</translation>
     </message>
 </context>
 <context>
@@ -1879,19 +1881,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Pridať akciu</translation>
+        <translation>Pridať akciu</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na zvuk</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na stránku</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť odkaz na www stránku</translation>
     </message>
 </context>
 <context>
@@ -1983,7 +1985,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore (sada dokumentov) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2203,123 +2205,123 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>predvolený</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>arabčina</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>bulharčina</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>katalánčina</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>čeština</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>dánčina</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">Nemčina</translation>
+        <translation>nemčina</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>gréčtina</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">Angličtina</translation>
+        <translation>angličtina</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>angličtina - Spoj. kráľovstvo</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>španielčina</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">Francúzština</translation>
+        <translation>francúzština</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">Švajčiarská francúzština</translation>
+        <translation>švajčiarska francúzština</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>taliančina</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>hebrejčina</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>japončina</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>kórejčina</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>malgaština</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>nórčina</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>holandčina</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>poľština</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>retorománčina</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>rumunčina</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">Ruština</translation>
+        <translation>ruština</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>slovenčina</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>švédčina</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>turečtina</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>čínština</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>zjednodušená čínština</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>tradičná čínština</translation>
     </message>
 </context>
 <context>
@@ -2364,14 +2366,14 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť aj nabudúce</translation>
     </message>
 </context>
 <context>
@@ -2465,7 +2467,7 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation>Indexovanie zdrojov</translation>
+        <translation>Popis zdroja</translation>
     </message>
     <message>
         <source>Keywords:</source>
@@ -2535,7 +2537,7 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Titulné stránka</translation>
+        <translation>Titulná stránka</translation>
     </message>
 </context>
 <context>
@@ -2606,11 +2608,11 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">Celá stránka</translation>
+        <translation>Celá stránka</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>Rám </translation>
     </message>
 </context>
 <context>
@@ -2707,7 +2709,7 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished">OpenSankore</translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2718,11 +2720,11 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
     </message>
     <message>
         <source>People &amp; Blogs</source>
-        <translation>Ľudia a blogy</translation>
+        <translation>Ľudia &amp; blogy</translation>
     </message>
     <message>
         <source>Nonprofits &amp; Activism</source>
-        <translation>Neziskovky a aktivisti</translation>
+        <translation>Neziskovky &amp; aktivisti</translation>
     </message>
     <message>
         <source>Comedy</source>
@@ -2742,11 +2744,11 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
     </message>
     <message>
         <source>Science &amp; Technology</source>
-        <translation>Veda a technika</translation>
+        <translation>Veda &amp; technika</translation>
     </message>
     <message>
         <source>Howto &amp; Style</source>
-        <translation>Návody a štýl</translation>
+        <translation>Návody &amp; štýl</translation>
     </message>
     <message>
         <source>Education</source>
@@ -2758,19 +2760,19 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
     </message>
     <message>
         <source>Travel &amp; Events</source>
-        <translation>Cestovanie a udalosti</translation>
+        <translation>Cestovanie &amp; udalosti</translation>
     </message>
     <message>
         <source>News &amp; Politics</source>
-        <translation>Správy a politika</translation>
+        <translation>Správy &amp; politika</translation>
     </message>
     <message>
         <source>Pets &amp; Animals</source>
-        <translation>Domáce a iné zvieratá</translation>
+        <translation>Domáce &amp; divoké zvieratá</translation>
     </message>
     <message>
         <source>Autos &amp; Vehicles</source>
-        <translation>Nákladné a osobné autá</translation>
+        <translation>Autá &amp; nákladiaky</translation>
     </message>
 </context>
 <context>
@@ -2960,23 +2962,23 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte obsah, ktorý sa má skopírovať:</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">Názov aplikácie</translation>
+        <translation>Názov aplikácie</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>Obmedzenia.</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Táto funkcia je navrhnutá tak, aby fungovala na najbežnejších webových stránkach.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosím, rešpektujte autorské práva pre vyváranie odkazov a kopírovanie obsahu z internetu.</translation>
     </message>
 </context>
 <context>
@@ -3057,7 +3059,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri reštarte obnoviť údaje</translation>
     </message>
 </context>
 <context>
@@ -4248,35 +4250,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipy pri štarte</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť tipy pri štarte</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jazyk</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový jazyk sa nahrá pri opätovnom spustení programu</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatvoriť Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>ID na Planète Sankoré na export súborov</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>Pri reštarte obnoviť údaje  </translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4287,19 +4289,19 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4311,7 +4313,7 @@ p, li { white-space: pre-wrap; }
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4363,7 +4365,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>

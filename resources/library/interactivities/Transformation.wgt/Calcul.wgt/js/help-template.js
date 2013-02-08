@@ -1,1 +1,0 @@
-<h3>Calcul rapide</h3>

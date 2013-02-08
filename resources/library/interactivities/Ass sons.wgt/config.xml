@@ -7,7 +7,7 @@
 		minimum_height="300"
 		minimum_width="710"
         height="530" 
-        ub:resizable="true">     
+        ub:resizable="false">     
    
 		<name>Notes</name>
 		<author href="http://www.getuniboard.com"

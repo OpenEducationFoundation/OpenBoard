@@ -112,6 +112,7 @@ signals:
 
 
 private:
+    QMutex mMutex;
     sDownloadFileDesc mDesc;
     QByteArray mData;
     bool m_bAborting;

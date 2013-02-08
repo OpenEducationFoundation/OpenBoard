@@ -123,8 +123,7 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
                 if (obj.objectMimeType.contains("html")
                     ||obj.objectMimeType.contains("audio")
                     || obj.objectMimeType.contains("video")
-                    || obj.objectMimeType.contains("flash")
-                    || obj.objectMimeType.contains("image"))
+                    || obj.objectMimeType.contains("flash"))
                         htmlObjects << obj;
             }
         }

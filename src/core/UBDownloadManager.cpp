@@ -49,12 +49,17 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 
 void UBAsyncLocalFileDownloader::run()
 {
-    if(mDesc.srcUrl.startsWith("file://") || mDesc.srcUrl.startsWith("/"))
-        mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
-    else
-        mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
+    mMutex.lock();
+    sDownloadFileDesc descriptor = mDesc;
+    mMutex.unlock();
 
-    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
+
+    if(descriptor.srcUrl.startsWith("file://") || descriptor.srcUrl.startsWith("/"))
+        descriptor.srcUrl = QUrl(descriptor.srcUrl).toLocalFile();
+    else
+        descriptor.srcUrl = QUrl::fromLocalFile(descriptor.srcUrl).toLocalFile();
+
+    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(descriptor.srcUrl);
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -70,12 +75,12 @@ void UBAsyncLocalFileDownloader::run()
         if (UBMimeType::Audio == itemMimeType)
             destDirectory = UBPersistenceManager::audioDirectory;
 
-    if (mDesc.originalSrcUrl.isEmpty())
-        mDesc.originalSrcUrl = mDesc.srcUrl;
+    if (descriptor.originalSrcUrl.isEmpty())
+        descriptor.originalSrcUrl = descriptor.srcUrl;
 
     QString uuid = QUuid::createUuid();
     UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
-                                                                  mDesc.srcUrl,
+                                                                  descriptor.srcUrl,
                                                                   destDirectory,
                                                                   uuid,
                                                                   mTo,
@@ -87,7 +92,7 @@ void UBAsyncLocalFileDownloader::run()
             QFile::remove(mTo);
     }
     else
-        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
+        emit signal_asyncCopyFinished(descriptor.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(descriptor.originalSrcUrl), "", NULL, descriptor.pos, descriptor.size, descriptor.isBackground);
 }
 
 void UBAsyncLocalFileDownloader::abort()

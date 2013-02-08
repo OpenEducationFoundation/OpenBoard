@@ -206,7 +206,9 @@ void UBGraphicsTextItemDelegate::pickFont()
             delegated()->setTextCursor(curCursor);
             delegated()->setFont(selectedFont);
             delegated()->setSelected(true);
-            delegated()->document()->adjustSize();
+//          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)
+//          delegated()->adjustSize();
+            delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
             delegated()->contentsChanged();
         }
     }

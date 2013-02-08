@@ -161,6 +161,7 @@ public:
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
     QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
     void moveIndex(const QModelIndex &source, const QModelIndex &newParent);
+    UBDocumentTreeNode *currentNode() const {return mCurrentNode;} //work around for sorting model.
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
     QModelIndex currentIndex() {return indexForNode(mCurrentNode);} //index representing a current document
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
@@ -195,6 +196,10 @@ public:
     QPersistentModelIndex trashIndex() const {return mTrash;}
     QPersistentModelIndex untitledDocumentsIndex() const {return mUntitledDocuments;}
     UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
+    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
+    void sortChilds(const QModelIndex &parentIndex);
+    void sortIndexes(QList<UBDocumentTreeNode *> &unsortedIndexList);
+    static bool nodeLessThan(const UBDocumentTreeNode *firstIndex, const UBDocumentTreeNode *secondIndex);
 
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);

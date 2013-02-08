@@ -998,7 +998,6 @@ void UBPersistenceManager::purgeEmptyDocuments()
             && !docProxy->metaData("sessionGradeLevel").toString().size()
             && !docProxy->metaData("sessionSubjects").toString().size()
             && !docProxy->metaData("sessionType").toString().size()
-            && !docProxy->metaData("sessionLicence").toString().size()
             )
         {
             toBeDeleted << docProxy;

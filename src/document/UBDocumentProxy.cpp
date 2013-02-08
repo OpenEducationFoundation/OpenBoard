@@ -54,6 +54,10 @@ UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     setPersistencePath(pPersistancePath);
 }
 
+bool UBDocumentProxy::theSameDocument(UBDocumentProxy *proxy)
+{
+    return  proxy && mPersistencePath == proxy->mPersistencePath;
+}
 
 void UBDocumentProxy::init()
 {

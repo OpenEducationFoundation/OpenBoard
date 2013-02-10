@@ -83,7 +83,16 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="autoScroll">
-            <bool>false</bool>
+            <bool>true</bool>
+           </property>
+           <property name="autoScrollMargin">
+            <number>65</number>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="verticalScrollMode">
+            <enum>QAbstractItemView::ScrollPerItem</enum>
            </property>
            <property name="animated">
             <bool>true</bool>

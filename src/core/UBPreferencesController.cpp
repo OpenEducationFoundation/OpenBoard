@@ -245,6 +245,7 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
     mIsoCodeAndLanguage.insert(tr("Bulgarian"),"bg");
     mIsoCodeAndLanguage.insert(tr("Catalan"),"ca");
+    mIsoCodeAndLanguage.insert(tr("Corsican"),"co");
     mIsoCodeAndLanguage.insert(tr("Czech"),"cs");
     mIsoCodeAndLanguage.insert(tr("Danish"),"da");
     mIsoCodeAndLanguage.insert(tr("German"),"de");
@@ -255,6 +256,7 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("French"),"fr");
     mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
     mIsoCodeAndLanguage.insert(tr("Italian"),"it");
+    mIsoCodeAndLanguage.insert(tr("Hindi"),"hi");
     mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
     mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
     mIsoCodeAndLanguage.insert(tr("Korean"),"ko");

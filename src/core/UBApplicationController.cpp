@@ -121,7 +121,7 @@ UBApplicationController::UBApplicationController(UBBoardView *pControlView,
     mMainWindow->setStyleSheet("QToolButton { font-size: 11px}");
 #endif
 
-    if(QDate::currentDate() > QDate(2013,2,28)){
+    if(QDate::currentDate() > QDate(2013,3,10)){
         QMessageBox messageBox;
         messageBox.setWindowFlags(Qt::Dialog);
         messageBox.setWindowTitle("Open-Sankore");

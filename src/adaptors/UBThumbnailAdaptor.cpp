@@ -167,7 +167,6 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
             painter.fillRect(imageRect, Qt::white);
         }
 
-        pScene->setRenderingContext(UBGraphicsScene::NonScreen);
         pScene->setRenderingQuality(UBItem::RenderingQualityHigh);
 
         pScene->render(&painter, imageRect, sceneRect, Qt::KeepAspectRatio);
@@ -178,7 +177,6 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
             painter.drawPixmap(QPoint(width - toque.width(),0),toque);
         }
 
-        pScene->setRenderingContext(UBGraphicsScene::Screen);
         pScene->setRenderingQuality(UBItem::RenderingQualityNormal);
 
         thumb.scaled(width, height, Qt::KeepAspectRatio, Qt::SmoothTransformation).save(fileName, "JPG");

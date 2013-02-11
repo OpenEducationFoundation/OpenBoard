@@ -213,9 +213,13 @@ void UBThumbnailWidget::refreshScene()
             geometry().width() - scrollBarThickness,
             mSpacing + ((((mGraphicItems.size() - 1) / nbColumns) + 1) * (thumbnailHeight + mSpacing + labelSpacing)));
 
-    int page = UBApplication::boardController->currentPage();
-    if (mLabelsItems.count() > page && mGraphicItems.count() > page)
-        mLabelsItems.at(page)->highlight(mGraphicItems.at(page)->isSelected());
+    
+    if (UBApplication::boardController)
+    {   
+        int page = UBApplication::boardController->currentPage();
+        if (mLabelsItems.count() > page && mGraphicItems.count() > page)
+            mLabelsItems.at(page)->highlight(mGraphicItems.at(page)->isSelected());
+    }
 }
 
 

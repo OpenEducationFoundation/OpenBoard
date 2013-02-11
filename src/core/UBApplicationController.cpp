@@ -375,7 +375,10 @@ void UBApplicationController::showBoard()
     mMainWindow->switchToBoardWidget();
 
     if (UBApplication::boardController)
+    {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::Screen);
         UBApplication::boardController->show();
+    }
 
     mIsShowingDesktop = false;
     UBPlatformUtils::setDesktopMode(false);
@@ -400,6 +403,7 @@ void UBApplicationController::showInternet()
 
     if (UBApplication::boardController)
     {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
         UBApplication::boardController->persistCurrentScene();
         UBApplication::boardController->hide();
     }
@@ -449,7 +453,10 @@ void UBApplicationController::showDocument()
     if (UBApplication::boardController)
     {
         if (UBApplication::boardController->activeScene()->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()))
+        {
+            UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
             UBApplication::boardController->persistCurrentScene();
+        }
         UBApplication::boardController->hide();
     }
 
@@ -509,7 +516,7 @@ void UBApplicationController::showTutorial()
     {
         showDesktop(true);
         UBApplication::webController->show(UBWebController::Tutorial);
-
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
     }
     else{
         mMainWindow->webToolBar->hide();
@@ -537,6 +544,7 @@ void UBApplicationController::showSankoreEditor()
 
     if (UBApplication::boardController)
     {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
         UBApplication::boardController->persistCurrentScene();
         UBApplication::boardController->hide();
     }

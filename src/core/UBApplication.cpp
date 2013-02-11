@@ -308,9 +308,7 @@ int UBApplication::exec(const QString& pFileToImport)
 
     connect(mainWindow->actionBoard, SIGNAL(triggered()), this, SLOT(showBoard()));
     connect(mainWindow->actionWeb, SIGNAL(triggered()), this, SLOT(showInternet()));
-    connect(mainWindow->actionWeb, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionDocument, SIGNAL(triggered()), this, SLOT(showDocument()));
-    connect(mainWindow->actionDocument, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionQuit, SIGNAL(triggered()), this, SLOT(closing()));
     connect(mainWindow, SIGNAL(closeEvent_Signal(QCloseEvent*)), this, SLOT(closeEvent(QCloseEvent*)));
 
@@ -351,7 +349,6 @@ int UBApplication::exec(const QString& pFileToImport)
 
     connect(mainWindow->actionPreferences, SIGNAL(triggered()), mPreferencesController, SLOT(show()));
     connect(mainWindow->actionTutorial, SIGNAL(triggered()), applicationController, SLOT(showTutorial()));
-    connect(mainWindow->actionTutorial, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionSankoreEditor, SIGNAL(triggered()), applicationController, SLOT(showSankoreEditor()));
     connect(mainWindow->actionCheckUpdate, SIGNAL(triggered()), applicationController, SLOT(checkUpdateRequest()));
 
@@ -434,11 +431,13 @@ void UBApplication::showInternet()
     applicationController->showInternet();
     webController->showTabAtTop(true);
     boardController->paletteManager()->featuresWidget()->switchToBookmarks();
+    stopScript();
 }
 
 void UBApplication::showDocument()
 {
     applicationController->showDocument();
+    startScript();
 }
 
 int UBApplication::toolBarHeight()

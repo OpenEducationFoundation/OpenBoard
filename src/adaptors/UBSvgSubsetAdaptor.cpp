@@ -2704,7 +2704,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsWidgetToSvg(UBGraphicsWidget
     }
 
     QString snapshotPath = mDocumentPath + "/" + UBPersistenceManager::widgetDirectory + "/" + uuid + ".png";
-    item->takeSnapshot().save(snapshotPath, "PNG");
+    item->snapshot().save(snapshotPath, "PNG");
 
     mXmlWriter.writeStartElement(nsXHtml, "iframe");
 

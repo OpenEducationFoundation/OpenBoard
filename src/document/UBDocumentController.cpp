@@ -64,6 +64,31 @@
 
 #include "core/memcheck.h"
 
+static bool lessThan(UBDocumentTreeNode *lValue, UBDocumentTreeNode *rValue)
+{
+    if (lValue->nodeType() == UBDocumentTreeNode::Catalog) {
+        if (rValue->nodeType() == UBDocumentTreeNode::Catalog) {
+            return lValue->nodeName() < rValue->nodeName();
+        } else {
+            return true;
+        }
+    } else {
+        if (rValue->nodeType() == UBDocumentTreeNode::Catalog) {
+            return false;
+        } else {
+            Q_ASSERT(lValue->proxyData());
+            Q_ASSERT(rValue->proxyData());
+
+            QDateTime lTime = lValue->proxyData()->documentDate();
+            QDateTime rTime = rValue->proxyData()->documentDate();
+
+            return lTime > rTime;
+        }
+    }
+
+    return false;
+}
+
 UBDocumentReplaceDialog::UBDocumentReplaceDialog(const QString &pIncommingName, const QStringList &pFileList, QWidget *parent, Qt::WindowFlags pFlags)
     : QDialog(parent, pFlags)
     , mFileNameList(pFileList)
@@ -186,6 +211,14 @@ void UBDocumentTreeNode::addChild(UBDocumentTreeNode *pChild)
     }
 }
 
+void UBDocumentTreeNode::insertChild(int pIndex, UBDocumentTreeNode *pChild)
+{
+    if (pChild) {
+        mChildren.insert(pIndex, pChild);
+        pChild->mParent = this;
+    }
+}
+
 void UBDocumentTreeNode::removeChild(int index)
 {
     if (index < 0 || index > mChildren.count() - 1) {
@@ -199,36 +232,6 @@ void UBDocumentTreeNode::removeChild(int index)
 
     mChildren.removeAt(index);
     delete curChild;
-}
-
-UBDocumentTreeNode *UBDocumentTreeNode::moveTo(const QString &pPath)
-{
-    UBDocumentTreeNode *parentNode = this;
-    QStringList pathList = pPath.split("/", QString::SkipEmptyParts);
-
-    bool searchingNode = true;
-    while (!pathList.isEmpty())
-    {
-        QString curLevelName = pathList.takeFirst();
-        if (searchingNode) {
-            searchingNode = false;
-            foreach (UBDocumentTreeNode *curChild, parentNode->children()) {
-                if (curChild->nodeName() == curLevelName) {
-                    searchingNode = true;
-                    parentNode = curChild;
-                    break;
-                }
-            }
-        }
-
-        if (!searchingNode) {
-            UBDocumentTreeNode *newChild = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, curLevelName);
-            parentNode->addChild(newChild);
-            parentNode = newChild;
-        }
-    }
-
-    return parentNode;
 }
 
 UBDocumentTreeNode *UBDocumentTreeNode::clone()
@@ -596,33 +599,6 @@ QModelIndex UBDocumentTreeModel::pIndexForNode(const QModelIndex &parent, UBDocu
     return QModelIndex();
 }
 
-void UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent)
-{
-    QModelIndex tstParent = indexForNode(pParent);
-
-    if (!tstParent.isValid() || pParent->nodeType() != UBDocumentTreeNode::Catalog) {
-        return;
-    }
-    beginInsertRows(tstParent, pParent->children().size(), pParent->children().size());
-    pParent->addChild(pFreeNode);
-    endInsertRows();
-}
-
-QModelIndex UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent)
-{
-    UBDocumentTreeNode *tstParent = nodeFromIndex(pParent);
-
-    if (!pParent.isValid() || tstParent->nodeType() != UBDocumentTreeNode::Catalog) {
-        return QModelIndex();
-    }
-    int newIndex = tstParent->children().size();
-    beginInsertRows(pParent, newIndex, newIndex);
-    tstParent->addChild(pFreeNode);
-    endInsertRows();
-
-    return createIndex(newIndex, 0, pFreeNode);
-}
-
 QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode)
 {
     UBDocumentTreeNode *nodeParent = nodeFromIndex(newParent);
@@ -674,7 +650,8 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
         UBPersistenceManager::persistenceManager()->persistDocumentMetadata(clonedNodeSource->proxyData());
     }
 
-    nodeParent->addChild(clonedNodeSource);
+    addNode(clonedNodeSource, newParent);
+//    nodeParent->addChild(clonedNodeSource);
     endInsertRows();
 
     QPersistentModelIndex newParentIndex = createIndex(rowCount(newParent), 0, clonedNodeSource);
@@ -698,6 +675,23 @@ void UBDocumentTreeModel::moveIndex(const QModelIndex &source, const QModelIndex
         emit currentIndexMoved(clonedTopLevel, source);
     }
     removeRow(source.row(), source.parent());
+}
+
+void UBDocumentTreeModel::moveNode(const QModelIndex &source, const QModelIndex &newParent)
+{
+    Q_ASSERT(source.parent().isValid());
+
+    UBDocumentTreeNode *sourceNode = nodeFromIndex(source);
+    UBDocumentTreeNode *newParentNode = nodeFromIndex(newParent);
+
+    int destinationPosition = positionForParent(sourceNode, newParentNode);
+
+    if (source.row() != destinationPosition || source.parent() == newParent) {
+        beginMoveRows(source.parent(), source.row(), source.row(), newParent, destinationPosition);
+        sourceNode->parentNode()->children().removeAt(source.row());
+        newParentNode->insertChild(destinationPosition, sourceNode);
+        endMoveRows();
+    }
 }
 
 void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
@@ -952,6 +946,37 @@ bool UBDocumentTreeModel::isDescendantOf(const QModelIndex &pPossibleDescendant,
     return false;
 }
 
+QModelIndex UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent, eAddItemMode pMode)
+{
+    UBDocumentTreeNode *tstParent = nodeFromIndex(pParent);
+
+    if (!pParent.isValid() || tstParent->nodeType() != UBDocumentTreeNode::Catalog) {
+        return QModelIndex();
+    }
+    int newIndex = pMode == aDetectPosition ? positionForParent(pFreeNode, tstParent): tstParent->children().size();
+    beginInsertRows(pParent, newIndex, newIndex);
+    tstParent->insertChild(newIndex, pFreeNode);
+    endInsertRows();
+
+    return createIndex(newIndex, 0, pFreeNode);
+}
+
+int UBDocumentTreeModel::positionForParent(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParentNode)
+{
+    Q_ASSERT(pFreeNode);
+    Q_ASSERT(pParentNode);
+    Q_ASSERT(pParentNode->nodeType() == UBDocumentTreeNode::Catalog);
+
+    int c = -1;
+    int childCount = pParentNode->children().count();
+    while (c <= childCount) {
+        if (++c == childCount || lessThan(pFreeNode, pParentNode->children().at(c))) {
+            break;
+        }
+    }
+    return c == -1 ? childCount : c;
+}
+
 UBDocumentTreeNode *UBDocumentTreeModel::nodeFromIndex(const QModelIndex &pIndex) const
 {
     if (pIndex.isValid()) {
@@ -964,6 +989,7 @@ UBDocumentTreeNode *UBDocumentTreeModel::nodeFromIndex(const QModelIndex &pIndex
 void UBDocumentTreeModel::sort(int column, Qt::SortOrder order)
 {
     Q_UNUSED(order)
+    Q_UNUSED(column)
 
 //  QModelIndex parentIndex = index(0, column, QModelIndex());
     sortChilds(mRoot);

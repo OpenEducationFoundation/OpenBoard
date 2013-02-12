@@ -277,7 +277,8 @@ void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
         plainText += textDoc.toPlainText();
     }
     if (source->hasText())
-        plainText += source->text();
+        if (textDoc.toPlainText() != source->text())
+            plainText += source->text();
     if (source->hasUrls())
     {
         foreach(QUrl url, source->urls())
@@ -296,8 +297,8 @@ void UBTGAdaptableText::managePlaceholder(bool focus)
         if(toPlainText() == mPlaceHolderText){
             setTextColor(QColor(Qt::black));
             setPlainText("");
+            setCursorToTheEnd();
         }
-        setCursorToTheEnd();
     }
     else{
         if(toPlainText().isEmpty()){

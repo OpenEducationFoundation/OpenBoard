@@ -45,8 +45,6 @@ class UBBoardView : public QGraphicsView
 
         UBGraphicsScene* scene();
 
-        void setPresentationMode(bool isPresentation) { bIsPresentation = isPresentation; setAcceptDrops(!isPresentation);}
-
         void forcedTabletRelease();
 
         void setToolCursor(int tool);
@@ -167,7 +165,6 @@ class UBBoardView : public QGraphicsView
         bool bIsControl;
         bool bIsDesktop;
         bool mRubberBandInPlayMode;
-        bool bIsPresentation;
 
         static bool hasSelectedParents(QGraphicsItem * item);
 

@@ -954,6 +954,8 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
     mpThumbnail->setAlignment(Qt::AlignHCenter);
     mpLayout->addWidget(mpThumbnail, 0);
 
+    mpLayout->addWidget(new QLabel(tr("Add"),this));
+
     mpButtonLayout = new QHBoxLayout();
     mpLayout->addLayout(mpButtonLayout, 0);
 

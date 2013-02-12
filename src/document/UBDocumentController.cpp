@@ -565,17 +565,17 @@ QPersistentModelIndex UBDocumentTreeModel::persistentIndexForNode(UBDocumentTree
 
 UBDocumentTreeNode *UBDocumentTreeModel::findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const
 {
-    foreach (UBDocumentTreeNode *curNode, pParent->children()) 
+    foreach (UBDocumentTreeNode *curNode, pParent->children())
     {
         if (UBDocumentTreeNode::Catalog != curNode->nodeType())
         {
-            if (curNode->proxyData()->theSameDocument(pSearch)) 
+            if (curNode->proxyData()->theSameDocument(pSearch))
                 return curNode;
         }
-        else if (curNode->children().count()) 
+        else if (curNode->children().count())
         {
             UBDocumentTreeNode *recursiveDescendResult = findProxy(pSearch, curNode);
-            if (recursiveDescendResult) 
+            if (recursiveDescendResult)
                 return findProxy(pSearch, curNode);
         }
     }
@@ -1007,8 +1007,8 @@ void UBDocumentTreeModel::sortChilds(const QModelIndex &parentIndex)
     {
         QModelIndex currentIndex = index(current_row, current_column, parentIndex);
         if (isCatalog(currentIndex))
-            catalogsForSort << nodeFromIndex(currentIndex);           
-        else 
+            catalogsForSort << nodeFromIndex(currentIndex);
+        else
             documentsForSort << nodeFromIndex(currentIndex);
     }
 
@@ -1306,7 +1306,7 @@ void UBDocumentController::createNewDocument()
                 ? docModel->virtualPathForIndex(selectedIndex)
                 : docModel->virtualDirForIndex(selectedIndex);
 
-        
+
         /* disabled model sorting. We cannot use it because of lot os troubles with internal Qt implementation related QPerisstentModelIndex which becomes invalid on index move.
         UBDocumentProxy *document = new UBDocumentProxy(*pManager->createDocument(groupName)); // work around with memory leak.
         mBoardController->setActiveDocumentScene(document);
@@ -1612,7 +1612,7 @@ void UBDocumentController::setupViews()
 
         if (mDocumentUI->documentTreeView->verticalScrollBar()->isVisible())
             headerSizeHint = mDocumentUI->documentTreeView->width() - mDocumentUI->documentTreeView->verticalScrollBar()->width();
-          
+
         if (mDocumentUI->documentTreeView->columnWidth(0) < headerSizeHint)
             mDocumentUI->documentTreeView->setColumnWidth(0, headerSizeHint);
 
@@ -1641,7 +1641,7 @@ void UBDocumentController::setupViews()
         mDocumentUI->thumbnailWidget->setBackgroundBrush(UBSettings::documentViewLightColor);
 
 /*disabled model sorting. We cannot use it because of lot os troubles with internal Qt implementation related QPerisstentModelIndex which becomes invalid on index move.
-        selectDocument(new UBDocumentProxy (*mBoardController->selectedDocument())); // work around with memory leak 
+        selectDocument(new UBDocumentProxy (*mBoardController->selectedDocument())); // work around with memory leak
         UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->sort(0);
 */
         #ifdef Q_WS_MACX
@@ -2436,7 +2436,9 @@ void UBDocumentController::selectionChanged()
     else
         mMainWindow->actionDuplicate->setEnabled(false);
 
-    mMainWindow->actionOpen->setEnabled((docSelected || pageSelected) && !trashSelected);
+
+    bool isAModel = dynamic_cast<UBDocumentGroupTreeItem*>(proxyTi->parent())->groupName() == UBPersistenceManager::modelsName;
+    mMainWindow->actionOpen->setEnabled((docSelected || pageSelected) && !trashSelected && !isAModel);
     mMainWindow->actionRename->setEnabled((groupSelected || docSelected) && !trashSelected && !defaultGroupSelected);
 
     mMainWindow->actionAddToWorkingDocument->setEnabled(pageSelected
@@ -2958,7 +2960,7 @@ void UBDocumentController::updateActions()
         mMainWindow->actionDuplicate->setEnabled(false);
     }
 
-    mMainWindow->actionOpen->setEnabled((docSelected || pageSelected) && !trashSelected);
+    mMainWindow->actionOpen->setEnabled((docSelected || pageSelected) && !trashSelected && !modelSelected);
     mMainWindow->actionRename->setEnabled(docModel->isOkToRename(selectedIndex));
 
     mMainWindow->actionAddToWorkingDocument->setEnabled(pageSelected
@@ -2987,7 +2989,7 @@ void UBDocumentController::updateActions()
         break;
     }
 
-    mMainWindow->actionDocumentAdd->setEnabled((docSelected || pageSelected) && !trashSelected);
+    mMainWindow->actionDocumentAdd->setEnabled((docSelected || pageSelected) && !trashSelected && !modelSelected);
     mMainWindow->actionImport->setEnabled(!trashSelected);
 
 }
@@ -3038,7 +3040,7 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
                 {
                     sceneIndexes.append(thumb->sceneIndex());
                 }
-                
+
             }
         }
 

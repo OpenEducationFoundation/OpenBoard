@@ -471,8 +471,6 @@ void UBBoardController::stylusToolDoubleClicked(int tool)
 
 void UBBoardController::addScene()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
     persistCurrentScene();
 
@@ -486,9 +484,6 @@ void UBBoardController::addScene()
 
 void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmpty)
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (scene)
     {
         if (scene->document() && (scene->document() != selectedDocument()))
@@ -534,9 +529,6 @@ void UBBoardController::addScene(UBDocumentProxy* proxy, int sceneIndex, bool re
 
 void UBBoardController::duplicateScene(int nIndex)
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
     persistCurrentScene();
 
@@ -555,9 +547,6 @@ void UBBoardController::duplicateScene(int nIndex)
 
 void UBBoardController::duplicateScene()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (UBApplication::applicationController->displayMode() != UBApplicationController::Board)
         return;
     duplicateScene(mActiveSceneIndex);
@@ -728,9 +717,6 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
 
 void UBBoardController::deleteScene(int nIndex)
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (selectedDocument()->pageCount()>=2)
     {
         mDeletingSceneIndex = nIndex;
@@ -755,9 +741,6 @@ void UBBoardController::deleteScene(int nIndex)
 
 void UBBoardController::clearScene()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (mActiveScene)
     {
         freezeW3CWidgets(true);
@@ -769,9 +752,6 @@ void UBBoardController::clearScene()
 
 void UBBoardController::clearSceneItems()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (mActiveScene)
     {
         freezeW3CWidgets(true);
@@ -783,9 +763,6 @@ void UBBoardController::clearSceneItems()
 
 void UBBoardController::clearSceneAnnotation()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     if (mActiveScene)
     {
         mActiveScene->clearContent(UBGraphicsScene::clearAnnotations);
@@ -795,8 +772,6 @@ void UBBoardController::clearSceneAnnotation()
 
 void UBBoardController::clearSceneBackground()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
     if (mActiveScene)
     {
         mActiveScene->clearContent(UBGraphicsScene::clearBackground);
@@ -1110,7 +1085,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
 void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos, const QString &embedCode)
 {
     QString widgetUrl;
-	QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
+    QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
     UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromUrl(lSourceUrl);
 
     if(UBMimeType::Flash == itemMimeType){
@@ -1564,7 +1539,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             e = e.firstChildElement();
 
         while(!e.isNull())
-        {     
+        {
             if ("src" == e.tagName().toLower())
                 url = e.text();
 
@@ -1611,8 +1586,6 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
     saveViewState();
 
     bool documentChange = selectedDocument() != pDocumentProxy;
-
-    mControlView->setPresentationMode(pDocumentProxy->groupName() == "Models");
 
     int index = pSceneIndex;
     int sceneCount = pDocumentProxy->pageCount();
@@ -1672,8 +1645,6 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
 
 void UBBoardController::moveSceneToIndex(int source, int target)
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
     if (selectedDocument())
     {
 
@@ -1764,8 +1735,6 @@ void UBBoardController::adjustDisplayViews()
 
 void UBBoardController::changeBackground(bool isDark, bool isCrossed)
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
     bool currentIsDark = mActiveScene->isDarkBackground();
     bool currentIsCrossed = mActiveScene->isCrossedBackground();
 
@@ -2592,9 +2561,6 @@ void UBBoardController::addItem()
 
 void UBBoardController::importPage()
 {
-    if(selectedDocument()->groupName()  == "Models")
-        return;
-
     int pageCount = selectedDocument()->pageCount();
     if (UBApplication::documentController->addFileToDocument(selectedDocument()))
     {

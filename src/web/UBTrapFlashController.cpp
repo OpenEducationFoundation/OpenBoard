@@ -239,7 +239,7 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool sendToBoar
     desc.isBackground = false;
     desc.modal = false;
     desc.dest = sendToBoard ? sDownloadFileDesc::board : sDownloadFileDesc::library;
-    desc.name = selectedObject.objectName;
+    desc.name = mTrapWebContentDialog->applicationNameLineEdit()->text();
     desc.srcUrl = selectedObject.source;
     desc.size = currentItemSize;
     desc.contentTypeHeader = selectedObject.objectMimeType;
@@ -251,11 +251,10 @@ void UBTrapWebPageContentController::addLink(bool isOnLibrary)
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoToTrapByTrapWebComboboxIndex.value(selectedIndex));
     QSize size(selectedObject.width,selectedObject.height);
-    if(isOnLibrary){
-        if(selectedIndex == 0){
-            QString tmp = mTrapWebContentDialog->applicationNameLineEdit()->text();
-            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(tmp,selectedObject.source);
-        }
+    if(isOnLibrary)
+    {
+        if(selectedIndex == 0)
+            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(mTrapWebContentDialog->applicationNameLineEdit()->text(),selectedObject.source);
         else
             UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(), selectedObject.source,size, selectedObject.objectMimeType, selectedObject.embedCode);
     }

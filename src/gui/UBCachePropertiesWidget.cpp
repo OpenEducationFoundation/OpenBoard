@@ -42,6 +42,7 @@ static QVector<UBGraphicsCache*> mCaches;
 UBCachePreviewWidget::UBCachePreviewWidget(QWidget *parent)
     : QWidget(parent)
     , mHoleSize(QSize())
+    , mShape(eMaskShape_Circle)
 {
 }
 
@@ -49,6 +50,11 @@ void UBCachePreviewWidget::setHoleSize(QSize size)
 {
     mHoleSize = size;
     update();
+}
+
+void UBCachePreviewWidget::setShape(eMaskShape shape)
+{
+    mShape = shape;
 }
 
 void UBCachePreviewWidget::setMaskColor(QColor color)
@@ -74,7 +80,14 @@ void UBCachePreviewWidget::paintEvent(QPaintEvent *event)
 
     UBBoardView *view = UBApplication::boardController->controlView();
     qreal scaleRatio = static_cast<qreal>(rect().width())/static_cast<qreal>(view->width());
-    painter.drawEllipse(rect().center(), static_cast<int>(mHoleSize.width()*scaleRatio/2), static_cast<int>(mHoleSize.height()*scaleRatio/2));
+    qreal holeWidth = mHoleSize.width()*scaleRatio;
+    qreal holeHeight = mHoleSize.height()*scaleRatio;
+
+    if (eMaskShape_Circle == mShape)
+        painter.drawEllipse(rect().center(), static_cast<int>(holeWidth/2), static_cast<int>(holeHeight/2));
+
+    if (eMaskShap_Rectangle == mShape)
+        painter.drawRect(rect().center().x() - holeWidth/2, rect().center().y() - holeHeight/2, holeWidth, holeHeight);
 }
 
 void UBCachePreviewWidget::resizeEvent(QResizeEvent *event)
@@ -109,6 +122,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpSizeLayout(NULL)
   , mpPropertiesLayout(NULL)
   , mpCurrentCache(NULL)
+  , mActualShape(eMaskShape_Circle)
   , mKeepAspectRatio(true)
   , mOtherSliderUsed(false)
 {
@@ -146,7 +160,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpAlphaLabel = new QLabel(tr("Alpha:"), mpProperties);
     mpAplhaSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpAplhaSlider->setMinimumHeight(20);
-    mpAplhaSlider->setMinimum(0);
+    mpAplhaSlider->setMinimum(178);
     mpAplhaSlider->setMaximum(255);
     mpAplhaSlider->setValue(255);
     mpColorLayout->addWidget(mpAlphaLabel, 0);
@@ -329,6 +343,11 @@ void UBCachePropertiesWidget::updateShapeButtons()
     {
         mpCurrentCache->setMaskShape(mActualShape);
     }
+
+    if (NULL != mpPreviewWidget)
+    {
+        mpPreviewWidget->setShape(mActualShape);
+    }
 }
 
 void UBCachePropertiesWidget::updateCurrentCache()
@@ -360,28 +379,31 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 if((NULL != mpCurrentCache) && (!mCaches.contains(mpCurrentCache)))
                     mCaches.append(mpCurrentCache);
                 else
-                    return;
-
-                // Update the values of the cache properties
-                mpWidthSlider->setValue(mpCurrentCache->holeWidth());
-                mpHeightSlider->setValue(mpCurrentCache->holeHeight());
-                syncCacheColor(mpCurrentCache->maskColor());
-                mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
-                mpCurrentCache->setMode(UBSettings::settings()->cacheMode->get().toInt());
-
-                switch(mpCurrentCache->maskshape())
                 {
-                    case eMaskShape_Circle:
-                        mpCircleButton->setChecked(true);
-                        mpSquareButton->setChecked(false);
-                        break;
-                    case eMaskShap_Rectangle:
-                        mpCircleButton->setChecked(false);
-                        mpSquareButton->setChecked(true);
-                        break;
-                }
+                    // Update the values of the cache properties
+                    mpWidthSlider->setValue(mpCurrentCache->holeWidth());
+                    mpHeightSlider->setValue(mpCurrentCache->holeHeight());
+                    syncCacheColor(mpCurrentCache->maskColor());
+                    mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
+                    mpCurrentCache->setMode(UBSettings::settings()->cacheMode->get().toInt());
 
-                return;
+                    mActualShape = mpCurrentCache->maskshape();
+                    switch(mActualShape)
+                    {
+                        case eMaskShape_Circle:
+                            mpCircleButton->setChecked(true);
+                            mpSquareButton->setChecked(false);
+                            break;
+                        case eMaskShap_Rectangle:
+                            mpCircleButton->setChecked(false);
+                            mpSquareButton->setChecked(true);
+                            break;
+                    }
+
+                    
+                    mpPreviewWidget->setShape(mActualShape);
+                    return;
+                }
             }
         }
     }

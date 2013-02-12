@@ -44,6 +44,7 @@ public:
     UBCachePreviewWidget(QWidget *parent = NULL);
     
     void setHoleSize(QSize size);
+    void setShape(eMaskShape shape);
     void setMaskColor(QColor color);
 
 private:
@@ -53,6 +54,7 @@ private:
 
 private:
     QSize mHoleSize;
+    eMaskShape mShape;
     QColor mMaskColor;
 };
 

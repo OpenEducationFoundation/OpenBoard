@@ -510,7 +510,7 @@ void UBBoardPaletteManager::containerResized()
     {
         mZoomPalette->move(userLeft + userWidth - mZoomPalette->width()
                 , userTop + userHeight /*- mPageNumberPalette->height()*/ - innerMargin - mZoomPalette->height());
-        mZoomPalette->adjustSizeAndPosition();
+        mZoomPalette->adjustSizeAndPosition(true,false);
     }
 
     if (isFirstResized && mKeyboardPalette && mKeyboardPalette->parent() == UBApplication::boardController->controlContainer())

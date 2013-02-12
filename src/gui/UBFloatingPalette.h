@@ -55,7 +55,7 @@ class UBFloatingPalette : public QWidget
         void addAssociatedPalette(UBFloatingPalette* pOtherPalette);
         void removeAssociatedPalette(UBFloatingPalette* pOtherPalette);
 
-        virtual void adjustSizeAndPosition(bool pUp = true);
+        virtual void adjustSizeAndPosition(bool pUp = true, bool resetPosition = true);
 
         void setCustomPosition(bool pFlag);
 

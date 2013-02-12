@@ -90,7 +90,6 @@ UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool
 , bIsControl(isControl)
 , bIsDesktop(isDesktop)
 , mRubberBandInPlayMode(false) //enables rubberband with play tool
-, bIsPresentation(false)
 {
   init ();
 
@@ -109,7 +108,6 @@ UBBoardView::UBBoardView (UBBoardController* pController, int pStartLayer, int p
 , mMultipleSelectionIsEnabled(false)
 , bIsControl(isControl)
 , bIsDesktop(isDesktop)
-, bIsPresentation(false)
 {
   init ();
 
@@ -192,10 +190,6 @@ UBBoardView::showEvent (QShowEvent * event)
 void
 UBBoardView::keyPressEvent (QKeyEvent *event)
 {
-    if(bIsPresentation){
-        event->ignore();
-        return;
-    }
   // send to the scene anyway
   QApplication::sendEvent (scene (), event);
 
@@ -350,10 +344,6 @@ UBBoardView::event (QEvent * e)
 
 void UBBoardView::tabletEvent (QTabletEvent * event)
 {
-    if(bIsPresentation){
-        event->ignore();
-        return;
-    }
     if (!mUseHighResTabletEvent) {
         event->setAccepted (false);
         return;
@@ -906,10 +896,6 @@ void UBBoardView::longPressEvent()
 
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
-    if(bIsPresentation){
-        event->ignore();
-        return;
-    }
     if (!bIsControl && !bIsDesktop) {
         event->ignore();
         return;
@@ -1054,10 +1040,6 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 void
 UBBoardView::mouseMoveEvent (QMouseEvent *event)
 {
-    if(bIsPresentation){
-        event->ignore();
-        return;
-    }
   if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance()))
   {
       return;
@@ -1167,10 +1149,6 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 void
 UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
-    if(bIsPresentation){
-        event->ignore();
-        return;
-    }
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
 
   setToolCursor (currentTool);

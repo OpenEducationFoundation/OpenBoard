@@ -427,6 +427,7 @@
                             imgSearch.setRestriction(google.search.ImageSearch.RESTRICT_RIGHTS,google.search.ImageSearch.RIGHTS_COMMERCIAL_MODIFICATION);
                             break;                        
                     }
+                    imgSearch.setRestriction(google.search.Search.RESTRICT_SAFESEARCH,google.search.Search.SAFESEARCH_STRICT);
                     return imgSearch;
                 }
                 

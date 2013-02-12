@@ -34,7 +34,7 @@
 #include "core/memcheck.h"
 
 UBZoomPalette::UBZoomPalette(QWidget* parent)
-    : UBFloatingPalette(Qt::BottomRightCorner, parent)
+    : UBFloatingPalette(Qt::BottomLeftCorner, parent)
     , mIsExpanded(1)
 {
     mBoardController = UBApplication::boardController;
@@ -71,13 +71,13 @@ void UBZoomPalette::showHideExtraButton()
     {
         mHundredButton->setVisible(false);
         mIsExpanded = false;
-        adjustSizeAndPosition(false);
+        adjustSizeAndPosition(false,false);
     }
     else
     {
         mHundredButton->setVisible(true);
         mIsExpanded = true;
-        adjustSizeAndPosition(true);
+        adjustSizeAndPosition(true,false);
     }
 
 }
@@ -109,7 +109,7 @@ void UBZoomPalette::refreshPalette()
     QString stringFactor = tr("%1 x").arg(currentZoomFactor, 0, 'f', 1);
 
     mCurrentZoomButton->setText(stringFactor);
-    adjustSizeAndPosition();
+    adjustSizeAndPosition(true,false);
     if (showAsNoZoom)
     {
         QTimer::singleShot(500, this, SLOT(hide()));

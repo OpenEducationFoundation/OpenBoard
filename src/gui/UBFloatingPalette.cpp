@@ -208,7 +208,7 @@ QSize UBFloatingPalette::preferredSize()
     return palettePreferredSize;
 }
 
-void UBFloatingPalette::adjustSizeAndPosition(bool pUp)
+void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
 {
     QSize newPreferredSize = preferredSize();
 
@@ -236,7 +236,7 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp)
         }
     }
 
-    if (parentWidget())
+    if (parentWidget() && resetPosition)
         move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
 }
 
@@ -287,46 +287,46 @@ void UBFloatingPalette::minimizePalette(const QPoint& pos)
     if(!mCanBeMinimized)
     {
         //  If this floating palette cannot be minimized, we exit this method.
-	return;
+    return;
     }
 
     if(mMinimizedLocation == eMinimizedLocation_None)
     {
-	//  Verify if we have to minimize this palette
-	if(pos.x() == 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_Left;
-	}
+    //  Verify if we have to minimize this palette
+    if(pos.x() == 5)
+    {
+        mMinimizedLocation = eMinimizedLocation_Left;
+    }
 //	else if(pos.y() == 5)
 //	{
 //	    mMinimizedLocation = eMinimizedLocation_Top;
 //	}
     else if(pos.x() == parentWidget()->width() - getParentRightOffset() - width() - 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_Right;
-	}
+    {
+        mMinimizedLocation = eMinimizedLocation_Right;
+    }
 //	else if(pos.y() == parentSize.height() - height() - 5)
 //	{
 //	    mMinimizedLocation = eMinimizedLocation_Bottom;
 //	}
 
-	//  Minimize the Palette
-	if(mMinimizedLocation != eMinimizedLocation_None)
-	{
-	    emit minimizeStart(mMinimizedLocation);
-	}
+    //  Minimize the Palette
+    if(mMinimizedLocation != eMinimizedLocation_None)
+    {
+        emit minimizeStart(mMinimizedLocation);
+    }
     }
     else
     {
-	//  Restore the palette
-	if(pos.x() > 5 &&
-	   pos.y() > 5 &&
+    //  Restore the palette
+    if(pos.x() > 5 &&
+       pos.y() > 5 &&
        pos.x() < parentWidget()->width() - getParentRightOffset()  - width() - 5 &&
        pos.y() < parentWidget()->size().height() - height() - 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_None;
-	    emit maximizeStart();
-	}
+    {
+        mMinimizedLocation = eMinimizedLocation_None;
+        emit maximizeStart();
+    }
     }
 }
 

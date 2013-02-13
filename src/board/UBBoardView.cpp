@@ -393,7 +393,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     //stylus palette.
     Q_ASSERT(UBApplication::applicationController->uninotesController());
     if (UBApplication::applicationController->uninotesController()->drawingView() == this) {
-        if (UBApplication::applicationController->uninotesController()->desktopPalette()->geometry().contains(event->pos())) {
+        if (UBApplication::applicationController->uninotesController()->desktopPalettePath().contains(event->pos())) {
             acceptEvent = false;
         }
     }

@@ -437,7 +437,7 @@ void UBFeaturesWidget::importImage(const QImage &image, const QString &fileName)
     controller->importImage(image, fileName);
 }
 
-void UBFeaturesWidget::createBookmark(QString& title, QString& urlString)
+void UBFeaturesWidget::createBookmark(const QString& title, const QString& urlString)
 {
     controller->createBookmark(title,urlString);
 }

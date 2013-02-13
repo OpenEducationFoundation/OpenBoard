@@ -87,7 +87,7 @@ public:
     }
     UBFeaturesController * getFeaturesController() const { return controller; }
     void importImage(const QImage &image, const QString &fileName = QString());
-    void createBookmark(QString& title, QString& urlString);
+    void createBookmark(const QString& title, const QString& urlString);
     void createLink(QString title, QString& urlString, QSize &size, QString mimeType, QString embedCode);
 
     QString importFromUrl(const QUrl &url) const;

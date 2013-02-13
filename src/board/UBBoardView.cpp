@@ -52,6 +52,11 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
 
+#ifdef Q_WS_MAC
+#include "desktop/UBDesktopAnnotationController.h"
+#include "desktop/UBDesktopPalette.h"
+#endif
+
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBGraphicsPixmapItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
@@ -381,6 +386,18 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
 
 
     bool acceptEvent = true;
+
+#ifdef Q_WS_MAC
+    //Work around #1388. After selecting annotation tool in desktop mode, annotation view appears on top when
+    //using Mac OS X. In this case tablet event should send mouse event so as to let user interact with
+    //stylus palette.
+    Q_ASSERT(UBApplication::applicationController->uninotesController());
+    if (UBApplication::applicationController->uninotesController()->drawingView() == this) {
+        if (UBApplication::applicationController->uninotesController()->desktopPalette()->geometry().contains(event->pos())) {
+            acceptEvent = false;
+        }
+    }
+#endif
 
     switch (event->type ()) {
     case QEvent::TabletPress: {

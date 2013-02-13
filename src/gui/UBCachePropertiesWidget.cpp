@@ -121,8 +121,8 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpProperties(NULL)
   , mpSizeLayout(NULL)
   , mpPropertiesLayout(NULL)
-  , mpCurrentCache(NULL)
   , mActualShape(eMaskShape_Circle)
+  , mpCurrentCache(NULL)
   , mKeepAspectRatio(true)
   , mOtherSliderUsed(false)
 {

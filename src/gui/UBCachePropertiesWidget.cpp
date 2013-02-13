@@ -378,8 +378,9 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 mpCurrentCache = dynamic_cast<UBGraphicsCache*>(it);
                 if((NULL != mpCurrentCache) && (!mCaches.contains(mpCurrentCache)))
                     mCaches.append(mpCurrentCache);
-                else
-                {
+                else                
+                    return
+
                     // Update the values of the cache properties
                     mpWidthSlider->setValue(mpCurrentCache->holeWidth());
                     mpHeightSlider->setValue(mpCurrentCache->holeHeight());
@@ -403,7 +404,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
                     
                     mpPreviewWidget->setShape(mActualShape);
                     return;
-                }
+                
             }
         }
     }

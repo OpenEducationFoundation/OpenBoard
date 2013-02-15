@@ -378,32 +378,32 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 mpCurrentCache = dynamic_cast<UBGraphicsCache*>(it);
                 if((NULL != mpCurrentCache) && (!mCaches.contains(mpCurrentCache)))
                     mCaches.append(mpCurrentCache);
-                else                
+                else
                     return
 
-                    // Update the values of the cache properties
-                    mpWidthSlider->setValue(mpCurrentCache->holeWidth());
-                    mpHeightSlider->setValue(mpCurrentCache->holeHeight());
-                    syncCacheColor(mpCurrentCache->maskColor());
-                    mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
-                    mpCurrentCache->setMode(UBSettings::settings()->cacheMode->get().toInt());
+                // Update the values of the cache properties
+                mpWidthSlider->setValue(mpCurrentCache->holeWidth());
+                mpHeightSlider->setValue(mpCurrentCache->holeHeight());
+                syncCacheColor(mpCurrentCache->maskColor());
+                mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
+                mpCurrentCache->setMode(UBSettings::settings()->cacheMode->get().toInt());
 
-                    mActualShape = mpCurrentCache->maskshape();
-                    switch(mActualShape)
-                    {
-                        case eMaskShape_Circle:
-                            mpCircleButton->setChecked(true);
-                            mpSquareButton->setChecked(false);
-                            break;
-                        case eMaskShap_Rectangle:
-                            mpCircleButton->setChecked(false);
-                            mpSquareButton->setChecked(true);
-                            break;
-                    }
+                mActualShape = mpCurrentCache->maskshape();
+                switch(mActualShape)
+                {
+                    case eMaskShape_Circle:
+                        mpCircleButton->setChecked(true);
+                        mpSquareButton->setChecked(false);
+                        break;
+                    case eMaskShap_Rectangle:
+                        mpCircleButton->setChecked(false);
+                        mpSquareButton->setChecked(true);
+                        break;
+                }
 
-                    
-                    mpPreviewWidget->setShape(mActualShape);
-                    return;
+                
+                mpPreviewWidget->setShape(mActualShape);
+                return;
                 
             }
         }

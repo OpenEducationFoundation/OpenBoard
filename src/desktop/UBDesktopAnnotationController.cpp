@@ -180,6 +180,25 @@ UBDesktopPalette* UBDesktopAnnotationController::desktopPalette()
     return mDesktopPalette;
 }
 
+QPainterPath UBDesktopAnnotationController::desktopPalettePath() const
+{
+    QPainterPath result;
+    if (mDesktopPalette && mDesktopPalette->isVisible()) {
+        result.addRect(mDesktopPalette->geometry());
+    }
+    if (mDesktopPenPalette && mDesktopPenPalette->isVisible()) {
+        result.addRect(mDesktopPenPalette->geometry());
+    }
+    if (mDesktopMarkerPalette && mDesktopMarkerPalette->isVisible()) {
+        result.addRect(mDesktopMarkerPalette->geometry());
+    }
+    if (mDesktopEraserPalette && mDesktopEraserPalette->isVisible()) {
+        result.addRect(mDesktopEraserPalette->geometry());
+    }
+
+    return result;
+}
+
 /**
  * \brief Toggle the visibility of the pen associated palette
  * @param checked as the visibility state

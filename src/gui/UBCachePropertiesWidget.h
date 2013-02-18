@@ -88,6 +88,7 @@ private slots:
     void onModeChanged(int mode);
     void onAlphaChanged(int alpha);
     void onControlViewResized(QResizeEvent *event);
+    void onZoomChanged(qreal newZoom);
 
 private:
     QVBoxLayout* mpLayout;

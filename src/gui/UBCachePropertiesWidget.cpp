@@ -187,6 +187,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
 
     // Shape Size
     connect(UBApplication::boardController->controlView(), SIGNAL(resized(QResizeEvent *)), this, SLOT(onControlViewResized(QResizeEvent *)));
+    connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged(qreal)));
     minimumShapeSize = QSize(100,100);
 
     mpSizeLayout = new QVBoxLayout(0);
@@ -496,6 +497,7 @@ void UBCachePropertiesWidget::onAlphaChanged(int alpha)
 
 void UBCachePropertiesWidget::onControlViewResized(QResizeEvent *event)
 {
+    Q_UNUSED(event);
     maximumShapeSize = UBApplication::boardController->controlView()->size();
     if (mKeepAspectRatio)
     {
@@ -508,4 +510,11 @@ void UBCachePropertiesWidget::onControlViewResized(QResizeEvent *event)
         mpWidthSlider->setMaximum(maximumShapeSize.width());
         mpHeightSlider->setMaximum(maximumShapeSize.height());
     }
+}
+
+void UBCachePropertiesWidget::onZoomChanged(qreal newZoom)
+{
+    mpWidthSlider->setMaximum(maximumShapeSize.width());
+    mpHeightSlider->setMaximum(maximumShapeSize.height());
+    mpCurrentCache->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
 }

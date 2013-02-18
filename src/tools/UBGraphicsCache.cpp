@@ -290,7 +290,7 @@ void UBGraphicsCache::setHoleHeight(int height)
 
 void UBGraphicsCache::setHoleSize(QSize size)
 {
-    mHoleSize = size;
+    mHoleSize = size/UBApplication::boardController->controlView()->viewportTransform().m11();
     UBSettings::settings()->casheLastHoleSize->set(mHoleSize);
 }
 

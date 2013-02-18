@@ -186,6 +186,9 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpCircleButton->setChecked(true);
 
     // Shape Size
+    connect(UBApplication::boardController->controlView(), SIGNAL(resized(QResizeEvent *)), this, SLOT(onControlViewResized(QResizeEvent *)));
+    minimumShapeSize = QSize(100,100);
+
     mpSizeLayout = new QVBoxLayout(0);
     mpGeometryLabel = new QLabel(tr("Geometry:"), mpProperties);
     mpSizeLayout->addWidget(mpGeometryLabel, 1);
@@ -194,18 +197,18 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpWidthLabel = new QLabel(tr("Width: "), mpProperties);
     mpWidthSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpWidthSlider->setMinimumHeight(20);
-    mpWidthSlider->setMinimum(MIN_SHAPE_WIDTH);
-    mpWidthSlider->setMaximum(MAX_SHAPE_WIDTH);
-    mpWidthSlider->setValue(MIN_SHAPE_WIDTH);
+    mpWidthSlider->setMinimum(minimumShapeSize.width());
+    mpWidthSlider->setMaximum(maximumShapeSize.width());
+    mpWidthSlider->setValue(minimumShapeSize.width());
     mpSizeLayout->addWidget(mpWidthLabel, 0);
     mpSizeLayout->addWidget(mpWidthSlider, 1);
 
     mpHeightLabel = new QLabel(tr("Height:"), mpProperties);
     mpHeightSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpHeightSlider->setMinimumHeight(20);
-    mpHeightSlider->setMinimum(MIN_SHAPE_WIDTH);
-    mpHeightSlider->setMaximum(MAX_SHAPE_WIDTH);
-    mpHeightSlider->setValue(MIN_SHAPE_WIDTH);
+    mpHeightSlider->setMinimum(minimumShapeSize.height());
+    mpHeightSlider->setMaximum(maximumShapeSize.height());
+    mpHeightSlider->setValue(minimumShapeSize.height());
     mpSizeLayout->addWidget(mpHeightLabel, 0);
     mpSizeLayout->addWidget(mpHeightSlider, 1);
 
@@ -489,4 +492,20 @@ void UBCachePropertiesWidget::onAlphaChanged(int alpha)
 {
     mActualColor.setAlpha(alpha);
     syncCacheColor(mActualColor);
+}
+
+void UBCachePropertiesWidget::onControlViewResized(QResizeEvent *event)
+{
+    maximumShapeSize = UBApplication::boardController->controlView()->size();
+    if (mKeepAspectRatio)
+    {
+        int maxSize = qMax(maximumShapeSize.width(), maximumShapeSize.height());
+        mpWidthSlider->setMaximum(maxSize);
+        mpHeightSlider->setMaximum(maxSize);
+    }
+    else
+    {
+        mpWidthSlider->setMaximum(maximumShapeSize.width());
+        mpHeightSlider->setMaximum(maximumShapeSize.height());
+    }
 }

@@ -35,9 +35,6 @@
 #include "UBDockPaletteWidget.h"
 #include "tools/UBGraphicsCache.h"
 
-#define MIN_SHAPE_WIDTH     100
-#define MAX_SHAPE_WIDTH     400
-
 class UBCachePreviewWidget : public QWidget
 {
 public:
@@ -90,6 +87,7 @@ private slots:
     void onCacheEnabled();
     void onModeChanged(int mode);
     void onAlphaChanged(int alpha);
+    void onControlViewResized(QResizeEvent *event);
 
 private:
     QVBoxLayout* mpLayout;
@@ -126,6 +124,8 @@ private:
     bool mKeepAspectRatio;
     bool mOtherSliderUsed;
     QSize mOldHoleSize;
+    QSize minimumShapeSize;
+    QSize maximumShapeSize;
 };
 
 #endif // UBCACHEPROPERTIESWIDGET_H

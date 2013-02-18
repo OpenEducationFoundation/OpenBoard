@@ -290,15 +290,9 @@ UBGraphicsScene *UBGraphicsItemDelegate::castUBGraphicsScene()
 
 bool UBGraphicsItemDelegate::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-    if(currentTool == UBStylusTool::Play){
-        if(mAction)
-            mAction->play();
-        return true;
-    }
-
     mDragStartPosition = event->pos();
+
+    mMoved = false;
 
     startUndoStep();
 
@@ -329,6 +323,7 @@ bool UBGraphicsItemDelegate::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         }
         mDrag->exec();
         mDragPixmap = QPixmap();
+        mMoved = true;
         return true;
     }
     return false;
@@ -346,6 +341,14 @@ bool UBGraphicsItemDelegate::weelEvent(QGraphicsSceneWheelEvent *event)
 bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     Q_UNUSED(event);
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if(!mMoved && currentTool == UBStylusTool::Play)
+    {
+        if(mAction)
+            mAction->play();
+        return true;
+    }
 
     //Deselect all the rest selected items if no ctrl key modifier
     if (delegated()->scene()

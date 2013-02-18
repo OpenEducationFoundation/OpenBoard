@@ -362,6 +362,9 @@ private:
         bool mToolBarUsed;
 
         bool mShowGoContentButton;
+
+        bool mMoved;
+
 private slots:
         void onAddActionClicked();
         void onRemoveActionClicked();

@@ -34,7 +34,7 @@
 #include "core/memcheck.h"
 
 UBZoomPalette::UBZoomPalette(QWidget* parent)
-    : UBFloatingPalette(Qt::BottomLeftCorner, parent)
+    : UBFloatingPalette(Qt::BottomRightCorner, parent)
     , mIsExpanded(1)
 {
     mBoardController = UBApplication::boardController;

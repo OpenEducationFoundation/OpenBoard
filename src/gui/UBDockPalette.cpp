@@ -231,15 +231,6 @@ void UBDockPalette::paintEvent(QPaintEvent *event)
 			path.addRect(0.0, 0.0, width(), height());
 		}
 
-		// THEN DRAW THE small tabs (yes, the tabs are small...)
-		if(eUBDockTabOrientation_Up == mTabsOrientation)
-		{
-			mHTab = border();
-		}
-		else
-		{
-			mHTab = height() - border() - nbTabs*TABSIZE - (nbTabs-1)*tabSpacing();
-		}
 		painter.drawPath(path);
 	}
 }

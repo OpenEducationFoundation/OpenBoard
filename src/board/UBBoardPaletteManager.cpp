@@ -767,8 +767,17 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mLeftPalette->setVisible(leftPaletteVisible);
                 mRightPalette->setVisible(rightPaletteVisible);
 #ifdef Q_WS_WIN
-                if (rightPaletteVisible && UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())
-                    mRightPalette->setAdditionalVOffset(30);
+                if (rightPaletteVisible)
+                {
+                    if (UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())               
+                        mRightPalette->setAdditionalVOffset(30);
+                    else
+                    {
+                        QDesktopWidget *desktop = QApplication::desktop();
+                        int taskBarOffset = desktop->screenGeometry(mRightPalette).height() - desktop->availableGeometry(mRightPalette).height();
+                        mRightPalette->setAdditionalVOffset(-taskBarOffset);
+                    }
+                }
 #endif
 
                 if(!isInit)

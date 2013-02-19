@@ -24,16 +24,13 @@ var sankoreLang = {
 
     "<p>Le bouton “Modifier” vous permet :</p>"+
     "<ul><li>de choisir le thème de l’interactivité : tablette, ardoise ou aucun (par défaut aucun),</li>"+
-    "<li>de modifier un exercice ou d’en créer de nouveaux dans la même activité. </li></ul>"+
+    "<li>de modifier l'exercice.</li></ul>"+
 
-    "<p>En mode édition, pour créer un nouvel exercice, cliquez sur “Nouveau bloc” en bas, puis</p>"+
-    "<ul><li>insérez une consigne en cliquant sur le champ de texte “Saisir votre consigne ici ...”, </li>"+
-    "<li>ajoutez des zones de texte en cliquant sur le gros “+T” vert en dessous puis entrez le texte voulu.</li></ul>"+
-    "<p>Pour supprimer une zone de texte, cliquez sur la croix située dans le coin supérieur de celle-ci.</p>"+ 
-
-    "<p>Pour supprimer un exercice, cliquez sur la croix à gauche du numéro de l’exercice.</p>"+
-
-    "<p>Le bouton “Afficher” vous permet d’utiliser l’activité.</p>",
+    "<p>En mode édition :</p>"+
+    "<ul><li>modifiez la consigne en cliquant sur le champ de texte, </li>"+
+    "<li>ajoutez des zones de texte en cliquant sur le gros “+T” vert en dessous puis entrez le texte voulu,</li>"+
+    "<li>supprimez une zone de texte, cliquez sur la croix située dans le coin supérieur de celle-ci,</li>"+ 
+    "<li>le bouton “Afficher” vous permet d’utiliser l’activité.</li></ul>",
     theme:"Thème"
 };
 

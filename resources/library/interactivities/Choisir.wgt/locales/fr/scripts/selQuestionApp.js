@@ -50,18 +50,15 @@ var sankoreLang = {
 
 "<p>Le bouton “Modifier” vous permet :</p>"+
 "<ul><li>de choisir le thème de l’interactivité : tablette, ardoise ou aucun (par défaut aucun),</li>"+
-"<li>de modifier un exercice ou d’en créer de nouveaux dans la même activité.</li></ul>"+
+"<li>de modifier l'exercice.</li></ul>"+
 
-"<p>En mode édition, pour créer un nouvel exercice, cliquez sur “Ajouter une nouvelle question …”, puis :</p>"+
+"<p>En mode édition :</p>"+
 "<ul><li>insérez la question en cliquant sur le champ de texte “Saisir la question ici ...”,</li>"+
 "<li>cliquez sur ”Options” pour choisir l’affichage des propositions (une seule bonne réponse, plusieurs bonnes réponses, liste déroulante). Cliquez sur “Fermer”,</li>"+
 "<li>cliquez sur ”Ajouter une proposition” et saisissez la proposition dans le champ de texte,</li>"+
-"<li>définissez la ou les propositions correctes en cliquant sur la case à cocher à gauche des bonnes réponses.</li>"+
-"<li>Pour supprimer une proposition, cliquez sur la croix située à droite de celle-ci.</li></ul>"+
-
-"<p>Pour supprimer un exercice, cliquez sur la croix à droite du numéro de ”Options”.</p>"+
-
-"<p>Le bouton “Afficher” vous permet d’utiliser l’activité.</p>",
+"<li>définissez la ou les propositions correctes en cliquant sur la case à cocher à gauche des bonnes réponses,</li>"+
+"<li>supprimez une proposition, en cliquant sur la croix située à droite de celle-ci,</li>"+
+"<li>le bouton “Afficher” vous permet d’utiliser l’activité.</li></ul>",
 theme: "Thème"
 };
 

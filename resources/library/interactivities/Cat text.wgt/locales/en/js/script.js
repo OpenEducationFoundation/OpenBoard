@@ -24,17 +24,15 @@ var sankoreLang = {
 "<p>“Reload” button resets the exercises.</p>" +
 "<p>Enter the “Edit” mode to :</p>" +
 "<ul><li>choose the theme of interactivity : pad, slate or none (none by default),</li>" +
-"<li>modify an exercise or create a new one.</li></ul>" +
-"<p>To create a new exercise :</p>" +
-"<ul><li>click on “New block”,</li>" +
-"<li>edit the category clicking on the text field “Enter your category name here ... ”,</li>" +
+"<li>modify the exercise.</li></ul>" +
+"<p>In edition mode :</p>" +
+"<ul><li>edit the category clicking on the text field,</li>" +
 "<li>add an another category clicking on the “+” (small one),</li>" +
 "<li>add a label clicking on the “+” (big one) on the correct category,</li>" +
-"<li>modify the text field clicking on it.</li></ul>" +
-"<p>To remove a label, click on the cross button on the frame.</p>" +
-"<p>To delete a category, click on the “-” sign on the right.</p>" +
-"<p>To delete a whole block, click on the cross on the left.</p>" +
-"<p>“Display” button comes back to the activity.</p>",
+"<li>modify the text field clicking on it,</li>" +
+"<li>remove a label clicking on the cross button on the frame,</li>" +
+"<li>delete a category clicking on the “-” sign on the right,</li>" +
+"<li>“Display” button comes back to the activity.</li></ul>",
     theme: "Theme"
 };
 

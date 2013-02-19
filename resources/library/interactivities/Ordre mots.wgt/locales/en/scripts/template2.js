@@ -45,11 +45,11 @@ var sankoreLang = {
 
 "<p> Enter the “Edit” mode to : </p>" +
 "<ul> <li> choose the theme of the App : pad, slate, or none (by default : none), </li>" +
-"<li> Determine the sentence and place separation between words. </li> </ul>" +
+"<li> determine the sentence and place separation between words. </li> </ul>" +
 
  "<p>To create a new exercise : </p>" +
 "<ul><li>insert the desired sentence,</li>" +
-"<li> To add spaces in the sentence, insert “*” between each word. Do not place a star at the beginning or the end of your sentence.</li></ul>" +
+"<li> add spaces in the sentence, inserting “*” between each word. Do not place a star at the beginning or the end of your sentence.</li></ul>" +
 "<p>“Display” button comes back to the activity.</p>",
     theme: "Theme"
 };

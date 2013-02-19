@@ -20,20 +20,16 @@ var sankoreLang = {
 
     "<p>Le bouton “Modifier” vous permet :</p>"+
     "<ul><li>de choisir le thème de l’interactivité : tablette, ardoise ou aucun (par défaut aucun),</li>"+
-    "<li>de modifier un exercice ou d’en créer de nouveaux dans la même activité.</li></ul>"+
+    "<li>de modifier l'exercice.</li></ul>"+
 
-    "<p>Pour créer un nouvel exercice, cliquez sur “Nouveau bloc” en bas, puis</p>"+
-    "<ul><li>insérez une consigne en cliquant sur le champ de texte “Saisir votre consigne ici …”,</li>"+
+    "<p>Dans le mode édition :</p>"+
+    "<ul><li>modifiez la consigne en cliquant sur le champ de texte,</li>"+
     "<li>insérez des images dans les zones de dépôt par glisser-déposer des images à partir de votre bibliothèque,</li>"+
-    "<li>modifiez éventuellement l’ordre des images par un glisser-déposer de l’image concernée pour la mettre au bon endroit dans la suite.</li></ul>"+
-
-    "<p>Pour ajouter une zone image, cliquez sur le gros “+” en bas.</p>"+
-    "<p>Pour supprimer une zone image, cliquez sur la croix située dans le coin supérieur droit de l’image.</p>"+
-    "<p>Pour changer d’image, cliquez sur l’icône située au milieu à droite de l’image.</p>"+ 
-
-    "<p>Pour supprimer un exercice, cliquez sur la croix à gauche du numéro de l’exercice.</p>"+
-
-    "<p>Le bouton “Afficher” vous permet d’utiliser l’activité.</p>",
+    "<li>modifiez éventuellement l’ordre des images par un glisser-déposer de l’image concernée pour la mettre au bon endroit dans la suite,</li>"+
+    "<li>ajoutez une zone image, en cliquant sur le gros “+” en bas,</li>"+
+    "<li>supprimez une zone image, en cliquant sur la croix située dans son coin supérieur droit,</li>"+
+    "<li>changez limage en cliquant sur l’icône située au milieu à droite de l’image,</li>"+ 
+    "<li>le bouton “Afficher” vous permet d’utiliser l’activité.</li></ul>",
     theme: "Thème"
 };
 

@@ -21,18 +21,15 @@ var sankoreLang = {
 
 "<p> Enter the “Edit” mode to : </p>" +
 "<ul> <li> choose the theme of interactivity : pad, slate or none (none by default),</li>" +
-"<li> modify an exercise or create a new one.</li> </ul>" +
+"<li> modify the exercise.</li> </ul>" +
 
-
-"<p>To create a new exercise : </p>" +
-"<ul> <li> click on “New block”,</li>" +
-"<li> edit the category clicking on the text field “Enter your category name here ...”,</li>" +
+"<p>In edition mode : </p>" +
+"<ul> <li> edit the category clicking on the text field,</li>" +
 "<li> add an another category clicking on the “+”,</li>" +
-"<li> drag and drop pictures from your library on the correct category.</li> </ul>" +
-"<p> To delete a picture, click on the cross button on the frame.</p>" +
-"<p> To remove a category, click on the “-” sign on the right.</p>" +
-"<p> To delete a whole block, click on the cross on the left.</p>" +
-"<p>“Display” button comes back to the activity.</p>",
+"<li> drag and drop pictures from your library on the correct category,</li>" +
+"<li> delete a picture clicking on the cross button on the frame,</li>" +
+"<li> remove a category clicking on the “-” sign on the right,</li>" +
+"<li>“Display” button comes back to the activity.</li></ul>",
     theme: "Theme"
 };
 

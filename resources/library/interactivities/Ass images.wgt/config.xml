@@ -4,9 +4,9 @@
         id="http://uniboard.mnemis.com/widgets/notes" 
         version="1.2"
         width="950"
+        height="560" 
 		minimum_height="300"
 		minimum_width="670"
-        height="530" 
         ub:resizable="false">     
    
 		<name>Notes</name>

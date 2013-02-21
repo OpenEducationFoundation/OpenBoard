@@ -26,7 +26,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
 
     QToolButton *buttonWebTrapToLibrary = new QToolButton();
     buttonWebTrapToLibrary->setDefaultAction(UBApplication::mainWindow->actionWebTrapToLibrary);
-    buttonLabels << new QLabel(tr("Download to") + "\n" +tr("library"));
+    buttonLabels << new QLabel(tr("Download to\nlibrary"));
     mTrapButtons << buttonWebTrapToLibrary;
 
     QToolButton *buttonWebTrapToCurrentPage = new QToolButton();

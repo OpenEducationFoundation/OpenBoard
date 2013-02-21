@@ -180,8 +180,11 @@ void UBDocumentNavigator::refreshScene()
     }
     scene()->setSceneRect(scene()->itemsBoundingRect());
 
-    mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getThumbnail()->setSelected(true);
-    mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getCaption()->highlight(true);
+    if (mThumbsWithLabels.count() > UBApplication::boardController->activeSceneIndex())
+    {
+        mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getThumbnail()->setSelected(true);
+        mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getCaption()->highlight(true);
+    }
 }
 
 /**

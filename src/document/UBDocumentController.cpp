@@ -3046,9 +3046,15 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
 
         if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"), tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
-            UBDocumentContainer::deletePages(sceneIndexes);
+            int offset = 0;
+            foreach(int index, sceneIndexes)
+            {
+                mBoardController->deleteScene(index);
+                deleteThumbPage(index - offset);
+                offset++;
+            }
+            emit UBDocumentContainer::documentThumbnailsUpdated(this);
 
-            mBoardController->deletePages(sceneIndexes);
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
             UBMetadataDcSubsetAdaptor::persist(proxy);
 

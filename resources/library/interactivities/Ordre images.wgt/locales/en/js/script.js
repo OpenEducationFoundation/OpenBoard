@@ -19,21 +19,16 @@ var sankoreLang = {
 
 "<p> Enter the “Edit” mode to : </p>" +
 "<ul> <li> choose the theme of interactivity : pad, slate or none (by default : none),</li>" +
-"<li> modify an exercise or create a new one. </li> </ul>" +
+"<li> modify the exercise. </li></ul>" +
 
-"<p>To create a new exercise : </p>" +
-"<ul> <li> click on “New block”,</li>" +
-"<li> insert an instruction clicking on the text field “Enter your instruction here ... ”,</li>" +
+"<p>In edition mode : </p>" +
+"<ul><li> modify the instruction clicking on the text field,</li>" +
 "<li> add picture frames clicking on the “+”,</li>" +
 "<li> drag an drop pictures from your library,</li>" +
-"<li> change the order of images by dragging them.</li> </ul>" +
-
-"<p> To delete a frame, click the cross (X).</p>" +
-"<p> To change a picture, click the “reload” button on the frame.</p>" +
-
-"<p> To delete a whole exercise, click the cross to the left. </p>" +
-
-"<p> “Display” button comes back to the activity.</p>",
+"<li> change the order of images by dragging them,</li>" +
+"<li> delete a frame, clicking the cross (X),</li>" +
+"<li> change a picture clicking the “reload” button on the frame,</li>" +
+"<li> “Display” button comes back to the activity.</li> </ul>",
     theme: "Theme"
 };
 

@@ -19,23 +19,16 @@ var sankoreLang = {
 
     "<p>Le bouton “Modifier” vous permet : </p>"+
     "<ul><li>de choisir le thème de l’interactivité : tablette, ardoise ou aucun (par défaut aucun),</li>"+
-    "<li>de modifier un exercice ou d’en créer de nouveaux dans la même activité.</li></ul>"+
+    "<li>de modifier l'exercice.</li></ul>"+
 
-
-"<p>En mode édition, pour créer un nouvel exercice, cliquez sur “Nouveau bloc” en bas, puis </p>"+
-"<ul><li>insérez une consigne en cliquant sur le champ de texte “Saisir votre description ici ...”,"+
-"<li>insérez un son dans la zone à gauche de la consigne par glisser-déposer d’un son à partir de votre bibliothèque,</li>"+
+"<p>En mode édition :</p>"+
+"<ul><li>modifiez la consigne en cliquant sur le champ de texte,"+
+"<li>remplacez le son dans la zone à gauche de la consigne par glisser-déposer d’un son à partir de votre bibliothèque,</li>"+
 "<li>ajoutez des zones image(s) en cliquant sur le gros signe + en dessous,</li>"+
 "<li>insérez des images par glisser-déposer des images à partir de votre bibliothèque,</li>"+
-"<li>définissez l’image correcte de l’interactivité en cliquant sur le bouton valider “v” situé en bas à droite de l’image concernée.</li></ul>"+
-"<p>Pour supprimer une zone image, cliquez sur la croix située dans le coin supérieur droit de l’image.</p>"+ 
-"<p>Pour remplacer un son, glissez-déposez simplement un nouveau son.</p>"+
-
-
-
-    "<p>Pour supprimer un exercice, cliquez sur la croix à gauche du numéro de l’exercice.</p>"+
-
-    "<p>Le bouton “Afficher” vous permet d’utiliser l’activité.</p>",
+"<li>définissez l’image correcte de l’interactivité en cliquant sur le bouton valider “v” situé en bas à droite de l’image concernée,</li>"+
+"<li>supprimez une zone image, en cliquant sur la croix située dans son coin supérieur droit,</li>"+ 
+"<li>le bouton “Afficher” vous permet d’utiliser l’activité.</li></ul>",
     theme: "Thème"
 
 };

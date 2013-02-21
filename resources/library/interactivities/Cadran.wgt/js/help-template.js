@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<h3>Le disque</h3>
-=======
 <h3>Dial</h3>
 <h4>Mental calculation</h4>
 
@@ -14,4 +11,4 @@
 <p> To change the number in the center, click and replace it.</p>
 
 <p>"Display" button comes back to the activity.</p>
->>>>>>> origin/release-candidate
+

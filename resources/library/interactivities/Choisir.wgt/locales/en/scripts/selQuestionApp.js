@@ -49,19 +49,18 @@ var sankoreLang = {
 
 "<p> Enter the “Edit” mode to :</p>" +
 "<ul><li> choose the theme of interactivity : pad, slate or none (none by default),</li>" +
-"<li> modify an exercise or create a new one.</li></ul>" +
+"<li> modify the exercise.</li></ul>" +
 
-"<p>To create a new exercise :</p>" +
+"<p>In edition mode :</p>" +
 "<ul> <li> click on “Add a new question”,</li>" +
 "<li>edit the text field clicking on the text field “Enter your question here ... ”,</li>" +
 "<li>click on “Options” to select the type of our MCQ (one correct answer, multiple correct answers, drop down) and close it,</li>" +
 "<li>add a new possible answer if needed,</li>" +
-"<li>modify the text field clicking on it.</li>" +
-"<li>set the correct answer by clicking in the checkbox to the left of the text field.</li></ul>" +
-"<p>To remove a label, click on the cross button on the frame.</p>" +
-"<p>To delete a possible answer click on the cross on the left.</p>" +
-"<p>To delete a question, click on the cross on the left.</p>" +
-"<p>“Display” button comes back to the activity.</p>",
+"<li>modify the text field clicking on it,</li>" +
+"<li>set the correct answer by clicking in the checkbox to the left of the text field,</li>" +
+"<li>remove a label clicking on the cross button on the frame,</li>" +
+"<li>delete a possible answer clicking on the cross on the left,</li>" +
+"<li>“Display” button comes back to the activity.</li></ul>",
     theme: "Theme"
 };
 

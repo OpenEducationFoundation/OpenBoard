@@ -22,20 +22,26 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     mTrapApplicationHLayout->setContentsMargins(0,0,0,0);
     mTrapApplicationHLayout->setSpacing(0);
 
+    QList<QLabel *> buttonLabels;
+
     QToolButton *buttonWebTrapToLibrary = new QToolButton();
     buttonWebTrapToLibrary->setDefaultAction(UBApplication::mainWindow->actionWebTrapToLibrary);
+    buttonLabels << new QLabel(tr("Download to") + "\n" +tr("library"));
     mTrapButtons << buttonWebTrapToLibrary;
 
     QToolButton *buttonWebTrapToCurrentPage = new QToolButton();
     buttonWebTrapToCurrentPage->setDefaultAction(UBApplication::mainWindow->actionWebTrapToCurrentPage);
+    buttonLabels << new QLabel(tr("Download to\ncurrent page"));
     mTrapButtons << buttonWebTrapToCurrentPage;
 
     QToolButton *buttonWebTrapLinkToLibrary = new QToolButton();
     buttonWebTrapLinkToLibrary->setDefaultAction(UBApplication::mainWindow->actionWebTrapLinkToLibrary);
+    buttonLabels << new QLabel(tr("Add link to\nlibrary"));
     mTrapButtons << buttonWebTrapLinkToLibrary;
 
     QToolButton *buttonWebTrapLinkToPage = new QToolButton();
     buttonWebTrapLinkToPage->setDefaultAction(UBApplication::mainWindow->actionWebTrapLinkToPage);
+    buttonLabels << new QLabel(tr("Add link to\ncurrent page"));
     mTrapButtons << buttonWebTrapLinkToPage;
 
     QString buttonStileSheet("QToolButton#WBWebTrapToolButton{background-color: rgb(127, 127, 127, 20%)}");
@@ -47,9 +53,11 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     buttonsLayoutWidget->setLayout(buttonsLayout);
     buttonsLayout->setAlignment(Qt::AlignTop);
     buttonsLayout->setContentsMargins(7,3,3,7);
-    
-    foreach (QToolButton *button, mTrapButtons)
+        
+    for (int i = 0; i < 4; i++)
     {
+        QToolButton *button = mTrapButtons.at(i);
+
         button->setObjectName("WBWebTrapToolButton");
         button->setToolButtonStyle(Qt::ToolButtonIconOnly);
         button->setIconSize(QSize(64, 64));
@@ -59,8 +67,9 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
         button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         button->defaultAction()->setEnabled(false);
 
-        QLabel *buttonLabel = new QLabel(button->defaultAction()->text());
+        QLabel *buttonLabel = buttonLabels.at(i);
         buttonLabel->setMaximumWidth(64);
+        buttonLabel->setTextFormat(Qt::PlainText);
         buttonLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         buttonLabel->setAlignment(Qt::AlignHCenter);
 

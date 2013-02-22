@@ -5,7 +5,7 @@
         id="http://www.example.net/widgets/helloworld" 
         version="1.0"
         width="850"
-        height="400" 
+        height="500" 
 		ub:resizable="false">
 		
 		<name>Phrases sortable</name>

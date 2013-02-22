@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Stop</source>
-        <translation>停止</translation>
+        <translation>結束</translation>
     </message>
     <message>
         <source>Open</source>
@@ -441,7 +441,7 @@
     </message>
     <message>
         <source>Quit</source>
-        <translation>停止</translation>
+        <translation>結束</translation>
     </message>
     <message>
         <source>Eraser</source>
@@ -825,39 +825,39 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新增書籤&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>下載至圖書館</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>下載至目前頁面</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>新增連結至圖書館</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>新增連結至目前頁面</translation>
     </message>
 </context>
 <context>
@@ -1033,101 +1033,101 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alpha:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>形狀:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>寬:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>高:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>保持等比例</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>預覽:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation>關閉 cache</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;drop content&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>圖像不被辨識接受</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>資料無法顯示</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案不被辨識為音訊檔</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>播放音訊檔</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>新增頁面連結</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>新增網頁連結</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>從圖書館拖曳音訊檔</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">下一頁</translation>
+        <translation>下一頁</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">上一頁</translation>
+        <translation>上一頁</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>標題頁</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>前一頁</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>頁面編號</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>此處插入url</translation>
     </message>
 </context>
 <context>
@@ -1277,8 +1277,8 @@
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
-        <translation type="unfinished">
-            <numerusform>確定要從所選文件 &apos;%1&apos; 移除 %n 個頁面?</numerusform>
+        <translation>
+            <numerusform>確定要從所選文件 &apos;%1&apos; 移除 %n 頁?</numerusform>
         </translation>
     </message>
     <message>
@@ -1383,40 +1383,42 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">接受</translation>
+        <translation>接受</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>置換</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation> %1 名稱已被使用。
+使用本名稱，文件會被置換。
+使用新名稱，則會產生新文件。</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>我的文件</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Models</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">回收桶</translation>
+        <translation>回收桶</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation>尙未標題文件</translation>
     </message>
 </context>
 <context>
@@ -1431,8 +1433,8 @@ Providing a new name will create a new document.</source>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
-            <numerusform>已複製 %1 個頁面</numerusform>
+        <translation>
+            <numerusform>已複製 %1 頁</numerusform>
         </translation>
     </message>
 </context>
@@ -1440,99 +1442,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>下載失敗</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>外部remote server 拒絕連線 (the server is not accepting requests)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>早在reply被接收且處理之前，外部remote server 就關閉連線。</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>the remote host name was not found (invalid hostname)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>外部伺服器remote server timed out</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>the operation was canceled via calls to abort() or close() before it was finished.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>網路連線失效。系統已啟動它點roaming。需重新提交request，待連線回復方能處理。</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy伺服器連結被拒 (the proxy server is not accepting requests)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>早在reply被接收且處理之前，proxy server 就關閉連線。</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>the proxy host name was not found (invalid proxy hostname)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy timed out 或 the proxy 沒有回應</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy 需要認証才能處理要求，但並未通過任何提供的資料（如果有的話）</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>外部內容存取被拒 (similar to HTTP error 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>外部的request不被允許</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>the remote content was not found at the server (similar to HTTP error 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>外部remote server 需要認証才能處理，但並未通過任何提供的資料（如果有的話）</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>因為protocol 未知，Network Access API的request不被處理。</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>the requested operation is invalid for this protocol</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>偵測到網路有錯誤</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>偵測到proxy相關的錯誤</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>偵測到外部內容有錯誤</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>偵測到protocol錯誤 (parsing error, invalid or unexpected responses, etc.)</translation>
     </message>
 </context>
 <context>
@@ -1607,27 +1609,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出失敗...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>以UBZ格式匯出</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>文件匯出中...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出成功。</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">匯出失敗。</translation>
+        <translation>匯出失敗。</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出成Sankore UBX格式</translation>
     </message>
 </context>
 <context>
@@ -1801,11 +1803,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">書籤</translation>
+        <translation>書籤</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished"></translation>
+        <translation>網路</translation>
     </message>
 </context>
 <context>
@@ -1842,19 +1844,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">新增動作</translation>
+        <translation>新增動作</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>移除音訊檔連結</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>移除頁面連結</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>移除網路url連結</translation>
     </message>
 </context>
 <context>
@@ -1873,19 +1875,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">新增動作</translation>
+        <translation>新增動作</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>移除音訊檔連結</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>移除頁面連結</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>移除網路url連結</translation>
     </message>
 </context>
 <context>
@@ -1977,7 +1979,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore (set of documents) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2085,7 +2087,13 @@ Do you want to ignore these errors for this host?</source>
 %2
 
 Do you want to ignore these errors for this host?</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL Errors:
+
+%1
+
+%2
+
+是否要忽略這些錯誤？</translation>
     </message>
 </context>
 <context>
@@ -2201,123 +2209,123 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>預設</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>阿拉伯文</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgarian</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>Catalan</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Danish</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">德文</translation>
+        <translation>德文</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>希臘文</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">英文</translation>
+        <translation>英文</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>英文-UK</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>西班牙文</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">法文</translation>
+        <translation>法文</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">法文(瑞士)</translation>
+        <translation>法文(瑞士)</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>義大利文</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>希伯來文</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>日文</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>韓文</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>Malagasy</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>挪威文</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>波蘭文</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>Romansh</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Romanian</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">俄文</translation>
+        <translation>俄文</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovak</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>瑞典文</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>土耳其文</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>中文</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>簡體中文</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>正體中文</translation>
     </message>
 </context>
 <context>
@@ -2362,14 +2370,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>下次顯現</translation>
     </message>
 </context>
 <context>
@@ -2599,11 +2607,11 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">整頁</translation>
+        <translation>整頁</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>Embed </translation>
     </message>
 </context>
 <context>
@@ -2852,7 +2860,8 @@ Please reboot the application to access the updated documents.</source>
     <message>
         <source>?</source>
         <comment>unknown file size</comment>
-        <translation type="unfinished">?</translation>
+        <translatorcomment>檔案大小未知</translatorcomment>
+        <translation>?</translation>
     </message>
 </context>
 <context>
@@ -2868,7 +2877,8 @@ Please reboot the application to access the updated documents.</source>
     <message>
         <source>%1 Downloads</source>
         <comment>always &gt;= 2</comment>
-        <translation type="unfinished">%1 個下載</translation>
+        <translatorcomment>永遠 &gt;= 2</translatorcomment>
+        <translation>%1 個下載</translation>
     </message>
 </context>
 <context>
@@ -2961,23 +2971,23 @@ Please reboot the application to access the updated documents.</source>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇要截取的內容</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">應用程式名稱</translation>
+        <translation>應用程式名稱</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>限制與免責聲明</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>本特色係應一般最常見網頁所開發</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>對於任何網路連結或內容截取，請尊重智慧財產權</translation>
     </message>
 </context>
 <context>
@@ -3058,7 +3068,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Restore credentials on reboot</translation>
     </message>
 </context>
 <context>
@@ -4227,35 +4237,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>啟動提示</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示啟動提示</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>語言</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇語言</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>下次啟動時，新選語言將會載入</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>關閉Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Planète Sankoré ID for exporting file</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>Restore credentials on reboot  </translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4266,19 +4276,26 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4290,7 +4307,15 @@ p, li { white-space: pre-wrap; }
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4342,7 +4367,55 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Crédits police scolaire Open-Sankoré : &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;La police Andika Basic dispose d&apos;une licence Open Font License &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Sil international&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;amp;id=andika&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Licence OFL (traduction française non officielle) http://fontforge.sourceforge.net/OFL-Unofficial-fr.html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence OFL : &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier Court &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier Ligne Court&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence Creative Commons BY NC ND :&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier lignes pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier CP&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier CP pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Cursive sont l&apos;oeuvre d&apos;Antoine Fetet (antoine.fetet@laposte.net) à partir d&apos;une police proposée par Jean-Claude Gineau&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://lps13.free.fr/contenu/construire/Cursive_standard.zip et http://fr.fontriver.com/font/gino_school_script/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;L&apos;auteur en autorise l&apos;utilisation dans le cadre du logiciel open-Sankoré pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Script (Ecole et CaseEcole) sont l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCO.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCA.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;La police phonétique, Alphonet est l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/ALPHONET.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

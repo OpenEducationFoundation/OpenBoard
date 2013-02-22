@@ -3,8 +3,8 @@
 		xmlns:ub="http://uniboard.mnemis.com/widgets"
         id="http://www.njin.fr/sankore/apps/memory" 
         version="1.0"
-        width="760"
-        height="580" 
+        width="850"
+        height="600" 
         ub:resizable="false">     
    
 		<name>La boite</name>

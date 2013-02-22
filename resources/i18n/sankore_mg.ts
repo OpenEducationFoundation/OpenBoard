@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr_CH">
+<TS version="2.0" language="fr_FR">
 <context>
     <name>BlackoutWidget</name>
     <message>
@@ -825,39 +825,39 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Asiana tobin-drohy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alaina ho an&apos;ny&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tahirim-boky&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaina ho an&apos;ny tahirim-boky</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alaina ho an&apos;io&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pejy io&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaina ho an&apos;io pejy io</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ampiana rohy&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ao anatin&apos;ny tahirim-boky&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampiana rohy ao anatin&apos;ny tahirim-boky</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ampiana rohy&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;eto amin&apos;ity pejy ity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampiana rohy eto amin&apos;ity pejy ity</translation>
     </message>
 </context>
 <context>
@@ -1033,101 +1033,101 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alpha:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeometria:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>Saka:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Halavana:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>Tehirizina nyfifandraisan&apos;ny saka sy ny halavana</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiasany:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fijerevana mialoha:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidina ny tahiry</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;fafana ny mpiatiny&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy ekena ny sary</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy afaka mampiseho ny data</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny rakitra nofafana dia tsy fantatra ho raki-peo</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Andefa raki-peo</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampiana rohy ny pejy</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampiana rohy ny pejin&apos;ny tranon-kala</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaina avy ao anatin&apos;ny tahirim-boky sy atao ao anatin&apos;ity faritra ity ilay raki-peo </translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ekena</translation>
+        <translation>Ekena</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">Pejy ao aorina</translation>
+        <translation>Pejy ao aorina</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">Pejy teo aloha</translation>
+        <translation>Pejy teo aloha</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Lohatenin&apos;ilay pejy</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pejy farany</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Laharan&apos;ny pejy</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampidiro eto ny rohin&apos;ny lahabolana</translation>
     </message>
 </context>
 <context>
@@ -1384,40 +1384,42 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">Ekena</translation>
+        <translation>Ekena</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Soloina</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Ajanony</translation>
+        <translation>Ajanony</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny anarana %1 dia efa nampiasana.
+Raha tazomina io anarana io dia voasolo ilay rakitra efa nisy.
+Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny rakitrako</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modely</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">Daba</translation>
+        <translation>Daba</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1442,99 +1444,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakana tsy nety.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny mpizara alavitra dia tsy manaiky ny fifandraisana (ny mpizara dia tsy manaiky fangatahana)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>ny mpizara alavitra dia nanapaka ny fifandraisana alohan&apos;ny nandraisana sy nikarakarana ny valiny feno</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>ny anaran&apos;ilay mpizara alavitra dia tsy hita ( anarana tsy mety)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapaka ny fifandraisana amin&apos;ny mpizara alavitra fa ela loatra</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny asa dia najanona tamin&apos;ny didy abort() na close() nefa tsy vita akory.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>ny fifandraisana SSL/TLS dia tsy nety ary ny lalana voantoka dia tsy mety ampiasana. Nalefa ny kaika sslErrors().</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapaka ny fifandraisana noho ny fanapahan&apos;ny rezo, na izany aza dia nalefa amin&apos;ny fidirana hafa ny rafitra. Ho averina alefa ny fangatahana ary ho valiana vao miverina ny fifandraisana.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fifandraisana amin&apos;ny mpizara proxy dia tsy nekena ( tsy manaiky fangatahana ny mpizara proxy)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>ny mpizara proxy dia nanapaka ny fifandraisana alohan&apos;ny nandraisana sy nikarakarana ny valiny feno</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>ny anaran&apos;ilay mpizara proxy dia tsy hita ( anarana tsy mety)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fifandraisana amin&apos;ny mpizara proxy dia ela loatra na tsy namaly ara-potoana an&apos;ilay fangatahana nalefa ny proxy</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny proxy dia mila famantarana mba hamalian&apos;ny fangatahana, kanefa tsy manaiky ny anarana sy ny teni-miafina nampiaisana (raha toa ka nisy)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy nekena ny fidirana amin&apos;ny mpiatiny alavitra ( ohatran&apos;ny diso HTTP 401 )</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy azo ato izany amin&apos;ny mpiatiny alavitra</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy hita amin&apos;ny mpizara ny mpiatiny alavitra ( ohatran&apos;ny diso HTTP 404 )</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny mpizara alavitra dia mila famantarana mba hizarana ny mpiatiny, kanefa tsy manaiky ny anarana sy ny teni-miafina nampiaisana (raha toa ka nisy)</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tokony nalefa indray mandeha ilay fangatahana, kanefa tsy nety satria tsy nety novakiana fanindroany ilay data nalefa ohatra .</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny API fidirana amin&apos;ny rezo dia tsy nety namaly ny fangatahana satria tsy fantatra ny fomba firesaka</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny asa nangatahana dia tsy mety amin&apos;ity fomba firesaka ity</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nisy tsy fetezana mifandray amin&apos;ny rezo nitranga</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nisy tsy fetezana mifandray amin&apos;ny proxy nitranga</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nisy tsy fetezana mifandray amin&apos;ny mpiatiny alavitra nitranga</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nisy fahasimbana ao anatin&apos;ny fomba firesaka nitranga (valiny tsy nety na tsy nampoizina ohatra, sns.)</translation>
     </message>
 </context>
 <context>
@@ -1609,27 +1611,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fandefasana tsy nety...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>Alefa ho rakitra UBX</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandefa ny rakitra ...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">Fandefasana nety.</translation>
+        <translation>Fandefasana nety.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">Fandefasana tsy nety.</translation>
+        <translation>Fandefasana tsy nety.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Alefa ho tahaka ny rakitra Sankore UBX</translation>
     </message>
 </context>
 <context>
@@ -1803,11 +1805,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">Tobin-drohy</translation>
+        <translation>Tobin-drohy</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished">Tranon-kala</translation>
+        <translation>Tranon-kala</translation>
     </message>
 </context>
 <context>
@@ -1844,19 +1846,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Manampy fihetsika iray</translation>
+        <translation>Manampy fihetsika iray</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay raki-peo ny rohy</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay pejy ny rohy</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay rohin&apos;ny tranon-kala ny rohy</translation>
     </message>
 </context>
 <context>
@@ -1875,19 +1877,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Manampy fihetsika iray</translation>
+        <translation>Manampy fihetsika iray</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay raki-peo ny rohy</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay pejy ny rohy</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina amin&apos;ilay rohin&apos;ny tranon-kala ny rohy</translation>
     </message>
 </context>
 <context>
@@ -1979,7 +1981,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore (valan-drakitra) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2199,123 +2201,123 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsotra</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>Arabic</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgarian</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>Catalan</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Danish</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">Alemanina</translation>
+        <translation>Alemanina</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Greek</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">Anglisy</translation>
+        <translation>Anglisy</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>Anglisy UK</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Espaniola</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">Frantsay</translation>
+        <translation>Frantsay</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">Frantsay avy amin&apos;ny Suisse</translation>
+        <translation>Frantsay avy amin&apos;ny Suisse</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italianina</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebrio</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>Japanese</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Koreanina</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>Malagasy</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>Norvejianina</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>Polish</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>Romansh</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Romanianina</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">Rosiana</translation>
+        <translation>Rosiana</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovak</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Swedish</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinoa</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinoa tsotra</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinoa nentim-paharazana</translation>
     </message>
 </context>
 <context>
@@ -2360,14 +2362,14 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/Tranon-kala</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Hita amin&apos;ny manaraka</translation>
     </message>
 </context>
 <context>
@@ -2598,11 +2600,11 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">Pejy iray manontolo</translation>
+        <translation>Pejy iray manontolo</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>Natao tao anatiny</translation>
     </message>
 </context>
 <context>
@@ -2952,23 +2954,23 @@ Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>Safidio ny mpiatiny ho alaina:</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">Anaran&apos;ny rindran&apos;asa</translation>
+        <translation>Anaran&apos;ny rindran&apos;asa</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>Fifehezana sy dina.</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ity fiasana ity dia namboarina ho andeha amin&apos;ny akamaroan&apos;ny pejin&apos;ny tranon-kala.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mba hajao azafady ny lalana amin&apos;ny fanamboarana rohy sy fangalana mpiatiny amin&apos;ny tranon-kala.</translation>
     </message>
 </context>
 <context>
@@ -3049,7 +3051,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Averina ampiaisana ny anarana sy ny teni-miafina nidirana rehefa averina alefa</translation>
     </message>
 </context>
 <context>
@@ -4357,35 +4359,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Planète Sankoré ID ho fakana rakitra</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>Averina ampiaisana ny anarana sy ny teni-miafina nidirana rehefa averina alefa  </translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Toro-hevitra amin&apos;ny voalohany</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseho ny toro-hevitra amin&apos;ny voalohany</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Teny</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>Safidio ny teny</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny teny nosafidiny dia ho ampiasana rehefa averina alefa amin&apos;ny manaraka</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidio Open-Sankoré</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4396,19 +4398,26 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Ny lalana mikasika an&apos;ity rafitra ity dia amin&apos;ny teny anglisy mba hanajana ny dika-teny ara-dalana sy ofisialy.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4420,7 +4429,15 @@ p, li { white-space: pre-wrap; }
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4472,7 +4489,55 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Crédits police scolaire Open-Sankoré : &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;La police Andika Basic dispose d&apos;une licence Open Font License &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Sil international&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;amp;id=andika&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Licence OFL (traduction française non officielle) http://fontforge.sourceforge.net/OFL-Unofficial-fr.html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence OFL : &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier Court &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier Ligne Court&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence Creative Commons BY NC ND :&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Ecolier lignes pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier CP&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;- Écolier CP pointillés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Cursive sont l&apos;oeuvre d&apos;Antoine Fetet (antoine.fetet@laposte.net) à partir d&apos;une police proposée par Jean-Claude Gineau&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://lps13.free.fr/contenu/construire/Cursive_standard.zip et http://fr.fontriver.com/font/gino_school_script/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;L&apos;auteur en autorise l&apos;utilisation dans le cadre du logiciel open-Sankoré pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les polices Script (Ecole et CaseEcole) sont l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCO.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCA.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;La police phonétique, Alphonet est l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices/ALPHONET.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

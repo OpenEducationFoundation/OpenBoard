@@ -4,7 +4,7 @@
         id="http://uniboard.mnemis.com/widgets/webbrowser" 
         version="1.1"
         width="920"
-        height="370" 
+        height="450" 
 		ub:resizable="false">   
 		     
   		<name>Choisir</name>

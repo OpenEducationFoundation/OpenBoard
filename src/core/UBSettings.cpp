@@ -235,7 +235,7 @@ void UBSettings::init()
     leftLibPaletteDesktopModeIsCollapsed = new UBSetting(this,"Board","LeftLibPaletteDesktopModeIsCollapsed",false);
 
     userCrossDarkBackground = new UBColorListSetting(this, "Board", "crossDarkBackgroundColor", "127 127 127", 0.75);
-    userCrossLightBackground = new UBColorListSetting(this, "Board", "crossLightBackgroundColor", "200 255 255", 1);
+    userCrossLightBackground = new UBColorListSetting(this, "Board", "crossLightBackgroundColor", "83 173 173", 1);
 
     QColor bgCrossColor;
     QStringList colors;

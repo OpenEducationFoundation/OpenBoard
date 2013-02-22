@@ -234,6 +234,23 @@ void UBSettings::init()
     leftLibPaletteDesktopModeWidth = new UBSetting(this, "Board", "LeftLibPaletteDesktopModeWidth",270);
     leftLibPaletteDesktopModeIsCollapsed = new UBSetting(this,"Board","LeftLibPaletteDesktopModeIsCollapsed",false);
 
+    userCrossDarkBackground = new UBColorListSetting(this, "Board", "crossDarkBackgroundColor", "127 127 127", 0.75);
+    userCrossLightBackground = new UBColorListSetting(this, "Board", "crossLightBackgroundColor", "200 255 255", 1);
+
+    QColor bgCrossColor;
+    QStringList colors;
+    colors = userCrossDarkBackground->get().toString().split(" ", QString::SkipEmptyParts);
+    if (3 == colors.count())
+        crossDarkBackground = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt());
+    if (4 == colors.count())
+        crossDarkBackground = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt(), colors[3].toInt());
+
+    colors = userCrossLightBackground->get().toString().split(" ", QString::SkipEmptyParts);
+    if (3 == colors.count())
+        crossLightBackground = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt());
+    if (4 == colors.count())
+        crossLightBackground = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt(), colors[3].toInt());
+
     appIsInSoftwareUpdateProcess = new UBSetting(this, "App", "IsInSoftwareUpdateProcess", false);
     appLastSessionDocumentUUID = new UBSetting(this, "App", "LastSessionDocumentUUID", "");
     appLastSessionPageIndex = new UBSetting(this, "App", "LastSessionPageIndex", 0);
@@ -264,7 +281,7 @@ void UBSettings::init()
     cacheKeepAspectRatio = new UBSetting(this, "Cache", "KeepAspectRatio", true);
     cacheMode = new UBSetting(this, "Cache", "CasheMode", 0);
     casheLastHoleSize = new UBSetting(this, "Cache", "LastHoleSize", QSize(20,20));
-    cacheColor = new UBColorListSetting(this, "Cache", "Color", "#000000", 0.75);
+    cacheColor = new UBColorListSetting(this, "Cache", "Color", "0 0 0", 0.75);
 
     ValidateKeyboardPaletteKeyBtnSize();
 

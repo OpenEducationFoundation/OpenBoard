@@ -53,11 +53,7 @@ void UBAsyncLocalFileDownloader::run()
     sDownloadFileDesc descriptor = mDesc;
     mMutex.unlock();
 
-
-    if(descriptor.srcUrl.startsWith("file://") || descriptor.srcUrl.startsWith("/"))
-        descriptor.srcUrl = QUrl(descriptor.srcUrl).toLocalFile();
-    else
-        descriptor.srcUrl = QUrl::fromLocalFile(descriptor.srcUrl).toLocalFile();
+    descriptor.srcUrl = QUrl::fromUserInput(descriptor.srcUrl).toLocalFile();
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(descriptor.srcUrl);
 

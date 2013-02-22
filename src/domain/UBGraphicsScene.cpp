@@ -1515,9 +1515,9 @@ UBGraphicsTextItem* UBGraphicsScene::textForObjectName(const QString& pString, c
         textItem->setObjectName(objectName);
         textItem->setData(UBGraphicsItemData::ItemEditable,QVariant(false));
         textItem->adjustSize();
-        textItem->setPlainText(pString);
         textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     }
+    textItem->setPlainText(pString);
 
     textItem->clearFocus();
     return textItem;

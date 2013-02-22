@@ -516,5 +516,6 @@ void UBCachePropertiesWidget::onZoomChanged(qreal newZoom)
 {
     mpWidthSlider->setMaximum(maximumShapeSize.width());
     mpHeightSlider->setMaximum(maximumShapeSize.height());
-    mpCurrentCache->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
+    if (mpCurrentCache)
+        mpCurrentCache->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
 }

@@ -610,7 +610,7 @@ void UBGraphicsWidgetItem::mainFrameLoadFinished (bool ok)
     mLoadIsErronous = !ok;
     update(boundingRect());
 
-    if (mInitialLoadDone && scene()->renderingContext() == UBGraphicsScene::Screen)
+    if (mInitialLoadDone && scene() && scene()->renderingContext() == UBGraphicsScene::Screen)
         takeSnapshot();
 }
 

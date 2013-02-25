@@ -3044,7 +3044,7 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
             }
         }
 
-        if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"), tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
+        if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"),tr("This is an irreversible action!") +"\n\n" + tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
             int offset = 0;
             foreach(int index, sceneIndexes)

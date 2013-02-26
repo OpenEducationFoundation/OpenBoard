@@ -165,10 +165,6 @@
         <translation>Světlá</translation>
     </message>
     <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Vložit obsah z webu</translation>
-    </message>
-    <message>
         <source>Pages</source>
         <translation>Stránky</translation>
     </message>
@@ -377,10 +373,6 @@
         <translation>Nová složka</translation>
     </message>
     <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Přenést obsah ve Flashi</translation>
-    </message>
-    <message>
         <source>Import</source>
         <translation>Otevřít</translation>
     </message>
@@ -573,10 +565,6 @@
         <translation>V zobrazené části obrazovky zobrazit hlavní obrazovku</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Přenést Flash</translation>
-    </message>
-    <message>
         <source>Window Capture</source>
         <translation>Zachytit okno</translation>
     </message>
@@ -599,10 +587,6 @@
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
         <translation>Zobrazit editor widgetů Open-Sankoré</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Zachytit část webové stránky</translation>
     </message>
     <message>
         <source>Write Text</source>
@@ -1013,14 +997,6 @@
 <context>
     <name>UBCachePropertiesWidget</name>
     <message>
-        <source>Close</source>
-        <translation type="obsolete">Zavřít</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation type="obsolete">Velikost:</translation>
-    </message>
-    <message>
         <source>Color:</source>
         <translation>Barva:</translation>
     </message>
@@ -1169,20 +1145,8 @@
         <translation>Koš</translation>
     </message>
     <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">Určitě chcete vyprázdnit koš?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">Určitě chcete odstranit složku &quot;%1&quot; a celý její obsah?</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Otevřít podporovaný soubor</translation>
-    </message>
-    <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Odstranit dokument</translation>
     </message>
     <message>
         <source>All Images (%1)</source>
@@ -1237,36 +1201,12 @@
         <translation>Soubor se nepodařilo otevřít...</translation>
     </message>
     <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">Určitě chcete odstranit dokument &quot;%1&quot;?</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Koš byl vyprázdněn</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Vyprázdnit koš</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Odstranit složku</translation>
-    </message>
-    <message>
         <source>Remove Page</source>
         <translation>Odstranit stránku</translation>
     </message>
     <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">Nevybrali jste žádný dokument!</translation>
-    </message>
-    <message>
         <source>Import all Images from Folder</source>
         <translation>Nahrát všechny obrázky ze složky</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Vyprazdňuje se koš</translation>
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
@@ -1295,6 +1235,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>Dokumenty bez názvu</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1724,6 +1668,10 @@ Poskytnutí nového názvu vytvoří nový dokument.</translation>
         <source>Object informations</source>
         <translation>Informace o objektu</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Přidat</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1911,13 +1859,6 @@ Poskytnutí nového názvu vytvoří nový dokument.</translation>
     <message>
         <source>Editable</source>
         <translation>Upravitelný</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2322,6 +2263,14 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
         <source>Chinese Traditional</source>
         <translation>Tradiční čínština</translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2586,21 +2535,6 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
     <message>
         <source>Magnifier</source>
         <translation>Lupa</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">Aristo</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
-    </message>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Celá stránka</translation>
     </message>
 </context>
 <context>
@@ -2980,6 +2914,26 @@ Znovu spusťte aplikaci, abyste mohli pracovat s aktualizovanými dokumenty.</tr
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation>Při vytváření odkazů či přenášení obsahu z webu, respektujte, prosím, autorská práva.</translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3169,10 +3123,6 @@ p, li { white-space: pre-wrap; }
         <translation>Pero</translation>
     </message>
     <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
     </message>
@@ -3217,20 +3167,12 @@ p, li { white-space: pre-wrap; }
         <translation>Zvýrazňovač</translation>
     </message>
     <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
-    </message>
-    <message>
         <source>Internet</source>
         <translation>Internet</translation>
     </message>
     <message>
         <source>Positioned at the Top (recommended for tablets)</source>
         <translation>Je umístěný na vrchu (doporučeno pro tablety)</translation>
-    </message>
-    <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSl</translation>
     </message>
     <message>
         <source>Virtual Keyboard</source>
@@ -3315,10 +3257,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>Heslo:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Planète Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>

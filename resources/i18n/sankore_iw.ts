@@ -700,14 +700,6 @@
         <translation>קבע תצורת הקלטת הפודקסט</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">מלכודת פלאש</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">תוכן מלכודת פלאש</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>מלכודת אינטרנט</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>לכד חלון</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">שלב תוכן אינטרנט</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">לכד תוכן אינטרנט מוכנס</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1025,14 +1009,6 @@
         <translation>צורה:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">מימדים:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">סגור</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1193,42 +1169,6 @@
         <translation>הסר את הדף</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">הסר את המסמך</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">אתה בטוח שברצונך להסיר את  %1&apos;המסמך?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">רוקן את הסל</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">אתה בטוח שברצונך לרוקן את הסל?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">מרוקן סל</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">הסל הורק</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">הסר תיקיה</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">אתה בטוח שברצונך להסיר את התיקיה %1 ואת כל תכנה?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">לא נבחר כל מסמך!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>פתח קובץ מתאים</translation>
     </message>
@@ -1294,6 +1234,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>מסמכים ללא שם</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1721,6 +1665,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>מידע על האובייקט</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">הוסף</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1908,13 +1856,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation>ניתן לעריכה</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">אינטרנט</translation>
     </message>
 </context>
 <context>
@@ -2314,6 +2255,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2578,21 +2527,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cache</source>
         <translation>מטמון</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">אריסטו</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">דף מלא</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">אינטרנט</translation>
     </message>
 </context>
 <context>
@@ -2971,6 +2905,26 @@ Please reboot the application to access the updated documents.</source>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3232,20 +3186,8 @@ p, li { white-space: pre-wrap; }
         <translation>רשיונות</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>About</source>
@@ -3302,10 +3244,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>סיסמא:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">שם מזהה בפלנטת Sankoré</translation>
     </message>
     <message>
         <source>User:</source>

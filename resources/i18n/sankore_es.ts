@@ -700,14 +700,6 @@
         <translation>Configurar grabación de podcast</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Captura de elemento Flash</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Capturar contenido Flash</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>Captura de contenido web</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>Capturar una ventana</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Integrar contenido web</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Capturar contenido web integrable</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1024,14 +1008,6 @@
         <translation>Forma:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">Tamaño:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Cerrar</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,42 +1168,6 @@
         <translation>Eliminar página</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Eliminar documento</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">¿Está seguro de que desea eliminar el documento &apos;%1&apos;?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Vaciar papelera</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">¿Está seguro de que desea vaciar la papelera?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Vaciando papelera</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Papelera vaciada</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Eliminar carpeta</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">¿Está seturo de que desea eliminar la carpeta &apos;%1&apos; y todo su contenido?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">¡Ningún documento seleccionado!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Abrir archivo compatible</translation>
     </message>
@@ -1293,6 +1233,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>Documentos sin título</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1719,6 +1663,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>Información del objeto</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Añadir</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1906,13 +1854,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation>Editable</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2311,6 +2252,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2575,17 +2524,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cache</source>
         <translation>Caché</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Página completa</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2964,6 +2902,26 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3241,20 +3199,8 @@ p, li { white-space: pre-wrap; }
         <translation>Licencias</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -3299,10 +3245,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>Contraseña:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">ID Planète Sankoré</translation>
     </message>
     <message>
         <source>User:</source>

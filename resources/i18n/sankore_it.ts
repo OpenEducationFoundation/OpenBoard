@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>BlackoutWidget</name>
     <message>
@@ -698,14 +700,6 @@
         <translation>Configura la registrazione del Podcast</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Cattura Flash</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Cattura contenuto flash</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>Cattura Web</translation>
     </message>
@@ -724,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>Cattura una finestra</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Incorpora contenuto web</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Cattura un contenuto web incorporabile</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -765,27 +751,27 @@
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Open-Sankoré</source>
         <translation>Open-Sankoré</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Quit Open-Sankoré</source>
         <translation>Chiudi Open-Sankoré</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Open-Sankoré Editor</source>
         <translation>Editor Open-Sankoré</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
         <translation>Mostra l&apos;editor dei Widgets Open-Sankoré</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Hide Open-Sankoré</source>
         <translation>Nascondi Open-Sankoré</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
         <translation>Nascondi l&apos;applicazione Open-Sankoré</translation>
     </message>
@@ -1022,14 +1008,6 @@
         <translation>Forma:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">Dimensione:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Chiudi</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation>Alfa:</translation>
     </message>
@@ -1190,42 +1168,6 @@
         <translation>Elimina pagina</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Elimina documento</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">Sei sicuro di voler eliminare il documento &apos;%1&apos;?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Svuota il cestino</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">Sei sicuro di voler svuotare il cestino?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Sto svuotanto il cestino</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Cestino svuotato</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Elimina cartella</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">Sei sicuro di voler eliminare la cartella &apos;%1&apos; e tutto il suo contenuto?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">Nessun documento selezionato!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Apri file supportato</translation>
     </message>
@@ -1273,9 +1215,11 @@
         <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
         <translation>Il documento &apos;%1&apos; è stato generato con una versione più recente di Sankore (%2). Aprendolo, si potrebbero perdere alcune informazioni. Vuoi continuare?</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
-        <translation>Sei sicuro di voler rimuovere %n pagine dal documento &apos;%1&apos; selezionato?</translation>
+        <translation type="unfinished">
+            <numerusform>Sei sicuro di voler rimuovere %n pagine dal documento &apos;%1&apos; selezionato?</numerusform>
+        </translation>
     </message>
     <message>
         <source>Title page</source>
@@ -1288,6 +1232,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>Documenti senza titolo</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1427,9 +1375,11 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
         <source>Copying page %1/%2</source>
         <translation>Sto copiando pagina %1/%2</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation>%1 pagine copiate</translation>
+        <translation type="unfinished">
+            <numerusform>%1 pagine copiate</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -1713,6 +1663,10 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
         <source>Object informations</source>
         <translation>Informazioni sull&apos;oggetto</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Aggiungi</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1900,13 +1854,6 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
     <message>
         <source>Editable</source>
         <translation>Modificabile</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2311,6 +2258,14 @@ Vuoi ignorare gli errori per questo host?</translation>
         <source>Chinese Traditional</source>
         <translation>Cinese Tradizionale</translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2578,21 +2533,6 @@ risorsa multimediale ...</translation>
     <message>
         <source>Cache</source>
         <translation>Cache</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">Goniometro 2</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Pagina intera</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2971,6 +2911,26 @@ Si prega di riavviare l&apos;applicazione per accedere ai documenti aggiornati.<
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation>Si prega di rispettare il diritto d&apos;autore durante la creazione di collegamenti o nella cattura di contenuto dal web.</translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3153,13 +3113,13 @@ p, li { white-space: pre-wrap; }
         <translation>Documenti Uniboard</translation>
     </message>
 </context>
-<context encoding="UTF-8">
+<context>
     <name>preferencesDialog</name>
     <message>
         <source>Preferences</source>
         <translation>Preferenze</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>version : …</source>
         <translation>versione : ...</translation>
     </message>
@@ -3248,26 +3208,14 @@ p, li { white-space: pre-wrap; }
         <translation>Licenze</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSL</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
         <translation>Rete</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Open-Sankoré</source>
         <translation>Open-Sankoré</translation>
     </message>
@@ -3307,10 +3255,6 @@ p, li { white-space: pre-wrap; }
         <source>Pass:</source>
         <translation>Password:</translation>
     </message>
-    <message encoding="UTF-8">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">ID Pianeta Sankoré</translation>
-    </message>
     <message>
         <source>User:</source>
         <translation>Utente:</translation>
@@ -3323,25 +3267,7 @@ p, li { white-space: pre-wrap; }
         <source>Credits</source>
         <translation>Riconoscimenti</translation>
     </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Le licenze sono in inglese per rispettare le traduzioni ufficiali legalmente approvate.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
         <translation>ID Planète Sankoré per l&apos;esportazione file</translation>
     </message>
@@ -3369,7 +3295,7 @@ p, li { white-space: pre-wrap; }
         <source>The new language will be loaded on next restart</source>
         <translation>La nuova lingua sarà caricate al successivo riavvio</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>Close Open-Sankoré</source>
         <translation>Chiudi Open-Sankoré</translation>
     </message>
@@ -3403,7 +3329,7 @@ p, li { white-space: pre-wrap; }
         <source>QuaZIP</source>
         <translation>QuaZIP</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -3423,7 +3349,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 2.0, Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }

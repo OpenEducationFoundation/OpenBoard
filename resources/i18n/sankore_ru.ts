@@ -700,14 +700,6 @@
         <translation>Конфигурировать запись подкаста</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Захват флэш</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Захват флэш-содержимого</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>Захват веб</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>Сделать снимок окна</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Вставить веб-содержимое</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Захватить веб-содержимого с возможностью вставки</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1024,14 +1008,6 @@
         <translation>Форма:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">Размеры:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Закрыть</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,42 +1168,6 @@
         <translation>Удалить страницу</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Удалить документ</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">Вы уверены, что хотите удалить документ &apos;%1&apos;?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Очистить корзину</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">Вы уверены, что хотите очистить корзину?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Очистка корзины</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Корзина пуста</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Удалить папку</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">Вы уверены, что хотите удалить папку &apos;%1 и все ее содержимое?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">Ничего не выбрано!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Открыть файл поддерживаемого формата</translation>
     </message>
@@ -1293,6 +1233,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>Документы без Названия</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1719,6 +1663,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>Информация об объекте</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Добавить</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1807,7 +1755,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Интернет</translation>
     </message>
 </context>
 <context>
@@ -1906,13 +1854,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation>Редактируемый</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Веб</translation>
     </message>
 </context>
 <context>
@@ -2317,6 +2258,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2581,21 +2530,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cache</source>
         <translation>Кэш</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">Аристо</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Вся страница</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Веб</translation>
     </message>
 </context>
 <context>
@@ -2974,6 +2908,26 @@ Please reboot the application to access the updated documents.</source>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3251,20 +3205,8 @@ p, li { white-space: pre-wrap; }
         <translation>Лицензии</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -3309,10 +3251,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>Пароль:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Планета Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>

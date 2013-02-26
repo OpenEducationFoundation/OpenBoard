@@ -700,14 +700,6 @@
         <translation>Podcast opname configureren</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Flash Trap</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Trap flash inhoud</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>Internet bescherming</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>Venster opnemen</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Internetinhoud insluiten</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Opnemen insluitbare webinhoud</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1024,14 +1008,6 @@
         <translation>Vorm:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">Formaat:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Sluiten</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,42 +1168,6 @@
         <translation>Pagina verwijderen</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Document verwijderen</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">Weet u zeker dat u document &quot;%1&quot; wilt verwijderen?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Prullenbak legen</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">Weet u zeker dat u de prullenbak wilt legen?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Prullenbak wordt geleegd</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Prullenbak is leeg</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Map verwijderen</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">Weet u zeker dat u de map &quot;%1&quot; met inhoud wilt verwijderen?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">Geen document geselecteerd!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Geopend ondersteund bestand</translation>
     </message>
@@ -1293,6 +1233,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation type="unfinished">Onbenoemde Documenten</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1719,6 +1663,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>Object informatie</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Toevoegen</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1807,7 +1755,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Internet</translation>
     </message>
 </context>
 <context>
@@ -2304,6 +2252,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2568,17 +2524,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cache</source>
         <translation>Cache</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Hele pagina</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Web</translation>
     </message>
 </context>
 <context>
@@ -2956,6 +2901,26 @@ Please reboot the application to access the updated documents.</source>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3233,20 +3198,8 @@ p, li { white-space: pre-wrap; }
         <translation>Licenties</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSI</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -3291,10 +3244,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>Wachtwoord:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Planète Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>

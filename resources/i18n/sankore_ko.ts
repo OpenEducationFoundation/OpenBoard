@@ -700,14 +700,6 @@
         <translation>팟캐스트 레코딩 설정</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">플래시 트랩</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">플래시 콘텐츠 트랩</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>웹 트랩</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>창 캡처하기</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">웹 콘텐츠 포함</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">포함 가능한 웹 콘텐츠 캡처</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1024,14 +1008,6 @@
         <translation>모양:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">크기:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">닫기</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,42 +1168,6 @@
         <translation>페이지 제거</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">문서 제거</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">정말로 &apos;%1&apos; 문서를 제거하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">휴지통 비우기</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">정말로 휴지통을 비우시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">휴지통 비우는 중</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">휴지통 비우기 완료</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">폴더 제거</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">정말로 &apos;%1&apos; 폴더와 해당 내용을 모두 제거하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">선택된 문서가 없습니다!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>지원되는 파일 열기</translation>
     </message>
@@ -1292,6 +1232,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation type="unfinished">무제 문서</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1720,6 +1664,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation type="unfinished">객체 정보</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">추가</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1907,13 +1855,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation type="unfinished">편집 가능</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">웹</translation>
     </message>
 </context>
 <context>
@@ -2318,6 +2259,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2584,21 +2533,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cache</source>
         <translation>캐시</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">Aristo</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">전체 페이지</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">웹</translation>
     </message>
 </context>
 <context>
@@ -2977,6 +2911,26 @@ Please reboot the application to access the updated documents.</source>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3254,20 +3208,8 @@ p, li { white-space: pre-wrap; }
         <translation>라이선스</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">OpenSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -3312,10 +3254,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation type="unfinished">패스:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Planète Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>

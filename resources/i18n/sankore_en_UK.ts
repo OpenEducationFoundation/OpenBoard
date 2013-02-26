@@ -1233,6 +1233,10 @@
         <source>Untitled Documents</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1655,6 +1659,10 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Object informations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2240,6 +2248,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Chinese Traditional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2881,6 +2897,26 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

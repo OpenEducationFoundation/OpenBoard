@@ -700,14 +700,6 @@
         <translation>Anpassa inspelning av Podcast</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">Lagra flash</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">Lagra flash innehål</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>Lagra web</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>Fånga ett fönster</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">Inbäddat webinnehåll</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">Fånga inbäddat webinnehåll</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -1025,14 +1009,6 @@
         <translation>Form:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">Storlek:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Stäng</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1193,42 +1169,6 @@
         <translation>Ta bort sida</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">Ta bort dokument</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">Är du säker på att du vill ta bort dokument &apos;%1&apos;?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">Töm papperskorgen</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">Är du säker på att du vill tömma papperskorgen?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">Tömmer papperskorgen</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">Papperskorgen tömd</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">Tabort mapp</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">Är du säker på att du vill ta bort mapp &apos;%1&apos; och all dess innehåll?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">Inget dokument markerat!</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>Öppna filer som stödjes</translation>
     </message>
@@ -1294,6 +1234,10 @@
     <message>
         <source>Untitled Documents</source>
         <translation>Namnlösa dokument</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1720,6 +1664,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>Objektinformation</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Lägg till</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1907,13 +1855,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation>Redigerbar</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Nät</translation>
     </message>
 </context>
 <context>
@@ -2318,6 +2259,14 @@ Vill du ignorera felen för den här värden?</translation>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2582,21 +2531,6 @@ Vill du ignorera felen för den här värden?</translation>
     <message>
         <source>Cache</source>
         <translation>Cache</translation>
-    </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="obsolete">Aristo</translation>
-    </message>
-</context>
-<context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">Hela sidan</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">Nät</translation>
     </message>
 </context>
 <context>
@@ -2975,6 +2909,26 @@ Vänligen starta om programmet för att komma åt uppdaterade dokument.</transla
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3252,20 +3206,8 @@ p, li { white-space: pre-wrap; }
         <translation>Licenser</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">ÖppnaSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -3310,10 +3252,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>Lösenord:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Planet Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>

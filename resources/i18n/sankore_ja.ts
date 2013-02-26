@@ -700,14 +700,6 @@
         <translation>ポッドキャストレコーディング設定 </translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation type="obsolete">フラッシュトラップ</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation type="obsolete">トラップフラッシュコンテンツ</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>ウェブトラップ </translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>ウィンドウをキャプチャ</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation type="obsolete">ウェブコンテンツを埋め込む</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation type="obsolete">埋め込み可能ウェブコンテンツをキャプチャ</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -798,10 +782,6 @@
     <message>
         <source>Import old Sankore or Uniboard documents</source>
         <translation>古いSankore書類やUniboard書類を移入する</translation>
-    </message>
-    <message>
-        <source>Group Items</source>
-        <translation type="obsolete">アイテムを纏める</translation>
     </message>
     <message>
         <source>Group items</source>
@@ -905,16 +885,6 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Trash</source>
-        <comment>Pictures category element</comment>
-        <translation type="obsolete">ゴミ箱</translation>
-    </message>
-    <message>
-        <source>/Home</source>
-        <comment>Category list label on navigation tool bar</comment>
-        <translation type="obsolete">/ホーム</translation>
-    </message>
-    <message>
         <source>Element ID = </source>
         <translation type="unfinished"></translation>
     </message>
@@ -929,13 +899,6 @@
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UBAbstractWidget</name>
-    <message>
-        <source>Loading ...</source>
-        <translation type="obsolete">ローディング中… </translation>
     </message>
 </context>
 <context>
@@ -1045,14 +1008,6 @@
         <translation>形状： </translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation type="obsolete">サイズ： </translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">閉じる</translation>
-    </message>
-    <message>
         <source>Alpha:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1154,10 +1109,6 @@
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <source>Show Uniboard</source>
-        <translation type="obsolete">Uniboard表示 </translation>
-    </message>
-    <message>
         <source>Capture Part of the Screen</source>
         <translation>画面の一部をキャプチャ </translation>
     </message>
@@ -1217,42 +1168,6 @@
         <translation>ページ削除</translation>
     </message>
     <message>
-        <source>Remove Document</source>
-        <translation type="obsolete">ドキュメント削除 </translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="obsolete">本当にドキュメント%1を削除しますか？</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation type="obsolete">ゴミ箱を空にする</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation type="obsolete">本当にこのゴミ箱を空にしますか？</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation type="obsolete">ゴミ箱を空にしています</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation type="obsolete">ゴミ箱を空にしました</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation type="obsolete">フォルダーを削除</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="obsolete">本当にフォルダー%1とそのコンテンツを削除しますか？</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation type="obsolete">ドキュメントが選択されていません！</translation>
-    </message>
-    <message>
         <source>Open Supported File</source>
         <translation>サポートされたファイルを開く</translation>
     </message>
@@ -1267,10 +1182,6 @@
     <message>
         <source>Import all Images from Folder</source>
         <translation>フォルダーから全ての画像をインポート</translation>
-    </message>
-    <message>
-        <source>Folder does not contain any image files!</source>
-        <translation type="obsolete">フィルダーには画像ファイルが含まれていません！ </translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1322,6 +1233,10 @@
         <source>Folder does not contain any image files</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1348,14 +1263,6 @@
     <message>
         <source>File %1 saved</source>
         <translation>ファイル%1保存済み </translation>
-    </message>
-    <message>
-        <source>Importing page %1 of %2</source>
-        <translation type="obsolete"> %1 / %2 ページをインポート</translation>
-    </message>
-    <message>
-        <source>Erronous image data, skipping file %1</source>
-        <translation type="obsolete">画像データエラー、ファイル%1をスキップ</translation>
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
@@ -1754,6 +1661,10 @@ Providing a new name will create a new document.</source>
         <source>Object informations</source>
         <translation>オブジェクトインフォーメーション</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">追加</translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
@@ -1944,13 +1855,6 @@ Providing a new name will create a new document.</source>
     </message>
 </context>
 <context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">ウェブ</translation>
-    </message>
-</context>
-<context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
@@ -2023,14 +1927,6 @@ Providing a new name will create a new document.</source>
         <source>Image Format (</source>
         <translation>画像フォーマット（</translation>
     </message>
-    <message>
-        <source>Image import failed.</source>
-        <translation type="obsolete">画像インポートに失敗 </translation>
-    </message>
-    <message>
-        <source>Image import successful.</source>
-        <translation type="obsolete">画像インポートに成功 </translation>
-    </message>
 </context>
 <context>
     <name>UBImportPDF</name>
@@ -2045,10 +1941,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Importing page %1 of %2</source>
         <translation>%1 / %2 ページをインポート</translation>
-    </message>
-    <message>
-        <source>PDF import successful.</source>
-        <translation type="obsolete">PDFインポートに成功</translation>
     </message>
 </context>
 <context>
@@ -2074,120 +1966,6 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Enter</source>
         <translation>Enter</translation>
-    </message>
-</context>
-<context>
-    <name>UBLibActionBar</name>
-    <message>
-        <source>Add to favorites</source>
-        <translation type="obsolete">お気に入りに追加</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="obsolete">シェアする</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">検索</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">削除</translation>
-    </message>
-    <message>
-        <source>Back to folder</source>
-        <translation type="obsolete">フォルダーに戻る</translation>
-    </message>
-    <message>
-        <source>Remove from favorites</source>
-        <translation type="obsolete">お気に入りから削除</translation>
-    </message>
-    <message>
-        <source>Create new folder</source>
-        <translation type="obsolete">新規フォルダーを作成</translation>
-    </message>
-</context>
-<context>
-    <name>UBLibItemProperties</name>
-    <message>
-        <source>Add to page</source>
-        <translation type="obsolete">ページに追加 </translation>
-    </message>
-    <message>
-        <source>Set as background</source>
-        <translation type="obsolete">背景として設定</translation>
-    </message>
-    <message>
-        <source>Add to library</source>
-        <translation type="obsolete">ライブラリに追加</translation>
-    </message>
-    <message>
-        <source>Object informations</source>
-        <translation type="obsolete">オブジェクトインフォーメーション</translation>
-    </message>
-</context>
-<context>
-    <name>UBLibraryController</name>
-    <message>
-        <source>Added 1 Image to Library</source>
-        <translation type="obsolete">ライブラリに1画像追加</translation>
-    </message>
-    <message>
-        <source>Audios</source>
-        <comment>Audio category element</comment>
-        <translation type="obsolete">オーディオ</translation>
-    </message>
-    <message>
-        <source>Movies</source>
-        <comment>Movies category element</comment>
-        <translation type="obsolete">ムービー</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <comment>Pictures category element</comment>
-        <translation type="obsolete">写真</translation>
-    </message>
-    <message>
-        <source>Shapes</source>
-        <comment>Shapes category element</comment>
-        <translation type="obsolete">形状</translation>
-    </message>
-    <message>
-        <source>Applications</source>
-        <comment>Applications category element</comment>
-        <translation type="obsolete">アプリケーション</translation>
-    </message>
-    <message>
-        <source>Favorite</source>
-        <comment>Favorite category element</comment>
-        <translation type="obsolete">お気に入り</translation>
-    </message>
-    <message>
-        <source>Creating image thumbnail for %1.</source>
-        <translation type="obsolete">%1のサムネイル画像を作成</translation>
-    </message>
-    <message>
-        <source>Adding to page failed for item %1.</source>
-        <translation type="obsolete">%1のページへの追加に失敗 </translation>
-    </message>
-    <message>
-        <source>Interactivities</source>
-        <comment>Interactives category element</comment>
-        <translation type="obsolete">インタラクティブ</translation>
-    </message>
-    <message>
-        <source>ImportedImage</source>
-        <translation type="obsolete">インポートされた画像</translation>
-    </message>
-    <message>
-        <source>Animations</source>
-        <comment>Animations category element</comment>
-        <translation type="obsolete">動画</translation>
-    </message>
-    <message>
-        <source>Web Search</source>
-        <comment>Web search category element</comment>
-        <translation type="obsolete">ウエブに経験する</translation>
     </message>
 </context>
 <context>
@@ -2246,25 +2024,6 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>No</source>
         <translation>いいえ</translation>
-    </message>
-</context>
-<context>
-    <name>UBNewFolderDlg</name>
-    <message>
-        <source>Add new folder</source>
-        <translation type="obsolete">新規フォルダー追加</translation>
-    </message>
-    <message>
-        <source>New Folder name:</source>
-        <translation type="obsolete">新規フォルダー名： </translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">追加</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">キャンセル</translation>
     </message>
 </context>
 <context>
@@ -2498,6 +2257,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Chinese Traditional</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2535,14 +2302,6 @@ Do you want to ignore these errors for this host?</source>
 </context>
 <context>
     <name>UBSettings</name>
-    <message>
-        <source>Untitled Documents</source>
-        <translation type="obsolete">タイトルなしドキュメント</translation>
-    </message>
-    <message>
-        <source>Trash</source>
-        <translation type="obsolete">ゴミ箱</translation>
-    </message>
     <message>
         <source>My Movies</source>
         <translation>マイ・ムービー </translation>
@@ -2773,17 +2532,6 @@ Do you want to ignore these errors for this host?</source>
     </message>
 </context>
 <context>
-    <name>UBTrapFlashController</name>
-    <message>
-        <source>Whole page</source>
-        <translation type="obsolete">ページ全体</translation>
-    </message>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">ウェブ</translation>
-    </message>
-</context>
-<context>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
@@ -2845,13 +2593,6 @@ Please reboot the application to access the updated documents.</source>
     <message>
         <source>Remind me later</source>
         <translation>あとで覚える</translation>
-    </message>
-</context>
-<context>
-    <name>UBW3CWidget</name>
-    <message>
-        <source>Web</source>
-        <translation type="obsolete">ウェブ</translation>
     </message>
 </context>
 <context>
@@ -3166,6 +2907,26 @@ Please reboot the application to access the updated documents.</source>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WBWebPage</name>
@@ -3439,20 +3200,8 @@ p, li { white-space: pre-wrap; }
         <translation>ライセンス</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation type="obsolete">オープンSSl </translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib </translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation type="obsolete">xpdf </translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation type="obsolete">Quazip </translation>
     </message>
     <message>
         <source>Network</source>
@@ -3497,10 +3246,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pass:</source>
         <translation>パスワード：</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="obsolete">Planète SankoréのID</translation>
     </message>
     <message>
         <source>User:</source>

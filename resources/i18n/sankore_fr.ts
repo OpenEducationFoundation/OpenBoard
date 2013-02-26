@@ -1034,73 +1034,73 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alpha :</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Géométrie :</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Largeur :</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hauteur :</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Garder les proportions</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mode :</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prévisualisation :</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fermer le spot</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;zone de dépôt&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Images non acceptée</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ne peut pas afficher la donnée</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Le document déposé n&apos;est pas reconnu comme document audio</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jouer un document audio</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ajouter un lien sur une page</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ajouter un lien sur une page Web</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Glisser et déposer un document audio depuis la bibliothèque</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -1116,19 +1116,19 @@
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Page de titre</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dernière page</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Page numéro</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Insérer une adresse URL</translation>
     </message>
 </context>
 <context>
@@ -1390,7 +1390,7 @@
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Remplacer</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1400,18 +1400,21 @@
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Le nom %1 est déjà utilisé.
+En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
+Un nouveau nom créera un nouveau document.
+</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mes documents</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Modèles</translation>
     </message>
     <message>
         <source>Trash</source>
@@ -1419,7 +1422,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Documents sans titre</translation>
     </message>
 </context>
 <context>
@@ -1444,99 +1447,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Le téléchargement a échoué.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le serveur distant refuse l&apos;accès</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le serveur distant a fermé l&apos;accès de manière prématurée</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le nom du serveur distant n&apos;a pas été trouvé</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;accès au serveur distant a expiré</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;opération a été annulée ou fermée avant d&apos;être terminée.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;accès SSL/TLS a échoué et la chaîne cryptée n&apos;a pu être établie.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la connexion a été interrompue en raison d&apos;une erreur réseau, l&apos;accès a été redirigé. La demande doit être à nouveau présentée et sera traitée dès que la connexion sera rétablie.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la connexion au serveur proxy a été refusée (le serveur proxy n&apos;accepte pas les demandes)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le serveur proxy a fermé la connexion prématurément, avant que la réponse entière ait été reçue et traitée</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le nom d&apos;hôte du proxy n&apos;a pas été trouvé (nom d&apos;hôte du proxy non valide)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la connexion au proxy a expiré ou le proxy ne répond pas à la demande envoyée dans les temps</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le proxy requiert une authentification pour cette demande, mais n&apos;accepte pas les certificats</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;accès au contenu distant a été refusé (similaire à l&apos;erreur HTTP 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;opération demandée sur le contenu distant n&apos;est pas autorisée</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le contenu distant n&apos;a pas été trouvé sur le serveur (similaire à l&apos;erreur HTTP 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">le serveur distant requiert une authentification, mais les informations d&apos;identification fournies n&apos;ont pas été acceptées</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la demande doit être envoyée à nouveau, cela est certainement dû à un problème de relecture.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;API d&apos;accès au réseau ne peut pas satisfaire la requête parce que le protocole n&apos;est pas connu</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">l&apos;opération demandée n&apos;est pas valide pour ce protocole</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">une erreur de réseau inconnue a été détectée</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">une erreur de proxy inconnue a été détectée</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">une erreur inconnue liée au contenu distant a été détectée</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">une rupture de protocole a été détectée (erreur d&apos;analyse, réponses non valides ou inattendues...)</translation>
     </message>
 </context>
 <context>
@@ -1611,11 +1614,11 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;export a échoué...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exporter comme document UBX</translation>
     </message>
     <message>
         <source>Exporting document...</source>
@@ -1623,7 +1626,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Export réussi.</translation>
     </message>
     <message>
         <source>Export failed.</source>
@@ -1631,7 +1634,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exporter au format UBX Open-Sankoré</translation>
     </message>
 </context>
 <context>
@@ -1853,15 +1856,15 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien audio</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien sur une page</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien Web</translation>
     </message>
 </context>
 <context>
@@ -1884,15 +1887,15 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien audio</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien sur une page</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Retirer le lien Web</translation>
     </message>
 </context>
 <context>
@@ -1984,7 +1987,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré (set de documents) (*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -2204,123 +2207,123 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Par défaut</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">arabe</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">bulgare</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">catalan</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">tchèque</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">danois</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">Allemand</translation>
+        <translation type="unfinished">allemand</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">grec</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">Anglais</translation>
+        <translation type="unfinished">anglais</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">anglais UK</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">espagnol</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">Français</translation>
+        <translation type="unfinished">français</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">Français suisse</translation>
+        <translation type="unfinished">français suisse</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">italien</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">hébreux</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">japonais</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">coréen</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">malgache</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">norvégien</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">danois</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">polonais</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">romanche</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">roumain</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">Russe</translation>
+        <translation type="unfinished">russe</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">slovaque</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">suédois</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">turc</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">chinois</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">chinois simplifié</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">chinois traditionnel</translation>
     </message>
 </context>
 <context>
@@ -2365,14 +2368,14 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visible lors du prochain démarrage</translation>
     </message>
 </context>
 <context>
@@ -2608,7 +2611,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Embarqué</translation>
     </message>
 </context>
 <context>
@@ -2959,7 +2962,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sélectionner du contenu à capturer :</translation>
     </message>
     <message>
         <source>Application name</source>
@@ -2967,15 +2970,15 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Restriction et mise en garde.</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La capture de contenu fonctionne sur les pages Web les plus courantes.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veuillez respecter les droits d&apos;auteur lors de la capture de contenu depuis le Web.</translation>
     </message>
 </context>
 <context>
@@ -3056,7 +3059,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Sauvegarder les paramètres de connexion. </translation>
+        <translation type="unfinished">Sauvegarder les paramètres de connexion. </translation>
     </message>
 </context>
 <context>
@@ -3497,27 +3500,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Conseils de démarrage</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afficher les conseils au démarrage</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Langue</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sélectionner la langue</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La nouvelle langue sera appliquée au prochain lancement</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quitter Open-Sankoré</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

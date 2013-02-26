@@ -83,6 +83,7 @@
         	                newImg.src = result.file + "/" + filename + "/icon.svg";
                                 newImg.onerror = function() { 
 					newImg.src = result.file + "/" + filename + "/icon.png";
+					iThumbnailUrl.attr("value",newImg.src);
                                 };
                             } else {
         	                   	newImg.src = "./images/thumbnail_icon.png";

@@ -973,7 +973,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="OpenSSLTab">
           <attribute name="title">
@@ -984,6 +984,9 @@ p, li { white-space: pre-wrap; }
             <widget class="QPlainTextEdit" name="OpenSSLTextEdit">
              <property name="acceptDrops">
               <bool>false</bool>
+             </property>
+             <property name="documentTitle">
+              <string notr="true"/>
              </property>
              <property name="undoRedoEnabled">
               <bool>false</bool>
@@ -1132,6 +1135,9 @@ p, li { white-space: pre-wrap; }
              <property name="acceptDrops">
               <bool>false</bool>
              </property>
+             <property name="documentTitle">
+              <string notr="true"/>
+             </property>
              <property name="undoRedoEnabled">
               <bool>false</bool>
              </property>
@@ -1173,6 +1179,9 @@ jloup@gzip.org          madler@alumni.caltech.edu</string>
             <widget class="QPlainTextEdit" name="XpdfTextEdit">
              <property name="acceptDrops">
               <bool>false</bool>
+             </property>
+             <property name="documentTitle">
+              <string notr="true"/>
              </property>
              <property name="undoRedoEnabled">
               <bool>false</bool>
@@ -1883,6 +1892,9 @@ Public License instead of this License.  But first, please read
              <property name="acceptDrops">
               <bool>false</bool>
              </property>
+             <property name="documentTitle">
+              <string notr="true"/>
+             </property>
              <property name="undoRedoEnabled">
               <bool>false</bool>
              </property>
@@ -2251,6 +2263,12 @@ Public License instead of this License.
            <item>
             <widget class="QPlainTextEdit" name="sankoreTextEdit">
              <property name="acceptDrops">
+              <bool>false</bool>
+             </property>
+             <property name="documentTitle">
+              <string notr="true"/>
+             </property>
+             <property name="undoRedoEnabled">
               <bool>false</bool>
              </property>
              <property name="plainText">
@@ -2964,7 +2982,7 @@ Public License instead of this License.  But first, please read
        <item>
         <widget class="QTextBrowser" name="copyrightTextBrowser">
          <property name="html">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+          <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3024,7 +3042,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QTextBrowser" name="credentialTextBrowser">
          <property name="html">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+          <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;

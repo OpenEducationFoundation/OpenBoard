@@ -62,7 +62,7 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
         mAudioPath = destFile;
     }
     else
-        mAudioPath = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + audioFile;
+        mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
 
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
@@ -88,7 +88,7 @@ void UBGraphicsItemPlayAudioAction::play()
 
 QStringList UBGraphicsItemPlayAudioAction::save()
 {
-    QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath() + "/" ;
+    QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/";
     return QStringList() << QString("%1").arg(eLinkToAudio) <<  mAudioPath.replace(documentPath,"");
 }
 

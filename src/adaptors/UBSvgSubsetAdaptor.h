@@ -51,6 +51,7 @@ class UBGraphicsCache;
 class IDataStorage;
 class UBGraphicsGroupContainerItem;
 class UBGraphicsItemAction;
+class UBGraphicsStrokesGroup;
 
 class UBSvgSubsetAdaptor
 {
@@ -174,6 +175,8 @@ class UBSvgSubsetAdaptor
                 QString mNamespaceUri;
                 UBGraphicsScene *mScene;
                 UBGraphicsItemAction* readAction();
+                QMap<QString,UBGraphicsStrokesGroup*> mStrokesGroupList;
+                QMap<QString,UBGraphicsStroke*> mStrokeList;
         };
 
         class UBSvgSubsetWriter
@@ -190,7 +193,7 @@ class UBSvgSubsetAdaptor
 
                 void persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *curDomDocument, UBGraphicsItemAction *action = 0);
                 void persistStrokeToDom(QGraphicsItem *strokeItem, QDomElement *curParent, QDomDocument *curDomDocument);
-                void polygonItemToSvgPolygon(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo);
+                void polygonItemToSvgPolygon(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo, UBGraphicsItemAction* action = 0);
                 void polygonItemToSvgLine(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo);
                 void strokeToSvgPolyline(UBGraphicsStroke* stroke, bool groupHoldsInfo);
                 void strokeToSvgPolygon(UBGraphicsStroke* stroke, bool groupHoldsInfo);

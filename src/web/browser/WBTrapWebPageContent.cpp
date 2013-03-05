@@ -66,30 +66,31 @@
     mTrapButtons << buttonWebTrapLinkToPage;
 
     QString buttonStileSheet("QToolButton#WBWebTrapToolButton{background-color: rgb(127, 127, 127, 20%)}");
-   
+
     QWidget *buttonsLayoutWidget = new QWidget();
     buttonsLayoutWidget->setObjectName("WBWebTrapButtonsLayoutWidget");
     buttonsLayoutWidget->setStyleSheet("QWidget#WBWebTrapButtonsLayoutWidget{border: 2px solid #999999; border-top-style: none; border-right-style: none}");
     QVBoxLayout *buttonsLayout = new QVBoxLayout();
     buttonsLayoutWidget->setLayout(buttonsLayout);
     buttonsLayout->setAlignment(Qt::AlignTop);
-    buttonsLayout->setContentsMargins(7,3,3,7);
-        
+    buttonsLayout->setContentsMargins(7,3,7,3);
+
+    int minimumHeight = 85;
+    int minimumWidth = 100;
     for (int i = 0; i < 4; i++)
     {
         QToolButton *button = mTrapButtons.at(i);
-
         button->setObjectName("WBWebTrapToolButton");
         button->setToolButtonStyle(Qt::ToolButtonIconOnly);
-        button->setIconSize(QSize(64, 64));
-        button->setMinimumSize(QSize(64,64));
-        button->setMaximumSize(QSize(64,64)); 
+        button->setIconSize(QSize(minimumWidth, minimumHeight));
+        button->setMinimumSize(QSize(minimumWidth, minimumHeight));
+        button->setMaximumSize(QSize(minimumWidth, minimumHeight));
         button->setStyleSheet(buttonStileSheet);
         button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         button->defaultAction()->setEnabled(false);
 
         QLabel *buttonLabel = buttonLabels.at(i);
-        buttonLabel->setMaximumWidth(64);
+        buttonLabel->setMaximumWidth(minimumWidth);
         buttonLabel->setTextFormat(Qt::PlainText);
         buttonLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         buttonLabel->setAlignment(Qt::AlignHCenter);
@@ -101,7 +102,7 @@
 
         currentButtonWithLabelWayout->addWidget(buttonLabel);
         currentButtonWithLabelWayout->setSpacing(0);
-        buttonsLayout->addLayout(currentButtonWithLabelWayout);        
+        buttonsLayout->addLayout(currentButtonWithLabelWayout);
     }
 
     QWidget *trapContentLayoutWidget = new QWidget();

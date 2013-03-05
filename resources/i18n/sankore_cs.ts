@@ -1040,6 +1040,14 @@
         <source>Close cache</source>
         <translation>Zavřít baterku</translation>
     </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>

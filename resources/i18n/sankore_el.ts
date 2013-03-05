@@ -1039,6 +1039,14 @@
         <source>Close cache</source>
         <translation>Κλειστή μνήμη cache</translation>
     </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>

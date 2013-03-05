@@ -1040,6 +1040,14 @@
         <source>Close cache</source>
         <translation>Tanca la memòria cau</translation>
     </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>

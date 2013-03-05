@@ -99,7 +99,7 @@ void UBCachePreviewWidget::resizeEvent(QResizeEvent *event)
     QSize newSize(width(),width()*aspectRatio);
     updateGeometry();
     resize(newSize);
-    
+
 
     QWidget::resizeEvent(event);
 }
@@ -224,8 +224,8 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpModeLabel = new QLabel(tr("Mode:"), mpProperties);
     mpModeComboBox = new QComboBox(mpProperties);
     mpModeComboBox->setObjectName("CacheModeSelectionComboBox");
-    mpModeComboBox->addItem("On Click", UBGraphicsCache::OnClick);
-    mpModeComboBox->addItem("Persistent", UBGraphicsCache::Persistent);
+    mpModeComboBox->addItem(tr("On Click"), UBGraphicsCache::OnClick);
+    mpModeComboBox->addItem(tr("Persistent"), UBGraphicsCache::Persistent);
     mpModeLayout->addWidget(mpModeLabel);
     mpModeLayout->addWidget(mpModeComboBox);
 
@@ -260,7 +260,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(mpSquareButton, SIGNAL(clicked()), this, SLOT(updateShapeButtons()));
     connect(mpWidthSlider, SIGNAL(valueChanged(int)), this, SLOT(onWidthChanged(int)));
     connect(mpHeightSlider, SIGNAL(valueChanged(int)), this, SLOT(onHeightChanged(int)));
-    connect(mpKeepAspectRatioCheckbox, SIGNAL(stateChanged(int)), this, SLOT(onKeepAspectRatioChanged(int)));    
+    connect(mpKeepAspectRatioCheckbox, SIGNAL(stateChanged(int)), this, SLOT(onKeepAspectRatioChanged(int)));
     connect(mpModeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(onModeChanged(int)));
     connect(mpAplhaSlider, SIGNAL(valueChanged(int)), this, SLOT(onAlphaChanged(int)));
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
@@ -405,10 +405,10 @@ void UBCachePropertiesWidget::updateCurrentCache()
                         break;
                 }
 
-                
+
                 mpPreviewWidget->setShape(mActualShape);
                 return;
-                
+
             }
         }
     }
@@ -425,7 +425,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
 void UBCachePropertiesWidget::onWidthChanged(int newSize)
 {
     if(NULL != mpCurrentCache)
-    { 
+    {
         if(mKeepAspectRatio)
         {
             if(!mOtherSliderUsed)
@@ -437,7 +437,7 @@ void UBCachePropertiesWidget::onWidthChanged(int newSize)
         }
         else
             mpCurrentCache->setHoleWidth(newSize);
-            
+
         mOldHoleSize.setWidth(newSize);
         mpPreviewWidget->setHoleSize(mOldHoleSize);
         mpCurrentCache->setHoleSize(mOldHoleSize);

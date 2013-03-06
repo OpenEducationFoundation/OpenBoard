@@ -30,6 +30,8 @@
 
 class WBTrapWebPageContentWindow : public QDialog
 {
+    Q_OBJECT
+
     public:
         WBTrapWebPageContentWindow(QObject *controller, QWidget *parent = NULL);
         virtual ~WBTrapWebPageContentWindow();

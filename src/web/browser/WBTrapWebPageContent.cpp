@@ -76,7 +76,7 @@
     buttonsLayout->setContentsMargins(7,3,7,3);
 
     int minimumHeight = 85;
-    int minimumWidth = 100;
+    int minimumWidth = 140;
     for (int i = 0; i < 4; i++)
     {
         QToolButton *button = mTrapButtons.at(i);

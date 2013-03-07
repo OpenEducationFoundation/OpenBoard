@@ -733,7 +733,7 @@
     </message>
     <message>
         <source>Bookmark</source>
-        <translation>Signet</translation>
+        <translation>Ajouter un signet</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -841,8 +841,9 @@
         <translation>Ajouter un lien dans la page courante</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Bookmark</source>
+        <comment>tooltip</comment>
+        <translation type="unfinished">Signet</translation>
     </message>
 </context>
 <context>

@@ -559,7 +559,7 @@
    <property name="text">
     <string>Bookmark</string>
    </property>
-   <property name="toolTip">
+   <property name="iconText">
     <string>Add Bookmark</string>
    </property>
   </action>
@@ -1660,8 +1660,11 @@
    <property name="text">
     <string>Bookmark</string>
    </property>
+   <property name="iconText">
+    <string comment="tooltip">Bookmark</string>
+   </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string notr="true">Bookmark</string>
    </property>
   </action>
   <action name="actionWebTrapContent">

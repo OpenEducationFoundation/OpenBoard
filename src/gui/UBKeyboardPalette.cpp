@@ -76,10 +76,10 @@ UBKeyboardPalette::UBKeyboardPalette(QWidget *parent)
     createCtrlButtons();
 
     nCurrentLocale = UBSettings::settings()->KeyboardLocale->get().toInt();
-	if (nCurrentLocale < 0 || nCurrentLocale >= nLocalesCount)
-		nCurrentLocale = 0;
-	if (locales!=NULL)
-	    setInput(locales[nCurrentLocale]);
+    if (nCurrentLocale < 0 || nCurrentLocale >= nLocalesCount)
+        nCurrentLocale = 0;
+    if (locales!=NULL)
+        setInput(locales[nCurrentLocale]);
 
     setContentsMargins( 22, 22, 22, 22 );
 
@@ -193,7 +193,7 @@ void UBKeyboardPalette::setLocale(int nLocale)
         onLocaleChanged(locales[nCurrentLocale]);
         update();
 
-		UBSettings::settings()->KeyboardLocale->set(nCurrentLocale);
+        UBSettings::settings()->KeyboardLocale->set(nCurrentLocale);
     }
     emit localeChanged(nLocale);
 }
@@ -223,7 +223,7 @@ void UBKeyboardPalette::enterEvent ( QEvent * )
 
     keyboardActive = true;
 
-    adjustSizeAndPosition();
+    //adjustSizeAndPosition();
 
     emit keyboardActivated(true);
 }
@@ -235,7 +235,7 @@ void UBKeyboardPalette::leaveEvent ( QEvent * )
 
     keyboardActive = false;
 
-    adjustSizeAndPosition();
+    //adjustSizeAndPosition();
 
     emit keyboardActivated(false);
 }
@@ -511,7 +511,7 @@ void  UBKeyboardButton::leaveEvent ( QEvent*)
 
 void  UBKeyboardButton::mousePressEvent ( QMouseEvent * event)
 {
-    event->accept(); 
+    event->accept();
     bPressed = true;
     update();
     this->onPress();
@@ -571,7 +571,7 @@ void UBKeyButton::onPress()
             }
             else
             {
-                sendUnicodeSymbol(keybt->codes[codeIndex]);            
+                sendUnicodeSymbol(keybt->codes[codeIndex]);
             }
         }
     }

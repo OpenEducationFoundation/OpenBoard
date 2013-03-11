@@ -1017,10 +1017,9 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
     if (mScene)
         mScene->setModified(false);
 
-    if (annotationGroup)
-    {
-        if (annotationGroup->polygons().empty())
+    if (annotationGroup && annotationGroup->polygons().empty()){
             delete annotationGroup;
+            annotationGroup = 0;
     }
 
     mScene->enableUndoRedoStack();

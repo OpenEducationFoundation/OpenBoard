@@ -630,7 +630,7 @@ void UBFeaturesController::initHardcodedData()
                                  .insertr(CategoryData::Library, UBFeature::WRITE_P | UBFeature::DELETE_P)
                                  .insertr(CategoryData::UserDefined, UBFeature::WRITE_P | UBFeature::DELETE_P));
 
-    
+
 
     extentionPermissionsCategoryData << webFolderData;
 }
@@ -969,7 +969,7 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
     QFile file(lFileName);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
 
-    QXmlStreamWriter xmlWriter(&file);  
+    QXmlStreamWriter xmlWriter(&file);
 
     xmlWriter.writeStartDocument();
 
@@ -979,7 +979,7 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
     xmlWriter.writeTextElement("width", QString("%1").arg(size.width()));
     xmlWriter.writeTextElement("height", QString("%1").arg(size.height()));
     xmlWriter.writeTextElement("html", bEmbedCode);
-    
+
     xmlWriter.writeEndElement();
 
     xmlWriter.writeEndDocument();
@@ -1159,11 +1159,11 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
         QString url = sourceUrl.toString();
         if(url.indexOf("?") != -1){
             url = url.left(url.indexOf("?"));
-            fileName = QFileInfo( url ).fileName();
+            fileName = pTitle.isEmpty() ? QFileInfo( url ).fileName() : pTitle;
             filePath = QDir::tempPath() + "/" + QUuid::createUuid();
         }
         else{
-            fileName = QFileInfo( url ).fileName();
+            fileName = pTitle.isEmpty() ? QFileInfo( url ).fileName() : pTitle;
             filePath = destData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + fileName;
         }
 

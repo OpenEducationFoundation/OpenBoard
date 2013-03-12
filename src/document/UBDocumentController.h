@@ -205,6 +205,8 @@ public:
     void sortChilds(const QModelIndex &parentIndex);
     void sortIndexes(QList<UBDocumentTreeNode *> &unsortedIndexList);
     static bool nodeLessThan(const UBDocumentTreeNode *firstIndex, const UBDocumentTreeNode *secondIndex);
+    void setHighLighted(const QModelIndex &newHighLighted) {mHighLighted = newHighLighted;}
+    QModelIndex highLighted() {return mHighLighted;}
 
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
@@ -227,6 +229,7 @@ private:
     QPersistentModelIndex mTrash;
     QPersistentModelIndex mUntitledDocuments;
     QList<UBDocumentProxy*> mNewDocuments;
+    QModelIndex mHighLighted;
 
 };
 

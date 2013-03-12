@@ -35,6 +35,7 @@
 #include "core/UBApplicationController.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
+#include "core/UBMimeData.h"
 
 #include "adaptors/UBExportPDF.h"
 #include "adaptors/UBThumbnailAdaptor.h"
@@ -422,6 +423,9 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
             if (isConstant(index)) {
                 return QBrush(0xD9DFEB);
             }
+            if (mHighLighted.isValid() && index == mHighLighted) {
+                return QBrush(0x6682B5);
+            }
             break;
         }
     }
@@ -490,6 +494,62 @@ QMimeData *UBDocumentTreeModel::mimeData (const QModelIndexList &indexes) const
 
 bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {
+    if (data->hasFormat(UBApplication::mimeTypeUniboardPage)) {
+        UBDocumentTreeNode *curNode = nodeFromIndex(index(row - 1, column, parent));
+        UBDocumentProxy *targetDocProxy = curNode->proxyData();
+        const UBMimeData *ubMime = qobject_cast <const UBMimeData*>(data);
+        if (!targetDocProxy || !ubMime || !ubMime->items().count()) {
+            qDebug() << "an error ocured while parsing " << UBApplication::mimeTypeUniboardPage;
+            return false;
+        }
+
+        int count = 0;
+        int total = ubMime->items().size();
+
+        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+        foreach (UBMimeDataItem sourceItem, ubMime->items())
+        {
+            count++;
+
+            UBApplication::applicationController->showMessage(tr("Copying page %1/%2").arg(count).arg(total), true);
+
+            // TODO UB 4.x Move following code to some controller class
+            UBGraphicsScene *scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
+            if (scene) {
+                UBGraphicsScene* sceneClone = scene->sceneDeepCopy();
+
+                foreach (QUrl relativeFile, scene->relativeDependencies()) {
+                    QString source = scene->document()->persistencePath() + "/" + relativeFile.toString();
+                    QString target = targetDocProxy->persistencePath() + "/" + relativeFile.toString();
+
+                    QFileInfo fi(target);
+                    QDir d = fi.dir();
+
+                    d.mkpath(d.absolutePath());
+                    QFile::copy(source, target);
+                }
+
+                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, sceneClone, targetDocProxy->pageCount());
+
+                //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
+                //it's not universal and good way but it's faster
+                QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
+                QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
+                QFile::remove(to);
+                QFile::copy(from, to);
+            }
+        }
+
+        QApplication::restoreOverrideCursor();
+
+        UBApplication::applicationController->showMessage(tr("%1 pages copied", "", total).arg(total), false);
+
+        return true;
+    }
+
+
+
     const UBDocumentTreeMimeData *mimeData = qobject_cast<const UBDocumentTreeMimeData*>(data);
     if (!mimeData) {
         qDebug() << "Incorrect mimeData, only internal one supported";
@@ -1108,20 +1168,53 @@ void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
 
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
+    QTreeView::dragEnterEvent(event);
     event->accept();
     event->acceptProposedAction();
-    QTreeView::dragEnterEvent(event);
 }
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
+    if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
+        UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+        QModelIndex targetIndex = indexAt(event->pos());
+        if (!docModel || !docModel->isDocument(targetIndex) || docModel->inTrash(targetIndex)) {
+            event->ignore();
+            docModel->setHighLighted(QModelIndex());
+            update(targetIndex);
+            return;
+        }
+        docModel->setHighLighted(targetIndex);
+        QRect updateRect = visualRect(targetIndex);
+        const int multipler = 3;
+        updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
+        update(updateRect);
+    }
     QTreeView::dragMoveEvent(event);
     event->setAccepted(isAcceptable(selectedIndexes().first(), indexAt(event->pos())));
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
 {
-    event->setDropAction(acceptableAction(selectedIndexes().first(), indexAt(event->pos())));
+    if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
+        UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+        QModelIndex targetIndex = indexAt(event->pos());
+        qDebug() << docModel->nodeFromIndex(targetIndex)->nodeName();
+        if (!docModel || !docModel->isDocument(targetIndex)) {
+            event->ignore();
+            return;
+        }
+        docModel->setHighLighted(QModelIndex());
+        QRect updateRect = visualRect(targetIndex);
+        const int multipler = 3;
+        updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
+        update(updateRect);
+
+
+        event->setDropAction(Qt::CopyAction);
+    } else {
+        event->setDropAction(acceptableAction(selectedIndexes().first(), indexAt(event->pos())));
+    }
     QTreeView::dropEvent(event);
     adjustSize();
 }
@@ -3046,14 +3139,24 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
 
         if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"),tr("This is an irreversible action!") +"\n\n" + tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
-            int offset = 0;
-            foreach(int index, sceneIndexes)
-            {
-                mBoardController->deleteScene(index);
-                deleteThumbPage(index - offset);
-                offset++;
+            UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+            if (docModel->proxyData(docModel->currentIndex()) == proxy) {
+
+                int offset = 0;
+                foreach(int index, sceneIndexes)
+                {
+                    mBoardController->deleteScene(index);
+
+                    deleteThumbPage(index - offset);
+                    offset++;
+                }
+
+                emit UBDocumentContainer::documentThumbnailsUpdated(this);
+
+            } else {
+                UBDocumentContainer::deletePages(sceneIndexes);
             }
-            emit UBDocumentContainer::documentThumbnailsUpdated(this);
+
 
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
             UBMetadataDcSubsetAdaptor::persist(proxy);

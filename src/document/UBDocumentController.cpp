@@ -1173,6 +1173,14 @@ void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
     event->acceptProposedAction();
 }
 
+void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
+{
+    Q_UNUSED(event);
+    UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+    docModel->setHighLighted(QModelIndex());
+    update();
+}
+
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
@@ -1181,14 +1189,11 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
         if (!docModel || !docModel->isDocument(targetIndex) || docModel->inTrash(targetIndex)) {
             event->ignore();
             docModel->setHighLighted(QModelIndex());
-            update(targetIndex);
+            updateIndexEnvirons(targetIndex);
             return;
         }
         docModel->setHighLighted(targetIndex);
-        QRect updateRect = visualRect(targetIndex);
-        const int multipler = 3;
-        updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
-        update(updateRect);
+        updateIndexEnvirons(targetIndex);
     }
     QTreeView::dragMoveEvent(event);
     event->setAccepted(isAcceptable(selectedIndexes().first(), indexAt(event->pos())));
@@ -1205,12 +1210,6 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
             return;
         }
         docModel->setHighLighted(QModelIndex());
-        QRect updateRect = visualRect(targetIndex);
-        const int multipler = 3;
-        updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
-        update(updateRect);
-
-
         event->setDropAction(Qt::CopyAction);
     } else {
         event->setDropAction(acceptableAction(selectedIndexes().first(), indexAt(event->pos())));
@@ -1268,6 +1267,13 @@ Qt::DropAction UBDocumentTreeView::acceptableAction(const QModelIndex &dragIndex
     return Qt::IgnoreAction;
 }
 
+void UBDocumentTreeView::updateIndexEnvirons(const QModelIndex &index)
+{
+    QRect updateRect = visualRect(index);
+    const int multipler = 3;
+    updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
+    update(updateRect);
+}
 
 void UBDocumentTreeView::adjustSize()
 {

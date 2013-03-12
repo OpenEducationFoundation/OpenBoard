@@ -260,6 +260,7 @@ public slots:
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
+    void dragLeaveEvent(QDragLeaveEvent *event);
     void dragMoveEvent(QDragMoveEvent *event);
     void dropEvent(QDropEvent *event);
     void paintEvent(QPaintEvent *event);
@@ -271,6 +272,7 @@ protected:
 private:
     bool isAcceptable(const QModelIndex &dragIndex, const QModelIndex &atIndex);
     Qt::DropAction acceptableAction(const QModelIndex &dragIndex, const QModelIndex &atIndex);
+    void updateIndexEnvirons(const QModelIndex &index);
 };
 
 class UBDocumentTreeItemDelegate : public QStyledItemDelegate

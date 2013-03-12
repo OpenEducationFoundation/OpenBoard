@@ -1250,6 +1250,10 @@
         <source>This is an irreversible action!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1376,6 +1380,18 @@ Ak zadaáte nový názov, vytvorí sa nový dokument.</translation>
     <message>
         <source>Untitled documents</source>
         <translation>Dokumenty bez názvu</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">Kopíruje sa stránka %1/%2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 skopírovaná stránka</numerusform>
+            <numerusform>%1 skopírované stránky</numerusform>
+            <numerusform>%1 skopírovaných stránok</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2279,6 +2295,10 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     </message>
     <message>
         <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

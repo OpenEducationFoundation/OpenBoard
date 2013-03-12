@@ -1246,6 +1246,10 @@
         <source>This is an irreversible action!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1372,6 +1376,16 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Untitled documents</source>
         <translation>尙未標題文件</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">頁面 %1/%2 複製中</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>已複製 %1 頁</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2273,6 +2287,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

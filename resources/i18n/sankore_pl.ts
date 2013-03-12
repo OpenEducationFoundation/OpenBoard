@@ -1252,6 +1252,10 @@
         <source>This is an irreversible action!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1376,6 +1380,18 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Untitled documents</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">Kopiowanie strony %1/%2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>Skopiowano %1 stronę</numerusform>
+            <numerusform>Skopiowano %1 strony</numerusform>
+            <numerusform>Skopiowano %1 stron</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2280,6 +2296,10 @@ Czy chcesz ignorować te błędy dla tego hosta?</translation>
     </message>
     <message>
         <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

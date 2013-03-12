@@ -2633,7 +2633,7 @@ void UBDocumentController::thumbnailPageDoubleClicked(QGraphicsItem* item, int i
 
     if (selectedIndex.isValid()) {
         if (docModel->inModel(selectedIndex)) {
-            UBApplication::showMessage("The model documents are not editable. Copy it to \"My documents\" to be able to work with");
+            UBApplication::showMessage(tr("The model documents are not editable. Copy it to \"My documents\" to be able to work with"));
             return;
         } else if (docModel->inTrash(selectedIndex)) {
             return;

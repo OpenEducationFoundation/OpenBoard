@@ -843,7 +843,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Signet</translation>
+        <translation>Signet</translation>
     </message>
 </context>
 <context>
@@ -1248,6 +1248,10 @@
         <source>This is an irreversible action!</source>
         <translation>Cette opération est irréversible !</translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation>Ce document est modèle, il n&apos;est pas éditable. Copiez-le dans &quot;Mes documents&quot; afin de travailler dessus.</translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1376,6 +1380,17 @@ Un nouveau nom créera un nouveau document.
     <message>
         <source>Untitled documents</source>
         <translation>Documents sans titre</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation>Copie de la page %1/%2 en cours</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 page copiée</numerusform>
+            <numerusform>%1 pages copiées</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2282,6 +2297,10 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Hindi</source>
         <translation>hindi</translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3321,15 +3340,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

@@ -1249,6 +1249,10 @@
         <source>This is an irreversible action!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1375,6 +1379,18 @@ Si indiqueu un nom diferent es crearà un document nou.</translation>
     <message>
         <source>Untitled documents</source>
         <translation>Documents sense nom</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">S&apos;està copiant la pàgina %1/%2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 pàgina copiada</numerusform>
+            <numerusform>%1 pàgines copiades</numerusform>
+            <numerusform>%1 pàgines copiades</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2278,6 +2294,10 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     </message>
     <message>
         <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

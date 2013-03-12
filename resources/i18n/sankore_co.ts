@@ -1254,6 +1254,10 @@
         <source>This is an irreversible action!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1380,6 +1384,17 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Untitled documents</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">Pagina in via di cupiera%1/%2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 pagine cupiate</numerusform>
+            <numerusform>%1 pages copiées</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2288,6 +2303,10 @@ Vulete lascià corre sti sbaglii per stu servore ?</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

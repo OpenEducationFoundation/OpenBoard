@@ -446,6 +446,10 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
     UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (shiftKey >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString2);
     UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (alphaLock >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString3);
 
+    // workaround for wrong character returned from UCKeyTranslate for swiss-french keyboard.
+    if (unicodeString1[0] == 94 && unicodeString2[0] == 80)
+        unicodeString2[0] = 168;
+
     return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString1[0] != unicodeString3[0], 0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1));
 }
 

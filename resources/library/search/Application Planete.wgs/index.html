@@ -231,7 +231,7 @@
                 currentTerm = term;
                 currentIndex = index;
                 var start = index * limit;
-                var url = "http://sankore.devxwiki.com/xwiki/bin/view/Search/Resources?xpage=plain&category=" + category + "&ict=" + ict + "&level=&sort=title&dir=ASC&terms=" + escape(term) + "&start=" + start + "&limit=" + limit;
+                var url = "http://planete.sankore.org/xwiki/bin/view/Search/Resources?xpage=plain&category=" + category + "&ict=" + ict + "&level=&sort=title&dir=ASC&terms=" + escape(term) + "&start=" + start + "&limit=" + limit;
 		$.ajax({
 			url: url,
   			success: searchComplete,

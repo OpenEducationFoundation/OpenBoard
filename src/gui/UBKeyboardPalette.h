@@ -229,6 +229,7 @@ public:
 
 private:
     bool shifted();
+    bool capsed();
     const KEYBT* keybt;
 };
 

@@ -450,7 +450,7 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
     if (unicodeString1[0] == 94 && unicodeString2[0] == 80)
         unicodeString2[0] = 168;
 
-    return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString2[0] == unicodeString3[0], 0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1));
+    return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString3[0], 0,0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1), KEYCODE(0, vkk, 2));
 }
 
 

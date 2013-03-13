@@ -534,18 +534,30 @@ UBKeyButton::~UBKeyButton()
 
 bool UBKeyButton::shifted()
 {
+#if defined(Q_WS_MACX)
+    return keyboard->shift;
+#else
     bool b = keyboard->shift;
     if (keybt->capsLockSwitch && keyboard->capsLock)
         b = !b;
     return b;
+#endif
+}
+
+bool UBKeyButton::capsed()
+{
+    return keyboard->capsLock;
 }
 
 void UBKeyButton::onPress()
 {
     if (keybt!=NULL)
     {
+#if defined(Q_WS_MACX)        
+        int codeIndex = keyboard->nSpecialModifierIndex;
+#else
         int codeIndex = keyboard->nSpecialModifierIndex * 2 + shifted();
-
+#endif
         if (keyboard->nSpecialModifierIndex)
         {
             if (keybt->codes[codeIndex].empty())
@@ -562,7 +574,20 @@ void UBKeyButton::onPress()
         }
         else
         {
-            int nSpecialModifierIndex = shifted()? keybt->modifier2 : keybt->modifier1;
+
+#if defined(Q_WS_MACX)
+            int nSpecialModifierIndex;
+
+            if(capsed())
+                nSpecialModifierIndex = keybt->modifierCaps;
+            else if (shifted())
+                nSpecialModifierIndex = keybt->modifierShift;
+            else
+                nSpecialModifierIndex = keybt->modifierNo;
+#else
+            int nSpecialModifierIndex = shifted()? keybt->modifierShift : keybt->modifierNo;
+#endif
+
 
             if (nSpecialModifierIndex)
             {
@@ -590,7 +615,11 @@ void UBKeyButton::paintContent(QPainter& painter)
 {
     if (keybt)
     {
-        QString text(QChar(shifted() ? keybt->symbol2 : keybt->symbol1));
+#if defined(Q_WS_MACX)
+        QString text(QChar(shifted() ? keybt->shiftedSymbol : (capsed() ? keybt->capsedSymbol : keybt->simpleSymbol)));
+#else
+        QString text(QChar(shifted() ? keybt->shiftedSymbol : keybt->simpleSymbol));
+#endif
         QRect textRect(rect().x()+2, rect().y()+2, rect().width()-4, rect().height()-4);
         painter.drawText(textRect, Qt::AlignCenter, text);
     }

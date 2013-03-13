@@ -255,8 +255,8 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("Spanish"),"es");
     mIsoCodeAndLanguage.insert(tr("French"),"fr");
     mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
-    mIsoCodeAndLanguage.insert(tr("Italian"),"it");
     mIsoCodeAndLanguage.insert(tr("Hindi"),"hi");
+    mIsoCodeAndLanguage.insert(tr("Italian"),"it");
     mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
     mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
     mIsoCodeAndLanguage.insert(tr("Korean"),"ko");
@@ -273,7 +273,7 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("Turkish"),"tr");
     mIsoCodeAndLanguage.insert(tr("Chinese"),"zh");
     mIsoCodeAndLanguage.insert(tr("Chinese Simplified"),"zh_CN");
-    mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TN");
+    mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TW");
 
     QStringList list;
     list << mIsoCodeAndLanguage.keys();

@@ -88,8 +88,16 @@ void UBGraphicsItemPlayAudioAction::play()
 
 QStringList UBGraphicsItemPlayAudioAction::save()
 {
-    QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/";
-    return QStringList() << QString("%1").arg(eLinkToAudio) <<  mAudioPath.replace(documentPath,"");
+    //Another hack
+    if(UBApplication::documentController && UBApplication::documentController->selectedDocument()){
+        QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/";
+        return QStringList() << QString("%1").arg(eLinkToAudio) <<  mAudioPath.replace(documentPath,"");
+    }
+    else{
+        int index = mAudioPath.indexOf("/audios/");
+        QString relativePath = mAudioPath.remove(0,index + 1);
+        return QStringList() << QString("%1").arg(eLinkToAudio) <<  relativePath;
+    }
 }
 
 void UBGraphicsItemPlayAudioAction::actionRemoved()

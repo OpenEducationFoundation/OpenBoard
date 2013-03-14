@@ -182,6 +182,7 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
+        Delegate()->mouseReleaseEvent(event);
         event->accept();
         clearFocus();
         return;

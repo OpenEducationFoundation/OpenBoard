@@ -450,6 +450,11 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
     if (unicodeString1[0] == 94 && unicodeString2[0] == 80)
         unicodeString2[0] = 168;
 
+    if (unicodeSimple[0] == 94 && unicodeShifted[0] == 63)
+    {
+        unicodeShifted[0] = 96;
+        unicodeCapsed[0] = unicodeSimple[0];
+    }
     return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString3[0], 0,0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1), KEYCODE(0, vkk, 2));
 }
 

@@ -553,11 +553,7 @@ void UBKeyButton::onPress()
 {
     if (keybt!=NULL)
     {
-#if defined(Q_WS_MACX)        
-        int codeIndex = keyboard->nSpecialModifierIndex;
-#else
         int codeIndex = keyboard->nSpecialModifierIndex * 2 + shifted();
-#endif
         if (keyboard->nSpecialModifierIndex)
         {
             if (keybt->codes[codeIndex].empty())

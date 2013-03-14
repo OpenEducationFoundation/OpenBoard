@@ -61,9 +61,12 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
         QFile(audioFile).copy(destFile);
         mAudioPath = destFile;
     }
-    else
-        mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
-
+    else{
+        //another hack
+        if(UBApplication::documentController)
+            mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
+        else return;
+    }
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
     Phonon::createPath(mMediaObject, mAudioOutput);

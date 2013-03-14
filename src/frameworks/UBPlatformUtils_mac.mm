@@ -440,22 +440,22 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
     UInt32 kbdType = kKeyboardISO;
 
     UniCharCount cnt1, cnt2;
-    UniChar unicodeString1[100], unicodeString2[100], unicodeString3[100];
+    UniChar unicodeSimple[100], unicodeShifted[100], unicodeCapsed[100];
 
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, 0, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt1, unicodeString1);
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (shiftKey >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString2);
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (alphaLock >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString3);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, 0, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt1, unicodeSimple);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (shiftKey >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeShifted);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (alphaLock >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeCapsed);
 
     // workaround for wrong character returned from UCKeyTranslate for swiss-french keyboard.
-    if (unicodeString1[0] == 94 && unicodeString2[0] == 80)
-        unicodeString2[0] = 168;
+    if (unicodeSimple[0] == 94 && unicodeShifted[0] == 80)
+        unicodeShifted[0] = 168;
 
     if (unicodeSimple[0] == 94 && unicodeShifted[0] == 63)
     {
         unicodeShifted[0] = 96;
         unicodeCapsed[0] = unicodeSimple[0];
     }
-    return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString3[0], 0,0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1), KEYCODE(0, vkk, 2));
+    return new KEYBT(unicodeSimple[0], unicodeShifted[0], unicodeCapsed[0], 0,0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1), KEYCODE(0, vkk, 2));
 }
 
 

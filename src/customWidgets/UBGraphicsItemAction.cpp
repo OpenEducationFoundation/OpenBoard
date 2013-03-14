@@ -63,7 +63,7 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
     }
     else{
         //another hack
-        if(UBApplication::documentController)
+        if(UBApplication::documentController && UBApplication::documentController->selectedDocument())
             mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
         else return;
     }

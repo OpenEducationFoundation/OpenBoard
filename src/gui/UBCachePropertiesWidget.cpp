@@ -514,6 +514,8 @@ void UBCachePropertiesWidget::onControlViewResized(QResizeEvent *event)
 
 void UBCachePropertiesWidget::onZoomChanged(qreal newZoom)
 {
+    Q_UNUSED(newZoom)
+
     mpWidthSlider->setMaximum(maximumShapeSize.width());
     mpHeightSlider->setMaximum(maximumShapeSize.height());
     if (mpCurrentCache)

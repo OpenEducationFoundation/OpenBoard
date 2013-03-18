@@ -805,39 +805,39 @@
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ライブラリに&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ダウンロード&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブラリにダウンロード</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;現在のページに&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ダウンロード&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のページにダウンロード</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ライブラリに&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;リンクを追加&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブラリにリンクを追加</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;現在のページに&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;リンクを追加&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のページにリンクを追加</translation>
     </message>
     <message>
         <source>Bookmark</source>
@@ -887,19 +887,19 @@
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation type="unfinished"></translation>
+        <translation>エレメントのID = </translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation type="unfinished"></translation>
+        <translation>コンテンツは送り先のフォーマットではサポートされていません。</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation type="unfinished">ページ削除</translation>
+        <translation>ページ削除</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>選択したドキュメント &apos;%0&apos;から1ページ削除してもよろしいですか？</translation>
     </message>
 </context>
 <context>
@@ -964,23 +964,23 @@
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ化</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ解除</translation>
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation type="unfinished"></translation>
+        <translation>ドキュメントからページ %1 を削除</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>ページ %1 が削除されました</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルの追加操作に失敗：ファイルコピーのエラー</translation>
     </message>
 </context>
 <context>
@@ -1010,35 +1010,35 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>アルファ：</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>形状：</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>幅：</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>高さ：</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>比率を維持</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>モード：</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>プレビュー：</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation>キャッシュを閉じる</translation>
     </message>
     <message>
         <source>On Click</source>
@@ -1053,66 +1053,66 @@
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;コンテンツをドロップ&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>画像は許可されません</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>データを表示できません</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>ドロップされたファイルは音声ファイルであると認められません</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>音声ファイルを再生</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>ページにリンクを追加</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>ウェブページにリンクを追加</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブラリからこのボックスに音声ファイルをドラッグ&amp;ドロップ</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">次のページ</translation>
+        <translation>次のページ</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">前のページ</translation>
+        <translation>前のページ</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>タイトルページ</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>最後のページ</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>ページ番号</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>ここにURL文字列を挿入</translation>
     </message>
 </context>
 <context>
@@ -1139,7 +1139,7 @@
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankoreを表示</translation>
     </message>
 </context>
 <context>
@@ -1236,15 +1236,15 @@
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation type="unfinished">タイトルなしドキュメント</translation>
+        <translation>無題ドキュメント</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished"></translation>
+        <translation>フォルダには画像ファイルが含まれていません</translation>
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation>この操作は取り消し不可能です！</translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
@@ -1279,19 +1279,19 @@
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 / %2ページを挿入中</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation type="unfinished">インポートに成功。</translation>
+        <translation>インポートに成功。</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル%1をインポート中</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル%1のインポートに成功。</translation>
     </message>
 </context>
 <context>
@@ -1340,40 +1340,42 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>承認する</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>置き換える</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation>名前%1はすでに使用されています。
+この名前のままにするとドキュメントが置き換えられます。
+新規の名前を付けると新規のドキュメントが作成されます。</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>マイドキュメント</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>テンプレート</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">ゴミ箱</translation>
+        <translation>ごみ箱</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation>無題ドキュメント</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
@@ -1407,99 +1409,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ダウンロードに失敗。</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートサーバーが接続を拒否しました（サーバーは要求を承認していません）</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートサーバーが、応答が最後まで受信・処理される前に接続を途中で切断しました</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートホスト名が見つかりませんでした（ホスト名が無効です）</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートサーバーへの接続がタイムアウトしました</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>操作は終了前に中止呼び出し() または終了呼び出し() 経由でキャンセルされました。</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL/TLSのハンドシェイクに失敗し、暗号化チャンネルを確立できませんでした。SSLエラー() シグナルが発信されている必要があります。</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>ネットワークとの切断で接続が中断されましたが、システムは別のアクセスポイントへのローミングを開始しました。要求は再送信され、接続が回復次第処理されます。</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシサーバーへの接続が拒否されました（プロキシサーバーは要求を承認していません）</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシサーバーが、応答が最後まで受信・処理される前に接続を途中で切断しました</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシサーバーのホスト名が見つかりませんでした（ホスト名が無効です）</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシサーバーへの接続がタイムアウトしたか、プロキシサーバーが送信された要求に時間内に応答しませんでした</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシは要求を実行するのに認証が必要ですが、提示したクレデンシャル（あったとしても）は承認されませんでした</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートコンテンツへのアクセスが拒否されました（HTTPエラー401と同様）</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートコンテンツで要求した操作は許可されていません</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバーでリモートコンテンツが見つかりませんでした（HTTPエラー404と同様）</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートサーバーはコンテンツを提供するのに認証が必要ですが、提示したクレデンシャル（あったとしても）は承認されませんでした</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>要求は再送信が必要でしたが、アップロードデータが2度目に読み込まれなかったなどの理由でこれに失敗しました。</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>Network Access API は、プロトコルが不明なため要求を実行できません</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>要求された操作はこのプロトコルに対して無効です</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>ネットワーク関連の不明なエラーが検出されました</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>プロキシ関連の不明なエラーが検出されました</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>リモートコンテンツ関連の不明なエラーが検出されました</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>プロトコルのブレークダウンが検出されました（構文エラー、無効なまたは予期しない応答など）</translation>
     </message>
 </context>
 <context>
@@ -1517,7 +1519,7 @@ Providing a new name will create a new document.</source>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポート中に警告が表示されました</translation>
     </message>
 </context>
 <context>
@@ -1574,27 +1576,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートに失敗...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>UBXファイルとしてエクスポート</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">ドキュメントのエクスポート中... </translation>
+        <translation>ドキュメントをエクスポート中...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートに成功。</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートに失敗。</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Sankore UBXフォーマットへエクスポート</translation>
     </message>
 </context>
 <context>
@@ -1686,7 +1688,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
 </context>
 <context>
@@ -1732,100 +1734,100 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Audios</source>
-        <translation type="unfinished">オーディオ</translation>
+        <translation>オーディオ</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation type="unfinished">ムービー</translation>
+        <translation>ムービー</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished">写真</translation>
+        <translation>写真</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation type="unfinished">動画</translation>
+        <translation>動画</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation type="unfinished">インタラクティブ</translation>
+        <translation>インタラクティブ</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation type="unfinished">アプリケーション</translation>
+        <translation>アプリケーション</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation type="unfinished">形状</translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>お気に入り</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished"></translation>
+        <translation>ウェブ検索</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">ゴミ箱</translation>
+        <translation>ごみ箱</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">ブックマーク</translation>
+        <translation>ブックマーク</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished">ウェブ</translation>
+        <translation>ウェブ</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>承認する</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>新規フォルダ名を入力</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished"></translation>
+        <translation>ロード中</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation type="unfinished">ロック</translation>
+        <translation>ロック</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation type="unfinished">拡張画面でみることができます </translation>
+        <translation>拡張画面でみることができます</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">行為を追加</translation>
+        <translation>操作を追加</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオへのリンクを削除</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>ページへのリンクを削除</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>ウェブURLへのリンクを削除</translation>
     </message>
 </context>
 <context>
@@ -1844,19 +1846,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">行為を追加</translation>
+        <translation>操作を追加</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオへのリンクを削除</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>ページへのリンクを削除</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>ウェブURLへのリンクを削除</translation>
     </message>
 </context>
 <context>
@@ -1881,7 +1883,7 @@ Providing a new name will create a new document.</source>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation type="unfinished">ローディング中… </translation>
+        <translation>ロード中...</translation>
     </message>
 </context>
 <context>
@@ -1941,7 +1943,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore（ドキュメントセット）(*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2010,7 +2012,7 @@ Providing a new name will create a new document.</source>
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -2162,131 +2164,131 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルト</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>アラビア語</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>ブルガリア語</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>カタロニア語</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>チェコ語</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>デンマーク語</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>ドイツ語</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>ギリシャ語</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">英語</translation>
+        <translation>英語</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>イギリス英語</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>スペイン語</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">フランス語</translation>
+        <translation>フランス語</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">スイスのフランス語</translation>
+        <translation>スイスのフランス語</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>イタリア語</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘブライ語</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>日本語</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>韓国語</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>マダガスカル語</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>ノルウェー語</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>オランダ語</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>ポーランド語</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>ロマンシュ語</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>ルーマニア語</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">ロシア語</translation>
+        <translation>ロシア語</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>スロバキア語</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>スウェーデン語</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>トルコ語</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>中国語</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>簡体字中国語</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>繁体字中国語</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation type="unfinished"></translation>
+        <translation>コルシカ語</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
+        <translation>ヒンディー語</translation>
     </message>
     <message>
         <source>Portuguese</source>
@@ -2335,14 +2337,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/ウェブ</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>次回から表示</translation>
     </message>
 </context>
 <context>
@@ -2562,11 +2564,11 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">ページ全体</translation>
+        <translation>ページ全体</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>埋め込み</translation>
     </message>
 </context>
 <context>
@@ -2659,11 +2661,11 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2916,43 +2918,47 @@ Please reboot the application to access the updated documents.</source>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>コンテンツを選択してトラップ：</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">アプリケーション名</translation>
+        <translation>アプリケーション名</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>制限および免責事項。</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>この機能は最も一般的なウェブページで作動するよう開発されています。</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>リンクを作成したりウェブからコンテンツをトラップする場合は著作権を遵守してください。</translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブラリに
+ダウンロード</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のページに
+ダウンロード</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブラリに
+リンクを追加</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のページに
+リンクを追加</translation>
     </message>
 </context>
 <context>
@@ -3029,7 +3035,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>再起動時にクレデンシャルを復元</translation>
     </message>
 </context>
 <context>
@@ -3288,47 +3294,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルをエクスポートするためのPlanète Sankoré ID</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>再起動時にクレデンシャルを復元</translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>起動に関するヒント</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>起動に関するヒントを表示</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>言語</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>言語を選択</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい言語は、次回の起動時にロードされます</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankoréを閉じる</translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3339,7 +3345,14 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;ライセンスは、法的に有効な公式翻訳に基づいて英語で記載されています。&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

@@ -794,7 +794,7 @@
     <message>
         <source>Interact with items</source>
         <translatorcomment>There is no direct translation of this sentence- please provide contexte</translatorcomment>
-        <translation type="unfinished">לתפעל את הפריט</translation>
+        <translation>לתפעל את הפריטים</translation>
     </message>
     <message>
         <source>Erase Background</source>
@@ -809,41 +809,40 @@
         <translation>קבוצה</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;הוספת סימניה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;הורדה ל&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ספריה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>הורדה לספריה</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;הורדה ל&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;דף הנוכחי&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>הורדה לדף הנוכחי</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;הוסף קישור ל&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ספריה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף קישור לספריה</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;הוספת קישור &lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;לדף הנוכחי&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bookmark</source>
-        <comment>tooltip</comment>
-        <translation type="unfinished">סימניות</translation>
+        <translation>הוספת קישור לדף הנוכחי</translation>
     </message>
 </context>
 <context>
@@ -1011,109 +1010,101 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>אלפא:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>גיאומטריה:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>רוחב:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>גובה:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>שמור על יחסי המידות</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>מצב:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>צפייה מוקדמת:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On Click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>סגור מטמון</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>תמונות לא מתקבלות</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן להציג נתונים</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>הקובץ שנשמט אינו מזוהה כקובץ שמע</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>נגן קובץ שמע</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף קישור לדף</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף קישור לדף אינטרנט</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>גרור ושחרר את קובץ השמע מהספריה בתיבה זו</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">אישור</translation>
+        <translation>אישור</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">הדף הבא</translation>
+        <translation>הדף הבא</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">דף קודם</translation>
+        <translation>דף קודם</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>דף כותרת</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>דף אחרון</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>מספר דף</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>הכנס כאן טקסט URL</translation>
     </message>
 </context>
 <context>
@@ -1246,11 +1237,7 @@
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>זוהי פעולה בלתי הפיכה!</translation>
     </message>
 </context>
 <context>
@@ -1342,51 +1329,40 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">קבל</translation>
+        <translation>קבל</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>החלף</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">בטל</translation>
+        <translation>בטל</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation>השם %1 כבר נמצא בשימוש. המשך שימוש בשם זה יחליף את המסמך. מתן שם חדש ייצור מסמך חדש.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>המסמכים שלי</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>תבניות</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">סל</translation>
+        <translation>  אשפהסל</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="unfinished">מעתיק עמוד %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="unfinished">
-            <numerusform>%1 דפים הועתקו</numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation>מסמך ללא שם</translation>
     </message>
 </context>
 <context>
@@ -1411,99 +1387,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההורדה נכשלה</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>השרת המרוחק סירב לחיבור (השרת אינו מקבל בקשות)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>השרת המרוחק סגר את החיבור באופן לפני הזמן, לפני שהתשובה התקבלה ועובדה במלואה</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>שם המארח המרוחק לא ננמצא (שם מאחרי לא תקין)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>החיבור לשרת המרוחק נותק באופן זמני</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>הפעולה בוטלה על ידי קריאות להפסקה() או סגירה() לפני סיומה.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>לחיצת היד SSL/TLS נכשלה ולא ניתן לפתוח את הערוץ המוצפן. אות השגיאה sslError() היה צריך להופיע.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>הקשר ניתק כתוצאה מניתוק מהרשת, אך המערכת פתחה בניוד לנקודת גישה אחרת. על הבקשה להישלח מחדש והיא תעובד עם חידוש הקשר.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>החיבור לשרת הפרוקסי נדחה (שרת הפרוקסי אינו מקבל בקשות)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>שרת הפרוקסי סגר את החיבור טרם זמנו, לפני שהתשובה השלמה התקבלה ועובדה</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>שם מארח הפרוקסי לא נמצא (שם מארח פרוקסי בלתי תקין)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>החיבור לפרוקסי נותק זמנית או הפרוקסי לא ענה בזמן לבקשה שנשלחה</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>הפרוקסי דורש זיהוי על מנת להיענות לבקשה אך לא קיבל אף הרשאה שהוצעה )אם הייתה כזו)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>הגישה לתוכן המרוחק נדחתה (בדומה לשגיאת HTTP מס 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>הפעולה המבוקשת על התוכן המרוחק אסורה</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>התוכן המרוחק לא נמצא בשרת (בדומה לשגיאת HTTP מס&apos; 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>השרת המרוחק מצריך זיהוי כדי לשרת את התוכן אך ההרשאות שניתנו נדחו (אם היו)</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>הבקשה הייתה צריכה להישלח שנית, אך הדבר נכשל למשל מכיוון שלא ניתן היה לקרוא שנית את הנתונים שהועלו</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>גישת הרשת API לא יכולה להיענות לבקשה מכיוון שהפרוטוקול אינו מוכר</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>הפעולה המבוקשת אינה תקפה עבור פרוטוקול זה</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>התגלתה שגיאה בלתי ידועה הקשורה לרשת </translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>התגלתה שגיאה בלתי ידועה הקשורה לפרוקסי</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>התגלתה שגיאה בלתי ידועה הקשורה לתוכן המרוחק</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>התגלה קלקול בפרוטוקול (שגיאת דקדוק, תשובות בלתי תקינות או בלתי צפויות, וכו&apos;)</translation>
     </message>
 </context>
 <context>
@@ -1579,27 +1555,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>הייצוא נכשל...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>ייצא כקובץ UBX</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">מייצא מסמך...</translation>
+        <translation>מייצא מסמך...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">הייצוא בוצע בהצלחה.</translation>
+        <translation>הייצוא בוצע בהצלחה.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>הייצוא נכשל.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>ייצוא ל- Sankore  בפורמט UBX</translation>
     </message>
 </context>
 <context>
@@ -1691,7 +1667,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">הוסף</translation>
+        <translation>הוסף</translation>
     </message>
 </context>
 <context>
@@ -1777,11 +1753,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">סימניות</translation>
+        <translation>סימניות</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished">אינטרנט</translation>
+        <translation>אינטרנט</translation>
     </message>
 </context>
 <context>
@@ -1818,19 +1794,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">הוסף פעולה</translation>
+        <translation>הוסף פעולה</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור לשמע</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור לדף</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור ל- URL אינטרנט</translation>
     </message>
 </context>
 <context>
@@ -1849,19 +1825,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">הוסף פעולה</translation>
+        <translation>הוסף פעולה</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור לשמע</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור לדף</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר קישור ל- URL באינטרנט</translation>
     </message>
 </context>
 <context>
@@ -1946,7 +1922,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore (מערך מסמכים) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2161,135 +2137,131 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>ברירת מחדל</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>ערבית</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>בולגרית</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>קטלאנית</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>צ&apos;כית</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>דנית</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">גרמנית</translation>
+        <translation>גרמנית</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>יוונית</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">אנגלית</translation>
+        <translation>אנגלית</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>אנגלית של בריטניה</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>ספרדית</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">צרפתית</translation>
+        <translation>צרפתית</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">צרפתית של שוויץ</translation>
+        <translation>צרפתית של שוויץ</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>איטלקית</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>עברית</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>יפנית</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>קוריאנית</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>מלגשית</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>נורבגית</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>הולנדית</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>פולנית</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>רומאנש</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>רומנית</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">רוסית</translation>
+        <translation>רוסית</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>סלובקית</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>שוודית</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>טורקית</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>סינית</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>סינית מופשטת</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>סינית מסורתית</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation type="unfinished"></translation>
+        <translation>קורסיקאית</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>הינדית</translation>
     </message>
 </context>
 <context>
@@ -2334,14 +2306,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>ניתן לראותו בפעם הבאה</translation>
     </message>
 </context>
 <context>
@@ -2467,23 +2439,23 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribution-NoDerivs CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribution-ShareAlike CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribution-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
@@ -2561,11 +2533,11 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">דף מלא</translation>
+        <translation>דף מלא</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>שבץ</translation>
     </message>
 </context>
 <context>
@@ -2658,11 +2630,11 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2915,43 +2887,43 @@ Please reboot the application to access the updated documents.</source>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר תוכן ללכידה</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">שם היישום</translation>
+        <translation>שם היישום</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>מגבלות והצהרות</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>מאפיין זה מתוכנן לעבוד על דפי האינטרנט הנפוצים ביותר.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>נא לשמור על זכויות היוצרים כשיוצרים קישורים או לוכדים תוכן מהאינטרנט.</translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>הורדה לספריה</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>הורדה לדף הנוכחי</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>הוספת קישור לספריה</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>הוספת קישור לדף הנוכחי</translation>
     </message>
 </context>
 <context>
@@ -3028,7 +3000,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>שחזר הרשאות בעת אתחול</translation>
     </message>
 </context>
 <context>
@@ -3287,47 +3259,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>עצות לאתחול</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>הצג עצות לאתחול</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>שפה</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר שפה</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>השפה החדשה תיטען באיתחול הבא</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>סגור את Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Planète Sankoré מזהה לייצוא קבצים</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>שחזר הרשאות בזמן איתחול</translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3338,7 +3310,14 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;הרשיונות בשפה האנגלית כדי לכבד את התרגום הרשמי והחוקי המאושר&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3365,3 +3344,4 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 </TS>
+

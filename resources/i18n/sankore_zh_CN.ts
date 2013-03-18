@@ -808,10 +808,6 @@
         <translation>组合</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;添加书签&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;下载到&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;图书馆&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -842,6 +838,11 @@
     <message>
         <source>Add link to current page</source>
         <translation>将链接添加至最近打开页面</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <comment>tooltip</comment>
+        <translation type="unfinished">书签</translation>
     </message>
 </context>
 <context>
@@ -1038,6 +1039,14 @@
     <message>
         <source>Close cache</source>
         <translation>关闭高级缓存</translation>
+    </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1237,6 +1246,10 @@
         <source>This is an irreversible action!</source>
         <translation>此举将无法复原！</translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1363,6 +1376,16 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Untitled documents</source>
         <translation>未命名文档</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">正在复制页面 %1/%2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>已复制页面%1</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2265,6 +2288,10 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Hindi</source>
         <translation>印度语</translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3355,4 +3382,3 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 </TS>
-

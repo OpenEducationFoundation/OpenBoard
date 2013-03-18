@@ -94,7 +94,8 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
         if(Delegate())
-            Delegate()->mousePressEvent(event);
+            //Delegate()->mousePressEvent(event);
+            QGraphicsTextItem::mousePressEvent(event);
         event->accept();
         clearFocus();
         return;
@@ -182,6 +183,12 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
+        QPointF distance = event->pos() - event->lastPos();
+        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1 )
+            Delegate()->mouseReleaseEvent(event);
+        else
+            QGraphicsTextItem::mouseReleaseEvent(event);
+
         event->accept();
         clearFocus();
         return;

@@ -808,10 +808,6 @@
         <translation>그룹</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;북마크 추가&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;다운로드 위치:&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;라이브러리&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -842,6 +838,11 @@
     <message>
         <source>Add link to current page</source>
         <translation>현재 페이지에 링크 추가</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <comment>tooltip</comment>
+        <translation type="unfinished">북마크</translation>
     </message>
 </context>
 <context>
@@ -1038,6 +1039,14 @@
     <message>
         <source>Close cache</source>
         <translation>캐시 닫기</translation>
+    </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1237,6 +1246,10 @@
         <source>This is an irreversible action!</source>
         <translation>돌이킬 수 없는 행동입니다!</translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1363,6 +1376,16 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Untitled documents</source>
         <translation>제목없는 문서</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">%1/%2 페이지 복사 중</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1페이지 복사됨</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2265,6 +2288,10 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Hindi</source>
         <translation>힌디어</translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3358,4 +3385,3 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 </TS>
-

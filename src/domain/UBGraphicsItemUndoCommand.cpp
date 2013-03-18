@@ -98,20 +98,19 @@ void UBGraphicsItemUndoCommand::undo()
         QTransform t;
         bool bApplyTransform = false;
         UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
+        if (polygonItem){
+            if (polygonItem->strokesGroup()
+                    && polygonItem->strokesGroup()->parentItem()
+                    && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
+            {
+                bApplyTransform = true;
+                t = polygonItem->sceneTransform();
+            }
+            else if (polygonItem->strokesGroup())
+                polygonItem->resetTransform();
 
-        if (polygonItem
-            && polygonItem->strokesGroup()
-            && polygonItem->strokesGroup()->parentItem()
-            && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
-        {
-            bApplyTransform = true;
-            t = polygonItem->sceneTransform();
+            polygonItem->strokesGroup()->removeFromGroup(polygonItem);
         }
-        else if (polygonItem->strokesGroup())
-            polygonItem->resetTransform();
-
-        polygonItem->strokesGroup()->removeFromGroup(polygonItem);
-
         mScene->removeItem(item);
 
         if (bApplyTransform)
@@ -232,19 +231,19 @@ void UBGraphicsItemUndoCommand::redo()
             bool bApplyTransform = false;
             UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
 
-            if (polygonItem
-                && polygonItem->strokesGroup()
-                && polygonItem->strokesGroup()->parentItem()
-                && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
-            {
-                bApplyTransform = true;
-                t = polygonItem->sceneTransform();
+            if (polygonItem){
+                if(polygonItem->strokesGroup()
+                        && polygonItem->strokesGroup()->parentItem()
+                        && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
+                {
+                    bApplyTransform = true;
+                    t = polygonItem->sceneTransform();
+                }
+                else if (polygonItem->strokesGroup())
+                    polygonItem->resetTransform();
+
+                polygonItem->strokesGroup()->removeFromGroup(polygonItem);
             }
-            else if (polygonItem->strokesGroup())
-                polygonItem->resetTransform();
-
-            polygonItem->strokesGroup()->removeFromGroup(polygonItem);
-
             mScene->removeItem(item);
 
             if (bApplyTransform)
@@ -268,7 +267,7 @@ void UBGraphicsItemUndoCommand::redo()
 
                 UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
                 if (polygonItem)
-                {   
+                {
                     mScene->removeItem(polygonItem);
                     mScene->removeItemFromDeletion(polygonItem);
                     polygonItem->strokesGroup()->addToGroup(polygonItem);

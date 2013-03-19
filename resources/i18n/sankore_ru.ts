@@ -809,40 +809,41 @@
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить в библиотеку</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить на текущую страницу</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку в библиотеку</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку на текущую страницу</translation>
     </message>
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Закладка</translation>
+        <translatorcomment>Подсказка</translatorcomment>
+        <translation>Закладка</translation>
     </message>
 </context>
 <context>
@@ -1010,109 +1011,109 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation type="unfinished"></translation>
+        <translation>Альфа:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation type="unfinished"></translation>
+        <translation>Геометрия:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить пропрорции</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпросмотр:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть cache</translation>
     </message>
     <message>
         <source>On Click</source>
-        <translation type="unfinished"></translation>
+        <translation>По клику</translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Постоянный</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;бросить содержимое&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый формат картинок</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно отобразить данные</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не распознан как аудио файл</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Проиграть аудио файл</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку на страницу</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку на веб страницу</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместите аудио файл из библиотеки в окно</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation type="unfinished">Следующая страница</translation>
+        <translation>Следующая страница</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation type="unfinished">Предыдущая страница</translation>
+        <translation>Предыдущая страница</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Титульная страница</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Последняя страница</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер страницы</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставьте текст ссылки сюда</translation>
     </message>
 </context>
 <context>
@@ -1245,11 +1246,11 @@
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation>Действие необратимо!</translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>Документы &quot;модели&quot; не редактируются. Скопируйте документ в &quot;Мои документы&quot; для того чтобы можно было с ними работать</translation>
     </message>
 </context>
 <context>
@@ -1341,48 +1342,50 @@
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">Принять</translation>
+        <translation>Принять</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Заменить</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Отмена</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя файла %1 уже используется.
+Сохранение этого имени заменит существующий документ.
+Создание нового имени создаст новый документ.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Мои документы</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Модели</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">Корзина</translation>
+        <translation>Корзина</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Документы без группы</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Копирование страницы %1/%2</translation>
+        <translation>Копирование страницы %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 страницы скопировано</numerusform>
             <numerusform>%1 страниц скопировано</numerusform>
         </translation>
@@ -1410,99 +1413,99 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка не завершена.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленный сервер сбросил соединение (сервер не принимает запросы)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленный сервер преждевременно закрыл соединение, до того как ответ сервера был получен полностью</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленное имя хоста не найдено (invalid hostname)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>Время соединения с удаленным сервером истекло</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Операция была отменена вызовами abort() или close() до завершения.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL/TSL соединение не установлено и шифрованный канал не может быть установлен. Сигнал sslErrors() должен быть сгенерирован.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation type="unfinished"></translation>
+        <translation>Соединение разорвано по причине недоступности сети, однако система проинициализировала связь с точкой доступа. Запрос должен быть передан снова и будет обработан когда сеть восстановится.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соединение с прокси сервером было сброшено (прокси сервер не принимает запросы)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation type="unfinished"></translation>
+        <translation>Возможно прокси сервер преждевременно закрыл соединение, до того как ответ был получен и обработан полностью</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя хоста прокси не найдено (invalid proxy hostname)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймаут соединения с прокси или прокси не отвечает вовремя на запросы</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Прокси требует аутентификации для обработки запроса, но не принимает предложенные пакеты (если имеются)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation type="unfinished"></translation>
+        <translation>Доступ к удаленному содержимому запрещен (аналогично HTTP error 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation type="unfinished"></translation>
+        <translation>Запрошенная операция с удаленным содержимым не разрешена</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленное содержимое не найдено на сервере (аналогично HTTP error 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленный сервер требует аутентификации для обработки содержимого, но предоставленные данные не были приняты (если имелись)</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Запрос должен быть отправлен, но попытка провалилась, например по причине того, что данные не могут быть прочитаны дважды.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation type="unfinished"></translation>
+        <translation>Network Access API не принимает запрос: неизвестный протокол</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>Запрошенная операция недопустима для протокола</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Обнаружена неизвестная ошибка сети</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Обнаружена неизвестная ошибка прокси</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Обнаружена неизвестная ошибка удаленных данных</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Обнаружена поломка в протоколе (передача ошибки, недопустимые или неожидаемые ответы и т.д.)</translation>
     </message>
 </context>
 <context>
@@ -1577,27 +1580,27 @@ Providing a new name will create a new document.</source>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка экспорта...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт в UBX файл</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">Экспорт документа...</translation>
+        <translation>Экспорт документа...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">Экспорт успешно завершен.</translation>
+        <translation>Экспорт успешно завершен.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">Ошибка экспорта.</translation>
+        <translation>Ошибка экспорта.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт в Sankore UBX формат</translation>
     </message>
 </context>
 <context>
@@ -1689,7 +1692,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Добавить</translation>
+        <translation>Добавить</translation>
     </message>
 </context>
 <context>
@@ -1775,11 +1778,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished">Закладки</translation>
+        <translation>Закладки</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished">Интернет</translation>
+        <translation>Интернет</translation>
     </message>
 </context>
 <context>
@@ -1816,19 +1819,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Добавить действие</translation>
+        <translation>Добавить действие</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на страницу</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на страницу</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на веб ссылку</translation>
     </message>
 </context>
 <context>
@@ -1847,19 +1850,19 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">Добавить действие</translation>
+        <translation>Добавить действие</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на аудио</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на страницу</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаленная ссылка на веб страницу</translation>
     </message>
 </context>
 <context>
@@ -1944,7 +1947,7 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore (блок документов) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2164,135 +2167,135 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation>Arabic</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgarian</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>Catalan</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Danish</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">Немецкий</translation>
+        <translation>German</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Greek</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">Английский</translation>
+        <translation>English</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation type="unfinished"></translation>
+        <translation>English UK</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Spanish</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">Французский</translation>
+        <translation>French</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">Шв. французский</translation>
+        <translation>Swiss French</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italian</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebrew</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>Japanese</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Korean</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation type="unfinished"></translation>
+        <translation>Malagasy</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished"></translation>
+        <translation>Norwegian</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>Polish</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation type="unfinished"></translation>
+        <translation>Romansh</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Romanian</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">Русский</translation>
+        <translation>Русский</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovak</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Swedish</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>Chinese</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>Chinese Simplified</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>Chinese Traditional</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation type="unfinished"></translation>
+        <translation>Corsican</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Portuguese</translation>
     </message>
 </context>
 <context>
@@ -2337,14 +2340,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>/Web</source>
-        <translation type="unfinished"></translation>
+        <translation>/Веб</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Видимый при следущей загрузке</translation>
     </message>
 </context>
 <context>
@@ -2564,11 +2567,11 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished">Вся страница</translation>
+        <translation>Вся страница</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation type="unfinished"></translation>
+        <translation>Встроенный</translation>
     </message>
 </context>
 <context>
@@ -2918,43 +2921,43 @@ Please reboot the application to access the updated documents.</source>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите содержимое для захвата:</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation type="unfinished">Название приложения</translation>
+        <translation>Название приложения</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation type="unfinished"></translation>
+        <translation>Ограничения и дисклеймер.</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта возможность реализована для работы с большинством веб страниц.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Соблюдайте авторские права при создании ссылок, коприованием содержимого из интернета.</translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить в библиотеку</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить на текущую страницу</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку в библиотеку</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ссылку на текущую страницу</translation>
     </message>
 </context>
 <context>
@@ -3035,7 +3038,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить привелегии после перезагрузки</translation>
     </message>
 </context>
 <context>
@@ -3294,47 +3297,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Planète Sankoré ID для экспорта файла</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить привелегии после перезагрузки</translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Загружать подстказки при старте</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать подсказки</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите язык</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый язык будет загружен после перезагрузки</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть Open-Sankoré</translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSSL</translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation type="unfinished"></translation>
+        <translation>Xpdf</translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QuaZIP</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3345,7 +3348,7 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>

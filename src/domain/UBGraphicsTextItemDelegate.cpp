@@ -403,7 +403,6 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
         cursor.setPosition (iCursorPos, QTextCursor::MoveAnchor);
     }
 
-    delegated()->setFont(curFont);
     UBSettings::settings()->setFontPointSize(iPointSize);
     //returning initial selection
     cursor.setPosition (anchorPos, QTextCursor::MoveAnchor);

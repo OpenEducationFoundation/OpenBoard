@@ -112,6 +112,9 @@ bool UBLeftPalette::switchMode(eUBDockPaletteWidgetMode mode)
         if(UBSettings::settings()->leftLibPaletteDesktopModeIsCollapsed->get().toBool())
             newModeWidth = 0;
     }
-    resize(newModeWidth,height());
+    //TODO claudio another hack
+    // avoid the overlap of tab and menu bar (positionned on bottom) when clicling between
+    // board and web mode
+    resize(newModeWidth == 0 ? 1 : newModeWidth,height());
     return UBDockPalette::switchMode(mode);
 }

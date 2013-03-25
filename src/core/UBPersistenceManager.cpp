@@ -197,8 +197,15 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
 
 QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UBDocumentProxy *pProxy)
 {
-    Qt::CursorShape saveShape = UBApplication::overrideCursor()->shape();
-    UBApplication::overrideCursor()->setShape(Qt::ArrowCursor);
+    //TODO claudio remove this hack necessary on double click on ubz file
+    Qt::CursorShape saveShape;
+    if(UBApplication::overrideCursor()){
+        saveShape = UBApplication::overrideCursor()->shape();
+        UBApplication::overrideCursor()->setShape(Qt::ArrowCursor);
+    }
+    else
+        saveShape = Qt::ArrowCursor;
+
     QDialog::DialogCode result = QDialog::Rejected;
 
     if (UBApplication::documentController
@@ -240,7 +247,9 @@ QDialog::DialogCode UBPersistenceManager::processInteractiveReplacementDialog(UB
             result = QDialog::Accepted;
         }
     }
-    UBApplication::overrideCursor()->setShape(saveShape);
+    //TODO claudio the if is an hack
+    if(UBApplication::overrideCursor())
+        UBApplication::overrideCursor()->setShape(saveShape);
 
     return result;
 }
@@ -1182,7 +1191,7 @@ void UBPersistenceManager::saveFoldersTreeToXml(QXmlStreamWriter &writer, const 
         if (mDocumentTreeStructureModel->isCatalog(currentIndex))
         {
             writer.writeStartElement(tFolder);
-            writer.writeAttribute(aName, mDocumentTreeStructureModel->nodeFromIndex(currentIndex)->nodeName());            
+            writer.writeAttribute(aName, mDocumentTreeStructureModel->nodeFromIndex(currentIndex)->nodeName());
             saveFoldersTreeToXml(writer, currentIndex);
             writer.writeEndElement();
         }

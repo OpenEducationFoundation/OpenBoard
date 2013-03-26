@@ -448,7 +448,10 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
 
     // workaround for wrong character returned from UCKeyTranslate for swiss-french keyboard.
     if (unicodeSimple[0] == 94 && unicodeShifted[0] == 80)
+    {
         unicodeShifted[0] = 168;
+        unicodeCapsed[0] = unicodeSimple[0];
+    }
 
     if (unicodeSimple[0] == 94 && unicodeShifted[0] == 63)
     {

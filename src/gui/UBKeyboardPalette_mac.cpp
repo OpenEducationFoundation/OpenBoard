@@ -33,12 +33,22 @@
 
 void UBKeyboardButton::sendUnicodeSymbol(KEYCODE keycode)
 {
-    if (keycode.modifier)
-		CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, true));
+    // if shift pressrd
+    if (1 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, true));
+    //if caps pressed
+    if (2 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 57, true));
+
     CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, keycode.code, true));
     CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, keycode.code, false));
+
+    //release shift
     if (keycode.modifier)
 		CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, false));
+    //release caps
+    if (2 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 57, false));
 	
 }
 

@@ -502,7 +502,7 @@ void UBBoardPaletteManager::containerResized()
     if(mStylusPalette)
     {
         mStylusPalette->move(userLeft, userTop);
-        mStylusPalette->adjustSizeAndPosition();
+        mStylusPalette->adjustSizeAndPosition(true,false);
         mStylusPalette->initPosition();
     }
 
@@ -769,7 +769,7 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
 #ifdef Q_WS_WIN
                 if (rightPaletteVisible)
                 {
-                    if (UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())               
+                    if (UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())
                         mRightPalette->setAdditionalVOffset(30);
                     else
                     {

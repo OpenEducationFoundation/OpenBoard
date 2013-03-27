@@ -96,7 +96,7 @@
                         iContent.attr("value", result.title);
                         iHeight.attr("value", result.height);
                         iWidth.attr("value", result.width);
-                        iTitle.attr("value",result.title);
+                        iTitle.attr("value",decodeURIComponent(result.file.substring(result.file.lastIndexOf("/")+1)));
                         iThumbnailUrl.attr("value",newImg.src);
                         imgContainer.append($(title));  
                         imgContainer.append(iUrl);

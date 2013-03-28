@@ -121,15 +121,15 @@ UBApplicationController::UBApplicationController(UBBoardView *pControlView,
     mMainWindow->setStyleSheet("QToolButton { font-size: 11px}");
 #endif
 
-    if(QDate::currentDate() > QDate(2013,4,10)){
-        QMessageBox messageBox;
-        messageBox.setWindowFlags(Qt::Dialog);
-        messageBox.setWindowTitle("Open-Sankore");
-        messageBox.setText("This version of Open-Sankore has expired. Please download the last version from the Open-Sankore web site.");
-        messageBox.addButton("Ok",QMessageBox::YesRole);
-        messageBox.exec();
-        exit(0);
-    }
+//    if(QDate::currentDate() > QDate(2013,4,10)){
+//        QMessageBox messageBox;
+//        messageBox.setWindowFlags(Qt::Dialog);
+//        messageBox.setWindowTitle("Open-Sankore");
+//        messageBox.setText("This version of Open-Sankore has expired. Please download the last version from the Open-Sankore web site.");
+//        messageBox.addButton("Ok",QMessageBox::YesRole);
+//        messageBox.exec();
+//        exit(0);
+//    }
 
 }
 

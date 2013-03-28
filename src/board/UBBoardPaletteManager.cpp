@@ -501,7 +501,7 @@ void UBBoardPaletteManager::containerResized()
 
     if(mStylusPalette)
     {
-        mStylusPalette->move(userLeft, userTop);
+        //mStylusPalette->move(userLeft, userTop);
         mStylusPalette->adjustSizeAndPosition(true,false);
         mStylusPalette->initPosition();
     }

@@ -564,6 +564,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         return true;
 
     case UBGraphicsDelegateFrame::Type:
+    case UBGraphicsPixmapItem::Type:
     case QGraphicsSvgItem::Type:
         return true;
 
@@ -574,7 +575,6 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
 
     case UBGraphicsSvgItem::Type:
-    case UBGraphicsPixmapItem::Type:
         if (currentTool == UBStylusTool::Play)
             return false;
     case UBGraphicsTextItem::Type:

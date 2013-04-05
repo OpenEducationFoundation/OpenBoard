@@ -2300,7 +2300,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation>portugaise</translation>
+        <translation>portugais</translation>
     </message>
 </context>
 <context>

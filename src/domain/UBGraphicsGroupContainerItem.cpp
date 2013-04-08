@@ -234,6 +234,8 @@ void UBGraphicsGroupContainerItem::copyItemParameters(UBItem *copy) const
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+        if(Delegate()->action())
+            cp->Delegate()->setAction(Delegate()->action());
     }
 }
 

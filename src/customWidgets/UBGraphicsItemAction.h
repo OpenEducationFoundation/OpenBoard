@@ -51,6 +51,7 @@ public:
     virtual void play() = 0;
     virtual QStringList save() = 0;
     virtual void actionRemoved();
+    virtual QString path() {return "";}
     eUBGraphicsItemLinkType linkType() { return mLinkType;}
 
 signals:
@@ -72,6 +73,7 @@ public:
     void play();
     QStringList save();
     void actionRemoved();
+    QString path() {return mAudioPath;}
 
 private:
     QString mAudioPath;

@@ -31,6 +31,15 @@
 
 #include "UBGraphicsItemDelegate.h"
 
+#include "document/UBDocumentProxy.h"
+#include "core/UBApplication.h"
+#include "document/UBDocumentController.h"
+#include "board/UBBoardController.h"
+#include "document/UBDocumentProxy.h"
+#include "customWidgets/UBGraphicsItemAction.h"
+#include "frameworks/UBFileSystemUtils.h"
+#include "core/UBPersistenceManager.h"
+
 #include "core/memcheck.h"
 
 UBGraphicsPixmapItem::UBGraphicsPixmapItem(QGraphicsItem* parent)
@@ -143,6 +152,18 @@ void UBGraphicsPixmapItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
         cp->setSourceUrl(this->sourceUrl());
+
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                QString destination =  UBApplication::boardController->activeScene()->document()->persistencePath() + "/" + UBPersistenceManager::audioDirectory + QUuid::createUuid().toString();
+                UBFileSystemUtils::copyFile(Delegate()->action()->path(),destination);
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(destination);
+                cp->Delegate()->setAction(action);
+            }
+            else
+                cp->Delegate()->setAction(Delegate()->action());
+        }
+
     }
 }
 

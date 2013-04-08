@@ -294,6 +294,11 @@ void UBPersistenceManager::closing()
     }
 }
 
+bool UBPersistenceManager::isSceneInCached(UBDocumentProxy *proxy, int index) const
+{
+    return mSceneCache.contains(proxy, index);
+}
+
 QStringList UBPersistenceManager::allShapes()
 {
     QString shapeLibraryPath = UBSettings::settings()->applicationShapeLibraryDirectory();

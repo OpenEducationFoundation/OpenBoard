@@ -517,8 +517,6 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
             // TODO UB 4.x Move following code to some controller class
             UBGraphicsScene *scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
             if (scene) {
-                UBGraphicsScene* sceneClone = scene->sceneDeepCopy();
-
                 foreach (QUrl relativeFile, scene->relativeDependencies()) {
                     QString source = scene->document()->persistencePath() + "/" + relativeFile.toString();
                     QString target = targetDocProxy->persistencePath() + "/" + relativeFile.toString();
@@ -530,14 +528,16 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
                     QFile::copy(source, target);
                 }
 
-                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, sceneClone, targetDocProxy->pageCount());
+                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, scene, targetDocProxy->pageCount());
 
                 //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
                 //it's not universal and good way but it's faster
                 QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
                 QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
                 QFile::remove(to);
-                QFile::copy(from, to);
+                if (!UBFileSystemUtils::copy(from, to)) {
+                    qDebug() << "can't copy from " << from << "to" << to;
+                }
             }
         }
 
@@ -1204,7 +1204,7 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
         UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
         QModelIndex targetIndex = indexAt(event->pos());
-        qDebug() << docModel->nodeFromIndex(targetIndex)->nodeName();
+        qDebug() << "target index drop event" << docModel->nodeFromIndex(targetIndex)->nodeName();
         if (!docModel || !docModel->isDocument(targetIndex)) {
             event->ignore();
             return;
@@ -3145,23 +3145,28 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
 
         if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"),tr("This is an irreversible action!") +"\n\n" + tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
-            UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
-            if (docModel->proxyData(docModel->currentIndex()) == proxy) {
+//            UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+//            if (docModel->proxyData(docModel->currentIndex()) == proxy) {
 
-                int offset = 0;
-                foreach(int index, sceneIndexes)
-                {
-                    mBoardController->deleteScene(index);
+//                int offset = 0;
+//                foreach(int index, sceneIndexes)
+//                {
+////                    if (UBPersistenceManager::persistenceManager()->isSceneInCached(proxy, index)) {
+//                        mBoardController->regenerateThumbnails();
+////                    }
+////                    mBoardController->deletePages(sceneIndexes);
 
-                    deleteThumbPage(index - offset);
-                    offset++;
-                }
+//                    deleteThumbPage(index - offset);
+//                    offset++;
+//                }
 
-                emit UBDocumentContainer::documentThumbnailsUpdated(this);
+//                emit UBDocumentContainer::documentThumbnailsUpdated(this);
 
-            } else {
+//            } else {
                 UBDocumentContainer::deletePages(sceneIndexes);
-            }
+                mBoardController->regenerateThumbnails();
+
+//            }
 
 
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
@@ -3271,6 +3276,10 @@ void UBDocumentController::refreshDocumentThumbnailsView(UBDocumentContainer*)
     QModelIndex current = docModel->indexForProxy(currentDocumentProxy);
 
     if (!current.isValid()) {
+        mDocumentUI->thumbnailWidget->setGraphicsItems(QList<QGraphicsItem*>()
+                                                       , QList<QUrl>()
+                                                       , QStringList()
+                                                       , UBApplication::mimeTypeUniboardPage);
         return;
     }
 

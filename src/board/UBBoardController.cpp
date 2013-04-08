@@ -738,6 +738,10 @@ void UBBoardController::deleteScene(int nIndex)
     }
 }
 
+void UBBoardController::regenerateThumbnails()
+{
+    mDocumentNavigator->generateThumbnails(this);
+}
 
 void UBBoardController::clearScene()
 {

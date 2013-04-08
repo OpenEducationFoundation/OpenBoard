@@ -171,6 +171,7 @@ class UBBoardController : public UBDocumentContainer
         void duplicateScene(int index);
         UBGraphicsItem *duplicateItem(UBItem *item, bool bAsync = true);
         void deleteScene(int index);
+        void regenerateThumbnails();
 
         bool cacheIsVisible() {return mCacheWidgetIsEnabled;}
 
@@ -178,6 +179,7 @@ class UBBoardController : public UBDocumentContainer
         QString actionUngroupText(){ return mActionUngroupText;}
         void setDocumentNavigator(UBDocumentNavigator *navigator){mDocumentNavigator = navigator;}
         UBDocumentNavigator *documentNavigator() const {return mDocumentNavigator;}
+
 
     public slots:
         void showDocumentsDialog();

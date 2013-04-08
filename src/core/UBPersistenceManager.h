@@ -152,6 +152,7 @@ class UBPersistenceManager : public QObject
         QString adjustDocumentVirtualPath(const QString &str);
 
         void closing();
+        bool isSceneInCached(UBDocumentProxy *proxy, int index) const;
 
     signals:
 

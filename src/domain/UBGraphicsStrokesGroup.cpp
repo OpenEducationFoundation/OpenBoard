@@ -25,6 +25,15 @@
 
 #include "domain/UBGraphicsPolygonItem.h"
 
+#include "document/UBDocumentProxy.h"
+#include "core/UBApplication.h"
+#include "document/UBDocumentController.h"
+#include "board/UBBoardController.h"
+#include "document/UBDocumentProxy.h"
+#include "customWidgets/UBGraphicsItemAction.h"
+#include "frameworks/UBFileSystemUtils.h"
+#include "core/UBPersistenceManager.h"
+
 #include "core/memcheck.h"
 
 UBGraphicsStrokesGroup::UBGraphicsStrokesGroup(QGraphicsItem *parent)

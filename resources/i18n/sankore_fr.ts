@@ -3304,7 +3304,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Credits</source>
-        <translation>Crédits</translation>
+        <translation>Auteurs et crédits</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>

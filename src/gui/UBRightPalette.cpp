@@ -132,6 +132,9 @@ bool UBRightPalette::switchMode(eUBDockPaletteWidgetMode mode)
         if(UBSettings::settings()->rightLibPaletteWebModeIsCollapsed->get().toBool())
             newModeWidth = 0;
     }
+    // HACK to force the reoganization of tabs
+    if(newModeWidth == 0)
+        resize(1,height());
     resize(newModeWidth,height());
     return UBDockPalette::switchMode(mode);
 }

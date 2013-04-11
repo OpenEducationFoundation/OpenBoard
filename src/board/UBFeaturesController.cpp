@@ -1003,7 +1003,7 @@ void UBFeaturesController::importImage( const QImage &image, const UBFeature &de
         static int imageCounter = 0;
         mFileName  = tr("ImportedImage") + "-" + now.toString("dd-MM-yyyy hh-mm-ss");
 
-        filePath = dest.getFullPath().toLocalFile() + "/" + mFileName;
+        filePath = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + mFileName;
 
         if (QFile::exists(filePath+".png"))
             mFileName += QString("-[%1]").arg(++imageCounter);

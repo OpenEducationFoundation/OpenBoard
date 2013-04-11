@@ -1144,7 +1144,7 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
                 ? UniqName
                 : tr("ImportedImage") + "-" + QDateTime::currentDateTime().toString("dd-MM-yyyy hh-mm-ss")+ ".jpg";
 
-        filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
+        filePath = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + fileName;
 
         QImage img;
         img.loadFromData(pData);
@@ -1365,8 +1365,7 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 
     QString name = QFileInfo(sourcePath).fileName();
     QString destPath = dest.getFullPath().toLocalFile();
-    if(dest.getSortKey() == "Pictures"){
-        //hack
+    if(dest == picturesData.categoryFeature()){
         destPath =  picturesData.pathData().value(CategoryData::UserDefined).toLocalFile();
     }
     QString destVirtualPath = dest.getFullVirtualPath();

@@ -265,7 +265,7 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
 
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioActionPath);
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
                 cp->Delegate()->setAction(action);
             }
             else

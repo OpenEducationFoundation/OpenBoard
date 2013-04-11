@@ -177,7 +177,7 @@ void UBGraphicsSvgItem::copyItemParameters(UBItem *copy) const
         cp->setSourceUrl(this->sourceUrl());
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioActionPath);
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
                 cp->Delegate()->setAction(action);
             }
             else

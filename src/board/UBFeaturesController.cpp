@@ -1013,14 +1013,12 @@ void UBFeaturesController::importImage( const QImage &image, const UBFeature &de
         mFileName += ".png";
     }
 
-
-    if ( !destination.getFullVirtualPath().startsWith( picturesData.categoryFeature().getFullVirtualPath(), Qt::CaseInsensitive ) )
-    {
-        dest = picturesData.categoryFeature();
-    }
-
-    filePath = dest.getFullPath().toLocalFile() + "/" + mFileName;
+    dest = picturesData.categoryFeature();
+    filePath = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + mFileName;
     image.save(filePath);
+
+    qDebug() << filePath;
+    qDebug() << dest.getFullVirtualPath();
 
     QImage thumb = createThumbnail( filePath );
     UBFeature resultItem =  UBFeature( dest.getFullVirtualPath() + "/" + mFileName, thumb, mFileName,

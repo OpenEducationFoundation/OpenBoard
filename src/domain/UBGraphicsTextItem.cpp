@@ -260,10 +260,6 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
         cp->setData(UBGraphicsItemData::ItemEditable, data(UBGraphicsItemData::ItemEditable).toBool());
-        //    cp->setDefaultTextColor(this->defaultTextColor());
-        //    cp->setFont(this->font());
-        //    cp->setColorOnDarkBackground(this->colorOnDarkBackground());
-        //    cp->setColorOnLightBackground(this->colorOnLightBackground());
         cp->setTextWidth(this->textWidth());
         cp->setTextHeight(this->textHeight());
 

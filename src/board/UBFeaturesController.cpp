@@ -1017,9 +1017,6 @@ void UBFeaturesController::importImage( const QImage &image, const UBFeature &de
     filePath = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + mFileName;
     image.save(filePath);
 
-    qDebug() << filePath;
-    qDebug() << dest.getFullVirtualPath();
-
     QImage thumb = createThumbnail( filePath );
     UBFeature resultItem =  UBFeature( dest.getFullVirtualPath() + "/" + mFileName, thumb, mFileName,
         QUrl::fromLocalFile( filePath ), FEATURE_ITEM );

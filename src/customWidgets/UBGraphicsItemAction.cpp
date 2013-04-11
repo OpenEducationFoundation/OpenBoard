@@ -52,7 +52,6 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
 {
     Q_ASSERT(audioFile.length() > 0);
     if(isNewAction){
-        qDebug() << UBApplication::boardController->selectedDocument();
         QString extension = QFileInfo(audioFile).completeSuffix();
         QString destDir = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
         QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
@@ -67,6 +66,25 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
             mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
         else return;
     }
+    mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+    mMediaObject = new Phonon::MediaObject(this);
+    Phonon::createPath(mMediaObject, mAudioOutput);
+    mMediaObject->setCurrentSource(Phonon::MediaSource(mAudioPath));
+}
+
+
+UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction() :
+    UBGraphicsItemAction(eLinkToAudio,NULL)
+  , mMediaObject(0)
+  , mIsLoading(true)
+{
+}
+
+
+void UBGraphicsItemPlayAudioAction::setPath(QString audioPath)
+{
+    Q_ASSERT(audioPath.length() > 0);
+    mAudioPath = audioPath;
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
     Phonon::createPath(mMediaObject, mAudioOutput);

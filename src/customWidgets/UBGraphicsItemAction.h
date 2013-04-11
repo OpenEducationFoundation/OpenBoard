@@ -69,11 +69,13 @@ class UBGraphicsItemPlayAudioAction : public UBGraphicsItemAction
 
 public:
     UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction = true, QObject* parent = 0);
+    UBGraphicsItemPlayAudioAction();
     ~UBGraphicsItemPlayAudioAction();
     void play();
     QStringList save();
     void actionRemoved();
     QString path() {return mAudioPath;}
+    void setPath(QString audioPath);
 
 private:
     QString mAudioPath;

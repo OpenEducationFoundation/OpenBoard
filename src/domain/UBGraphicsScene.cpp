@@ -68,6 +68,8 @@
 #include "UBGraphicsTextItem.h"
 #include "UBGraphicsStrokesGroup.h"
 
+#include "customWidgets/UBGraphicsItemAction.h"
+
 #include "domain/UBGraphicsGroupContainerItem.h"
 
 #include "UBGraphicsStroke.h"
@@ -2081,13 +2083,21 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 
     while (itItems.hasNext())
     {
-        UBGraphicsMediaItem *videoItem = qgraphicsitem_cast<UBGraphicsMediaItem*> (itItems.next());
+        QGraphicsItem* item = itItems.next();
+        UBGraphicsMediaItem *videoItem = qgraphicsitem_cast<UBGraphicsMediaItem*> (item);
 
         if (videoItem && videoItem->mediaFileUrl().isRelative())
         {
             relativePathes << videoItem->mediaFileUrl();
         }
+
+        UBGraphicsItem* ubItem = dynamic_cast<UBGraphicsItem*>(item);
+        if(ubItem && ubItem->Delegate()->action() && ubItem->Delegate()->action()->linkType() == eLinkToAudio)
+            relativePathes << QUrl(ubItem->Delegate()->action()->path().replace(document()->persistencePath(),""));
+
     }
+
+    qDebug() << relativePathes;
 
     return relativePathes;
 }

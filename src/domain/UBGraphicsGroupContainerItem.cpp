@@ -245,9 +245,7 @@ void UBGraphicsGroupContainerItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
-                QString destination =  UBApplication::boardController->activeScene()->document()->persistencePath() + "/" + UBPersistenceManager::audioDirectory + QUuid::createUuid().toString();
-                UBFileSystemUtils::copyFile(Delegate()->action()->path(),destination);
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(destination);
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioActionPath);
                 cp->Delegate()->setAction(action);
             }
             else

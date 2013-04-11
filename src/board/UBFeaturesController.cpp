@@ -1365,6 +1365,10 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 
     QString name = QFileInfo(sourcePath).fileName();
     QString destPath = dest.getFullPath().toLocalFile();
+    if(dest.getSortKey() == "Pictures"){
+        //hack
+        destPath =  picturesData.pathData().value(CategoryData::UserDefined).toLocalFile();
+    }
     QString destVirtualPath = dest.getFullVirtualPath();
     QString newFullPath = destPath + "/" + name;
 

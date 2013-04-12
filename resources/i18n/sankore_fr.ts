@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Stylus</source>
-        <translation>Stylets</translation>
+        <translation>Stylet</translation>
     </message>
     <message>
         <source>Backgrounds</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Configure Podcast Recording</source>
-        <translation>Configurer le podcast</translation>
+        <translation>Configurer l&apos;enregistrement de l&apos;écran</translation>
     </message>
     <message>
         <source>Web Trap</source>
@@ -713,7 +713,7 @@
     </message>
     <message>
         <source>Add to Working Document</source>
-        <translation>Ajouter au document</translation>
+        <translation>Ajouter au document courant</translation>
     </message>
     <message>
         <source>Add</source>
@@ -729,11 +729,11 @@
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Signet</translation>
+        <translation>Signets</translation>
     </message>
     <message>
         <source>Bookmark</source>
-        <translation>Ajouter un signet</translation>
+        <translation>Signet</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -810,7 +810,8 @@
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pas certain de la pertinence car le contexte n&apos;est pas précisé ...</translatorcomment>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Télécharger dans&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;la bibliothèque&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
@@ -818,7 +819,7 @@
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Télécharger sur&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;la page courante&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
@@ -826,24 +827,23 @@
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ajouter le lien à&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;la bibliothèque&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation>Ajouter un lien dans la bibliothèque</translation>
+        <translation>Ajouter le lien dans la bibliothèque</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ajouter le lien à&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;la page courante&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation>Ajouter un lien dans la page courante</translation>
+        <translation>Ajouter le lien à la page courante</translation>
     </message>
     <message>
-        <source>Bookmark</source>
-        <comment>tooltip</comment>
-        <translation>Signet</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajouter aux signets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -999,7 +999,7 @@
     <name>UBCachePropertiesWidget</name>
     <message>
         <source>Cache Properties</source>
-        <translation>Propriétés du cache</translation>
+        <translation>Propriétés du spot</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1058,7 +1058,7 @@
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation>Images non acceptée</translation>
+        <translation>Images non acceptées</translation>
     </message>
     <message>
         <source>Cannot display data</source>
@@ -1077,15 +1077,15 @@
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation>Ajouter un lien sur une page</translation>
+        <translation>Ajouter un lien vers une page</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation>Ajouter un lien sur une page Web</translation>
+        <translation>Ajouter un lien vers une page Web</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation>Glisser et déposer un document audio depuis la bibliothèque</translation>
+        <translation>Glisser et déposer un fichier audio depuis la bibliothèque</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -1183,7 +1183,7 @@
     </message>
     <message>
         <source>Failed to import file ... </source>
-        <translation>Impossible d&apos;importer le fichier ...</translation>
+        <translation>Impossible d&apos;importer le fichier ... </translation>
     </message>
     <message>
         <source>Import all Images from Folder</source>
@@ -1247,10 +1247,6 @@
     <message>
         <source>This is an irreversible action!</source>
         <translation>Cette opération est irréversible !</translation>
-    </message>
-    <message>
-        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation>Ce document est modèle, il n&apos;est pas éditable. Copiez-le dans &quot;Mes documents&quot; afin de travailler dessus.</translation>
     </message>
 </context>
 <context>
@@ -1316,7 +1312,7 @@
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Export annulée ...</translation>
+        <translation>Exportation annulée ...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
@@ -1357,9 +1353,10 @@
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
+        <translatorcomment>j&apos;ai ajouté le terme &quot;Attention&quot; car cette opération est dangereuse (et pas trop conforme aux habitudes ou l&apos;on place en général un n° de version à la fin du fichier pour les différencier et eviter l&apos;effacement)</translatorcomment>
         <translation>Le nom %1 est déjà utilisé.
-En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
-Un nouveau nom créera un nouveau document.
+ATTENTION : En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
+Un nouveau nom vous permettra un nouveau document.
 </translation>
     </message>
 </context>
@@ -1380,17 +1377,6 @@ Un nouveau nom créera un nouveau document.
     <message>
         <source>Untitled documents</source>
         <translation>Documents sans titre</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation>Copie de la page %1/%2 en cours</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation>
-            <numerusform>%1 page copiée</numerusform>
-            <numerusform>%1 pages copiées</numerusform>
-        </translation>
     </message>
 </context>
 <context>
@@ -1419,15 +1405,15 @@ Un nouveau nom créera un nouveau document.
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation>le serveur distant refuse l&apos;accès</translation>
+        <translation>le serveur distant refuse l&apos;accès (le serveur n&apos;accepte pas les requêtes)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>le serveur distant a fermé l&apos;accès de manière prématurée</translation>
+        <translation>le serveur distant a fermé l&apos;accès de manière prématurée avant que la réponse ne soit reçue complètement et ne soit traitée</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation>le nom du serveur distant n&apos;a pas été trouvé</translation>
+        <translation>le nom du serveur distant n&apos;a pas été trouvé (nom du serveur distant invalide)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
@@ -1439,19 +1425,19 @@ Un nouveau nom créera un nouveau document.
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation>l&apos;accès SSL/TLS a échoué et la chaîne cryptée n&apos;a pu être établie.</translation>
+        <translation>la connexion SSL/TLS a échoué et la chaîne cryptée n&apos;a pu être établie. Les erreurs SSL () devraient avoir été envoyées.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation>la connexion a été interrompue en raison d&apos;une erreur réseau, l&apos;accès a été redirigé. La demande doit être à nouveau présentée et sera traitée dès que la connexion sera rétablie.</translation>
+        <translation>la connexion a été interrompue en raison d&apos;une erreur réseau, l&apos;accès a été redirigé. La requête doit être à nouveau présentée et sera traitée dès que la connexion sera rétablie.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation>la connexion au serveur proxy a été refusée (le serveur proxy n&apos;accepte pas les demandes)</translation>
+        <translation>la connexion au serveur proxy a été refusée (le serveur proxy n&apos;accepte pas les requêtes)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>le serveur proxy a fermé la connexion prématurément, avant que la réponse entière ait été reçue et traitée</translation>
+        <translation>le serveur proxy a fermé la connexion prématurément, avant que la réponse entière n&apos;ait été reçue et traitée</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
@@ -1459,11 +1445,11 @@ Un nouveau nom créera un nouveau document.
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation>la connexion au proxy a expiré ou le proxy ne répond pas à la demande envoyée dans les temps</translation>
+        <translation>la connexion au proxy a expiré ou le proxy ne répond pas à la requête envoyée</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation>le proxy requiert une authentification pour cette demande, mais n&apos;accepte pas les certificats</translation>
+        <translation>le proxy requiert une authentification pour cette demande, mais n&apos;accepte pas les certificats proposés</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
@@ -1697,7 +1683,7 @@ Un nouveau nom créera un nouveau document.
     </message>
     <message>
         <source>Add</source>
-        <translation>Ajouter</translation>
+        <translation>Ajouter à :</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1896,7 @@ Un nouveau nom créera un nouveau document.
     <name>UBImportCFF</name>
     <message>
         <source>Common File Format (</source>
-        <translation>Format de fichier CFF (</translation>
+        <translation>Format de fichier CFF (*.iwb) (</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
@@ -1918,15 +1904,15 @@ Un nouveau nom créera un nouveau document.
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Echec de l&apos;import du fichier %1.</translation>
+        <translation>Echec de l&apos;importation du fichier %1.</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Import terminée.</translation>
+        <translation>Importation terminée.</translation>
     </message>
     <message>
         <source>Import failed.</source>
-        <translation>Echec de l&apos;import.</translation>
+        <translation>Echec de l&apos;importation.</translation>
     </message>
 </context>
 <context>
@@ -1952,7 +1938,7 @@ Un nouveau nom créera un nouveau document.
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation>Open-Sankoré (set de documents) (*.ubx)</translation>
+        <translation>Open-Sankoré (archive de documents) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2042,7 +2028,7 @@ Un nouveau nom créera un nouveau document.
 %2
 
 Do you want to ignore these errors for this host?</source>
-        <translation>Erreur SSL (Secure Socket Layer) sur un serveur sécurisé:
+        <translation>Erreur SSL (Secure Socket Layer) sur un serveur sécurisé :
 
 %1
 
@@ -2094,7 +2080,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Français suisse</translation>
+        <translation>Français (Suisse)</translation>
     </message>
 </context>
 <context>
@@ -2176,131 +2162,127 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation>arabe</translation>
+        <translation>Arabe</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation>bulgare</translation>
+        <translation>Bulgare</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation>catalan</translation>
+        <translation>Catalan</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>tchèque</translation>
+        <translation>Tchèque</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation>danois</translation>
+        <translation>Danois</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>allemand</translation>
+        <translation>Allemand</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>grec</translation>
+        <translation>Grec</translation>
     </message>
     <message>
         <source>English</source>
-        <translation>anglais</translation>
+        <translation>Anglais</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation>anglais UK</translation>
+        <translation>Anglais UK</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>espagnol</translation>
+        <translation>Espagnol</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>français</translation>
+        <translation>Français</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>français suisse</translation>
+        <translation>Français (Suisse)</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>italien</translation>
+        <translation>Italien</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation>hébreux</translation>
+        <translation>Hébreux</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation>japonais</translation>
+        <translation>Japonais</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation>coréen</translation>
+        <translation>Coréen</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation>malgache</translation>
+        <translation>Malgache</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation>norvégien</translation>
+        <translation>Norvégien</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>danois</translation>
+        <translation>Néerlandais</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation>polonais</translation>
+        <translation>Polonais</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation>romanche</translation>
+        <translation>Romanche</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation>roumain</translation>
+        <translation>Roumain</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>russe</translation>
+        <translation>Russe</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation>slovaque</translation>
+        <translation>Slovaque</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation>suédois</translation>
+        <translation>Suédois</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation>turc</translation>
+        <translation>Turc</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation>chinois</translation>
+        <translation>Chinois</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation>chinois simplifié</translation>
+        <translation>Chinois simplifié</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation>chinois traditionnel</translation>
+        <translation>Chinois traditionnel</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation>corse</translation>
+        <translation>Corse</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation>hindi</translation>
-    </message>
-    <message>
-        <source>Portuguese</source>
-        <translation>portugais</translation>
+        <translation>Hindi</translation>
     </message>
 </context>
 <context>
@@ -2392,6 +2374,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <name>UBTeacherBarWidget</name>
     <message>
         <source></source>
+        <translatorcomment>Je ne sais pas quoi faire avec cet item...</translatorcomment>
         <translation></translation>
     </message>
 </context>
@@ -2403,7 +2386,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation>Renseigner le commentaire ici ...</translation>
+        <translation>Ajouter le commentaire ici ...</translation>
     </message>
     <message>
         <source>Add an action</source>
@@ -2419,7 +2402,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation>Page: %0</translation>
+        <translation>Page : %0</translation>
     </message>
 </context>
 <context>
@@ -2430,11 +2413,11 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation>Auteur(s) :</translation>
+        <translation>Auteur(s) et crédits :</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation>Ajouter les auteurs ici ...</translation>
+        <translation>Ajouter les auteurs et les crédits des médias ici ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
@@ -2502,8 +2485,8 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translatorcomment>attention le copyright n&apos;est pas une protection ou une licence puisque ca existe même pour les licences libres les plus ouvertes. C&apos;est simplement la mention détenteur des droits de reproduction (celui qui fixe la licence) . Le terme est donc impropre même en anglais.</translatorcomment>
-        <translation>Protection par le droit d&apos;auteur</translation>
+        <translatorcomment>attention le copyright n&apos;est pas une protection ou une licence puisque ca existe même pour les licences libres les plus ouvertes. C&apos;est simplement la mention détenteur des droits de reproduction (celui qui fixe la licence) . Le terme est donc impropre même en anglais. (je suis d&apos;accord avec la remarque Francois)</translatorcomment>
+        <translation>Protection par le droit d&apos;auteur courant</translation>
     </message>
     <message>
         <source>Created the:
@@ -2524,7 +2507,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation>Page: %0</translation>
+        <translation>Page : %0</translation>
     </message>
 </context>
 <context>
@@ -2577,7 +2560,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation>Embarqué</translation>
+        <translation>Embarqué </translation>
     </message>
 </context>
 <context>
@@ -2622,11 +2605,11 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>Updating file </source>
-        <translation>Mise à jour du fichier</translation>
+        <translation>Mise à jour du fichier </translation>
     </message>
     <message>
         <source>Please wait the import process will start soon...</source>
-        <translation>Merci de patienter, le processus d&apos;import va commencer...</translation>
+        <translation>Merci de patienter : le processus d&apos;importation va commencer...</translation>
     </message>
     <message>
         <source>Remind me later</source>
@@ -2781,7 +2764,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>Error saving: %1</source>
-        <translation>Erreur lors de la sauvegarde du fichier : %1</translation>
+        <translation>Erreur lors de l&apos;enregistrement du fichier : %1</translation>
     </message>
     <message>
         <source>Network Error: %1</source>
@@ -2797,7 +2780,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>- %4 %5 remaining</source>
-        <translation>- %4 %5 restante(s)</translation>
+        <translation>- %4 %5 restantes</translation>
     </message>
     <message>
         <source>%1 of %2 (%3/sec) %4</source>
@@ -2830,12 +2813,12 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>WBDownloadManager</name>
     <message>
         <source>1 Download</source>
-        <translation>1 téléchargement(s)</translation>
+        <translation>1 téléchargement</translation>
     </message>
     <message>
         <source>%1 Downloads</source>
         <comment>always &gt;= 2</comment>
-        <translation>%1 téléchargement(s)</translation>
+        <translation>%1 téléchargements</translation>
     </message>
 </context>
 <context>
@@ -2949,26 +2932,22 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <message>
         <source>Download to
 library</source>
-        <translation>Télécharger dans
-la bibliothèque</translation>
+        <translation>Télécharger dans la bibliothèque</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation>Télécharger sur
-la page courante</translation>
+        <translation>Télécharger sur la page courante</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation>Ajouter un lien
-dans la bibliothèque</translation>
+        <translation>Ajouter un lien dans la bibliothèque</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation>Ajouter un lien
-sur la page courante</translation>
+        <translation>Ajouter un lien sur la page courante</translation>
     </message>
 </context>
 <context>
@@ -3045,7 +3024,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;En cliquant sur le bouton &quot;Téléchargement&quot;, vous certifiez que vous respectez les conditions générales d&apos;utilisation de YouTube &lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;En cliquant sur le bouton &quot;Téléchargement&quot;, vous certifiez que vous respectez les conditions générales d&apos;utilisation de YouTube disponibles ici &lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Restore credentials on reboot</source>
@@ -3180,7 +3159,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Keyboard button size:</source>
-        <translation>Taille des touches du clavier virtuel:</translation>
+        <translation>Taille des touches du clavier virtuel :</translation>
     </message>
     <message>
         <source>Positioned at the Top (recommended for tablets)</source>
@@ -3288,7 +3267,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation>Proxy :</translation>
+        <translation>Login Proxy :</translation>
     </message>
     <message>
         <source>Pass:</source>
@@ -3304,15 +3283,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Credits</source>
-        <translation>Auteurs et crédits</translation>
+        <translation>Crédits</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation>Identifiant Planète Sankoré pour l&apos;export de fichier</translation>
+        <translation>Identifiant Planète-Sankoré pour l&apos;export de fichier</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation>Sauvegarder les paramètres de connexion.</translation>
+        <translation>Enrgistrer les paramètres de connexion.</translation>
     </message>
     <message>
         <source>Start up tips</source>
@@ -3332,7 +3311,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation>La nouvelle langue sera appliquée au prochain lancement</translation>
+        <translation>Cette nouvelle langue sera utilisée lors du rédémarrage du logiciel</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
@@ -3359,7 +3338,7 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Les licences proposées ci-dessous sont rédigées en langue anglaise afin de respecter le cadre légal et officiel des traductions approuvées par les auteurs de ces textes.</translation>
+        <translation>Les licences proposées ci-dessous sont proposées en langue anglaise afin de respecter le cadre légal et officiel de ces textes.qui ne disposent pas d&apos;une traduction officialisée en français.</translation>
     </message>
 </context>
 <context>

@@ -853,8 +853,19 @@ void UBDocumentController::loadDocumentProxies()
             if (!groupNamesMap.contains(docGroup) && !isInTrash)
             {
                 UBDocumentGroupTreeItem* docGroupItem = new UBDocumentGroupTreeItem(0, !isEmptyGroupName); // deleted by the tree widget
-                groupNamesMap.insert(docGroup, docGroupItem);
-                docGroupItem->setGroupName(docGroup);
+                docGroupItem->setGroupName(docGroup.split("/").at(0));
+                QStringList splittedPath = docGroup.split("/");
+                if(splittedPath.count() > 1){
+                    UBDocumentGroupTreeItem* parentGroupItem = docGroupItem;
+                    for(int splitIndex = 1; splitIndex < splittedPath.count(); splitIndex += 1){
+                        UBDocumentGroupTreeItem* docGroupItem1 = new UBDocumentGroupTreeItem(parentGroupItem, !isEmptyGroupName); // deleted by the tree widget
+                        docGroupItem1->setGroupName(docGroup.split("/").at(splitIndex));
+                        parentGroupItem = docGroupItem1;
+                    }
+                    groupNamesMap.insert(docGroup, parentGroupItem);
+                }
+                else
+                    groupNamesMap.insert(docGroup, docGroupItem);
 
                 if (isEmptyGroupName)
                     emptyGroupNameTi = docGroupItem;
@@ -891,8 +902,11 @@ void UBDocumentController::loadDocumentProxies()
     {
         UBDocumentGroupTreeItem* ti = groupNamesMap.value(groupName);
 
-        if (ti != emptyGroupNameTi)
-            mDocumentUI->documentTreeWidget->addTopLevelItem(ti);
+        if (ti != emptyGroupNameTi){
+            QTreeWidgetItem* tmpTi = dynamic_cast<QTreeWidgetItem*>(ti);
+            while(tmpTi->parent()) tmpTi = dynamic_cast<QTreeWidgetItem*>(tmpTi->parent());
+            mDocumentUI->documentTreeWidget->addTopLevelItem(tmpTi);
+        }
     }
 
     if (emptyGroupNameTi)

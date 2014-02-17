@@ -128,6 +128,10 @@ class UBDocumentController : public UBDocumentContainer
         QString mDocumentTrashGroupName;
         QString mDefaultDocumentGroupName;
 
+        UBDocumentGroupTreeItem *getCommonGroupItem(QString& path);
+        QMap<QString, UBDocumentGroupTreeItem*> mMapOfPaths;
+
+
     private slots:
         void documentZoomSliderValueChanged (int value);
         void loadDocumentProxies();

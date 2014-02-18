@@ -130,6 +130,7 @@ class UBDocumentController : public UBDocumentContainer
 
         UBDocumentGroupTreeItem *getCommonGroupItem(QString& path);
         QMap<QString, UBDocumentGroupTreeItem*> mMapOfPaths;
+        UBDocumentGroupTreeItem* getParentTreeItem(QString& documentGroup);
 
 
     private slots:

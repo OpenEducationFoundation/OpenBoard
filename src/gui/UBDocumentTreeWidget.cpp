@@ -22,10 +22,10 @@
  * along with OpenBoard. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 #include "UBDocumentTreeWidget.h"
 
 #include "document/UBDocumentProxy.h"
-//#include "document/UBDocumentContainer.h"
 
 #include "core/UBSettings.h"
 #include "core/UBApplication.h"
@@ -33,6 +33,9 @@
 #include "core/UBMimeData.h"
 #include "core/UBApplicationController.h"
 #include "core/UBDocumentManager.h"
+
+#include "gui/UBMainWindow.h"
+
 #include "document/UBDocumentController.h"
 
 #include "adaptors/UBThumbnailAdaptor.h"
@@ -41,22 +44,23 @@
 
 #include "core/memcheck.h"
 
+#include <QTimer>
+
 UBDocumentTreeWidget::UBDocumentTreeWidget(QWidget * parent)
     : QTreeWidget(parent)
     , mSelectedProxyTi(0)
     , mDropTargetProxyTi(0)
+    , mLastItemClickedLabel("")
 {
     setDragDropMode(QAbstractItemView::InternalMove);
     setAutoScroll(true);
 
     mScrollTimer = new QTimer(this);
-    connect(UBDocumentManager::documentManager(), SIGNAL(documentUpdated(UBDocumentProxy*))
-            , this, SLOT(documentUpdated(UBDocumentProxy*)));
+    connect(UBDocumentManager::documentManager(), SIGNAL(documentUpdated(UBDocumentProxy*)), this, SLOT(documentUpdated(UBDocumentProxy*)));
 
-    connect(this, SIGNAL(itemChanged(QTreeWidgetItem *, int))
-            , this,  SLOT(itemChangedValidation(QTreeWidgetItem *, int)));
-    connect(mScrollTimer, SIGNAL(timeout())
-            , this, SLOT(autoScroll()));
+    connect(this, SIGNAL(itemChanged(QTreeWidgetItem *, int)) , this,  SLOT(itemChangedValidation(QTreeWidgetItem *, int)));
+    connect(mScrollTimer, SIGNAL(timeout()) , this, SLOT(autoScroll()));
+    connect(this,SIGNAL(itemActivated(QTreeWidgetItem*,int)),this,SLOT(onItemActivated(QTreeWidgetItem*,int)));
 }
 
 
@@ -66,30 +70,83 @@ UBDocumentTreeWidget::~UBDocumentTreeWidget()
 }
 
 
+void UBDocumentTreeWidget::onItemActivated(QTreeWidgetItem* item, int column)
+{
+    Q_UNUSED(column)
+
+    UBDocumentGroupTreeItem* group = dynamic_cast<UBDocumentGroupTreeItem *>(item);
+    if(group)
+        mLastItemClickedLabel = group->buildEntirePath();
+}
+
 void UBDocumentTreeWidget::itemChangedValidation(QTreeWidgetItem * item, int column)
 {
-    if (column == 0)
+    UBDocumentProxyTreeItem* treeItem = dynamic_cast< UBDocumentProxyTreeItem *>(item);
+    if (treeItem)
     {
-        UBDocumentGroupTreeItem *group = dynamic_cast< UBDocumentGroupTreeItem *>(item);
+        QString name = treeItem->text(column);
 
-        if (group)
+        for(int i = 0; i < treeItem->parent()->childCount(); i++)
         {
-            QString name = group->text(0);
+            QTreeWidgetItem* childAtPosition = treeItem->parent()->child(i);
 
-            for(int i = 0; i < topLevelItemCount (); i++)
-            {
-                QTreeWidgetItem *someTopLevelItem = topLevelItem(i);
-
-                if (someTopLevelItem != group &&
-                        someTopLevelItem->text(0) == name)
-                {
-                    group->setText(0, tr("%1 (copy)").arg(name));
-                }
+            if (childAtPosition != item && childAtPosition->text(column) == name){
+                UBApplication::mainWindow->warning(tr("Name already in use"),tr("Please choose another name for the document. The chosed name is already used."));
+                // This is not really a good way but at this time we are not yet out of the editing time
+                // this is not what is told by the name of the function itemChanged...
+                mFailedValidationForTreeItem = item;
+                mFailedValidationItemColumn = column;
+                QTimer::singleShot(100,this,SLOT(validationFailed()));
+                return;
             }
         }
     }
+
+
+    UBDocumentGroupTreeItem* group = dynamic_cast<UBDocumentGroupTreeItem *>(item);
+    if(group)
+    {
+        QString name = group->text(column);
+
+        if(group->parent()){
+            for(int i = 0; i < group->parent()->childCount(); i++)
+            {
+                QTreeWidgetItem* childAtPosition = group->parent()->child(i);
+
+                if (childAtPosition != item && childAtPosition->text(column) == name){
+                    UBApplication::mainWindow->warning(tr("Name already in use"),tr("Please choose another name for the directory. The chosed name is already used."));
+                    mFailedValidationForTreeItem = item;
+                    mFailedValidationItemColumn = column;
+                    QTimer::singleShot(100,this,SLOT(validationFailed()));
+                    return;
+                }
+            }
+        }
+//        else{
+//            for(int i = 0; i < UBApplication::documentController->treeWidget()->children().count(); i++)
+//            {
+//                QTreeWidgetItem* childAtPosition = UBApplication::documentController->treeWidget();
+
+//                if (childAtPosition != item && childAtPosition->text(column) == name){
+//                    UBApplication::mainWindow->warning(tr("Name already in use"),tr("Please choose another name for the directory. The chosed name is already used."));
+//                    // This is not really a good way but at this time we are not yet out of the editing time
+//                    // this is not what is told by the name of the function itemChanged...
+//                    mFailedValidationForTreeItem = item;
+//                    mFailedValidationItemColumn = column;
+//                    QTimer::singleShot(100,this,SLOT(validationFailed()));
+//                    return;
+//                }
+//            }
+//        }
+        group->updateChildrenPath(item, column, mLastItemClickedLabel, group->buildEntirePath());
+    }
 }
 
+void UBDocumentTreeWidget::validationFailed()
+{
+    setItemSelected(mFailedValidationForTreeItem,true);
+    editItem(mFailedValidationForTreeItem,mFailedValidationItemColumn);
+}
 
 Qt::DropActions UBDocumentTreeWidget::supportedDropActions() const
 {
@@ -208,11 +265,6 @@ void UBDocumentTreeWidget::dragMoveEvent(QDragMoveEvent *event)
 
 void UBDocumentTreeWidget::focusInEvent(QFocusEvent *event)
 {
-    Q_UNUSED(event);
-
-    // Tolik
-    //itemSelectionChanged();
-
     QTreeWidget::focusInEvent(event);
 }
 
@@ -275,7 +327,6 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
             if (groupItem->isTrashFolder())
                 mSelectedProxyTi->setFlags(mSelectedProxyTi->flags() ^ Qt::ItemIsEditable);
 
-            //clearSelection();
             expandItem(groupItem);
             scrollToItem(mSelectedProxyTi);
 
@@ -320,7 +371,6 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
                         if (scene)
                         {
                             UBGraphicsScene* sceneClone = scene->sceneDeepCopy();
-//                            UBGraphicsScene* sceneClone = scene;
 
                             UBDocumentProxy *targetDocProxy = targetProxyTreeItem->proxy();
 
@@ -451,6 +501,33 @@ void UBDocumentGroupTreeItem::setGroupName(const QString& groupName)
 QString UBDocumentGroupTreeItem::groupName() const
 {
     return text(0);
+}
+
+QString UBDocumentGroupTreeItem::buildEntirePath()
+{
+    QString result(groupName());
+    UBDocumentGroupTreeItem* item = this;
+    while(item->parent()){
+        item = dynamic_cast<UBDocumentGroupTreeItem*>(item->parent());
+        result = item->groupName() + "/" + result;
+    }
+
+    return result;
+}
+
+void UBDocumentGroupTreeItem::updateChildrenPath(QTreeWidgetItem* parent, int column, QString& previousText, const QString& text)
+{
+    for(int i = 0; i < parent->childCount(); i += 1){
+        if(dynamic_cast<UBDocumentGroupTreeItem*>(parent->child(i)))
+            updateChildrenPath(parent->child(i),column + 1, previousText,text);
+        else{
+            UBDocumentProxyTreeItem* docProxyItem = dynamic_cast<UBDocumentProxyTreeItem*>(parent->child(i));
+            QString groupName = docProxyItem->proxy()->metaData(UBSettings::documentGroupName).toString();
+            groupName = groupName.replace(previousText,text);
+            docProxyItem->proxy()->setMetaData(UBSettings::documentGroupName, text);
+            UBPersistenceManager::persistenceManager()->persistDocumentMetadata(docProxyItem->proxy());
+        }
+    }
 }
 
 

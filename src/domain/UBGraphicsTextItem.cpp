@@ -45,8 +45,8 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent)
     : QGraphicsTextItem(parent)
     , UBGraphicsItem()
     , mMultiClickState(0)
-    , mLastMousePressTime(QTime::currentTime())
     , mTypeTextHereLabel(tr("<Type Text Here>"))
+    , mLastMousePressTime(QTime::currentTime())
 {
     setDelegate(new UBGraphicsTextItemDelegate(this, 0));
 

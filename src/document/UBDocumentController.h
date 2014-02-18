@@ -66,6 +66,8 @@ class UBDocumentController : public UBDocumentContainer
         QString documentTrashGroupName(){ return mDocumentTrashGroupName;}
         QString defaultDocumentGroupName(){ return mDefaultDocumentGroupName;}
 
+        void treeGroupItemRenamed(QString& oldPath,QString& newPath);
+
     signals:
         void exportDone();
 

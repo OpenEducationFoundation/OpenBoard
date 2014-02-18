@@ -54,7 +54,7 @@ class UBDocumentTreeWidget : public QTreeWidget
         void documentUpdated(UBDocumentProxy *pDocument);
 
         void itemChangedValidation(QTreeWidgetItem * item, int column);
-        void onItemActivated(QTreeWidgetItem* item, int column);
+        void onItemPressed(QTreeWidgetItem* item, int column);
         void autoScroll();
         void validationFailed();
 
@@ -66,8 +66,8 @@ class UBDocumentTreeWidget : public QTreeWidget
         int mScrollMagnitude;
         QTreeWidgetItem* mFailedValidationForTreeItem;
         int mFailedValidationItemColumn;
-        QString mLastItemClickedLabel;
-
+        QString mLastItemCompletePath;
+        QString mLastItemName;
 };
 
 
@@ -102,7 +102,7 @@ class UBDocumentGroupTreeItem : public QTreeWidgetItem
         QString buildEntirePath();
 
 
-        void updateChildrenPath(QTreeWidgetItem* parent, int column, QString& previousText, const QString &text);
+        void updateChildrenPath(int column, QString& previousText, const QString &text);
 };
 
 #endif /* UBDOCUMENTTREEWIDGET_H_ */

@@ -869,7 +869,6 @@ void UBDocumentController::loadDocumentProxies()
     {
         if (proxy)
         {
-            qDebug() << proxy->metaData(UBSettings::documentGroupName).toString();
             addDocumentInTree(proxy);
         }
     }
@@ -886,12 +885,27 @@ void UBDocumentController::itemClicked(QTreeWidgetItem * item, int column )
 }
 
 
+void UBDocumentController::treeGroupItemRenamed(QString& oldPath,QString& newPath)
+{
+    if(oldPath.isEmpty() || newPath.isEmpty())
+        return;
+
+    QList<QString> keys = mMapOfPaths.keys();
+    for(int i = 0; i < keys.count(); i += 1){
+        QString key = keys.at(i);
+        if(key.startsWith(oldPath)){
+            UBDocumentGroupTreeItem* value = mMapOfPaths.take(key);
+            key = key.remove(0,oldPath.size());
+            mMapOfPaths.insert(key.prepend(newPath),value);
+        }
+    }
+}
+
 void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
 {
     UBDocumentProxyTreeItem* proxyItem = dynamic_cast<UBDocumentProxyTreeItem*>(item);
 
-    disconnect(UBPersistenceManager::persistenceManager(), SIGNAL(documentMetadataChanged(UBDocumentProxy*))
-            , this, SLOT(updateDocumentInTree(UBDocumentProxy*)));
+    disconnect(UBPersistenceManager::persistenceManager(), SIGNAL(documentMetadataChanged(UBDocumentProxy*)) , this, SLOT(updateDocumentInTree(UBDocumentProxy*)));
 
     if (proxyItem)
     {
@@ -1317,7 +1331,7 @@ UBDocumentGroupTreeItem* UBDocumentController::getParentTreeItem(QString& docume
     QString pathNotYetCreated = documentGroup;
     UBDocumentGroupTreeItem* result = getCommonGroupItem(documentGroup);
     if(result)
-        pathNotYetCreated = pathNotYetCreated.remove(result->groupName());
+        pathNotYetCreated = pathNotYetCreated.remove(0,result->buildEntirePath().size());
 
     if(pathNotYetCreated.startsWith("/")) pathNotYetCreated = pathNotYetCreated.remove(0,1);
     QString completePath = result ? result->groupName() + "/" : "";
@@ -1326,11 +1340,12 @@ UBDocumentGroupTreeItem* UBDocumentController::getParentTreeItem(QString& docume
     for(int i = 0; i < folders.count(); i += 1 ){
         if(!folders.at(i).isEmpty()){
             completePath = completePath + folders.at(i);
-            result = new UBDocumentGroupTreeItem(result, true);
-            result->setGroupName(folders.at(i));
+            UBDocumentGroupTreeItem* newTreeItem = new UBDocumentGroupTreeItem(result, true);
+            newTreeItem->setGroupName(folders.at(i));
             if(completePath.indexOf("/") == -1)
-                mDocumentUI->documentTreeWidget->insertTopLevelItem(0,result);
-            mMapOfPaths.insert(completePath,result);
+                mDocumentUI->documentTreeWidget->insertTopLevelItem(0,newTreeItem);
+            mMapOfPaths.insert(completePath,newTreeItem);
+            result = newTreeItem;
             completePath += "/";
         }
     }

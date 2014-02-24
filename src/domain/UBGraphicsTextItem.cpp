@@ -41,14 +41,13 @@
 #include "core/memcheck.h"
 QColor UBGraphicsTextItem::lastUsedTextColor;
 
-UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
-    QGraphicsTextItem(parent)
+UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent)
+    : QGraphicsTextItem(parent)
     , UBGraphicsItem()
     , mMultiClickState(0)
     , mLastMousePressTime(QTime::currentTime())
     , mTypeTextHereLabel(tr("<Type Text Here>"))
 {
-    mEmptyTextWidth = QFontMetrics(font()).width(mTypeTextHereLabel);
     setDelegate(new UBGraphicsTextItemDelegate(this, 0));
 
     // TODO claudio remove this because in contrast with the fact the frame should be created on demand.
@@ -131,11 +130,6 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             }
 
         }
-        else
-        {
-            Delegate()->getToolBarItem()->show();
-        }
-
     }
 
     if (!data(UBGraphicsItemData::ItemEditable).toBool())
@@ -246,9 +240,6 @@ void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     if (widget == UBApplication::boardController->controlView()->viewport() &&
             !isSelected() && toPlainText().isEmpty())
     {
-//        QFontMetrics fm(font());
-//        setTextWidth(fm.width(mTypeTextHereLabel));
-
         painter->setFont(font());
         painter->setPen(UBSettings::paletteColor);
         painter->drawText(boundingRect(), Qt::AlignCenter, mTypeTextHereLabel);
@@ -339,7 +330,7 @@ void UBGraphicsTextItem::contentsChanged()
 
     if (toPlainText().isEmpty())
     {
-        resize(textWidth(),textHeight());
+        resize(QFontMetrics(font()).width(mTypeTextHereLabel),QFontMetrics(font()).height());
     }
 }
 
@@ -354,7 +345,6 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
 {
     setTextWidth(w);
     setTextHeight(h);
-
     if (Delegate())
         Delegate()->positionHandles();
 }

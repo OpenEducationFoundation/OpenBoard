@@ -625,6 +625,38 @@ void UBDocumentController::moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi,
     proxyTi->setFlags(proxyTi->flags() ^ Qt::ItemIsEditable);
 }
 
+
+QList<UBDocumentProxyTreeItem*> UBDocumentController::getProxies(QTreeWidgetItem* groupItem)
+{
+    QList<UBDocumentProxyTreeItem*> result;
+
+    for(int i = 0; i < groupItem->childCount(); i += 1){
+        UBDocumentProxyTreeItem* docProxy  = dynamic_cast<UBDocumentProxyTreeItem*>(groupItem->child(i));
+        if(docProxy)
+            result.append(docProxy);
+        else
+            result << getProxies(groupItem->child(i));
+    }
+
+    return result;
+}
+
+
+QList<UBDocumentGroupTreeItem*> UBDocumentController::getGroupTreeItem(QTreeWidgetItem* groupItem)
+{
+    QList<UBDocumentGroupTreeItem*> result;
+
+    for(int i = 0; i < groupItem->childCount(); i += 1){
+        UBDocumentGroupTreeItem* group  = dynamic_cast<UBDocumentGroupTreeItem*>(groupItem->child(i));
+        if(group)
+            result.append(group);
+        else
+            result << getGroupTreeItem(groupItem->child(i));
+    }
+
+    return result;
+}
+
 void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
 {
     bool changeCurrentDocument = false;
@@ -638,14 +670,9 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
         }
     }
 
-    QList<UBDocumentProxyTreeItem*> toBeDeleted;
 
-    for (int i = 0; i < groupTi->childCount(); i++)
-    {
-        UBDocumentProxyTreeItem* proxyTi = dynamic_cast<UBDocumentProxyTreeItem*>(groupTi->child(i));
-        if (proxyTi && proxyTi->proxy())
-            toBeDeleted << proxyTi;
-    }
+
+    QList<UBDocumentProxyTreeItem*> toBeDeleted = getProxies(groupTi);
 
     for (int i = 0; i < toBeDeleted.count(); i++)
     {
@@ -657,12 +684,24 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
         proxyTi->proxy()->setMetaData(UBSettings::documentGroupName, UBSettings::trashedDocumentGroupNamePrefix + oldGroupName);
         UBPersistenceManager::persistenceManager()->persistDocumentMetadata(proxyTi->proxy());
 
-        groupTi->removeChild(proxyTi);
+        UBDocumentGroupTreeItem* parentDirectory = dynamic_cast<UBDocumentGroupTreeItem*>(mMapOfPaths.value(oldGroupName));
+        parentDirectory->removeChild(proxyTi);
         mTrashTi->addChild(proxyTi);
         proxyTi->setFlags(proxyTi->flags() ^ Qt::ItemIsEditable);
 
         showMessage(QString("%1 deleted").arg(groupTi->groupName()));
     }
+
+
+    QList<UBDocumentGroupTreeItem*> dirToDelete = getGroupTreeItem(groupTi);
+    for(int i = dirToDelete.count() - 1; i >= 0 ; i -= 1){
+        UBDocumentGroupTreeItem* parent = dynamic_cast<UBDocumentGroupTreeItem*>(dirToDelete.at(i)->parent());
+        if(parent){
+            mMapOfPaths.remove(dirToDelete.at(i)->buildEntirePath());
+            parent->removeChild(dirToDelete.at(i));
+        }
+    }
+
 
     // dont remove default group
     if (!groupTi->isDefaultFolder())
@@ -670,8 +709,13 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
         int index = mDocumentUI->documentTreeWidget->indexOfTopLevelItem(groupTi);
 
         if (index >= 0)
-        {
             mDocumentUI->documentTreeWidget->takeTopLevelItem(index);
+        else {
+            UBDocumentGroupTreeItem* parent = dynamic_cast<UBDocumentGroupTreeItem*>(groupTi->parent());
+            if(parent){
+                mMapOfPaths.remove(groupTi->buildEntirePath());
+                parent->removeChild(groupTi);
+            }
         }
     }
 
